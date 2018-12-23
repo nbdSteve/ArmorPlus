@@ -1,0 +1,54 @@
+
+armor-set-1:
+  additional-damage: 1.25
+  reduced-damage: 1
+  proc-chance: 0.1
+  unique: "&c&lPHANTOM SET BONUS"
+  #
+  helmet:
+    name: "&c&lPhantom Hood"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&cThe fabled hood of the Phantom."
+      - "&7 "
+      - "&c&lPHANTOM SET BONUS"
+      - "&cDeal +25% damage to all enemies."
+      - "&7&o(Requires all 4 phantom items.)"
+  #
+  chestplate:
+    name: "&c&lPhantom Shroud"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&cThe legendary shroud of the Phantom."
+      - "&7 "
+      - "&c&lPHANTOM SET BONUS"
+      - "&cDeal +25% damage to all enemies."
+      - "&7&o(Requires all 4 phantom items.)"
+  #
+  leggings:
+    name: "&c&lPhantom Robeset"
+    enchantments:
+    - protection_environmental:4
+    - durability:3
+    lore:
+    - "&cThe demonic robe of the Phantom."
+    - "&7 "
+    - "&c&lPHANTOM SET BONUS"
+    - "&cDeal +25% damage to all enemies."
+    - "&7&o(Requires all 4 phantom items.)"
+  boots:
+    name: "&c&lPhantom Sandals"
+    enchantments:
+    - protection_environmental:4
+    - durability:3
+    lore:
+    - "&cThe silent sandals of the Phantom."
+    - "&7 "
+    - "&c&lPHANTOM SET BONUS"
+    - "&cDeal +25% damage to all enemies."
+    - "&7&o(Requires all 4 phantom items.)"
+  #

@@ -1,0 +1,3 @@
+name: Carmor
+version: ${project.version}
+main: com.nbdsteve.carmor.Carmor
