@@ -8,9 +8,10 @@ import com.nbdsteve.carmor.method.InventoryArmorCheck;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 
-public class EquipMessage {
+public class EquipMessage implements Listener {
     //Register the main class
     private Plugin pl = Carmor.getPlugin(Carmor.class);
     //Get the files for the plugin

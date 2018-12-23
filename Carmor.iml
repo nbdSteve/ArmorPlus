@@ -31,7 +31,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.13-SNAPSHOT" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: me.codingforcookies:armorequip:1.6.5">
+      <library name="Maven: com.codingforcookies:armorequip:1.6.5">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/main/lib/ArmorEquipEvent-1.6.5.jar!/" />
         </CLASSES>

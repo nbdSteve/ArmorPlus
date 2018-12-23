@@ -10,7 +10,7 @@ public class GetSetNumber {
     public static String setNumber(List<String> lore, LoadCarmorFiles lcf) {
         String setNumber = null;
         for (int i = 0; i <= 54; i++) {
-            setNumber = "armor-set" + String.valueOf(i);
+            setNumber = "armor-set-" + String.valueOf(i);
             try {
                 lcf.getArmor().getString(setNumber + ".unique");
                 if (lore.contains(ChatColor.translateAlternateColorCodes('&',

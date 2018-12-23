@@ -1,6 +1,7 @@
 package com.nbdsteve.carmor.method;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -22,10 +23,11 @@ public class InventoryArmorCheck {
         } catch (Exception e) {
             return false;
         }
-        String unique = GetSetNumber.setNumber(helmLore, lcf);
-        if (unique == null) {
+        String setNumber = GetSetNumber.setNumber(helmLore, lcf);
+        if (setNumber == null) {
             return false;
         }
+        String unique = ChatColor.translateAlternateColorCodes('&', lcf.getArmor().getString(setNumber + ".unique"));
         if (helmLore.contains(unique) && chestLore.contains(unique)
                 && leggingLore.contains(unique) && bootLore.contains(unique)) {
             return true;

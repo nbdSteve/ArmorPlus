@@ -71,7 +71,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.codingforcookies</groupId>
+            <groupId>com.codingforcookies</groupId>
             <artifactId>armorequip</artifactId>
             <version>1.6.5</version>
             <scope>system</scope>
