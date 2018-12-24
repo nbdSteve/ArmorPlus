@@ -100,8 +100,27 @@ public class CaCommand implements CommandExecutor {
                     Player target = null;
                     int setNumber = 0;
                     int amount = 1;
-                    String armorPiece = "DIAMOND_" + args[3].toUpperCase();
-                    String armorSet = "armor-set-" + args[2] + "." + args[3];
+                    String armorPiece = args[3].toUpperCase();
+                    String item = null;
+                    if (args[3].contains("helmet")) {
+                        item = "helmet";
+                    } else if (args[3].contains("chestplate")) {
+                        item = "chestplate";
+                    } else if (args[3].contains("leggings")) {
+                        item  = "leggings";
+                    } else if (args[3].contains("boots")) {
+                        item = "boots";
+                    } else {
+                        if (s instanceof Player) {
+                            for (String line : lcf.getMessages().getStringList("invalid-armor-piece")) {
+                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
+                            }
+                        } else {
+                            pl.getLogger().info("The armor piece you entered isn't valid.");
+                        }
+                        return true;
+                    }
+                    String armorSet = "armor-set-" + args[2] + "." + item;
                     try {
                         target = pl.getServer().getPlayer(args[1]);
                     } catch (Exception e) {

@@ -72,7 +72,7 @@ public class InventoryArmorCheck {
         List<String> bootLore;
         //Has to be this way because the event is called before the armor is on the player
         //Running the above methods causes an exception to be thrown
-        if (newPieceMaterial.equals(Material.DIAMOND_HELMET)) {
+        if (newPieceMaterial.toString().contains("HELMET")) {
             helmLore = newPieceLore;
         } else {
             try {
@@ -81,7 +81,7 @@ public class InventoryArmorCheck {
                 return false;
             }
         }
-        if (newPieceMaterial.equals(Material.DIAMOND_CHESTPLATE)) {
+        if (newPieceMaterial.toString().contains("CHESTPLATE")) {
             chestLore = newPieceLore;
         } else {
             try {
@@ -90,7 +90,7 @@ public class InventoryArmorCheck {
                 return false;
             }
         }
-        if (newPieceMaterial.equals(Material.DIAMOND_LEGGINGS)) {
+        if (newPieceMaterial.toString().contains("LEGGINGS")) {
             leggingLore = newPieceLore;
         } else {
             try {
@@ -99,7 +99,7 @@ public class InventoryArmorCheck {
                 return false;
             }
         }
-        if (newPieceMaterial.equals(Material.DIAMOND_BOOTS)) {
+        if (newPieceMaterial.toString().contains("BOOTS")) {
             bootLore = newPieceLore;
         } else {
             try {
