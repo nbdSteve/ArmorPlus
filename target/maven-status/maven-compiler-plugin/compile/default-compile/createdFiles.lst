@@ -4,10 +4,11 @@ com\nbdsteve\carmor\Carmor.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent.class
 com\nbdsteve\carmor\file\LoadCarmorFiles.class
 com\nbdsteve\carmor\method\GetSetNumber.class
-com\nbdsteve\carmor\event\EquipMessage.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent$EquipMethod.class
+com\nbdsteve\carmor\event\DeEquipEvent.class
 com\nbdsteve\carmor\event\AdditionalPlayerDamage.class
 com\nbdsteve\carmor\method\InventoryArmorCheck.class
+com\nbdsteve\carmor\event\EquipEvent.class
 com\nbdsteve\carmor\event\ReducedPlayerDamage.class
 com\nbdsteve\carmor\command\CaCommand.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorListener.class

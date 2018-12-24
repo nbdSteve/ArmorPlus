@@ -112,3 +112,15 @@ armor-set-2:
   - "&7 "
   - "&5&l*** ---<>--- ***"
 #
+
+#
+armor-set-3:
+  equip-message:
+  - "&a&l*** ---<>--- ***"
+  - "&7 "
+  - "&a&lROAD RUNNER SET BONUS ACTIVE"
+  - "&2&oRun +70% faster"
+  - "&2&oDig +60% faster"
+  - "&7 "
+  - "&a&l*** ---<>--- ***"
+#
