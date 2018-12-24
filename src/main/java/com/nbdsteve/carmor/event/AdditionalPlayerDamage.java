@@ -10,12 +10,20 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.plugin.Plugin;
 
+/**
+ * Class containing methods for the additional damage for the player attack event
+ */
 public class AdditionalPlayerDamage implements Listener {
     //Register the main class
     private Plugin pl = Carmor.getPlugin(Carmor.class);
     //Get the files for the plugin
     private LoadCarmorFiles lcf = ((Carmor) pl).getFiles();
 
+    /**
+     * All code for the event is contained in this method
+     *
+     * @param e the event, cannot be null
+     */
     @EventHandler
     public void additionalDamage(EntityDamageByEntityEvent e) {
         String setNumber;

@@ -16,12 +16,16 @@ import org.bukkit.plugin.Plugin;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Command class from /ca and /carmor
+ */
 public class CaCommand implements CommandExecutor {
     //Register the main class
     private Plugin pl = Carmor.getPlugin(Carmor.class);
     //Get the files for the plugin
     private LoadCarmorFiles lcf = ((Carmor) pl).getFiles();
 
+    //Create the constructor to make the command work
     public CaCommand(Carmor pl) {
         this.pl = pl;
     }

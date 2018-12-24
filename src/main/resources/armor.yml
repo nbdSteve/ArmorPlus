@@ -1,8 +1,12 @@
-
+#
+# Carmor v1.1 - armor.yml
+#
+# Configuration for the first armor set.
+# Copy and paste this config for any other armor sets you would like to create
+# the plugin supports up to 54 armor sets
 armor-set-1:
   additional-damage: 1.25
   reduced-damage: 1
-  proc-chance: 0.1
   unique: "&c&lPHANTOM SET BONUS"
   #
   helmet:
@@ -40,6 +44,7 @@ armor-set-1:
     - "&c&lPHANTOM SET BONUS"
     - "&cDeal +25% damage to all enemies."
     - "&7&o(Requires all 4 phantom items.)"
+  #
   boots:
     name: "&c&lPhantom Sandals"
     enchantments:
@@ -51,4 +56,62 @@ armor-set-1:
     - "&c&lPHANTOM SET BONUS"
     - "&cDeal +25% damage to all enemies."
     - "&7&o(Requires all 4 phantom items.)"
+  #
+
+armor-set-2:
+  additional-damage: 1.15
+  reduced-damage: 0.85
+  unique: "&5&lDIABLO SET BONUS"
+  #
+  helmet:
+    name: "&5&lDiablo Hood"
+    enchantments:
+    - protection_environmental:4
+    - durability:3
+    lore:
+    - "&5The Diablo hood."
+    - "&7 "
+    - "&5&lDIABLO SET BONUS"
+    - "&5Deal +15% damage to all enemies."
+    - "&5All damage reduced by -15% from all enemies."
+    - "&7&o(Requires all 4 diablo items.)"
+  #
+  chestplate:
+    name: "&5&lDiablo Shroud"
+    enchantments:
+    - protection_environmental:4
+    - durability:3
+    lore:
+    - "&5The Diablo shroud."
+    - "&7 "
+    - "&5&lDIABLO SET BONUS"
+    - "&5Deal +15% damage to all enemies."
+    - "&5All damage reduced by -15% from all enemies."
+    - "&7&o(Requires all 4 diablo items.)"
+  #
+  leggings:
+    name: "&5&lDiablo Robeset"
+    enchantments:
+    - protection_environmental:4
+    - durability:3
+    lore:
+    - "&5The Diablo robeset."
+    - "&7 "
+    - "&5&lDIABLO SET BONUS"
+    - "&5Deal +15% damage to all enemies."
+    - "&5All damage reduced by -15% from all enemies."
+    - "&7&o(Requires all 4 diablo items.)"
+  #
+  boots:
+    name: "&5&lDiablo Sandals"
+    enchantments:
+    - protection_environmental:4
+    - durability:3
+    lore:
+    - "&5The Diablo sandals."
+    - "&7 "
+    - "&5&lDIABLO SET BONUS"
+    - "&5Deal +15% damage to all enemies."
+    - "&5All damage reduced by -15% from all enemies."
+    - "&7&o(Requires all 4 diablo items.)"
   #

@@ -1,7 +1,114 @@
+#
+# Carmor v1.1 - messages.yml
+#
+
+# General plugin messages are at the top, per armor set message are at the bottom
+
+# Message sent to the player when they type the /ca help command.
+# Requires permission: carmor.help
+help:
+- "&7 "
+- "&a&lCarmor &7- &emade by &6&lnbdSteve"
+- "&7 "
+- "&3/ca give <player> <set number> <armor piece> <amount>"
+- "&7Give the target player their armor piece from that armor set"
+- "&7Requires premission node: &fcarmor.give"
+- "&7 "
+- "&3/ca reload"
+- "&7Reload the configuration files"
+- "&7Requires premission node: &fcarmor.reload"
+- "&7 "
+#
+
+#
+# Message sent to the player when they type the /ca reload command.
+# Requires permission: carmor.reload
+reload:
+- "&7 "
+- "&a&lCarmor:"
+- "&a&lSUCCESS!&7 You just reloaded all of the configuration files."
+- "&7 "
+#
+
+#
+# Message sent to the player when they type an invalid command.
+# No permission required.
+invalid-command:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 The command you entered is &b&lINVALID&7 please see &e/ca help&7 for command help."
+- "&7 "
+#
+
+#
+# Message sent to the player when they type a command and don't have permission.
+# No permission required.
+no-permission:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 You do not have permission to use that!"
+- "&7 "
+#
+
+#
+# Message sent to the player when they type a command and the player is invalid.
+# Command permission required.
+invalid-player:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 The player who entered is not online."
+- "&7 "
+#
+
+#
+# Message sent to the player when they type a command and the amount is invalid.
+# Command permission required.
+invalid-amount:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 The amount you entered is &b&lINVALID&7, make sure the amount is a positive integer greater than 0."
+- "&7 "
+#
+
+#
+# Message sent to the player when they try to give an armor set that doesn't exist.
+# Command permission required
+invalid-armor-set:
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 That armor set doesn't exist, please check the armor.yml!"
+  - "&7 "
+#
+
+#
+# Message sent to the player when the try to give an armor piece that doesn't exist
+# Command permission required
+invalid-armor-piece:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 That armor piece isn't valid, enter helmet, chestplate, leggings or boots."
+- "&7 "
+#
+
+# Per armor set messages, these are sent to the player when they equip a full set of custom armor
 armor-set-1:
   equip-message:
-    - "test"
-  additional-damage:
-    - "test1"
-  reduced-damage:
-    - "test2"
+    - "&c&l*** ---<>--- ***"
+    - "&7 "
+    - "&c&lPHANTOM SET BONUS ACTIVE"
+    - "&4&oDeal +25% damage to &nALL&4&o enemies"
+    - "&7 "
+    - "&c&l*** ---<>--- ***"
+#
+
+#
+armor-set-2:
+  equip-message:
+  - "&5&l*** ---<>--- ***"
+  - "&7 "
+  - "&5&lDIABLO SET BONUS ACTIVE"
+  - "&d&oDeal +15% damage to &nALL&d&o enemies"
+  - "&d&oDamage from &nALL&d&o enemies reduced by -15%"
+  - "&7 "
+  - "&5&l*** ---<>--- ***"
+#
