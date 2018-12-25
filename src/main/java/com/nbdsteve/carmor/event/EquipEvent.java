@@ -4,6 +4,7 @@ import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.method.GetSetNumber;
 import com.nbdsteve.carmor.method.InventoryArmorCheck;
+import com.nbdsteve.carmor.method.PlayerPotionCheck;
 import com.nbdsteve.carmor.method.armorequiplistener.ArmorEquipEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -52,6 +53,8 @@ public class EquipEvent implements Listener {
                     }
                     for (String effect : lcf.getArmor().getStringList(setNumber + ".potion-effects")) {
                         String[] parts = effect.split(":");
+                        PlayerPotionCheck.potionCheck(p, parts[0].toUpperCase(),
+                                Integer.parseInt(parts[1]) - 1);
                         p.addPotionEffect(new PotionEffect(PotionEffectType.getByName(parts[0].toUpperCase()), 999999, Integer.parseInt(parts[1]) - 1));
                     }
                 }

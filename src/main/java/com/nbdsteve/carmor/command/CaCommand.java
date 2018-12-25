@@ -78,6 +78,27 @@ public class CaCommand implements CommandExecutor {
                         lcf.reload();
                         pl.getLogger().info("You successfully reloaded all of the configuration files");
                     }
+                } else if (args[0].equalsIgnoreCase("l") || args[0].equalsIgnoreCase("list")) {
+                    if (s instanceof Player) {
+                        if (s.hasPermission("carmor.list")) {
+                            s.sendMessage(" ");
+                            for (int i = 0; i <= 54; i++) {
+                                String setNumber = "armor-set-" + String.valueOf(i);
+                                try {
+                                    s.sendMessage(String.valueOf(i) + ". " + ChatColor.translateAlternateColorCodes('&', lcf.getArmor().getString(setNumber + ".unique")));
+                                } catch (Exception e) {
+                                    //Do nothing this armor set just doesn't exist
+                                }
+                            }
+                            s.sendMessage(" ");
+                        } else {
+                            for (String line : lcf.getMessages().getStringList("no-permission")) {
+                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
+                            }
+                        }
+                    } else {
+                        pl.getLogger().info("The list of armor sets can only be viewed in game, check your armor.yml");
+                    }
                 } else {
                     if (s instanceof Player) {
                         for (String line : lcf.getMessages().getStringList("invalid-command")) {

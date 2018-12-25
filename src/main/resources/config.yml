@@ -1,6 +1,12 @@
 #
-# Carmor v1.1 - config.yml
+# Carmor v1.1.3 - config.yml
 #
+# This is how often the plugin will check to see if the player needs potion effects
+# added to them. (NOTE: potions are applied when the player equips the armor as well).
+# Make this number larger to reduce lag, this is the delay in ticks (20 ticks = 1 second).
+potion-check-delay: 20
+#
+# (This is for the armor equip event listener, don't touch unless you know what you're doing!).
 # All blocks with an inventory or any blocks that when right clicked shouldn't equip armor.
 blocked:
 - FURNACE

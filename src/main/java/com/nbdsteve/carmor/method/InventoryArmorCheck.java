@@ -33,13 +33,10 @@ public class InventoryArmorCheck {
             leggingLore = p.getInventory().getLeggings().getItemMeta().getLore();
             bootLore = p.getInventory().getBoots().getItemMeta().getLore();
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("exception caught");
             return false;
         }
         String setNumber = GetSetNumber.setNumber(helmLore, lcf);
         if (setNumber == null) {
-            System.out.println("set number == null");
             return false;
         }
         String unique = ChatColor.translateAlternateColorCodes('&', lcf.getArmor().getString(setNumber +
@@ -48,7 +45,6 @@ public class InventoryArmorCheck {
                 && leggingLore.contains(unique) && bootLore.contains(unique)) {
             return true;
         }
-        System.out.println("not found in lore");
         return false;
     }
 
@@ -57,9 +53,9 @@ public class InventoryArmorCheck {
      * otherwise return false. This is called for the equip event since the armor piece
      * doesn't register when the event is called
      *
-     * @param p   the player to check
-     * @param lcf the file configuration
-     * @param newPieceLore the lore of the new armor piece
+     * @param p                the player to check
+     * @param lcf              the file configuration
+     * @param newPieceLore     the lore of the new armor piece
      * @param newPieceMaterial the material that the new armor piece is
      * @return boolean
      */
