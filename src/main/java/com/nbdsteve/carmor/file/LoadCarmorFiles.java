@@ -5,6 +5,7 @@ import com.nbdsteve.carmor.file.providedfile.GenerateCarmorFiles;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
+import java.io.File;
 import java.util.HashMap;
 
 /**
@@ -21,7 +22,7 @@ public class LoadCarmorFiles {
      * Enum to store each file, this is public so we can call method on these
      */
     public enum Files {
-        CONFIG, MESSAGES, ARMOR
+        CONFIG, MESSAGES, ARMOR, MAIN_GUI, ARMOR_GUI
     }
 
     /**
@@ -32,6 +33,8 @@ public class LoadCarmorFiles {
         fileList.put(Files.CONFIG, new GenerateCarmorFiles("config.yml"));
         fileList.put(Files.MESSAGES, new GenerateCarmorFiles("messages.yml"));
         fileList.put(Files.ARMOR, new GenerateCarmorFiles("armor.yml"));
+        fileList.put(Files.MAIN_GUI, new GenerateCarmorFiles("gui-config" + File.separator + "main-gui"));
+        fileList.put(Files.ARMOR_GUI, new GenerateCarmorFiles("gui-config" + File.separator + "armor-gui"));
         pl.getLogger().info("Loading provided files...");
     }
 
@@ -45,6 +48,14 @@ public class LoadCarmorFiles {
 
     public FileConfiguration getArmor() {
         return fileList.get(Files.ARMOR).get();
+    }
+
+    public FileConfiguration getMainGui() {
+        return fileList.get(Files.MAIN_GUI).get();
+    }
+
+    public FileConfiguration getArmorGui() {
+        return fileList.get(Files.ARMOR_GUI).get();
     }
 
     public void reload() {

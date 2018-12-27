@@ -5,6 +5,7 @@ import com.nbdsteve.carmor.event.AdditionalPlayerDamage;
 import com.nbdsteve.carmor.event.DeEquipEvent;
 import com.nbdsteve.carmor.event.EquipEvent;
 import com.nbdsteve.carmor.event.ReducedPlayerDamage;
+import com.nbdsteve.carmor.event.guiclick.GeneralArmorGuiClick;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.method.ServerPotionCheckRunnable;
 import com.nbdsteve.carmor.method.armorequiplistener.ArmorListener;
@@ -40,6 +41,7 @@ public final class Carmor extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ReducedPlayerDamage(), this);
         getServer().getPluginManager().registerEvents(new EquipEvent(), this);
         getServer().getPluginManager().registerEvents(new DeEquipEvent(), this);
+        getServer().getPluginManager().registerEvents(new GeneralArmorGuiClick(), this);
     }
 
     /**

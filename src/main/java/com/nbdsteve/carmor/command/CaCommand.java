@@ -2,6 +2,7 @@ package com.nbdsteve.carmor.command;
 
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import com.nbdsteve.carmor.gui.MainGui;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -35,8 +36,10 @@ public class CaCommand implements CommandExecutor {
         if (c.getName().equalsIgnoreCase("ca") || c.getName().equalsIgnoreCase("carmar")) {
             if (args.length == 0) {
                 if (s instanceof Player) {
-                    if (s.hasPermission("carmor.help")) {
-                        for (String line : lcf.getMessages().getStringList("help")) {
+                    if (s.hasPermission("carmor.gui")) {
+                        MainGui mainMenu = new MainGui();
+                        mainMenu.mainGui((Player) s);
+                        for (String line : lcf.getMessages().getStringList("open-gui")) {
                             s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
                         }
                     } else {
@@ -45,7 +48,7 @@ public class CaCommand implements CommandExecutor {
                         }
                     }
                 } else {
-                    pl.getLogger().info("The help message can only be seen using game chat.");
+                    pl.getLogger().info("The gui can only be seen in game.");
                 }
             } else if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("h") || args[0].equalsIgnoreCase("help")) {
