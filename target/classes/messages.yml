@@ -1,5 +1,5 @@
 #
-# Carmor v1.1.3 - messages.yml
+# Carmor v1.2.0 - messages.yml
 #
 
 # General plugin messages are at the top, per armor set message are at the bottom
@@ -87,6 +87,46 @@ invalid-armor-piece:
 - "&7 "
 - "&a&lCarmor:"
 - "&c&lERROR!&7 That armor piece isn't valid, enter helmet, chestplate, leggings or boots."
+- "&7 "
+#
+
+#
+# Message sent to the player when the try to give an armor piece that doesn't exist
+# Command permission required
+purchase:
+- "&7 "
+- "&a&lCarmor:"
+- "&7Your new armor piece has been added to your inventory!"
+- "&7 "
+#
+
+#
+# Message sent to the player when the try to give an armor piece that doesn't exist
+# Command permission required
+insufficient-funds:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 You do not have enough money to buy that item!"
+- "&7 "
+#
+
+#
+# Message sent to the player when the try to give an armor piece that doesn't exist
+# Command permission required
+no-economy:
+- "&7 "
+- "&a&lCarmor:"
+- "&c&lERROR!&7 You are unable to buy armor at this time since there is not an active economy."
+- "&7 "
+#
+
+#
+# Message sent to the player when the try to give an armor piece that doesn't exist
+# Command permission required
+open-gui:
+- "&7 "
+- "&a&lCarmor:"
+- "&e&oSearching the universe for the &cCarmor&e&o dealer..."
 - "&7 "
 #
 

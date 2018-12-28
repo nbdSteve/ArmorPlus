@@ -1,4 +1,4 @@
-package com.nbdsteve.carmor.gui;
+package com.nbdsteve.carmor.gui.method;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import org.bukkit.ChatColor;
@@ -8,13 +8,15 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class to generate an armor set for the specified gui
  */
-class GenerateArmorSet {
+public class GenerateArmorSet {
 
     /**
      * Constructor to create the armor set
@@ -23,7 +25,7 @@ class GenerateArmorSet {
      * @param lcf       LoadCarmorFiles instance
      * @param setGui    The gui to add the armor pieces to
      */
-    GenerateArmorSet(String setNumber, LoadCarmorFiles lcf, Inventory setGui) {
+    public GenerateArmorSet(String setNumber, LoadCarmorFiles lcf, Inventory setGui) {
         //Run this loop for each piece of armor
         for (int i = 0; i <= 4; i++) {
             String armorPiece = null;
@@ -53,10 +55,12 @@ class GenerateArmorSet {
             for (String lore : lcf.getArmor().getStringList(armorPiece + ".lore")) {
                 pieceLore.add(ChatColor.translateAlternateColorCodes('&', lore));
             }
+            //Decimal format for price of the piece
+            NumberFormat df = new DecimalFormat("#,###");
             //Add the special gui lore
             for (String lore : lcf.getArmorGui().getStringList(setNumber + ".gui-lore")) {
                 pieceLore.add(ChatColor.translateAlternateColorCodes('&', lore).replace("%Price",
-                        armorPieceParts[2]));
+                        df.format(Integer.parseInt(armorPieceParts[2]))));
             }
             //Add the regular enchantments
             for (String ench : lcf.getArmor().getStringList(armorPiece + ".enchantments")) {

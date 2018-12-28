@@ -4,7 +4,7 @@
   <groupId>com.nbdsteve</groupId>
   <artifactId>Carmor</artifactId>
   <name>Carmor</name>
-  <version>1.1-BETA</version>
+  <version>1.2.0</version>
   <build>
     <defaultGoal>clean package</defaultGoal>
     <resources>
@@ -83,11 +83,11 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>com.codingforcookies</groupId>
-      <artifactId>armorequip</artifactId>
-      <version>1.6.5</version>
+      <groupId>net.milkbowl.vault</groupId>
+      <artifactId>VaultAPI</artifactId>
+      <version>1.7.1</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/src/main/lib/ArmorEquipEvent-1.6.5.jar</systemPath>
+      <systemPath>${project.basedir}/src/main/lib/Vault.jar</systemPath>
     </dependency>
   </dependencies>
   <properties>

@@ -1,6 +1,7 @@
 package com.nbdsteve.carmor.gui;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import com.nbdsteve.carmor.gui.method.GenerateArmorSet;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

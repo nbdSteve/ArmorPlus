@@ -52,7 +52,7 @@ public class MainGui {
                 }
                 iconMeta.setLore(iconLore);
                 icon.setItemMeta(iconMeta);
-                inven.setItem(lcf.getArmorGui().getInt(set + "main-icon-gui.slot"), icon);
+                inven.setItem(lcf.getArmorGui().getInt(set + ".main-gui-icon.slot"), icon);
             }
         }
         p.openInventory(inven);

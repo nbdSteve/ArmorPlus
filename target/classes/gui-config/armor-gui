@@ -1,4 +1,8 @@
-
+#
+# Carmor v1.2.0 - armor-gui.yml
+#
+# This is how the armor set will appear in its own gui
+# Just copy and paste this format for any additional armor sets you add
 armor-set-1:
   main-gui-icon:
     item: blaze_rod
@@ -22,3 +26,52 @@ armor-set-1:
     - "&7 "
     - "&7Price: &c&l$%Price"
     - "&7 "
+#
+armor-set-2:
+  main-gui-icon:
+    item: obsidian
+    name: "&5&lDiablo Set"
+    glowing: true
+    slot: 1
+    lore:
+    - "&7 "
+    - "&e&oLeft Click to purchase"
+    - "&e&oDiablo set items."
+    - "&7 "
+  #
+  name: "&5&lDiablo Set"
+  size: 54
+  in-gui: true
+  helmet: diamond_helmet:13:1000
+  chestplate: diamond_chestplate:22:2000
+  leggings: diamond_leggings:31:1500
+  boots: diamond_boots:40:1000
+  gui-lore:
+  - "&7 "
+  - "&7Price: &c&l$%Price"
+  - "&7 "
+#
+armor-set-3:
+  main-gui-icon:
+    item: rabbit_foot
+    name: "&a&lRoad Runner Set"
+    glowing: true
+    slot: 2
+    lore:
+    - "&7 "
+    - "&e&oLeft Click to purchase"
+    - "&e&oRoad Runner set items."
+    - "&7 "
+  #
+  name: "&a&lRoad Runner Set"
+  size: 54
+  in-gui: true
+  helmet: diamond_helmet:13:1000
+  chestplate: diamond_chestplate:22:2000
+  leggings: diamond_leggings:31:1500
+  boots: diamond_boots:40:1000
+  gui-lore:
+  - "&7 "
+  - "&7Price: &c&l$%Price"
+  - "&7 "
+#
