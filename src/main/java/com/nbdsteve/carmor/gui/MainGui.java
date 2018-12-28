@@ -15,12 +15,20 @@ import org.bukkit.plugin.Plugin;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class handling the main gui when the players runs the /ca command
+ */
 public class MainGui {
     //Register the main class
     private Plugin pl = Carmor.getPlugin(Carmor.class);
     //Get the files for the plugin
     private LoadCarmorFiles lcf = ((Carmor) pl).getFiles();
 
+    /**
+     * Create the main gui
+     *
+     * @param p the Player, cannot be null
+     */
     public void mainGui(Player p) {
         //Create the gui
         Inventory inven = pl.getServer().createInventory(null, lcf.getMainGui().getInt("size"),

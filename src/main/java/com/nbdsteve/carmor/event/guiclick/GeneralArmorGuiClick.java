@@ -14,12 +14,20 @@ import org.bukkit.plugin.Plugin;
 
 import java.util.List;
 
+/**
+ * Class handling click events from the main gui
+ */
 public class GeneralArmorGuiClick implements Listener {
     //Register the main class
     private Plugin pl = Carmor.getPlugin(Carmor.class);
     //Get the files for the plugin
     private LoadCarmorFiles lcf = ((Carmor) pl).getFiles();
 
+    /**
+     * All code for the event is in this method, when the player clicks open up the respective armor gui
+     *
+     * @param e the event, cannot be null
+     */
     @EventHandler
     public void guiClick(InventoryClickEvent e) {
         //Store the player
@@ -52,7 +60,7 @@ public class GeneralArmorGuiClick implements Listener {
                             return;
                         }
                         if (p.hasPermission("carmor.gui." + perm)) {
-                            GeneralSetGui.createGui(setNumber, lcf, pl, p);
+                            new GeneralSetGui(setNumber, lcf, pl, p);
                         } else {
                             p.closeInventory();
                             for (String line : lcf.getMessages().getStringList("no-permission")) {
