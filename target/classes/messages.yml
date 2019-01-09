@@ -1,5 +1,5 @@
 #
-# Carmor v1.2.1 - messages.yml
+# Carmor v1.2.2 - messages.yml
 #
 
 # General plugin messages are at the top, per armor set message are at the bottom
@@ -164,4 +164,22 @@ armor-set-3:
   - "&2&oDig +60% faster"
   - "&7 "
   - "&a&l*** ---<>--- ***"
+#
+
+# Bonus attack messages, these will be sent to players affected by the bonus attack
+lightning-attack:
+  - "&f&l<&b&l-=-=<>=-=-&f&l> &e&l|-| &f&l<&b&l-=-=<>=-=-&f&l>"
+  - "&7 "
+  - "&f&lFEEL THE WRATH OF &b&l{player}"
+  - "&7 "
+  - "&f&l<&b&l-=-=<>=-=-&f&l> &e&l|-| &f&l<&b&l-=-=<>=-=-&f&l>"
+#
+
+#
+potion-attack:
+  - "&4&l<&6&l-=-=<>=-=-&4&l> &c&l|-| &4&l<&6&l-=-=<>=-=-&4&l>"
+  - "&7 "
+  - "&f&lFEEL THE EFFECTS OF &c&l{player}"
+  - "&7 "
+  - "&4&l<&6&l-=-=<>=-=-&4&l> &c&l|-| &4&l<&6&l-=-=<>=-=-&4&l>"
 #

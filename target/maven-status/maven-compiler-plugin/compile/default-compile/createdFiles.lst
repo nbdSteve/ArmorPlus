@@ -1,4 +1,5 @@
 com\nbdsteve\carmor\event\guiclick\ArmorBuyGuiClick.class
+com\nbdsteve\carmor\method\specialattack\PotionEffectAttack.class
 com\nbdsteve\carmor\method\ArmorPieceMethods.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorType.class
 com\nbdsteve\carmor\file\LoadCarmorFiles.class
@@ -18,7 +19,6 @@ com\nbdsteve\carmor\method\gui\GenerateArmorSet.class
 com\nbdsteve\carmor\file\LoadCarmorFiles$Files.class
 com\nbdsteve\carmor\Carmor.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent.class
-com\nbdsteve\carmor\method\bonusattack\LightningAttack.class
 com\nbdsteve\carmor\event\AdditionalPlayerDamage.class
 com\nbdsteve\carmor\gui\GeneralSetGui.class
 com\nbdsteve\carmor\gui\MainGui.class
@@ -26,3 +26,4 @@ com\nbdsteve\carmor\method\gui\GetPiecePrice.class
 com\nbdsteve\carmor\event\guiclick\GeneralArmorGuiClick.class
 com\nbdsteve\carmor\event\ReducedPlayerDamage.class
 com\nbdsteve\carmor\file\providedfile\GenerateCarmorFiles.class
+com\nbdsteve\carmor\method\specialattack\LightningAttack.class
