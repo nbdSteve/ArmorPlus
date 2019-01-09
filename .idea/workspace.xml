@@ -2,53 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36c0865a-c20e-44ff-99f6-07b8a612eb1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/ArmorPieceMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/message/SendMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusattack/LightningAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_13_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_13_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_13_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_13_2_R0_1_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Carmor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Carmor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/Carmor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/Carmor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/command/CaCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/command/CaCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/DeEquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/DeEquipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/EquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/EquipEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/ReducedPlayerDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/ReducedPlayerDamage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/guiclick/ArmorBuyGuiClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/guiclick/ArmorBuyGuiClick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/guiclick/GeneralArmorGuiClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/guiclick/GeneralArmorGuiClick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GeneralSetGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GeneralSetGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/MainGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/MainGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/method/CraftArmorPieceForPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/gui/CraftArmorPieceForPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/method/GenerateArmorSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/gui/GenerateArmorSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/method/GetPiecePrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/gui/GetPiecePrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/PlayerPotionCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/potion/PlayerPotionCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/ServerPotionCheckRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/potion/ServerPotionCheckRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gui-config/armor-gui" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gui-config/armor-gui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/messages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Carmor-1.2.0-shaded.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Carmor-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/Carmor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/Carmor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/command/CaCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/command/CaCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/DeEquipEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/DeEquipEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/EquipEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/EquipEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Carmor-1.2.1-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Carmor-1.2.1-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/armor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/armor.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/ReducedPlayerDamage$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/ReducedPlayerDamage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/ReducedPlayerDamage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/guiclick/ArmorBuyGuiClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/guiclick/ArmorBuyGuiClick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/guiclick/GeneralArmorGuiClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/event/guiclick/GeneralArmorGuiClick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/GeneralSetGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/GeneralSetGui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/MainGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/MainGui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/method/CraftArmorPieceForPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/method/GenerateArmorSet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/gui/method/GetPiecePrice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/method/PlayerPotionCheck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/method/ServerPotionCheckRunnable$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nbdsteve/carmor/method/ServerPotionCheckRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui-config/armor-gui" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui-config/armor-gui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Carmor-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Carmor-1.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-Carmor-1.2.1.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,108 +26,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-443050473">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="armor-gui" value="3" />
-          <entry key="java" value="97" />
-          <entry key="main-gui" value="3" />
-          <entry key="xml" value="8" />
-          <entry key="yml" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="97" />
-          <entry key="XML" value="8" />
-          <entry key="YAML" value="29" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="armor-gui" value="927" />
-          <entry key="dummy" value="47" />
-          <entry key="java" value="21507" />
-          <entry key="main-gui" value="45" />
-          <entry key="xml" value="171" />
-          <entry key="yml" value="3572" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="21507" />
-          <entry key="PLAIN_TEXT" value="47" />
-          <entry key="XML" value="171" />
-          <entry key="YAML" value="4544" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="Carmor" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GeneralSetGui.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/gui/GenerateArmorSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/MainGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="900">
               <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/AdditionalPlayerDamage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+            <state relative-caret-position="315">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/message/SendMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="30" selection-start-line="30" selection-end-line="31" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -167,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/ReducedPlayerDamage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+            <state relative-caret-position="492">
+              <caret line="51" column="99" lean-forward="true" selection-start-line="51" selection-start-column="99" selection-end-line="51" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,22 +65,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/ArmorPieceMethods.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusattack/LightningAttack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+            <state relative-caret-position="32">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/GetSetNumber.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/armor.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="20">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/messages.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -220,14 +126,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/../../../2018/sem 2/deco2800/Project" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../../2018/sem 2/deco2800/proj" value="PREVIEW" />
-      </map>
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -250,14 +148,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GeneralSetGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GenerateArmorSet.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/Carmor.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/armor.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/gui-config/main-gui" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/method/GetPiecePrice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/method/CraftArmorPieceForPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/method/GenerateArmorSet.java" />
         <option value="$PROJECT_DIR$/src/main/resources/gui-config/armor-gui" />
-        <option value="$PROJECT_DIR$/src/main/resources/messages.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/EquipEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/DeEquipEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/guiclick/GeneralArmorGuiClick.java" />
@@ -272,7 +167,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/command/CaCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/MainGui.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/ArmorPieceMethods.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusAttacks/Lightining.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusAttacks/Lightning.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusattack/LightningAttack.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/ReducedPlayerDamage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/armor.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
       </list>
     </option>
   </component>
@@ -316,6 +217,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -374,46 +276,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carmor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carmor" type="462c0819:PsiDirectoryNode" />
               <item name="method" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carmor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="method" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carmor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="method" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carmor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carmor" type="462c0819:PsiDirectoryNode" />
-              <item name="method" type="462c0819:PsiDirectoryNode" />
-              <item name="potion" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Carmor" type="b2602c69:ProjectViewProjectNode" />
@@ -426,12 +289,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547058031489" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547060298144" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -487,10 +348,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.25100672" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.2563966" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.2442953" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -499,7 +360,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50141644" side_tool="true" weight="0.2442953" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,7 +368,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -516,10 +377,8 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.11409396" />
+      <window_info anchor="right" id="Maven" order="8" visible="true" weight="0.102878466" />
     </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/armorequiplistener/ArmorType.java">
@@ -557,20 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/armor.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/Carmor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -590,25 +435,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="124" column="58" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/message/SendMessageWithReplacement.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/gui-config/main-gui">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/DeEquipEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="46" column="62" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -644,13 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-791">
           <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -692,13 +516,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/InventoryArmorCheck.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GeneralSetGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/gui/GenerateArmorSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/MainGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/DeEquipEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="46" column="62" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -709,16 +554,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/MainGui.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        <state relative-caret-position="1120">
+          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/ArmorPieceMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/GetSetNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
+        <state relative-caret-position="500">
           <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -726,47 +578,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/ArmorPieceMethods.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/InventoryArmorCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/gui/GeneralSetGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/gui/GenerateArmorSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/ReducedPlayerDamage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/AdditionalPlayerDamage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="315">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusAttacks/Lightning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/method/bonusattack/LightningAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbdsteve/carmor/event/ReducedPlayerDamage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="51" column="99" lean-forward="true" selection-start-line="51" selection-start-column="99" selection-end-line="51" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/armor.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
         </state>
       </provider>
     </entry>

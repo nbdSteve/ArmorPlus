@@ -1,5 +1,5 @@
 #
-# Carmor v1.2.0 - armor.yml
+# Carmor v1.2.1 - armor.yml
 #
 # Configuration for the first armor set.
 # Copy and paste this config for any other armor sets you would like to create
@@ -9,6 +9,9 @@ armor-set-1:
   reduced-damage: 1
   potion-effects:
     - fire_resistance:1
+  # currently there is on the lightning bonus attack, syntax is: <attackType>:<if the radius is random>:<radius>
+  bonus-attacks:
+    - lightning:true:5
   unique: "&c&lPHANTOM SET BONUS"
   #
   helmet:

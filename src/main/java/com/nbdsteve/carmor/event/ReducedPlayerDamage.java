@@ -4,6 +4,7 @@ import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.method.GetSetNumber;
 import com.nbdsteve.carmor.method.InventoryArmorCheck;
+import com.nbdsteve.carmor.method.bonusattack.LightningAttack;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -47,40 +48,13 @@ public class ReducedPlayerDamage implements Listener {
             setNumber = GetSetNumber.setNumber(p.getInventory().getHelmet().getItemMeta().getLore(), lcf);
             ((Player) e.getEntity()).setLastDamage(e.getDamage() * lcf.getArmor().getDouble(setNumber +
                     ".reduced-damage"));
-//            for (Entity entity : p.getNearbyEntities(5, 5, 5)) {
-//                if (entity.getType().equals(EntityType.PLAYER)) {
-//                    if (entity.getType().getName().equals(p.getName())) {
-//                        //Do nothing
-//                    } else {
-//                        entity.getWorld().strikeLightning(entity.getLocation());
-//                    }
-//                } else {
-//                    if (!entity.isDead()) {
-//                        entity.getWorld().strikeLightning(entity.getLocation());
-//                    }
-//                }
-//            }
+            //Bonus attacks code
+            for (String bonusAttack : lcf.getArmor().getStringList(setNumber + ".bonus-attacks")) {
+                String[] attack = bonusAttack.split(":");
+                if (attack[0].equalsIgnoreCase("lightning")) {
+                    new LightningAttack(p, Boolean.parseBoolean(attack[1]), Double.parseDouble(attack[2]));
+                }
+            }
         }
     }
-
-//    @EventHandler
-//    public void noLightningDamage(EntityDamageEvent e) {
-//        if (e.getEntity() instanceof Player) {
-//            Player p = (Player) e.getEntity();
-//            new BukkitRunnable() {
-//                @Override
-//                public void run() {
-//                    if (playerLightning.contains(p.getUniqueId())) {
-//                        if (e.getEntityType().getName().equals(p.getName())) {
-//                            if (e.getCause().equals(EntityDamageEvent.DamageCause.LIGHTNING)) {
-//                                e.setCancelled(true);
-//                            }
-//                        }
-//                    }
-//                    playerLightning.remove(p.getUniqueId());
-//                    cancel();
-//                }
-//            }.runTaskLater(pl, 40L);
-//        }
-//    }
 }

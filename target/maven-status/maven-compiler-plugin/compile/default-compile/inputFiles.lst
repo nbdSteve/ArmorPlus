@@ -1,24 +1,25 @@
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\GetSetNumber.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\armorequiplistener\ArmorType.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\ReducedPlayerDamage.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\DeEquipEvent.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\armorequiplistener\ArmorListener.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\file\providedfile\GenerateCarmorFiles.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\InventoryArmorCheck.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\file\LoadCarmorFiles.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\message\SendMessageWithReplacement.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\ServerPotionCheckRunnable.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\EquipEvent.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\PlayerPotionCheck.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\gui\GeneralSetGui.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\AdditionalPlayerDamage.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\gui\GenerateArmorSet.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\guiclick\ArmorBuyGuiClick.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\gui\GetPiecePrice.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\command\CaCommand.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\gui\CraftArmorPieceForPlayer.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\guiclick\GeneralArmorGuiClick.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\message\SendMessage.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\Carmor.java
-C:\Users\sgood\OneDrive\Documents\Java\Plugins\Carmor\src\main\java\com\nbdsteve\carmor\gui\MainGui.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\DeEquipEvent.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\file\LoadCarmorFiles.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\gui\GenerateArmorSet.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\file\providedfile\GenerateCarmorFiles.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\armorequiplistener\ArmorListener.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\message\SendMessage.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\GetSetNumber.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\gui\MainGui.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\bonusattack\LightningAttack.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\Carmor.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\gui\GeneralSetGui.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\ArmorPieceMethods.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\EquipEvent.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\InventoryArmorCheck.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\gui\CraftArmorPieceForPlayer.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\armorequiplistener\ArmorType.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\command\CaCommand.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\potion\PlayerPotionCheck.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\AdditionalPlayerDamage.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\ReducedPlayerDamage.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\gui\GetPiecePrice.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\method\potion\ServerPotionCheckRunnable.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\guiclick\ArmorBuyGuiClick.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\com\nbdsteve\carmor\event\guiclick\GeneralArmorGuiClick.java

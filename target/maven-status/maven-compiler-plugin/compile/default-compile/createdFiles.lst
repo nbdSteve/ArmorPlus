@@ -13,12 +13,12 @@ com\nbdsteve\carmor\method\potion\ServerPotionCheckRunnable$1.class
 com\nbdsteve\carmor\command\CaCommand.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorListener.class
 com\nbdsteve\carmor\method\gui\CraftArmorPieceForPlayer.class
-com\nbdsteve\carmor\event\ReducedPlayerDamage$1.class
 com\nbdsteve\carmor\method\potion\ServerPotionCheckRunnable.class
 com\nbdsteve\carmor\method\gui\GenerateArmorSet.class
 com\nbdsteve\carmor\file\LoadCarmorFiles$Files.class
 com\nbdsteve\carmor\Carmor.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent.class
+com\nbdsteve\carmor\method\bonusattack\LightningAttack.class
 com\nbdsteve\carmor\event\AdditionalPlayerDamage.class
 com\nbdsteve\carmor\gui\GeneralSetGui.class
 com\nbdsteve\carmor\gui\MainGui.class
