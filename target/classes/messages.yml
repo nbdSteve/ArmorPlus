@@ -91,7 +91,7 @@ invalid-armor-piece:
 #
 
 #
-# Message sent to the player when the try to give an armor piece that doesn't exist
+# Message sent to the player when they buy an armor piece from the gui
 # Command permission required
 purchase:
 - "&7 "
@@ -101,7 +101,8 @@ purchase:
 #
 
 #
-# Message sent to the player when the try to give an armor piece that doesn't exist
+# Message sent to the player when they try to buy an armor piece but do not
+# have sufficient funds
 # Command permission required
 insufficient-funds:
 - "&7 "
@@ -111,7 +112,7 @@ insufficient-funds:
 #
 
 #
-# Message sent to the player when the try to give an armor piece that doesn't exist
+# Message sent to the player if the server is not using vault.jar
 # Command permission required
 no-economy:
 - "&7 "
@@ -121,7 +122,7 @@ no-economy:
 #
 
 #
-# Message sent to the player when the try to give an armor piece that doesn't exist
+# Message sent to the player when they run the /ca command
 # Command permission required
 open-gui:
 - "&7 "

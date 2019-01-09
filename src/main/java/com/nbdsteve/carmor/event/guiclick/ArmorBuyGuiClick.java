@@ -2,8 +2,9 @@ package com.nbdsteve.carmor.event.guiclick;
 
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
-import com.nbdsteve.carmor.gui.method.CraftArmorPieceForPlayer;
-import com.nbdsteve.carmor.gui.method.GetPiecePrice;
+import com.nbdsteve.carmor.method.gui.CraftArmorPieceForPlayer;
+import com.nbdsteve.carmor.method.gui.GetPiecePrice;
+import com.nbdsteve.carmor.method.message.SendMessage;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -44,19 +45,13 @@ public class ArmorBuyGuiClick implements Listener {
                     if (econ.getBalance(p) >= GetPiecePrice.getPiecePrice(setNumber, itemType, lcf)) {
                         econ.withdrawPlayer(p, GetPiecePrice.getPiecePrice(setNumber, itemType, lcf));
                         new CraftArmorPieceForPlayer(setNumber, itemType, p, lcf);
-                        for (String line : lcf.getMessages().getStringList("purchase")) {
-                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("purchase", p, lcf);
                     } else {
-                        for (String line : lcf.getMessages().getStringList("insufficient-funds")) {
-                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("insufficient-funds", p, lcf);
                         p.closeInventory();
                     }
                 } else {
-                    for (String line : lcf.getMessages().getStringList("no-economy")) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                    }
+                    new SendMessage("no-economy", p, lcf);
                 }
             }
         }

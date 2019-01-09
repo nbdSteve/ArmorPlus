@@ -8,7 +8,7 @@ import com.nbdsteve.carmor.event.ReducedPlayerDamage;
 import com.nbdsteve.carmor.event.guiclick.ArmorBuyGuiClick;
 import com.nbdsteve.carmor.event.guiclick.GeneralArmorGuiClick;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
-import com.nbdsteve.carmor.method.ServerPotionCheckRunnable;
+import com.nbdsteve.carmor.method.potion.ServerPotionCheckRunnable;
 import com.nbdsteve.carmor.method.armorequiplistener.ArmorListener;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;

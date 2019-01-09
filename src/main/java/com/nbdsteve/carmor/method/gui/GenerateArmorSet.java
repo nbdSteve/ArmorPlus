@@ -1,9 +1,9 @@
-package com.nbdsteve.carmor.gui.method;
+package com.nbdsteve.carmor.method.gui;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import com.nbdsteve.carmor.method.ArmorPieceMethods;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -49,12 +49,9 @@ public class GenerateArmorSet {
             //Create a new array list to create the lore
             List<String> pieceLore = new ArrayList<>();
             //Set the display name of the item
-            pieceMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-                    lcf.getArmor().getString(armorPiece + ".name")));
+            ArmorPieceMethods.setDisplayName(armorPiece + ".name", pieceMeta, lcf);
             //Add the regular lore
-            for (String lore : lcf.getArmor().getStringList(armorPiece + ".lore")) {
-                pieceLore.add(ChatColor.translateAlternateColorCodes('&', lore));
-            }
+            ArmorPieceMethods.addLore(armorPiece + ".lore", pieceLore, lcf);
             //Decimal format for price of the piece
             NumberFormat df = new DecimalFormat("#,###");
             //Add the special gui lore
@@ -63,12 +60,7 @@ public class GenerateArmorSet {
                         df.format(Integer.parseInt(armorPieceParts[2]))));
             }
             //Add the regular enchantments
-            for (String ench : lcf.getArmor().getStringList(armorPiece + ".enchantments")) {
-                String[] parts = ench.split(":");
-                pieceMeta.addEnchant(Enchantment.getByName(parts[0].toUpperCase()),
-                        Integer.parseInt(parts[1]),
-                        true);
-            }
+            ArmorPieceMethods.addEnchantments(armorPiece + ".enchantments", pieceMeta, lcf);
             //Set the new lore
             pieceMeta.setLore(pieceLore);
             //Set the new item meta

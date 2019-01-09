@@ -4,9 +4,9 @@ import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.method.GetSetNumber;
 import com.nbdsteve.carmor.method.InventoryArmorCheck;
-import com.nbdsteve.carmor.method.PlayerPotionCheck;
+import com.nbdsteve.carmor.method.potion.PlayerPotionCheck;
 import com.nbdsteve.carmor.method.armorequiplistener.ArmorEquipEvent;
-import org.bukkit.ChatColor;
+import com.nbdsteve.carmor.method.message.SendMessage;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -48,9 +48,8 @@ public class EquipEvent implements Listener {
                     //Get the set number
                     setNumber = GetSetNumber.setNumber(e.getNewArmorPiece().getItemMeta().getLore(), lcf);
                     //Send the player the equip message for that set
-                    for (String line : lcf.getMessages().getStringList(setNumber + ".equip-message")) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                    }
+                    new SendMessage(setNumber + ".equip-message", p, lcf);
+                    //Give the player the necessary potion effects
                     for (String effect : lcf.getArmor().getStringList(setNumber + ".potion-effects")) {
                         String[] parts = effect.split(":");
                         PlayerPotionCheck.potionCheck(p, parts[0].toUpperCase(),

@@ -1,7 +1,9 @@
-package com.nbdsteve.carmor.method;
+package com.nbdsteve.carmor.method.potion;
 
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import com.nbdsteve.carmor.method.GetSetNumber;
+import com.nbdsteve.carmor.method.InventoryArmorCheck;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;

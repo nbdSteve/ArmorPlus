@@ -1,4 +1,4 @@
-package com.nbdsteve.carmor.gui.method;
+package com.nbdsteve.carmor.method.gui;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 

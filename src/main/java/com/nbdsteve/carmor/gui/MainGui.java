@@ -33,6 +33,7 @@ public class MainGui {
         //Create the gui
         Inventory inven = pl.getServer().createInventory(null, lcf.getMainGui().getInt("size"),
                 ChatColor.translateAlternateColorCodes('&', lcf.getMainGui().getString("name")));
+        //Create the icons for the different armor sets
         for (int i = 0; i <= 54; i++) {
             String set = "armor-set-" + String.valueOf(i);
             if (lcf.getArmorGui().getBoolean(set + ".in-gui")) {
@@ -40,18 +41,22 @@ public class MainGui {
                 ItemStack icon = new ItemStack(Material.valueOf(lcf.getArmorGui().getString(set + ".main" +
                         "-gui-icon.item").toUpperCase()));
                 ItemMeta iconMeta = icon.getItemMeta();
+                //Set the icons display name
                 iconMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
                         lcf.getArmorGui().getString(set + ".main-gui-icon.name")));
+                //Create and set the icons lore
                 List<String> iconLore = new ArrayList<>();
                 for (String lore : lcf.getArmorGui().getStringList(set + ".main-gui-icon.lore")) {
                     iconLore.add(ChatColor.translateAlternateColorCodes('&', lore));
                 }
+                //If the user wants the item to appear enchanted run this code
                 if (lcf.getArmorGui().getBoolean(set + ".main-gui-icon.glowing")) {
                     iconMeta.addEnchant(Enchantment.LURE, 1, true);
                     iconMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
                 }
                 iconMeta.setLore(iconLore);
                 icon.setItemMeta(iconMeta);
+                //Add the icon to the gui
                 inven.setItem(lcf.getArmorGui().getInt(set + ".main-gui-icon.slot"), icon);
             }
         }

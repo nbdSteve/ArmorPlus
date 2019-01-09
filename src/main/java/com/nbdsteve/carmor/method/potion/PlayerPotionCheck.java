@@ -1,4 +1,4 @@
-package com.nbdsteve.carmor.method;
+package com.nbdsteve.carmor.method.potion;
 
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;

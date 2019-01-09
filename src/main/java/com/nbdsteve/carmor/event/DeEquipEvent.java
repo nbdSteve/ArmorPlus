@@ -44,6 +44,7 @@ public class DeEquipEvent implements Listener {
                         e.getOldArmorPiece().getItemMeta().getLore(), e.getOldArmorPiece().getType())) {
                     //Get the set number
                     setNumber = GetSetNumber.setNumber(e.getOldArmorPiece().getItemMeta().getLore(), lcf);
+                    //Clear the potion effects from the player
                     for (String effect : lcf.getArmor().getStringList(setNumber + ".potion-effects")) {
                         String[] parts = effect.split(":");
                         p.removePotionEffect(PotionEffectType.getByName(parts[0].toUpperCase()));

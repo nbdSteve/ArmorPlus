@@ -18,6 +18,8 @@ armor-set-1:
   name: "&c&lPhantom Set"
   size: 54
   in-gui: true
+  # SYNTAX: <item>:<gui slot>:<price>
+  # Please ensure that the item is a piece of armor, it can be any type (iron, leather etc.).
   helmet: diamond_helmet:13:1000
   chestplate: diamond_chestplate:22:2000
   leggings: diamond_leggings:31:1500

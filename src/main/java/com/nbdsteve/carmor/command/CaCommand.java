@@ -3,12 +3,13 @@ package com.nbdsteve.carmor.command;
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.gui.MainGui;
+import com.nbdsteve.carmor.method.ArmorPieceMethods;
+import com.nbdsteve.carmor.method.message.SendMessage;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -34,18 +35,19 @@ public class CaCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender s, Command c, String label, String[] args) {
         if (c.getName().equalsIgnoreCase("ca") || c.getName().equalsIgnoreCase("carmar")) {
+            //Store the player for the message methods
+            Player p = null;
+            if (s instanceof Player) {
+                p = (Player) s;
+            }
             if (args.length == 0) {
                 if (s instanceof Player) {
                     if (s.hasPermission("carmor.gui")) {
                         MainGui mainMenu = new MainGui();
                         mainMenu.mainGui((Player) s);
-                        for (String line : lcf.getMessages().getStringList("open-gui")) {
-                            s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("open-gui", p, lcf);
                     } else {
-                        for (String line : lcf.getMessages().getStringList("no-permission")) {
-                            s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("no-permission", p, lcf);
                     }
                 } else {
                     pl.getLogger().info("The gui can only be seen in game.");
@@ -54,13 +56,9 @@ public class CaCommand implements CommandExecutor {
                 if (args[0].equalsIgnoreCase("h") || args[0].equalsIgnoreCase("help")) {
                     if (s instanceof Player) {
                         if (s.hasPermission("carmor.help")) {
-                            for (String line : lcf.getMessages().getStringList("help")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("help", p ,lcf);
                         } else {
-                            for (String line : lcf.getMessages().getStringList("no-permission")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("no-permission", p, lcf);
                         }
                     } else {
                         pl.getLogger().info("The help message can only be seen using game chat.");
@@ -69,13 +67,9 @@ public class CaCommand implements CommandExecutor {
                     if (s instanceof Player) {
                         if (s.hasPermission("carmor.reload")) {
                             lcf.reload();
-                            for (String line : lcf.getMessages().getStringList("reload")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("reload", p, lcf);
                         } else {
-                            for (String line : lcf.getMessages().getStringList("no-permission")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("no-permission", p, lcf);
                         }
                     } else {
                         lcf.reload();
@@ -95,18 +89,14 @@ public class CaCommand implements CommandExecutor {
                             }
                             s.sendMessage(" ");
                         } else {
-                            for (String line : lcf.getMessages().getStringList("no-permission")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("no-permission", p, lcf);
                         }
                     } else {
                         pl.getLogger().info("The list of armor sets can only be viewed in game, check your armor.yml");
                     }
                 } else {
                     if (s instanceof Player) {
-                        for (String line : lcf.getMessages().getStringList("invalid-command")) {
-                            s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("invalid-command", p, lcf);
                     } else {
                         pl.getLogger().info("The command you entered is invalid.");
                     }
@@ -115,9 +105,7 @@ public class CaCommand implements CommandExecutor {
                 if (args[0].equalsIgnoreCase("g") || args[0].equalsIgnoreCase("give")) {
                     if (s instanceof Player) {
                         if (!s.hasPermission("carmor.give")) {
-                            for (String line : lcf.getMessages().getStringList("no-permission")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("no-permission", p, lcf);
                             return true;
                         }
                     }
@@ -136,9 +124,7 @@ public class CaCommand implements CommandExecutor {
                         item = "boots";
                     } else {
                         if (s instanceof Player) {
-                            for (String line : lcf.getMessages().getStringList("invalid-armor-piece")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("invalid-armor-piece", p, lcf);
                         } else {
                             pl.getLogger().info("The armor piece you entered isn't valid.");
                         }
@@ -149,9 +135,7 @@ public class CaCommand implements CommandExecutor {
                         target = pl.getServer().getPlayer(args[1]);
                     } catch (Exception e) {
                         if (s instanceof Player) {
-                            for (String line : lcf.getMessages().getStringList("invalid-player")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("invalid-player", p, lcf);
                         } else {
                             pl.getLogger().info("The command you entered is invalid");
                         }
@@ -160,9 +144,7 @@ public class CaCommand implements CommandExecutor {
                         setNumber = Integer.parseInt(args[2]);
                     } catch (Exception e) {
                         if (s instanceof Player) {
-                            for (String line : lcf.getMessages().getStringList("invalid-armor-set")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("invalid-armor-set", p, lcf);
                         } else {
                             pl.getLogger().info("The armor set you entered doesn't exist.");
                         }
@@ -171,9 +153,7 @@ public class CaCommand implements CommandExecutor {
                         new ItemStack(Material.valueOf(armorPiece));
                     } catch (Exception e) {
                         if (s instanceof Player) {
-                            for (String line : lcf.getMessages().getStringList("invalid-armor-piece")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("invalid-armor-piece", p, lcf);
                         } else {
                             pl.getLogger().info("The armor piece you entered isn't valid.");
                         }
@@ -183,9 +163,7 @@ public class CaCommand implements CommandExecutor {
                             amount = Integer.parseInt(args[4]);
                         } catch (Exception e) {
                             if (s instanceof Player) {
-                                for (String line : lcf.getMessages().getStringList("invalid-amount")) {
-                                    s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                                }
+                                new SendMessage("invalid-amount", p, lcf);
                             } else {
                                 pl.getLogger().info("The amount you entered is invalid.");
                             }
@@ -197,22 +175,16 @@ public class CaCommand implements CommandExecutor {
                         List<String> pieceLore = new ArrayList<>();
                         pieceMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
                                 lcf.getArmor().getString(armorSet + ".name")));
-                        for (String lore : lcf.getArmor().getStringList(armorSet + ".lore")) {
-                            pieceLore.add(ChatColor.translateAlternateColorCodes('&', lore));
-                        }
-                        for (String ench : lcf.getArmor().getStringList(armorSet + ".enchantments")) {
-                            String[] parts = ench.split(":");
-                            pieceMeta.addEnchant(Enchantment.getByName(parts[0].toUpperCase()), Integer.parseInt(parts[1]), true);
-                        }
+                        ArmorPieceMethods.setDisplayName(armorSet + ".name", pieceMeta, lcf);
+                        ArmorPieceMethods.addLore(armorSet + ".lore", pieceLore, lcf);
+                        ArmorPieceMethods.addEnchantments(armorSet + ".enchantments", pieceMeta, lcf);
                         pieceMeta.setLore(pieceLore);
                         setPiece.setItemMeta(pieceMeta);
                         setPiece.setAmount(amount);
                         target.getInventory().addItem(setPiece);
                     } else {
                         if (s instanceof Player) {
-                            for (String line : lcf.getMessages().getStringList("invalid-armor-set")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("invalid-armor-set", p, lcf);
                         } else {
                             pl.getLogger().info("The armor set you entered doesn't exist.");
                         }
@@ -220,13 +192,9 @@ public class CaCommand implements CommandExecutor {
                 } else {
                     if (s instanceof Player) {
                         if (s.hasPermission("carmor.give")) {
-                            for (String line : lcf.getMessages().getStringList("invalid-command")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("invalid-command", p, lcf);
                         } else {
-                            for (String line : lcf.getMessages().getStringList("no-permission")) {
-                                s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("no-permission", p, lcf);
                         }
                     } else {
                         pl.getLogger().info("the command you entered is invalid.");
@@ -236,13 +204,9 @@ public class CaCommand implements CommandExecutor {
                 if (s instanceof Player) {
                     if (s.hasPermission("carmor.give") || s.hasPermission("carmor.reload")
                             || s.hasPermission("carmor.help")) {
-                        for (String line : lcf.getMessages().getStringList("invalid-command")) {
-                            s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("invalid-command", p, lcf);
                     } else {
-                        for (String line : lcf.getMessages().getStringList("no-permission")) {
-                            s.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                        }
+                        new SendMessage("no-permission", p, lcf);
                     }
                 } else {
                     pl.getLogger().info("the command you entered is invalid.");

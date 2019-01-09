@@ -3,6 +3,7 @@ package com.nbdsteve.carmor.event.guiclick;
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.gui.GeneralSetGui;
+import com.nbdsteve.carmor.method.message.SendMessage;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -63,9 +64,7 @@ public class GeneralArmorGuiClick implements Listener {
                             new GeneralSetGui(setNumber, lcf, pl, p);
                         } else {
                             p.closeInventory();
-                            for (String line : lcf.getMessages().getStringList("no-permission")) {
-                                p.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
-                            }
+                            new SendMessage("no-permission", p, lcf);
                         }
                     }
                 }
