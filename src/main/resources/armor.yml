@@ -1,12 +1,14 @@
 #
-# Carmor v1.2.2 - armor.yml
+# Carmor v1.3.0 - armor.yml
 #
 # Configuration for the first armor set.
 # Copy and paste this config for any other armor sets you would like to create
 # the plugin supports up to 54 armor sets
 armor-set-1:
-  additional-damage: 1.25
-  reduced-damage: 1
+  modifiers:
+    - +dmg:1.25
+    - health:40
+    - -kb:100
   potion-effects:
     - fire_resistance:1
   # currently there is on the lightning bonus attack, syntax is: <attackType>:<if the radius is random>:<radius>:<proc chance>
@@ -41,31 +43,32 @@ armor-set-1:
   leggings:
     name: "&c&lPhantom Robeset"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&cThe demonic robe of the Phantom."
-    - "&7 "
-    - "&c&lPHANTOM SET BONUS"
-    - "&cDeal +25% damage to all enemies."
-    - "&7&o(Requires all 4 phantom items.)"
+      - "&cThe demonic robe of the Phantom."
+      - "&7 "
+      - "&c&lPHANTOM SET BONUS"
+      - "&cDeal +25% damage to all enemies."
+      - "&7&o(Requires all 4 phantom items.)"
   #
   boots:
     name: "&c&lPhantom Sandals"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&cThe silent sandals of the Phantom."
-    - "&7 "
-    - "&c&lPHANTOM SET BONUS"
-    - "&cDeal +25% damage to all enemies."
-    - "&7&o(Requires all 4 phantom items.)"
+      - "&cThe silent sandals of the Phantom."
+      - "&7 "
+      - "&c&lPHANTOM SET BONUS"
+      - "&cDeal +25% damage to all enemies."
+      - "&7&o(Requires all 4 phantom items.)"
   #
 
 armor-set-2:
-  additional-damage: 1.15
-  reduced-damage: 0.85
+  modifiers:
+    - +dmg:1.15
+    - -dmg:0.85
   potion-effects:
     - regeneration:2
   # potion attack syntax: <attackType>:<potion effect given>:<level>:<duration in seconds>:<random radius enabled>:<radius>:<proc chance>
@@ -76,113 +79,113 @@ armor-set-2:
   helmet:
     name: "&5&lDiablo Hood"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&5The Diablo hood."
-    - "&7 "
-    - "&5&lDIABLO SET BONUS"
-    - "&5Deal +15% damage to all enemies."
-    - "&5All damage reduced by -15% from all enemies."
-    - "&7&o(Requires all 4 diablo items.)"
+      - "&5The Diablo hood."
+      - "&7 "
+      - "&5&lDIABLO SET BONUS"
+      - "&5Deal +15% damage to all enemies."
+      - "&5All damage reduced by -15% from all enemies."
+      - "&7&o(Requires all 4 diablo items.)"
   #
   chestplate:
     name: "&5&lDiablo Shroud"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&5The Diablo shroud."
-    - "&7 "
-    - "&5&lDIABLO SET BONUS"
-    - "&5Deal +15% damage to all enemies."
-    - "&5All damage reduced by -15% from all enemies."
-    - "&7&o(Requires all 4 diablo items.)"
+      - "&5The Diablo shroud."
+      - "&7 "
+      - "&5&lDIABLO SET BONUS"
+      - "&5Deal +15% damage to all enemies."
+      - "&5All damage reduced by -15% from all enemies."
+      - "&7&o(Requires all 4 diablo items.)"
   #
   leggings:
     name: "&5&lDiablo Robeset"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&5The Diablo robeset."
-    - "&7 "
-    - "&5&lDIABLO SET BONUS"
-    - "&5Deal +15% damage to all enemies."
-    - "&5All damage reduced by -15% from all enemies."
-    - "&7&o(Requires all 4 diablo items.)"
+      - "&5The Diablo robeset."
+      - "&7 "
+      - "&5&lDIABLO SET BONUS"
+      - "&5Deal +15% damage to all enemies."
+      - "&5All damage reduced by -15% from all enemies."
+      - "&7&o(Requires all 4 diablo items.)"
   #
   boots:
     name: "&5&lDiablo Sandals"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&5The Diablo sandals."
-    - "&7 "
-    - "&5&lDIABLO SET BONUS"
-    - "&5Deal +15% damage to all enemies."
-    - "&5All damage reduced by -15% from all enemies."
-    - "&7&o(Requires all 4 diablo items.)"
+      - "&5The Diablo sandals."
+      - "&7 "
+      - "&5&lDIABLO SET BONUS"
+      - "&5Deal +15% damage to all enemies."
+      - "&5All damage reduced by -15% from all enemies."
+      - "&7&o(Requires all 4 diablo items.)"
   #
 
 armor-set-3:
-  additional-damage: 1
-  reduced-damage: 1
+  modifiers:
+    - -kb:1000
   potion-effects:
-  - speed:3
-  - fast_digging:3
+    - speed:3
+    - fast_digging:3
   unique: "&a&lROAD RUNNER SET BONUS"
   #
   helmet:
     name: "&a&lRoad Runner Hood"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&aThe Road Runner hood."
-    - "&7 "
-    - "&a&lROAD RUNNER SET BONUS"
-    - "&aRun +70% faster"
-    - "&aDig +60% faster"
-    - "&7&o(Requires all 4 road runner items.)"
+      - "&aThe Road Runner hood."
+      - "&7 "
+      - "&a&lROAD RUNNER SET BONUS"
+      - "&aRun +70% faster"
+      - "&aDig +60% faster"
+      - "&7&o(Requires all 4 road runner items.)"
   #
   chestplate:
     name: "&a&lRoad Runner Shroud"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&aThe Road Runner shroud."
-    - "&7 "
-    - "&a&lROAD RUNNER SET BONUS"
-    - "&aRun +70% faster"
-    - "&aDig +60% faster"
-    - "&7&o(Requires all 4 road runner items.)"
+      - "&aThe Road Runner shroud."
+      - "&7 "
+      - "&a&lROAD RUNNER SET BONUS"
+      - "&aRun +70% faster"
+      - "&aDig +60% faster"
+      - "&7&o(Requires all 4 road runner items.)"
   #
   leggings:
     name: "&a&lRoad Runner Robeset"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&aThe Road Runner robeset."
-    - "&7 "
-    - "&a&lROAD RUNNER SET BONUS"
-    - "&aRun +70% faster"
-    - "&aDig +60% faster"
-    - "&7&o(Requires all 4 road runner items.)"
+      - "&aThe Road Runner robeset."
+      - "&7 "
+      - "&a&lROAD RUNNER SET BONUS"
+      - "&aRun +70% faster"
+      - "&aDig +60% faster"
+      - "&7&o(Requires all 4 road runner items.)"
   #
   boots:
     name: "&a&lRoad Runner Sandals"
     enchantments:
-    - protection_environmental:4
-    - durability:3
+      - protection_environmental:4
+      - durability:3
     lore:
-    - "&aThe Road Runner sandals."
-    - "&7 "
-    - "&a&lROAD RUNNER SET BONUS"
-    - "&aRun +70% faster"
-    - "&aDig +60% faster"
-    - "&7&o(Requires all 4 road runner items.)"
+      - "&aThe Road Runner sandals."
+      - "&7 "
+      - "&a&lROAD RUNNER SET BONUS"
+      - "&aRun +70% faster"
+      - "&aDig +60% faster"
+      - "&7&o(Requires all 4 road runner items.)"
   #

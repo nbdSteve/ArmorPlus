@@ -1,10 +1,9 @@
 package com.nbdsteve.carmor;
 
 import com.nbdsteve.carmor.command.CaCommand;
-import com.nbdsteve.carmor.event.AdditionalPlayerDamage;
 import com.nbdsteve.carmor.event.DeEquipEvent;
 import com.nbdsteve.carmor.event.EquipEvent;
-import com.nbdsteve.carmor.event.ReducedPlayerDamage;
+import com.nbdsteve.carmor.event.PlayerDamageEvent;
 import com.nbdsteve.carmor.event.guiclick.ArmorBuyGuiClick;
 import com.nbdsteve.carmor.event.guiclick.GeneralArmorGuiClick;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
@@ -47,8 +46,7 @@ public final class Carmor extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorListener(lcf.getConfig().getStringList(
                 "blocked")), this);
         //Register the other events for the plugin
-        getServer().getPluginManager().registerEvents(new AdditionalPlayerDamage(), this);
-        getServer().getPluginManager().registerEvents(new ReducedPlayerDamage(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDamageEvent(), this);
         getServer().getPluginManager().registerEvents(new EquipEvent(), this);
         getServer().getPluginManager().registerEvents(new DeEquipEvent(), this);
         getServer().getPluginManager().registerEvents(new GeneralArmorGuiClick(), this);

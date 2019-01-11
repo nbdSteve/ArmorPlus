@@ -5,6 +5,7 @@ import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.method.GetSetNumber;
 import com.nbdsteve.carmor.method.InventoryArmorCheck;
 import com.nbdsteve.carmor.method.armorequiplistener.ArmorEquipEvent;
+import com.nbdsteve.carmor.method.modifier.PassiveModifiers;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -49,6 +50,8 @@ public class DeEquipEvent implements Listener {
                         String[] parts = effect.split(":");
                         p.removePotionEffect(PotionEffectType.getByName(parts[0].toUpperCase()));
                     }
+                    //Remove the passive effects
+                    PassiveModifiers.removePassiveModifiers(p);
                 }
             }
         }

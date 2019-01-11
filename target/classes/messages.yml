@@ -1,5 +1,5 @@
 #
-# Carmor v1.2.2 - messages.yml
+# Carmor v1.3.0 - messages.yml
 #
 
 # General plugin messages are at the top, per armor set message are at the bottom
@@ -129,6 +129,16 @@ open-gui:
 - "&a&lCarmor:"
 - "&e&oSearching the universe for the &cCarmor&e&o dealer..."
 - "&7 "
+#
+
+#
+# Message sent to the player when they type a command and don't have permission.
+# No permission required.
+no-wear-permission:
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 You do not have permission to wear that armor set!"
+  - "&7 "
 #
 
 # Per armor set messages, these are sent to the player when they equip a full set of custom armor

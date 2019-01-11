@@ -1,5 +1,9 @@
 #
-# Carmor v1.2.2 - config.yml
+# Carmor v1.3.0 - config.yml
+#
+# If you you would like players to have a permission to wear a piece of armor
+# permission node is: carmor.wear.<armor set number in armor.yml>
+permission-based-wear: true
 #
 # This is how often the plugin will check to see if the player needs potion effects
 # added to them. (NOTE: potions are applied when the player equips the armor as well).

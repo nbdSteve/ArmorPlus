@@ -5,8 +5,10 @@ com\nbdsteve\carmor\method\armorequiplistener\ArmorType.class
 com\nbdsteve\carmor\file\LoadCarmorFiles.class
 com\nbdsteve\carmor\method\GetSetNumber.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent$EquipMethod.class
+com\nbdsteve\carmor\method\modifier\DamageModifiers.class
 com\nbdsteve\carmor\event\DeEquipEvent.class
 com\nbdsteve\carmor\method\message\SendMessage.class
+com\nbdsteve\carmor\method\modifier\passive\AlterMaxHealth.class
 com\nbdsteve\carmor\method\InventoryArmorCheck.class
 com\nbdsteve\carmor\method\potion\PlayerPotionCheck.class
 com\nbdsteve\carmor\event\EquipEvent.class
@@ -16,14 +18,14 @@ com\nbdsteve\carmor\method\armorequiplistener\ArmorListener.class
 com\nbdsteve\carmor\method\gui\CraftArmorPieceForPlayer.class
 com\nbdsteve\carmor\method\potion\ServerPotionCheckRunnable.class
 com\nbdsteve\carmor\method\gui\GenerateArmorSet.class
+com\nbdsteve\carmor\event\PlayerDamageEvent.class
 com\nbdsteve\carmor\file\LoadCarmorFiles$Files.class
+com\nbdsteve\carmor\method\modifier\PassiveModifiers.class
 com\nbdsteve\carmor\Carmor.class
 com\nbdsteve\carmor\method\armorequiplistener\ArmorEquipEvent.class
-com\nbdsteve\carmor\event\AdditionalPlayerDamage.class
 com\nbdsteve\carmor\gui\GeneralSetGui.class
 com\nbdsteve\carmor\gui\MainGui.class
 com\nbdsteve\carmor\method\gui\GetPiecePrice.class
 com\nbdsteve\carmor\event\guiclick\GeneralArmorGuiClick.class
-com\nbdsteve\carmor\event\ReducedPlayerDamage.class
 com\nbdsteve\carmor\file\providedfile\GenerateCarmorFiles.class
 com\nbdsteve\carmor\method\specialattack\LightningAttack.class
