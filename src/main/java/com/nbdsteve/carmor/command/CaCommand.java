@@ -5,6 +5,7 @@ import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.gui.MainGui;
 import com.nbdsteve.carmor.method.ArmorPieceMethods;
 import com.nbdsteve.carmor.method.message.SendMessage;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -173,8 +174,6 @@ public class CaCommand implements CommandExecutor {
                         ItemStack setPiece = new ItemStack(Material.valueOf(armorPiece));
                         ItemMeta pieceMeta = setPiece.getItemMeta();
                         List<String> pieceLore = new ArrayList<>();
-                        pieceMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&',
-                                lcf.getArmor().getString(armorSet + ".name")));
                         ArmorPieceMethods.setDisplayName(armorSet + ".name", pieceMeta, lcf);
                         ArmorPieceMethods.addLore(armorSet + ".lore", pieceLore, lcf);
                         ArmorPieceMethods.addEnchantments(armorSet + ".enchantments", pieceMeta, lcf);

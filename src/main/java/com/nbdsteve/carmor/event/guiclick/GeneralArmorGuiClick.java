@@ -13,8 +13,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
-import java.util.List;
-
 /**
  * Class handling click events from the main gui
  */
@@ -42,7 +40,6 @@ public class GeneralArmorGuiClick implements Listener {
                 if (e.getCurrentItem().hasItemMeta()) {
                     if (e.getCurrentItem().getItemMeta().hasLore()) {
                         ItemMeta iconMeta = e.getCurrentItem().getItemMeta();
-                        List<String> iconLore = iconMeta.getLore();
                         String setNumber = null;
                         String perm = null;
                         for (int i = 0; i <= 54; i++) {

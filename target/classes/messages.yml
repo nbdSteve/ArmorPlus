@@ -172,8 +172,34 @@ armor-set-3:
   - "&a&lROAD RUNNER SET BONUS ACTIVE"
   - "&2&oRun +70% faster"
   - "&2&oDig +60% faster"
+  - "&2&oSignificantly reduced knockback."
   - "&7 "
   - "&a&l*** ---<>--- ***"
+#
+
+#
+armor-set-4:
+  equip-message:
+    - "&f&l*** ---<>--- ***"
+    - "&7 "
+    - "&f&lYIJIKI SET BONUS ACTIVE"
+    - "&7&oDamage from &nALL&7&o enemies reduced by -30%"
+    - "&7&oChance to unleash Yijiki special attack."
+    - "&7 "
+    - "&f&l*** ---<>--- ***"
+#
+
+#
+armor-set-5:
+  equip-message:
+    - "&6&l*** ---<>--- ***"
+    - "&7 "
+    - "&6&lROAD RUNNER SET BONUS ACTIVE"
+    - "&e&oDeal +10% damage to &nALL&e&o enemies"
+    - "&e&oDamage from &nALL&e&o enemies reduced by -10%"
+    - "&e&oChance to unleash Bounty Hunter special attack."
+    - "&7 "
+    - "&6&l*** ---<>--- ***"
 #
 
 # Bonus attack messages, these will be sent to players affected by the bonus attack

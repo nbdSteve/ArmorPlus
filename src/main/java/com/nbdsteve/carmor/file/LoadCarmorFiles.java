@@ -33,8 +33,8 @@ public class LoadCarmorFiles {
         fileList.put(Files.CONFIG, new GenerateCarmorFiles("config.yml"));
         fileList.put(Files.MESSAGES, new GenerateCarmorFiles("messages.yml"));
         fileList.put(Files.ARMOR, new GenerateCarmorFiles("armor.yml"));
-        fileList.put(Files.MAIN_GUI, new GenerateCarmorFiles("gui-config" + File.separator + "main-gui"));
-        fileList.put(Files.ARMOR_GUI, new GenerateCarmorFiles("gui-config" + File.separator + "armor-gui"));
+        fileList.put(Files.MAIN_GUI, new GenerateCarmorFiles("gui-config" + File.separator + "main-gui.yml"));
+        fileList.put(Files.ARMOR_GUI, new GenerateCarmorFiles("gui-config" + File.separator + "armor-gui.yml"));
         pl.getLogger().info("Loading provided files...");
     }
 

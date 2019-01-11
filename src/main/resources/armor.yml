@@ -5,15 +5,14 @@
 # Copy and paste this config for any other armor sets you would like to create
 # the plugin supports up to 54 armor sets
 armor-set-1:
+  # See the spigot page for all modifiers & syntax
   modifiers:
     - +dmg:1.25
-    - health:40
-    - -kb:100
+    - health:16
+  # See the spigot page for all effects & syntax
   potion-effects:
-    - fire_resistance:1
-  # currently there is on the lightning bonus attack, syntax is: <attackType>:<if the radius is random>:<radius>:<proc chance>
+  # See the spigot page for all bonus attacks & syntax
   bonus-attacks:
-    - lightning:true:5:0.4
   unique: "&c&lPHANTOM SET BONUS"
   #
   helmet:
@@ -26,6 +25,7 @@ armor-set-1:
       - "&7 "
       - "&c&lPHANTOM SET BONUS"
       - "&cDeal +25% damage to all enemies."
+      - "&c-10% player health reduction."
       - "&7&o(Requires all 4 phantom items.)"
   #
   chestplate:
@@ -38,6 +38,7 @@ armor-set-1:
       - "&7 "
       - "&c&lPHANTOM SET BONUS"
       - "&cDeal +25% damage to all enemies."
+      - "&c-10% player health reduction."
       - "&7&o(Requires all 4 phantom items.)"
   #
   leggings:
@@ -50,6 +51,7 @@ armor-set-1:
       - "&7 "
       - "&c&lPHANTOM SET BONUS"
       - "&cDeal +25% damage to all enemies."
+      - "&c-10% player health reduction."
       - "&7&o(Requires all 4 phantom items.)"
   #
   boots:
@@ -62,6 +64,7 @@ armor-set-1:
       - "&7 "
       - "&c&lPHANTOM SET BONUS"
       - "&cDeal +25% damage to all enemies."
+      - "&c-10% player health reduction."
       - "&7&o(Requires all 4 phantom items.)"
   #
 
@@ -70,8 +73,6 @@ armor-set-2:
     - +dmg:1.15
     - -dmg:0.85
   potion-effects:
-    - regeneration:2
-  # potion attack syntax: <attackType>:<potion effect given>:<level>:<duration in seconds>:<random radius enabled>:<radius>:<proc chance>
   bonus-attacks:
     - potion:poison:3:3:true:5:0.3
   unique: "&5&lDIABLO SET BONUS"
@@ -135,6 +136,7 @@ armor-set-3:
   potion-effects:
     - speed:3
     - fast_digging:3
+  bonus-attacks:
   unique: "&a&lROAD RUNNER SET BONUS"
   #
   helmet:
@@ -148,6 +150,7 @@ armor-set-3:
       - "&a&lROAD RUNNER SET BONUS"
       - "&aRun +70% faster"
       - "&aDig +60% faster"
+      - "&aSignificantly reduced knockback."
       - "&7&o(Requires all 4 road runner items.)"
   #
   chestplate:
@@ -161,6 +164,7 @@ armor-set-3:
       - "&a&lROAD RUNNER SET BONUS"
       - "&aRun +70% faster"
       - "&aDig +60% faster"
+      - "&aSignificantly reduced knockback."
       - "&7&o(Requires all 4 road runner items.)"
   #
   leggings:
@@ -174,6 +178,7 @@ armor-set-3:
       - "&a&lROAD RUNNER SET BONUS"
       - "&aRun +70% faster"
       - "&aDig +60% faster"
+      - "&aSignificantly reduced knockback."
       - "&7&o(Requires all 4 road runner items.)"
   #
   boots:
@@ -187,5 +192,133 @@ armor-set-3:
       - "&a&lROAD RUNNER SET BONUS"
       - "&aRun +70% faster"
       - "&aDig +60% faster"
+      - "&aSignificantly reduced knockback."
       - "&7&o(Requires all 4 road runner items.)"
+  #
+
+armor-set-4:
+  modifiers:
+    - -dmg:0.70
+  potion-effects:
+  bonus-attacks:
+    - lightning:false:15:0.5
+  unique: "&f&lYIJIKI SET BONUS"
+  #
+  helmet:
+    name: "&f&lYijiki Hood"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&fThe Yijiki hood."
+      - "&7 "
+      - "&f&lYIJIKI SET BONUS"
+      - "&fAll damage reduced by -30% from all enemies."
+      - "&fChance to unleash Yijiki special attack."
+      - "&7&o(Requires all 4 yijiki items.)"
+  #
+  chestplate:
+    name: "&f&lYijiki Shroud"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&fThe Yijiki shroud."
+      - "&7 "
+      - "&f&lYIJIKI SET BONUS"
+      - "&fAll damage reduced by -30% from all enemies."
+      - "&fChance to unleash Yijiki special attack."
+      - "&7&o(Requires all 4 yijiki items.)"
+  #
+  leggings:
+    name: "&f&lYijiki Robeset"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&fThe Yijiki robeset."
+      - "&7 "
+      - "&f&lYIJIKI SET BONUS"
+      - "&fAll damage reduced by -30% from all enemies."
+      - "&fChance to unleash Yijiki special attack."
+      - "&7&o(Requires all 4 yijiki items.)"
+  #
+  boots:
+    name: "&f&lYijiki Sandals"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&fThe Yijiki sandals."
+      - "&7 "
+      - "&f&lYIJIKI SET BONUS"
+      - "&fAll damage reduced by -30% from all enemies."
+      - "&fChance to unleash Yijiki special attack."
+      - "&7&o(Requires all 4 yijiki items.)"
+  #
+
+armor-set-5:
+  modifiers:
+    - +dmg:1.10
+    - -dmg:0.90
+  potion-effects:
+  bonus-attacks:
+    - potion:blidness:3:3:true:5:0.3
+  unique: "&6&lBOUNTY HUNTER SET BONUS"
+  #
+  helmet:
+    name: "&6&lBounty Hunter Hood"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&6The Bounty Hunter hood."
+      - "&7 "
+      - "&6&lBOUNTY HUNTER SET BONUS"
+      - "&6Deal +10% damage to all enemies."
+      - "&6All damage reduced by -10% from all enemies."
+      - "&6Chance to unleash Bounty Hunter special attack."
+      - "&7&o(Requires all 4 bounty hunter items.)"
+  #
+  chestplate:
+    name: "&6&lBounty Hunter Shroud"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&6The Bounty Hunter shroud."
+      - "&7 "
+      - "&6&lBOUNTY HUNTER SET BONUS"
+      - "&6Deal +10% damage to all enemies."
+      - "&6All damage reduced by -10% from all enemies."
+      - "&6Chance to unleash Bounty Hunter special attack."
+      - "&7&o(Requires all 4 bounty hunter items.)"
+  #
+  leggings:
+    name: "&6&lBounty Hunter Robeset"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&6The Bounty Hunter robeset."
+      - "&7 "
+      - "&6&lBOUNTY HUNTER SET BONUS"
+      - "&6Deal +10% damage to all enemies."
+      - "&6All damage reduced by -10% from all enemies."
+      - "&6Chance to unleash Bounty Hunter special attack."
+      - "&7&o(Requires all 4 bounty hunter items.)"
+  #
+  boots:
+    name: "&6&lBounty Hunter Sandals"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&6The Bounty Hunter sandals."
+      - "&7 "
+      - "&6&lBOUNTY HUNTER SET BONUS"
+      - "&6Deal +10% damage to all enemies."
+      - "&6All damage reduced by -10% from all enemies."
+      - "&6Chance to unleash Bounty Hunter special attack."
+      - "&7&o(Requires all 4 bounty hunter items.)"
   #

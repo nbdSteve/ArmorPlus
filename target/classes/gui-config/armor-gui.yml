@@ -1,5 +1,5 @@
 #
-# Carmor v1.2.0 - armor-gui.yml
+# Carmor v1.3.0 - armor-gui.yml
 #
 # This is how the armor set will appear in its own gui
 # Just copy and paste this format for any additional armor sets you add
@@ -36,10 +36,10 @@ armor-set-2:
     glowing: true
     slot: 1
     lore:
-    - "&7 "
-    - "&e&oLeft Click to purchase"
-    - "&e&oDiablo set items."
-    - "&7 "
+      - "&7 "
+      - "&e&oLeft Click to purchase"
+      - "&e&oDiablo set items."
+      - "&7 "
   #
   name: "&5&lDiablo Set"
   size: 54
@@ -49,9 +49,9 @@ armor-set-2:
   leggings: diamond_leggings:31:1500
   boots: diamond_boots:40:1000
   gui-lore:
-  - "&7 "
-  - "&7Price: &c&l$%Price"
-  - "&7 "
+    - "&7 "
+    - "&7Price: &c&l$%Price"
+    - "&7 "
 #
 armor-set-3:
   main-gui-icon:
@@ -60,10 +60,10 @@ armor-set-3:
     glowing: true
     slot: 2
     lore:
-    - "&7 "
-    - "&e&oLeft Click to purchase"
-    - "&e&oRoad Runner set items."
-    - "&7 "
+      - "&7 "
+      - "&e&oLeft Click to purchase"
+      - "&e&oRoad Runner set items."
+      - "&7 "
   #
   name: "&a&lRoad Runner Set"
   size: 54
@@ -73,7 +73,55 @@ armor-set-3:
   leggings: diamond_leggings:31:1500
   boots: diamond_boots:40:1000
   gui-lore:
-  - "&7 "
-  - "&7Price: &c&l$%Price"
-  - "&7 "
+    - "&7 "
+    - "&7Price: &c&l$%Price"
+    - "&7 "
+#
+armor-set-4:
+  main-gui-icon:
+    item: book
+    name: "&7&lYijiki Set"
+    glowing: true
+    slot: 3
+    lore:
+      - "&7 "
+      - "&e&oLeft Click to purchase"
+      - "&e&oYijiki set items."
+      - "&7 "
+  #
+  name: "&7&lYijiki Set"
+  size: 54
+  in-gui: true
+  helmet: diamond_helmet:13:1000
+  chestplate: diamond_chestplate:22:2000
+  leggings: diamond_leggings:31:1500
+  boots: diamond_boots:40:1000
+  gui-lore:
+    - "&7 "
+    - "&7Price: &c&l$%Price"
+    - "&7 "
+#
+armor-set-5:
+  main-gui-icon:
+    item: sunflower
+    name: "&6&lBounty Hunter Set"
+    glowing: true
+    slot: 4
+    lore:
+      - "&7 "
+      - "&e&oLeft Click to purchase"
+      - "&e&oBounty Hunter items."
+      - "&7 "
+  #
+  name: "&6&lBounty Hunter Set"
+  size: 54
+  in-gui: true
+  helmet: diamond_helmet:13:1000
+  chestplate: diamond_chestplate:22:2000
+  leggings: diamond_leggings:31:1500
+  boots: diamond_boots:40:1000
+  gui-lore:
+    - "&7 "
+    - "&7Price: &c&l$%Price"
+    - "&7 "
 #
