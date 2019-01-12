@@ -2,6 +2,7 @@ package com.nbdsteve.carmor.gui;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
 import com.nbdsteve.carmor.method.gui.GenerateArmorSet;
+import com.nbdsteve.carmor.method.gui.GenerateReturnButton;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -25,6 +26,8 @@ public class GeneralSetGui {
         Inventory inven = pl.getServer().createInventory(null, lcf.getArmorGui().getInt(setNumber + ".size"),
                 ChatColor.translateAlternateColorCodes('&',
                         lcf.getArmorGui().getString(setNumber + ".name")));
+        //Create the return button
+        new GenerateReturnButton(setNumber, lcf, inven);
         //Create the armor set
         new GenerateArmorSet(setNumber, lcf, inven);
         //Open the new inventory

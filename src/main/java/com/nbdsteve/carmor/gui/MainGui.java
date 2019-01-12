@@ -2,6 +2,7 @@ package com.nbdsteve.carmor.gui;
 
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import com.nbdsteve.carmor.method.gui.GenerateInformationBook;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -33,9 +34,13 @@ public class MainGui {
         //Create the gui
         Inventory inven = pl.getServer().createInventory(null, lcf.getMainGui().getInt("size"),
                 ChatColor.translateAlternateColorCodes('&', lcf.getMainGui().getString("name")));
+        //Add the information book to the Gui
+        if (lcf.getMainGui().getBoolean("information-item.in-gui")) {
+            new GenerateInformationBook(inven, lcf);
+        }
         //Create the icons for the different armor sets
         for (int i = 0; i <= 54; i++) {
-            String set = "armor-set-" + String.valueOf(i);
+            String set = "armor-set-" + i;
             if (lcf.getArmorGui().getBoolean(set + ".in-gui")) {
                 //Create the armor set icon
                 ItemStack icon = new ItemStack(Material.valueOf(lcf.getArmorGui().getString(set + ".main" +

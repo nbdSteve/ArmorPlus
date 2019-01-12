@@ -1,45 +1,63 @@
 package com.nbdsteve.carmor.method.gui;
 
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
-import com.nbdsteve.carmor.method.ArmorPieceMethods;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateInformationBook {
+/**
+ * Class that will render the button to return to the main gui
+ */
+public class GenerateReturnButton {
+    //Store the item meta of the button
+    private static ItemMeta itemMeta;
 
-    public GenerateInformationBook(String setNumber, LoadCarmorFiles lcf, Inventory setGui) {
+    /**
+     * Create the return button in the given Gui
+     *
+     * @param setNumber armor set gui to create it in
+     * @param lcf       LoadCarmorFiles instance
+     * @param setGui    the gui to render it in
+     */
+    public GenerateReturnButton(String setNumber, LoadCarmorFiles lcf, Inventory setGui) {
         //Create the item
-        ItemStack piece = new ItemStack(Material.valueOf(lcf.getArmorGui().getString("return-button.item".toUpperCase())));
+        ItemStack item = new ItemStack(Material.valueOf(lcf.getArmorGui().getString("return-button.item").toUpperCase()));
         //Store the item meta
-        ItemMeta pieceMeta = piece.getItemMeta();
+        itemMeta = item.getItemMeta();
         //Create a new array list to create the lore
-        List<String> pieceLore = new ArrayList<>();
+        List<String> itemLore = new ArrayList<>();
         //Set the display name of the item
-        ArmorPieceMethods.setDisplayName(armorPiece + ".name", pieceMeta, lcf);
+        itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', lcf.getArmorGui().getString("return-button.name")));
         //Add the regular lore
-        ArmorPieceMethods.addLore(armorPiece + ".lore", pieceLore, lcf);
-        //Decimal format for price of the piece
-        NumberFormat df = new DecimalFormat("#,###");
-        //Add the special gui lore
-        for (String lore : lcf.getArmorGui().getStringList(setNumber + ".gui-lore")) {
-            pieceLore.add(ChatColor.translateAlternateColorCodes('&', lore).replace("%Price",
-                    df.format(Integer.parseInt(armorPieceParts[2]))));
+        for (String loreLine : lcf.getArmorGui().getStringList("return-button.lore")) {
+            itemLore.add(ChatColor.translateAlternateColorCodes('&', loreLine));
         }
-        //Add the regular enchantments
-        ArmorPieceMethods.addEnchantments(armorPiece + ".enchantments", pieceMeta, lcf);
+        //If the button is glowing make it
+        if (lcf.getArmorGui().getBoolean("return-button.glowing")) {
+            itemMeta.addEnchant(Enchantment.LURE, 1, true);
+            itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        }
         //Set the new lore
-        pieceMeta.setLore(pieceLore);
+        itemMeta.setLore(itemLore);
         //Set the new item meta
-        piece.setItemMeta(pieceMeta);
+        item.setItemMeta(itemMeta);
         //Add it to the gui
-        setGui.setItem(Integer.parseInt(armorPieceParts[1]), piece);
+        setGui.setItem(lcf.getArmorGui().getInt(setNumber + ".return-button-slot"), item);
+    }
+
+    /**
+     * Static method to get the button meta
+     *
+     * @return ItemMeta
+     */
+    public static ItemMeta getButtonMeta() {
+        return itemMeta;
     }
 }

@@ -2,7 +2,9 @@ package com.nbdsteve.carmor.event.guiclick;
 
 import com.nbdsteve.carmor.Carmor;
 import com.nbdsteve.carmor.file.LoadCarmorFiles;
+import com.nbdsteve.carmor.gui.MainGui;
 import com.nbdsteve.carmor.method.gui.CraftArmorPieceForPlayer;
+import com.nbdsteve.carmor.method.gui.GenerateReturnButton;
 import com.nbdsteve.carmor.method.gui.GetPiecePrice;
 import com.nbdsteve.carmor.method.message.SendMessage;
 import net.milkbowl.vault.economy.Economy;
@@ -40,6 +42,13 @@ public class ArmorBuyGuiClick implements Listener {
         //If the server has an economy try give the player the item
         if (e.getCurrentItem().hasItemMeta()) {
             if (e.getCurrentItem().getItemMeta().hasLore()) {
+                //If the item clicked is the back button return to the main gui
+                if (e.getCurrentItem().getItemMeta().equals(GenerateReturnButton.getButtonMeta())) {
+                    MainGui mainMenu = new MainGui();
+                    mainMenu.mainGui(p);
+                    return;
+                }
+                //Withdraw the money from the player
                 if (econ != null) {
                     String itemType = e.getCurrentItem().getType().toString().toLowerCase();
                     if (econ.getBalance(p) >= GetPiecePrice.getPiecePrice(setNumber, itemType, lcf)) {
@@ -61,12 +70,12 @@ public class ArmorBuyGuiClick implements Listener {
      * Method to get the number of the armor set from the gui
      *
      * @param inventory the inventory to check
-     * @return
+     * @return String
      */
     private String getGuiSetNumber(Inventory inventory) {
         String setNumber = null;
         for (int i = 0; i <= 54; i++) {
-            String temp = "armor-set-" + String.valueOf(i);
+            String temp = "armor-set-" + i;
             try {
                 if (inventory.getName().equals(ChatColor.translateAlternateColorCodes('&',
                         lcf.getArmorGui().getString(temp + ".name")))) {

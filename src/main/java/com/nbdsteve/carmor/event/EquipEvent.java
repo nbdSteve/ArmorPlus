@@ -8,13 +8,20 @@ import com.nbdsteve.carmor.method.modifier.PassiveModifiers;
 import com.nbdsteve.carmor.method.potion.PlayerPotionCheck;
 import com.nbdsteve.carmor.method.armorequiplistener.ArmorEquipEvent;
 import com.nbdsteve.carmor.method.message.SendMessage;
+import org.bukkit.Effect;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import static java.lang.Math.cos;
+import static java.lang.StrictMath.sin;
 
 /**
  * Class that handles armor equiping, it will send a message to the player if they have a full set
@@ -70,6 +77,29 @@ public class EquipEvent implements Listener {
                                 Integer.parseInt(parts[1]) - 1);
                         p.addPotionEffect(new PotionEffect(PotionEffectType.getByName(parts[0].toUpperCase()), 999999, Integer.parseInt(parts[1]) - 1));
                     }
+                    //Working on adding particles
+//                    new BukkitRunnable() {
+//                        Location location = p.getLocation();
+//                        double t = 0;
+//                        double r = 1;
+//
+//                        @Override
+//                        public void run() {
+//
+//                            t = t + Math.PI / 8;
+//                            double x = r * cos(t);
+//                            double y = t;
+//                            double z = r * sin(t);
+//
+//                            location.add(x, y, z);
+//                            p.getWorld().playEffect(location, Effect.MOBSPAWNER_FLAMES, 0);
+//                            location.subtract(x, y, z);
+//
+//                            if (t > Math.PI * 2) {
+//                                cancel();
+//                            }
+//                        }
+//                    }.runTaskTimer(pl, 0, 1);
                 }
             }
         }

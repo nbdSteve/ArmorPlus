@@ -1,6 +1,17 @@
 #
-# Carmor v1.3.0 - armor-gui.yml
+# Carmor v1.3.1 - armor-gui.yml
 #
+# This button will be added to each armor gui, set the slot in the individual set sections.
+# If you don't want to button to be in the gui set the slot as the same as an armor piece.
+return-button:
+  name: "&c&lBack"
+  item: barrier
+  glowing: false
+  lore:
+    - "&7 "
+    - "&7&oReturn to the main Gui"
+    - "&7 "
+
 # This is how the armor set will appear in its own gui
 # Just copy and paste this format for any additional armor sets you add
 armor-set-1:
@@ -16,14 +27,15 @@ armor-set-1:
       - "&7 "
   #
   name: "&c&lPhantom Set"
-  size: 54
+  size: 18
   in-gui: true
   # SYNTAX: <item>:<gui slot>:<price>
   # Please ensure that the item is a piece of armor, it can be any type (iron, leather etc.).
-  helmet: diamond_helmet:13:1000
-  chestplate: diamond_chestplate:22:2000
-  leggings: diamond_leggings:31:1500
-  boots: diamond_boots:40:1000
+  helmet: diamond_helmet:2:1000
+  chestplate: diamond_chestplate:3:2000
+  leggings: diamond_leggings:5:1500
+  boots: diamond_boots:6:1000
+  return-button-slot: 13
   gui-lore:
     - "&7 "
     - "&7Price: &c&l$%Price"
@@ -31,7 +43,7 @@ armor-set-1:
 #
 armor-set-2:
   main-gui-icon:
-    item: obsidian
+    item: bowl
     name: "&5&lDiablo Set"
     glowing: true
     slot: 1
@@ -42,12 +54,13 @@ armor-set-2:
       - "&7 "
   #
   name: "&5&lDiablo Set"
-  size: 54
+  size: 18
   in-gui: true
-  helmet: diamond_helmet:13:1000
-  chestplate: diamond_chestplate:22:2000
-  leggings: diamond_leggings:31:1500
-  boots: diamond_boots:40:1000
+  helmet: diamond_helmet:2:1000
+  chestplate: diamond_chestplate:3:2000
+  leggings: diamond_leggings:5:1500
+  boots: diamond_boots:6:1000
+  return-button-slot: 13
   gui-lore:
     - "&7 "
     - "&7Price: &c&l$%Price"
@@ -66,12 +79,13 @@ armor-set-3:
       - "&7 "
   #
   name: "&a&lRoad Runner Set"
-  size: 54
+  size: 18
   in-gui: true
-  helmet: diamond_helmet:13:1000
-  chestplate: diamond_chestplate:22:2000
-  leggings: diamond_leggings:31:1500
-  boots: diamond_boots:40:1000
+  helmet: diamond_helmet:2:1000
+  chestplate: diamond_chestplate:3:2000
+  leggings: diamond_leggings:5:1500
+  boots: diamond_boots:6:1000
+  return-button-slot: 13
   gui-lore:
     - "&7 "
     - "&7Price: &c&l$%Price"
@@ -79,7 +93,7 @@ armor-set-3:
 #
 armor-set-4:
   main-gui-icon:
-    item: book
+    item: anvil
     name: "&7&lYijiki Set"
     glowing: true
     slot: 3
@@ -90,12 +104,13 @@ armor-set-4:
       - "&7 "
   #
   name: "&7&lYijiki Set"
-  size: 54
+  size: 18
   in-gui: true
-  helmet: diamond_helmet:13:1000
-  chestplate: diamond_chestplate:22:2000
-  leggings: diamond_leggings:31:1500
-  boots: diamond_boots:40:1000
+  helmet: diamond_helmet:2:1000
+  chestplate: diamond_chestplate:3:2000
+  leggings: diamond_leggings:5:1500
+  boots: diamond_boots:6:1000
+  return-button-slot: 13
   gui-lore:
     - "&7 "
     - "&7Price: &c&l$%Price"
@@ -114,12 +129,13 @@ armor-set-5:
       - "&7 "
   #
   name: "&6&lBounty Hunter Set"
-  size: 54
+  size: 18
   in-gui: true
-  helmet: diamond_helmet:13:1000
-  chestplate: diamond_chestplate:22:2000
-  leggings: diamond_leggings:31:1500
-  boots: diamond_boots:40:1000
+  helmet: diamond_helmet:2:1000
+  chestplate: diamond_chestplate:3:2000
+  leggings: diamond_leggings:5:1500
+  boots: diamond_boots:6:1000
+  return-button-slot: 13
   gui-lore:
     - "&7 "
     - "&7Price: &c&l$%Price"

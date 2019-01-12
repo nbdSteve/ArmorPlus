@@ -1,5 +1,22 @@
 #
-# Carmor v1.3.0 - main-gui.yml
+# Carmor v1.3.1 - main-gui.yml
 #
 size: 9
 name: "&6&lCarmor Menu"
+
+# This is just an item that you can add to the main gui to provide information about the armor sets
+# Set in-gui to false for it to not be rendered.
+information-item:
+  name: "&e&lArmor Set Info"
+  in-gui: true
+  item: book_and_quill
+  glowing: true
+  slot: 8
+  lore:
+    - "&7 "
+    - "&7&oThese armor sets are ancient relics,"
+    - "&7&ointially discovered in the mines of PMC,"
+    - "&7&ono one could've known what they are capable of."
+    - "&7 "
+    - "&e&oAbuse and harness their abilites..."
+    - "&7 "
