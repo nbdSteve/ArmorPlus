@@ -4,6 +4,8 @@ Carmor is a custom armor plugin that aims to emulate the armor mechanics on the 
 Currently the plugin is free to download from [Spigot](https://www.spigotmc.org/), spigot is an event API for minecraft servers that Carmor uses to enhance the game.
 
 Carmor can be downloaded from the [plugin page](https://www.spigotmc.org/resources/carmor-cosmic-armor-yijiki-potion-effect-special-attacks.56616/)
+
+More information about the plugin, permissions and commands can be found on the [wiki](https://github.com/nbdSteve/Carmor/wiki)
  
 ## Soft Dependencies
 *(required for economy features)*
