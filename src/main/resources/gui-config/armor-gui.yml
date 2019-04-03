@@ -1,5 +1,5 @@
 #
-# Carmor v1.3.1 - armor-gui.yml
+# Carmor v1.3.3 - armor-gui.yml
 #
 # This button will be added to each armor gui, set the slot in the individual set sections.
 # If you don't want to button to be in the gui set the slot as the same as an armor piece.
@@ -43,7 +43,7 @@ armor-set-1:
 #
 armor-set-2:
   main-gui-icon:
-    item: bowl
+    item: blaze_rod
     name: "&5&lDiablo Set"
     glowing: true
     slot: 1
@@ -68,7 +68,7 @@ armor-set-2:
 #
 armor-set-3:
   main-gui-icon:
-    item: rabbit_foot
+    item: blaze_rod
     name: "&a&lRoad Runner Set"
     glowing: true
     slot: 2
@@ -93,7 +93,7 @@ armor-set-3:
 #
 armor-set-4:
   main-gui-icon:
-    item: anvil
+    item: blaze_rod
     name: "&7&lYijiki Set"
     glowing: true
     slot: 3
@@ -118,7 +118,7 @@ armor-set-4:
 #
 armor-set-5:
   main-gui-icon:
-    item: sunflower
+    item: blaze_rod
     name: "&6&lBounty Hunter Set"
     glowing: true
     slot: 4

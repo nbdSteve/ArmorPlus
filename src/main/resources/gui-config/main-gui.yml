@@ -1,5 +1,5 @@
 #
-# Carmor v1.3.1 - main-gui.yml
+# Carmor v1.3.3 - main-gui.yml
 #
 size: 9
 name: "&6&lCarmor Menu"
@@ -9,7 +9,7 @@ name: "&6&lCarmor Menu"
 information-item:
   name: "&e&lArmor Set Info"
   in-gui: true
-  item: book_and_quill
+  item: book
   glowing: true
   slot: 8
   lore:
