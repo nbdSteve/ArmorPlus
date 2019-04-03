@@ -10,4 +10,4 @@ Carmor can be downloaded from the [plugin page](https://www.spigotmc.org/resourc
 * [Vault](https://www.spigotmc.org/resources/vault.34315/)
 
 ## Authors
-* Steve Goodhill - *Nuer*
+* Stephen Goodhill - *Nuer*
