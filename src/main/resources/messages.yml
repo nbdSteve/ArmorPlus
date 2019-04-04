@@ -35,50 +35,36 @@ no-permission:
 # Message sent to the player when they type a command and the player is invalid.
 # Command permission required.
 invalid-player:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 The player who entered is not online."
-  - "&7 "
+  - "&eUsage: &7That player is not online."
 #
 
 #
 # Message sent to the player when they type a command and the amount is invalid.
 # Command permission required.
 invalid-amount:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 The amount you entered is &b&lINVALID&7, make sure the amount is a positive integer greater than 0."
-  - "&7 "
+  - "&eUsage: &7Please enter an amount that is greater than 0."
 #
 
 #
 # Message sent to the player when they try to give an armor set that doesn't exist.
 # Command permission required
 invalid-armor-set:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 That armor set doesn't exist, please check the armor.yml!"
-  - "&7 "
+  - "&eUsage: &7Either that armor set does not exist, or it is not loaded."
 #
 
 #
 # Message sent to the player when the try to give an armor piece that doesn't exist
 # Command permission required
 invalid-armor-piece:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 That armor piece isn't valid, enter helmet, chestplate, leggings or boots."
-  - "&7 "
+  - "&eUsage: &7Please use a valid item, &f&nhttp://docs.codelanx.com/Bukkit/1
+  .8/org/bukkit/Material.html"
 #
 
 #
 # Message sent to the player when they buy an armor piece from the gui
 # Command permission required
 purchase:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&7Your new armor piece has been added to your inventory!"
-  - "&7 "
+  - "&6&lCarmor &e -&7Your new armor piece has been added to your inventory."
 #
 
 #
@@ -86,40 +72,28 @@ purchase:
 # have sufficient funds
 # Command permission required
 insufficient-funds:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 You do not have enough money to buy that item!"
-  - "&7 "
+  - "&6&lCarmor &e- &7You do not have sufficient funds to purchase that."
 #
 
 #
 # Message sent to the player if the server is not using vault.jar
 # Command permission required
 no-economy:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 You are unable to buy armor at this time since there is not an active economy."
-  - "&7 "
+  - "&6&lCarmor &e- &7Unable to purchase, there is no economy loaded."
 #
 
 #
 # Message sent to the player when they run the /ca command
 # Command permission required
 open-gui:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&e&oSearching the universe for the &cCarmor&e&o dealer..."
-  - "&7 "
+  - "&7&oScanning the universe for the &6&lCarmor &7&odealer..."
 #
 
 #
 # Message sent to the player when they type a command and don't have permission.
 # No permission required.
 no-wear-permission:
-  - "&7 "
-  - "&a&lCarmor:"
-  - "&c&lERROR!&7 You do not have permission to wear that armor set!"
-  - "&7 "
+  - "&6&lCarmor &e- &7You do not have permission to weat that."
 #
 
 # Per armor set messages, these are sent to the player when they equip a full set of custom armor
