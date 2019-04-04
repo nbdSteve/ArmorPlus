@@ -9,7 +9,6 @@ More information about the plugin, permissions, and commands please refer to the
  
 ## Soft Dependencies
 *(required for economy features)*.
-* [EssentialsX](https://www.spigotmc.org/resources/essentialsx.9089/)
 * [Vault](https://www.spigotmc.org/resources/vault.34315/)
 
 ## Authors
