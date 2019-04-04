@@ -5,6 +5,10 @@ import dev.nuer.ca.method.message.SendMessage;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.ArrayList;
 
 /**
  * Class to handle the lightning special attack
@@ -19,22 +23,43 @@ public class LightningAttack {
      * @param radius         the max radius
      * @param lcf            LoadCarmorFiles instance
      */
-    public LightningAttack(Player p, boolean doRandomRadius, double radius, LoadCarmorFiles lcf) {
+    public LightningAttack(Player p, boolean doRandomRadius, double radius,
+                           int numberOfStrikes, int delayBetweenStrikes, double damagePerStrike,
+                           LoadCarmorFiles lcf, Plugin plugin) {
+        //Check if the radius is random, update it if it is
         if (doRandomRadius) {
             radius = Math.random() * radius + 1;
         }
-        for (Entity entity : p.getNearbyEntities(radius, radius, radius)) {
-            if (!entity.isDead()) {
-                entity.getWorld().strikeLightning(entity.getLocation());
-                if (entity.getType().equals(EntityType.PLAYER)) {
-                    Player player = (Player) entity;
-                    if (player.getName().equals(p.getName())) {
-                        player.setLastDamage(0.0);
-                    } else {
-                        new SendMessage("lightning-attack", (Player) entity, lcf, "{player}", p.getName());
+        //Store the radius as final so it can be accessed inside the runnable
+        final double rad = radius;
+        //Store the players who have been messaged (reduces the proc spam).
+        ArrayList<String> alreadyMessaged = new ArrayList<>();
+
+        new BukkitRunnable() {
+            //To increment the strikes
+            int base = 0;
+
+            @Override
+            public void run() {
+                if (base < numberOfStrikes) {
+                    for (Entity entity : p.getNearbyEntities(rad, rad, rad)) {
+                        if (!entity.isDead()) {
+                            if (entity.getType().equals(EntityType.PLAYER)) {
+                                Player player = (Player) entity;
+                                if (!player.getName().equals(p.getName())) {
+                                    ((Player) entity).damage(damagePerStrike);
+                                    entity.getWorld().strikeLightningEffect(entity.getLocation());
+                                    if (!alreadyMessaged.contains(entity.getName())) {
+                                        new SendMessage("lightning-attack", (Player) entity, lcf, "{player}", p.getName());
+                                        alreadyMessaged.add(entity.getName());
+                                    }
+                                }
+                            }
+                        }
                     }
+                    base++;
                 }
             }
-        }
+        }.runTaskTimer(plugin, 0L, delayBetweenStrikes);
     }
 }

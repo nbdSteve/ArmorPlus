@@ -201,7 +201,7 @@ armor-set-4:
     - -dmg:0.70
   potion-effects:
   bonus-attacks:
-    - lightning:false:15:0.5
+    - lightning:false:15:4:10:1.36:0.14
   unique: "&f&lYIJIKI SET BONUS"
   #
   helmet:
@@ -263,7 +263,7 @@ armor-set-5:
     - -dmg:0.90
   potion-effects:
   bonus-attacks:
-    - potion:blidness:3:3:true:5:0.3
+    - potion:blidness:3:3:true:5:0.12
   unique: "&6&lBOUNTY HUNTER SET BONUS"
   #
   helmet:
@@ -329,7 +329,7 @@ armor-set-6:
   potion-effects:
     - damage_resistance:2
   bonus-attacks:
-    - warp:4:0.2
+    - warp:4:0.06
   unique: "&3&lAPOLLO SET BONUS"
   #
   helmet:

@@ -56,12 +56,17 @@ public class PlayerDamageEvent implements Listener {
                     //Split up the attack sequence
                     String[] attack = bonusAttack.split(":");
                     if (attack[0].equalsIgnoreCase("lightning")) {
-                        if (chance < Double.parseDouble(attack[3])) {
-                            new LightningAttack(p, Boolean.parseBoolean(attack[1]), Double.parseDouble(attack[2]), lcf);
+                        if (chance < Double.parseDouble(attack[6])) {
+                            new LightningAttack(p, Boolean.parseBoolean(attack[1]),
+                                    Double.parseDouble(attack[2]), Integer.parseInt(attack[3]),
+                                    Integer.parseInt(attack[4]), Double.parseDouble(attack[5]), lcf,
+                                    pl);
                         }
                     } else if (attack[0].equalsIgnoreCase("potion")) {
                         if (chance < Double.parseDouble(attack[6])) {
-                            new PotionEffectAttack(attack[1], Integer.parseInt(attack[2]), Integer.parseInt(attack[3]), p, Boolean.parseBoolean(attack[1]), Double.parseDouble(attack[2]), lcf);
+                            new PotionEffectAttack(attack[1], Integer.parseInt(attack[2]),
+                                    Integer.parseInt(attack[3]), p, Boolean.parseBoolean(attack[1]),
+                                    Double.parseDouble(attack[2]), lcf);
                         }
                     } else if (attack[0].equalsIgnoreCase("warp")) {
                         if (chance < Double.parseDouble(attack[2])) {
