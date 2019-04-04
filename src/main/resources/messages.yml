@@ -1,5 +1,5 @@
 #
-# Carmor v1.3.3 - messages.yml
+# Carmor v1.3.4 - messages.yml
 #
 
 # General plugin messages are at the top, per armor set message are at the bottom
@@ -175,12 +175,24 @@ armor-set-5:
   equip-message:
     - "&6&l*** ---<>--- ***"
     - "&7 "
-    - "&6&lROAD RUNNER SET BONUS ACTIVE"
+    - "&6&lBOUNTY HUNTER SET BONUS ACTIVE"
     - "&e&oDeal +10% damage to &nALL&e&o enemies"
     - "&e&oDamage from &nALL&e&o enemies reduced by -10%"
     - "&e&oChance to unleash Bounty Hunter special attack."
     - "&7 "
     - "&6&l*** ---<>--- ***"
+#
+
+#
+armor-set-6:
+  equip-message:
+    - "&3&l*** ---<>--- ***"
+    - "&7 "
+    - "&3&lAPOLLO SET BONUS ACTIVE"
+    - "&b&oDamage from &nALL&b&o enemies reduced by -30%"
+    - "&b&oChance to unleash Apollo special attack."
+    - "&7 "
+    - "&3&l*** ---<>--- ***"
 #
 
 # Bonus attack messages, these will be sent to players affected by the bonus attack

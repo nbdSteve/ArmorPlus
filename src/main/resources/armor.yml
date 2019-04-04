@@ -75,7 +75,6 @@ armor-set-2:
     - -dmg:0.85
   potion-effects:
   bonus-attacks:
-    - potion:poison:3:3:true:5:0.3
   unique: "&5&lDIABLO SET BONUS"
   #
   helmet:
@@ -322,4 +321,66 @@ armor-set-5:
       - "&6All damage reduced by -10% from all enemies."
       - "&6Chance to unleash Bounty Hunter special attack."
       - "&7&o(Requires all 4 bounty hunter items.)"
+  #
+
+armor-set-6:
+  modifiers:
+    - -dmg:0.70
+  potion-effects:
+    - damage_resistance:2
+  bonus-attacks:
+    - warp:4:0.2
+  unique: "&3&lAPOLLO SET BONUS"
+  #
+  helmet:
+    name: "&3&lApollo Hood"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&3The Apollo hood."
+      - "&7 "
+      - "&3&lAPOLLO SET BONUS"
+      - "&3All damage reduced by -30% from all enemies."
+      - "&3Chance to unleash Apollo special attack."
+      - "&7&o(Requires all 4 apollo items.)"
+  #
+  chestplate:
+    name: "&3&lApollo Shroud"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&3The Apollo shroud."
+      - "&7 "
+      - "&3&lAPOLLO SET BONUS"
+      - "&3All damage reduced by -30% from all enemies."
+      - "&3Chance to unleash Apollo special attack."
+      - "&7&o(Requires all 4 apollo items.)"
+  #
+  leggings:
+    name: "&3&lApollo Robeset"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&3The Apollo robeset."
+      - "&7 "
+      - "&3&lAPOLLO SET BONUS"
+      - "&3All damage reduced by -30% from all enemies."
+      - "&3Chance to unleash Apollo special attack."
+      - "&7&o(Requires all 4 apollo items.)"
+  #
+  boots:
+    name: "&3&lApollo Sandals"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    lore:
+      - "&3The Apollo sandals."
+      - "&7 "
+      - "&3&lAPOLLO SET BONUS"
+      - "&3All damage reduced by -30% from all enemies."
+      - "&3Chance to unleash Apollo special attack."
+      - "&7&o(Requires all 4 apollo items.)"
   #
