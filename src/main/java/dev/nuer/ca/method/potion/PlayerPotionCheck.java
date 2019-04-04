@@ -16,10 +16,12 @@ public class PlayerPotionCheck {
      * @param level         the amplifier of the new effect
      */
     public static void potionCheck(Player p, String effectToCheck, int level) {
-        if (p.hasPotionEffect(PotionEffectType.getByName(effectToCheck))) {
-            if (p.getActivePotionEffects().iterator().next().getType().equals(PotionEffectType.getByName(effectToCheck))) {
-                if (p.getActivePotionEffects().iterator().next().getAmplifier() <= level) {
-                    p.removePotionEffect(PotionEffectType.getByName(effectToCheck));
+        if (p.getActivePotionEffects().size() > 0) {
+            if (p.hasPotionEffect(PotionEffectType.getByName(effectToCheck))) {
+                if (p.getActivePotionEffects().iterator().next().getType().equals(PotionEffectType.getByName(effectToCheck))) {
+                    if (p.getActivePotionEffects().iterator().next().getAmplifier() <= level) {
+                        p.removePotionEffect(PotionEffectType.getByName(effectToCheck));
+                    }
                 }
             }
         }

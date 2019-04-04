@@ -4,6 +4,7 @@ dev\nuer\ca\method\potion\PlayerPotionCheck.class
 dev\nuer\ca\method\armorequiplistener\ArmorListener.class
 dev\nuer\ca\gui\GeneralSetGui.class
 dev\nuer\ca\method\modifier\passive\AlterMaxHealth.class
+dev\nuer\ca\method\GetPlayerFacingDirection.class
 dev\nuer\ca\method\specialattack\LightningAttack.class
 dev\nuer\ca\method\modifier\DamageModifiers.class
 dev\nuer\ca\event\guiclick\GeneralArmorGuiClick.class
@@ -18,6 +19,7 @@ dev\nuer\ca\method\message\SendMessage.class
 dev\nuer\ca\method\potion\ServerPotionCheckRunnable$1.class
 dev\nuer\ca\file\LoadCarmorFiles$Files.class
 dev\nuer\ca\event\PlayerDamageEvent.class
+dev\nuer\ca\method\specialattack\WarpBehindAttacker.class
 dev\nuer\ca\method\gui\GetPiecePrice.class
 dev\nuer\ca\method\armorequiplistener\ArmorEquipEvent$EquipMethod.class
 dev\nuer\ca\event\DeEquipEvent.class

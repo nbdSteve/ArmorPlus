@@ -48,9 +48,12 @@ public class ArmorBuyGuiClick implements Listener {
                     mainMenu.mainGui(p);
                     return;
                 }
-                //Withdraw the money from the player
-                if (econ != null) {
-                    String itemType = e.getCurrentItem().getType().toString().toLowerCase();
+                String itemType = e.getCurrentItem().getType().toString().toLowerCase();
+                if (lcf.getConfig().getBoolean("disable-buy")) {
+                    new CraftArmorPieceForPlayer(setNumber, itemType, p, lcf);
+                    new SendMessage("purchase", p, lcf);
+                } else if (econ != null) {
+                    //Withdraw the money from the player
                     if (econ.getBalance(p) >= GetPiecePrice.getPiecePrice(setNumber, itemType, lcf)) {
                         econ.withdrawPlayer(p, GetPiecePrice.getPiecePrice(setNumber, itemType, lcf));
                         new CraftArmorPieceForPlayer(setNumber, itemType, p, lcf);

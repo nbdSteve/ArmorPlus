@@ -7,6 +7,7 @@ import dev.nuer.ca.method.InventoryArmorCheck;
 import dev.nuer.ca.method.modifier.DamageModifiers;
 import dev.nuer.ca.method.specialattack.LightningAttack;
 import dev.nuer.ca.method.specialattack.PotionEffectAttack;
+import dev.nuer.ca.method.specialattack.WarpBehindAttacker;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,6 +30,9 @@ public class PlayerDamageEvent implements Listener {
      */
     @EventHandler
     public void playerDamageEvent(EntityDamageByEntityEvent e) {
+        if (e.isCancelled()) {
+            return;
+        }
         String setNumber;
         Player p;
         if (e.getDamager() instanceof Player) {
@@ -58,6 +62,10 @@ public class PlayerDamageEvent implements Listener {
                     } else if (attack[0].equalsIgnoreCase("potion")) {
                         if (chance < Double.parseDouble(attack[6])) {
                             new PotionEffectAttack(attack[1], Integer.parseInt(attack[2]), Integer.parseInt(attack[3]), p, Boolean.parseBoolean(attack[1]), Double.parseDouble(attack[2]), lcf);
+                        }
+                    } else if (attack[0].equalsIgnoreCase("warp")) {
+                        if (chance < Double.parseDouble(attack[2])) {
+                            new WarpBehindAttacker(p, e.getDamager(), Integer.parseInt(attack[1]), lcf);
                         }
                     }
                 }

@@ -7,67 +7,48 @@
 # Message sent to the player when they type the /ca help command.
 # Requires permission: carmor.help
 help:
-- "&7 "
-- "&a&lCarmor &7- &emade by &6&lnbdSteve"
-- "&7 "
-- "&3/ca give <player> <set number> <armor piece> <amount>"
-- "&7Give the target player their armor piece from that armor set"
-- "&7Requires premission node: &fcarmor.give"
-- "&7 "
-- "&3/ca reload"
-- "&7Reload the configuration files"
-- "&7Requires premission node: &fcarmor.reload"
-- "&7 "
+  - "&eCommand Help: &f&nhttps://github.com/nbdSteve/Carmor/wiki/Command-Usage"
 #
 
 #
 # Message sent to the player when they type the /ca reload command.
 # Requires permission: carmor.reload
 reload:
-- "&7 "
-- "&a&lCarmor:"
-- "&a&lSUCCESS!&7 You just reloaded all of the configuration files."
-- "&7 "
+  - "&6&lCarmor &e- &7Reloaded the configuration."
 #
 
 #
 # Message sent to the player when they type an invalid command.
 # No permission required.
 invalid-command:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 The command you entered is &b&lINVALID&7 please see &e/ca help&7 for command help."
-- "&7 "
+  - "&eUsage: &f/ca help &7for command syntax & help."
 #
 
 #
 # Message sent to the player when they type a command and don't have permission.
 # No permission required.
 no-permission:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 You do not have permission to use that!"
-- "&7 "
+  - "&c&l*&cYou do not have permission to use that&l*"
 #
 
 #
 # Message sent to the player when they type a command and the player is invalid.
 # Command permission required.
 invalid-player:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 The player who entered is not online."
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 The player who entered is not online."
+  - "&7 "
 #
 
 #
 # Message sent to the player when they type a command and the amount is invalid.
 # Command permission required.
 invalid-amount:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 The amount you entered is &b&lINVALID&7, make sure the amount is a positive integer greater than 0."
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 The amount you entered is &b&lINVALID&7, make sure the amount is a positive integer greater than 0."
+  - "&7 "
 #
 
 #
@@ -84,20 +65,20 @@ invalid-armor-set:
 # Message sent to the player when the try to give an armor piece that doesn't exist
 # Command permission required
 invalid-armor-piece:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 That armor piece isn't valid, enter helmet, chestplate, leggings or boots."
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 That armor piece isn't valid, enter helmet, chestplate, leggings or boots."
+  - "&7 "
 #
 
 #
 # Message sent to the player when they buy an armor piece from the gui
 # Command permission required
 purchase:
-- "&7 "
-- "&a&lCarmor:"
-- "&7Your new armor piece has been added to your inventory!"
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&7Your new armor piece has been added to your inventory!"
+  - "&7 "
 #
 
 #
@@ -105,30 +86,30 @@ purchase:
 # have sufficient funds
 # Command permission required
 insufficient-funds:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 You do not have enough money to buy that item!"
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 You do not have enough money to buy that item!"
+  - "&7 "
 #
 
 #
 # Message sent to the player if the server is not using vault.jar
 # Command permission required
 no-economy:
-- "&7 "
-- "&a&lCarmor:"
-- "&c&lERROR!&7 You are unable to buy armor at this time since there is not an active economy."
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&c&lERROR!&7 You are unable to buy armor at this time since there is not an active economy."
+  - "&7 "
 #
 
 #
 # Message sent to the player when they run the /ca command
 # Command permission required
 open-gui:
-- "&7 "
-- "&a&lCarmor:"
-- "&e&oSearching the universe for the &cCarmor&e&o dealer..."
-- "&7 "
+  - "&7 "
+  - "&a&lCarmor:"
+  - "&e&oSearching the universe for the &cCarmor&e&o dealer..."
+  - "&7 "
 #
 
 #
@@ -155,26 +136,26 @@ armor-set-1:
 #
 armor-set-2:
   equip-message:
-  - "&5&l*** ---<>--- ***"
-  - "&7 "
-  - "&5&lDIABLO SET BONUS ACTIVE"
-  - "&d&oDeal +15% damage to &nALL&d&o enemies"
-  - "&d&oDamage from &nALL&d&o enemies reduced by -15%"
-  - "&7 "
-  - "&5&l*** ---<>--- ***"
+    - "&5&l*** ---<>--- ***"
+    - "&7 "
+    - "&5&lDIABLO SET BONUS ACTIVE"
+    - "&d&oDeal +15% damage to &nALL&d&o enemies"
+    - "&d&oDamage from &nALL&d&o enemies reduced by -15%"
+    - "&7 "
+    - "&5&l*** ---<>--- ***"
 #
 
 #
 armor-set-3:
   equip-message:
-  - "&a&l*** ---<>--- ***"
-  - "&7 "
-  - "&a&lROAD RUNNER SET BONUS ACTIVE"
-  - "&2&oRun +70% faster"
-  - "&2&oDig +60% faster"
-  - "&2&oSignificantly reduced knockback."
-  - "&7 "
-  - "&a&l*** ---<>--- ***"
+    - "&a&l*** ---<>--- ***"
+    - "&7 "
+    - "&a&lROAD RUNNER SET BONUS ACTIVE"
+    - "&2&oRun +70% faster"
+    - "&2&oDig +60% faster"
+    - "&2&oSignificantly reduced knockback."
+    - "&7 "
+    - "&a&l*** ---<>--- ***"
 #
 
 #
@@ -219,3 +200,21 @@ potion-attack:
   - "&7 "
   - "&4&l<&6&l-=-=<>=-=-&4&l> &c&l|-| &4&l<&6&l-=-=<>=-=-&4&l>"
 #
+
+#
+# Message sent to the person who is being warped behind
+warp-attack-attacker:
+  - "&2&l<&a&l-=-=<>=-=-&2&l> &f&l|-| &2&l<&a&l-=-=<>=-=-&2&l>"
+  - "&7 "
+  - "&f&lLOOK OUT, &a&l{player} &f&lIS NOW BEHIND YOU!"
+  - "&7 "
+  - "&2&l<&a&l-=-=<>=-=-&2&l> &f&l|-| &2&l<&a&l-=-=<>=-=-&2&l>"
+
+#
+# Message sent to the player who is warping
+warp-attack-player:
+  - "&2&l<&a&l-=-=<>=-=-&2&l> &f&l|-| &2&l<&a&l-=-=<>=-=-&2&l>"
+  - "&7 "
+  - "&f&lWOOSH, YOU JUST WARPED BEHIND &a&l{player}"
+  - "&7 "
+  - "&2&l<&a&l-=-=<>=-=-&2&l> &f&l|-| &2&l<&a&l-=-=<>=-=-&2&l>"
