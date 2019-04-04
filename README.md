@@ -5,7 +5,7 @@ Currently the plugin is free to download from [Spigot](https://www.spigotmc.org/
 
 Carmor can be downloaded from the [plugin page](https://www.spigotmc.org/resources/carmor-cosmic-armor-yijiki-potion-effect-special-attacks.56616/).
 
-More information about the plugin, permissions, and commands please refer to the [wiki](https://github.com/nbdSteve/Carmor/wiki).
+For more information about the plugin, permissions, and commands please refer to the [wiki](https://github.com/nbdSteve/Carmor/wiki).
  
 ## Soft Dependencies
 *(required for economy features)*.
