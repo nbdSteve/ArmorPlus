@@ -64,7 +64,7 @@ invalid-armor-piece:
 # Message sent to the player when they buy an armor piece from the gui
 # Command permission required
 purchase:
-  - "&6&lCarmor &e -&7Your new armor piece has been added to your inventory."
+  - "&6&lCarmor &e- &7Your new armor piece has been added to your inventory."
 #
 
 #
