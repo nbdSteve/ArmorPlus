@@ -2,9 +2,11 @@ package dev.nuer.ca.method.specialattack;
 
 import dev.nuer.ca.file.LoadCarmorFiles;
 import dev.nuer.ca.method.message.SendMessage;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -16,12 +18,17 @@ import java.util.ArrayList;
 public class LightningAttack {
 
     /**
-     * This will strike nearby enemies with lightning
+     * This will strike nearby enemies with lightning, using a runnable to strike multiple times if the
+     * user desires
      *
-     * @param p              the player wearing the armor set
-     * @param doRandomRadius if the radius should be random
-     * @param radius         the max radius
-     * @param lcf            LoadCarmorFiles instance
+     * @param p                   player wearing the armor set
+     * @param doRandomRadius      boolean, if the radius to strike is random
+     * @param radius              int, the radius from the player that will be affected
+     * @param numberOfStrikes     int, the amount of times lightning will strike
+     * @param delayBetweenStrikes int, delay (in ticks) between strikes
+     * @param damagePerStrike     double, damage dealt to the entity affected
+     * @param lcf                 LoadCarmorFiles instance
+     * @param plugin              main plugin instance
      */
     public LightningAttack(Player p, boolean doRandomRadius, double radius,
                            int numberOfStrikes, int delayBetweenStrikes, double damagePerStrike,
@@ -47,10 +54,16 @@ public class LightningAttack {
                             if (entity.getType().equals(EntityType.PLAYER)) {
                                 Player player = (Player) entity;
                                 if (!player.getName().equals(p.getName())) {
-                                    ((Player) entity).damage(damagePerStrike);
-                                    entity.getWorld().strikeLightningEffect(entity.getLocation());
+                                    EntityDamageEvent strikeDamageByPlayer = new EntityDamageEvent(entity,
+                                            EntityDamageEvent.DamageCause.ENTITY_ATTACK, damagePerStrike);
+                                    Bukkit.getPluginManager().callEvent(strikeDamageByPlayer);
+                                    if (strikeDamageByPlayer.isCancelled()) {
+                                        this.cancel();
+                                    }
                                     if (!alreadyMessaged.contains(entity.getName())) {
-                                        new SendMessage("lightning-attack", (Player) entity, lcf, "{player}", p.getName());
+                                        new SendMessage("lightning-attack", (Player) entity, lcf, "{player}",
+                                                p.getName());
+                                        entity.getWorld().strikeLightningEffect(entity.getLocation());
                                         alreadyMessaged.add(entity.getName());
                                     }
                                 }
