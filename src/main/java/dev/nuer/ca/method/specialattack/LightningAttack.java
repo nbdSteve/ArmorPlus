@@ -58,12 +58,15 @@ public class LightningAttack {
                                             EntityDamageEvent.DamageCause.ENTITY_ATTACK, damagePerStrike);
                                     Bukkit.getPluginManager().callEvent(strikeDamageByPlayer);
                                     if (strikeDamageByPlayer.isCancelled()) {
-                                        this.cancel();
+                                        break;
+                                    } else {
+                                        entity.getWorld().strikeLightningEffect(entity.getLocation());
+                                        player.damage(damagePerStrike, p);
+                                        player.setVelocity(player.getVelocity().subtract(player.getVelocity()));
                                     }
                                     if (!alreadyMessaged.contains(entity.getName())) {
                                         new SendMessage("lightning-attack", (Player) entity, lcf, "{player}",
                                                 p.getName());
-                                        entity.getWorld().strikeLightningEffect(entity.getLocation());
                                         alreadyMessaged.add(entity.getName());
                                     }
                                 }
