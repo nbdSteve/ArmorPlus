@@ -96,6 +96,13 @@ no-wear-permission:
   - "&6&lCarmor &e- &7You do not have permission to weat that."
 #
 
+#
+# Message sent to player if their warp location is unsafe
+# No permission required.
+unsafe-warp-location:
+  - "&6&lCarmor &e- &7The location you were going to warp to has been deemed unsafe, the warp has been cancelled."
+#
+
 # Per armor set messages, these are sent to the player when they equip a full set of custom armor
 armor-set-1:
   equip-message:

@@ -20,6 +20,7 @@ dev\nuer\ca\method\message\SendMessage.class
 dev\nuer\ca\method\potion\ServerPotionCheckRunnable$1.class
 dev\nuer\ca\file\LoadCarmorFiles$Files.class
 dev\nuer\ca\event\PlayerDamageEvent.class
+dev\nuer\ca\method\checks\PlayerSafeBlockCheck.class
 dev\nuer\ca\method\specialattack\WarpBehindAttacker.class
 dev\nuer\ca\method\gui\GetPiecePrice.class
 dev\nuer\ca\method\armorequiplistener\ArmorEquipEvent$EquipMethod.class

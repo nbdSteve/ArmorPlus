@@ -2,6 +2,7 @@ package dev.nuer.ca.method.specialattack;
 
 import dev.nuer.ca.file.LoadCarmorFiles;
 import dev.nuer.ca.method.GetPlayerFacingDirection;
+import dev.nuer.ca.method.checks.PlayerSafeBlockCheck;
 import dev.nuer.ca.method.message.SendMessage;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
@@ -18,23 +19,33 @@ public class WarpBehindAttacker {
         player.setVelocity(player.getVelocity().subtract(player.getVelocity()));
         //Create the new location
         Location behindPlayer = attacker.getLocation();
+        //Create a new location to query
+        Location safeLocation = null;
         //Check multiples first
         if (facingDirection.positiveX() && facingDirection.positiveZ()) {
-            player.teleport(behindPlayer.add(0 - blocksWarped / 1.6, 0, 0 - blocksWarped / 1.6));
+            safeLocation = behindPlayer.add(0 - blocksWarped / 1.6, 0, 0 - blocksWarped / 1.6);
         } else if (facingDirection.positiveX() && facingDirection.negativeZ()) {
-            player.teleport(behindPlayer.add(0 - blocksWarped / 1.6, 0, blocksWarped / 1.6));
+            safeLocation = behindPlayer.add(0 - blocksWarped / 1.6, 0, blocksWarped / 1.6);
         } else if (facingDirection.negativeX() && facingDirection.positiveZ()) {
-            player.teleport(behindPlayer.add(blocksWarped / 1.6, 0, 0 - blocksWarped / 1.6));
+            safeLocation = behindPlayer.add(blocksWarped / 1.6, 0, 0 - blocksWarped / 1.6);
         } else if (facingDirection.negativeX() && facingDirection.negativeZ()) {
-            player.teleport(behindPlayer.add(blocksWarped / 1.6, 0, blocksWarped / 1.6));
+            safeLocation = behindPlayer.add(blocksWarped / 1.6, 0, blocksWarped / 1.6);
         } else if (facingDirection.positiveX()) {
-            player.teleport(behindPlayer.add(0 - blocksWarped, 0, 0));
+            safeLocation = behindPlayer.add(0 - blocksWarped, 0, 0);
         } else if (facingDirection.positiveZ()) {
-            player.teleport(behindPlayer.add(0, 0, 0 - blocksWarped));
+            safeLocation = behindPlayer.add(0, 0, 0 - blocksWarped);
         } else if (facingDirection.negativeX()) {
-            player.teleport(behindPlayer.add(blocksWarped, 0, 0));
+            safeLocation = behindPlayer.add(blocksWarped, 0, 0);
         } else if (facingDirection.negativeZ()) {
-            player.teleport(behindPlayer.add(0, 0, blocksWarped));
+            safeLocation = behindPlayer.add(0, 0, blocksWarped);
+        }
+        if (safeLocation != null) {
+            if (PlayerSafeBlockCheck.safeLocation(safeLocation)) {
+                player.teleport(safeLocation);
+            } else {
+                new SendMessage("unsafe-warp-location", player, lcf);
+                return;
+            }
         }
         try {
             new SendMessage("warp-attack-attacker", (Player) attacker, lcf, "{player}",
