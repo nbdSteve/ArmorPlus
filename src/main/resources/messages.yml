@@ -1,8 +1,12 @@
-#
-# Carmor v1.3.7 - messages.yml
-#
+# Carmor - messages.yml
 
 # General plugin messages are at the top, per armor set message are at the bottom
+
+# Message sent to Ops when the plugin is out of date
+outdated-version:
+  - "&7--= &6&lCarmor&e: &fUpdater &7=--"
+  - " - &7You are using version &fCarmor v{currentVersion}&7, which is out of date."
+  - " - &7Please &e&l*UPDATE*&7 to the latest version, &fCarmor v{latestVersion}&7."
 
 # Message sent to the player when they type the /ca help command.
 # Requires permission: carmor.help

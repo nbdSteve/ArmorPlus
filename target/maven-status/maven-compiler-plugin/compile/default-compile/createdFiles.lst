@@ -11,12 +11,14 @@ dev\nuer\ca\event\guiclick\GeneralArmorGuiClick.class
 dev\nuer\ca\file\LoadCarmorFiles.class
 dev\nuer\ca\method\GetSetNumber.class
 dev\nuer\ca\method\modifier\PassiveModifiers.class
+dev\nuer\ca\method\specialattack\TravellerAttack.class
 dev\nuer\ca\method\ArmorPieceMethods.class
 dev\nuer\ca\event\EquipEvent.class
 dev\nuer\ca\method\InventoryArmorCheck.class
 dev\nuer\ca\method\specialattack\LightningAttack$1.class
 dev\nuer\ca\gui\MainGui.class
 dev\nuer\ca\method\message\SendMessage.class
+dev\nuer\ca\version\VersionChecker.class
 dev\nuer\ca\method\potion\ServerPotionCheckRunnable$1.class
 dev\nuer\ca\file\LoadCarmorFiles$Files.class
 dev\nuer\ca\event\PlayerDamageEvent.class

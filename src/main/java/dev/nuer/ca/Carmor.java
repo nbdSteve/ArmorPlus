@@ -9,6 +9,7 @@ import dev.nuer.ca.event.guiclick.GeneralArmorGuiClick;
 import dev.nuer.ca.file.LoadCarmorFiles;
 import dev.nuer.ca.method.armorequiplistener.ArmorListener;
 import dev.nuer.ca.method.potion.ServerPotionCheckRunnable;
+import dev.nuer.ca.version.VersionChecker;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -51,6 +52,9 @@ public final class Carmor extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DeEquipEvent(), this);
         getServer().getPluginManager().registerEvents(new GeneralArmorGuiClick(), this);
         getServer().getPluginManager().registerEvents(new ArmorBuyGuiClick(), this);
+        //Check that the plugin is in the latest version
+        VersionChecker.checkVersion(null, lcf);
+        getServer().getPluginManager().registerEvents(new VersionChecker(), this);
     }
 
     /**
