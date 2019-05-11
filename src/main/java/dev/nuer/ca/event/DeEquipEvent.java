@@ -5,6 +5,7 @@ import dev.nuer.ca.file.LoadCarmorFiles;
 import dev.nuer.ca.method.GetSetNumber;
 import dev.nuer.ca.method.InventoryArmorCheck;
 import dev.nuer.ca.method.armorequiplistener.ArmorEquipEvent;
+import dev.nuer.ca.method.message.SendMessage;
 import dev.nuer.ca.method.modifier.PassiveModifiers;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -45,6 +46,8 @@ public class DeEquipEvent implements Listener {
                         e.getOldArmorPiece().getItemMeta().getLore(), e.getOldArmorPiece().getType())) {
                     //Get the set number
                     setNumber = GetSetNumber.setNumber(e.getOldArmorPiece().getItemMeta().getLore(), lcf);
+                    //Send set removal message
+                    new SendMessage(setNumber + ".removal-message", p, lcf);
                     //Clear the potion effects from the player
                     for (String effect : lcf.getArmor().getStringList(setNumber + ".potion-effects")) {
                         String[] parts = effect.split(":");

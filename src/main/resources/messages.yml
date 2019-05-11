@@ -116,6 +116,12 @@ armor-set-1:
     - "&4&oDeal +25% damage to &nALL&4&o enemies"
     - "&7 "
     - "&c&l*** ---<>--- ***"
+  removal-message:
+    - "&c&l*** ---<>--- ***"
+    - "&7 "
+    - "&c&lPHANTOM SET BONUS REMOVED"
+    - "&7 "
+    - "&c&l*** ---<>--- ***"
 #
 
 #
@@ -126,6 +132,12 @@ armor-set-2:
     - "&5&lDIABLO SET BONUS ACTIVE"
     - "&d&oDeal +15% damage to &nALL&d&o enemies"
     - "&d&oDamage from &nALL&d&o enemies reduced by -15%"
+    - "&7 "
+    - "&5&l*** ---<>--- ***"
+  removal-message:
+    - "&5&l*** ---<>--- ***"
+    - "&7 "
+    - "&5&lDIABLO SET BONUS REMOVED"
     - "&7 "
     - "&5&l*** ---<>--- ***"
 #
@@ -141,6 +153,12 @@ armor-set-3:
     - "&2&oSignificantly reduced knockback."
     - "&7 "
     - "&a&l*** ---<>--- ***"
+  removal-message:
+    - "&a&l*** ---<>--- ***"
+    - "&7 "
+    - "&a&lROAD RUNNER SET BONUS REMOVED"
+    - "&7 "
+    - "&a&l*** ---<>--- ***"
 #
 
 #
@@ -151,6 +169,12 @@ armor-set-4:
     - "&f&lYIJIKI SET BONUS ACTIVE"
     - "&7&oDamage from &nALL&7&o enemies reduced by -30%"
     - "&7&oChance to unleash Yijiki special attack."
+    - "&7 "
+    - "&f&l*** ---<>--- ***"
+  removal-message:
+    - "&f&l*** ---<>--- ***"
+    - "&7 "
+    - "&f&lYIJIKI SET BONUS REMOVED"
     - "&7 "
     - "&f&l*** ---<>--- ***"
 #
@@ -166,6 +190,12 @@ armor-set-5:
     - "&e&oChance to unleash Bounty Hunter special attack."
     - "&7 "
     - "&6&l*** ---<>--- ***"
+  removal-message:
+    - "&6&l*** ---<>--- ***"
+    - "&7 "
+    - "&6&lBOUNTY HUNTER SET BONUS REMOVED"
+    - "&7 "
+    - "&6&l*** ---<>--- ***"
 #
 
 #
@@ -176,6 +206,12 @@ armor-set-6:
     - "&3&lAPOLLO SET BONUS ACTIVE"
     - "&b&oDamage from &nALL&b&o enemies reduced by -30%"
     - "&b&oChance to unleash Apollo special attack."
+    - "&7 "
+    - "&3&l*** ---<>--- ***"
+  removal-message:
+    - "&3&l*** ---<>--- ***"
+    - "&7 "
+    - "&3&lAPOLLO SET BONUS REMOVED"
     - "&7 "
     - "&3&l*** ---<>--- ***"
 #
