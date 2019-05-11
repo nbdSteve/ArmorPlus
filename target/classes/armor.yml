@@ -13,7 +13,6 @@ armor-set-1:
   potion-effects:
   # See the spigot page for all bonus attacks & syntax
   bonus-attacks:
-    - warp:5:0.8
   unique: "&c&lPHANTOM SET BONUS"
   #
   helmet:
@@ -132,7 +131,7 @@ armor-set-2:
 
 armor-set-3:
   modifiers:
-    - -kb:1000
+    - kb:-0.5
   potion-effects:
     - speed:3
     - fast_digging:3

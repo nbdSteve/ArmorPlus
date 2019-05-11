@@ -9,6 +9,7 @@ C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\c
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\ArmorPieceMethods.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\command\CaCommand.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\GetPlayerFacingDirection.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\specialattack\TravellerAttack.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\specialattack\WarpBehindAttacker.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\gui\MainGui.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\armorequiplistener\ArmorEquipEvent.java
@@ -24,6 +25,7 @@ C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\c
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\event\guiclick\ArmorBuyGuiClick.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\armorequiplistener\ArmorListener.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\modifier\PassiveModifiers.java
+C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\version\VersionChecker.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\modifier\passive\AlterMaxHealth.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\modifier\DamageModifiers.java
 C:\Users\deeb0\Desktop\minecraft\Intellj Plugins\Carmor\src\main\java\dev\nuer\ca\method\specialattack\LightningAttack.java

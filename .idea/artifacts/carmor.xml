@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="carmor">
+    <output-path>$PROJECT_DIR$/../../server stuff/Server Files/plugins</output-path>
+    <root id="archive" name="carmor.jar">
+      <element id="module-output" name="Carmor" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/armor.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/messages.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/gui-config/armor-gui.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/gui-config/main-gui.yml" />
+    </root>
+  </artifact>
+</component>

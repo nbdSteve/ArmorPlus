@@ -1,5 +1,5 @@
 # Carmor - config.yml
-version: 1.3.9
+version: 1.3.11
 #
 # If you you would like players to have a permission to wear a piece of armor
 # permission node is: carmor.wear.<armor set number in armor.yml>

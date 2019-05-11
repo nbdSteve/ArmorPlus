@@ -10,6 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -115,6 +116,8 @@ public class CaCommand implements CommandExecutor {
                     String armorPiece = args[3].toUpperCase();
                     String item;
                     if (args[3].contains("helmet")) {
+                        item = "helmet";
+                    } else if (args[3].contains("skull")) {
                         item = "helmet";
                     } else if (args[3].contains("chestplate")) {
                         item = "chestplate";

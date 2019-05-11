@@ -29,8 +29,8 @@ public class DamageModifiers {
                 if (modifierParts[0].equalsIgnoreCase("-dmg")) {
                     player.setLastDamage(event.getDamage() * Double.parseDouble(modifierParts[1]));
                 }
-                if (modifierParts[0].equalsIgnoreCase("-kb")) {
-                    player.setVelocity(player.getVelocity().multiply(Double.parseDouble(modifierParts[1])));
+                if (modifierParts[0].equalsIgnoreCase("kb")) {
+                    player.setVelocity(event.getDamager().getLocation().getDirection().setY(0).normalize().multiply(Double.parseDouble(modifierParts[1])));
                 }
             }
         }
