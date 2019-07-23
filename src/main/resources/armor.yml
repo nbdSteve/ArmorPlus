@@ -11,6 +11,15 @@ armor-set-1:
     - health:16
   # See the spigot page for all effects & syntax
   potion-effects:
+  # Commands to be ran on equip and unequip
+  commandonequip:
+  - "eco give {username} 1000"
+  - "broadcast hello {username}, you are equiping the &c&lPHANTOM SET BONUS!"
+  - "lp user {username} permission set essentials.home true"
+  commandonunequip:
+  - "broadcast hello {username} you are un-equiping the &c&lPHANTOM SET BONUS!"
+  - "eco set {username} 100"
+  - "lp user {username} permission set essentials.home false"
   # See the spigot page for all bonus attacks & syntax
   bonus-attacks:
   unique: "&c&lPHANTOM SET BONUS"
