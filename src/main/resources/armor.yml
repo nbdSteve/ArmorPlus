@@ -11,7 +11,7 @@ armor-set-1:
     - health:16
   # See the spigot page for all effects & syntax
   potion-effects:
-  # Commands to be ran on equip and unequip
+  # Commands to be ran on equip and unequip. {username} represents the player name
   commandonequip:
   - "eco give {username} 1000"
   - "broadcast hello {username}, you are equiping the &c&lPHANTOM SET BONUS!"
