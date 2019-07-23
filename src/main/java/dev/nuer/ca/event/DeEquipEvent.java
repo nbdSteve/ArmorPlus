@@ -48,6 +48,10 @@ public class DeEquipEvent implements Listener {
                     setNumber = GetSetNumber.setNumber(e.getOldArmorPiece().getItemMeta().getLore(), lcf);
                     //Send set removal message
                     new SendMessage(setNumber + ".removal-message", p, lcf);
+                    // Commands to run on unequip
+                    for (String command : lcf.getArmor().getStringList(setNumber + ".commandonunequip")) {
+                    	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{username}", p.getName()));
+                    }
                     //Clear the potion effects from the player
                     for (String effect : lcf.getArmor().getStringList(setNumber + ".potion-effects")) {
                         String[] parts = effect.split(":");
