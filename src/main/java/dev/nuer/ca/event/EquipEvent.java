@@ -63,6 +63,10 @@ public class EquipEvent implements Listener {
                     PassiveModifiers.applyPassiveModifiers(lcf.getArmor().getStringList(setNumber + ".modifiers"), p);
                     //Send the player the equip message for that set
                     new SendMessage(setNumber + ".equip-message", p, lcf);
+                    // Commands to be ran when they equip the item
+                    for (String command : lcf.getArmor().getStringList(setNumber + ".commandonequip")) {
+                    	Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{username}", p.getName()));
+                    }
                     //Give the player the necessary potion effects
                     for (String effect : lcf.getArmor().getStringList(setNumber + ".potion-effects")) {
                         String[] parts = effect.split(":");
