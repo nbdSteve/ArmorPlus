@@ -1,0 +1,96 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&c&l**'
+      - '&c&lPHANTOM SET BONUS NOW ACTIVE'
+      - '&c&l**'
+  commands:
+    - say {player} applied phantom set bonus
+  sound:
+    enabled: true
+    type: 'level_up'
+    volume: 1
+    pitch: 2
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&c&l**'
+      - '&c&lPHANTOM SET BONUS NO LONGER ACTIVE'
+      - '&c&l**'
+  commands:
+    - say {player} remove phantom set bonus
+  sound:
+    enabled: true
+    type: 'level_up'
+    volume: 1
+    pitch: 2
+#
+modifiers:
+  damage-increase: 1.25
+  damage-reduction: 0
+  health: 16
+  kb: 0
+#
+set-data:
+  type: basic
+#
+set-pieces:
+  HELMET:
+    name: '&c&lPhantom Hood'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - "&cThe fabled hood of the Phantom."
+      - "&7 "
+      - "&c&lPHANTOM SET BONUS"
+      - "&cDeal +25% damage to all enemies."
+      - "&c-10% player health reduction."
+      - "&7&o(Requires all 4 phantom items.)"
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+      - hide_enchants
+#
+gui:
+  name: '&c&lPhantom Set'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    set-piece: HELMET
+    name: '&c&lPhantom Hood'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&cThe fabled hood of the Phantom.'
+      - '&7'
+      - '&c&lPHANTOM SET BONUS'
+      - '&cDeal +25% damage to all enemies.'
+      - '&c-10% player health reduction.'
+      - '&7&o(Requires all 4 phantom items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+      - hide_enchants
+    cost: 25000.0
+  2:
+    slot: 4
+    set-piece: NONE
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes
