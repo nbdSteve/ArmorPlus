@@ -5,6 +5,5 @@ public enum Piece {
     CHESTPLATE,
     LEGGINGS,
     BOOTS,
-    SWORD,
-    AXE;
+    HAND;
 }

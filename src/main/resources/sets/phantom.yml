@@ -7,7 +7,9 @@ apply:
       - '&c&lPHANTOM SET BONUS NOW ACTIVE'
       - '&c&l**'
   commands:
-    - say {player} applied phantom set bonus
+    enabled: true
+    list:
+      - say {player} applied phantom set bonus
   sound:
     enabled: true
     type: 'level_up'
@@ -22,21 +24,23 @@ remove:
       - '&c&lPHANTOM SET BONUS NO LONGER ACTIVE'
       - '&c&l**'
   commands:
-    - say {player} remove phantom set bonus
+    enabled: true
+    list:
+      - say {player} removed phantom set bonus
   sound:
     enabled: true
     type: 'level_up'
     volume: 1
     pitch: 2
 #
-modifiers:
-  damage-increase: 1.25
-  damage-reduction: 0
-  health: 16
-  kb: 0
-#
 set-data:
-  type: basic
+  1:
+    type: basic
+    damage-increase: 1.25
+    damage-reduction: 0
+    health: 16
+    kb: 0
+
 #
 set-pieces:
   HELMET:

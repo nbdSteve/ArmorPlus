@@ -3,6 +3,8 @@ package gg.steve.mc.ap.managers;
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.armorequipevent.ArmorListener;
 import gg.steve.mc.ap.armorequipevent.DispenserArmorListener;
+import gg.steve.mc.ap.listener.PlayerEquipListener;
+import gg.steve.mc.ap.listener.PlayerUnequipListener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
@@ -40,5 +42,7 @@ public class SetupManager {
         PluginManager pm = instance.getServer().getPluginManager();
         pm.registerEvents(new ArmorListener(ConfigManager.BLOCKED.get().getStringList("blocked")), instance);
         pm.registerEvents(new DispenserArmorListener(), instance);
+        pm.registerEvents(new PlayerEquipListener(), instance);
+        pm.registerEvents(new PlayerUnequipListener(), instance);
     }
 }
