@@ -11,7 +11,6 @@ import org.bukkit.inventory.ItemStack;
  * @since Jul 30, 2015
  */
 public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
-
     private static final HandlerList handlers = new HandlerList();
     private boolean cancel = false;
     private final EquipMethod equipType;
@@ -32,6 +31,9 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable {
         this.newArmorPiece = newArmorPiece;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
     /**
      * Gets a list of handlers handling this event.
      *

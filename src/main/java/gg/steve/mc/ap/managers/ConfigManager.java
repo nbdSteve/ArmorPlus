@@ -8,7 +8,8 @@ public enum ConfigManager {
     CONFIG("armor+.yml"),
     DEBUG("lang" + File.separator + "debug.yml"),
     MESSAGES("lang" + File.separator + "messages.yml"),
-    BLOCKED("assets" + File.separator + "blocked.yml");
+    BLOCKED("assets" + File.separator + "blocked.yml"),
+    DEFAULT("sets" + File.separator + "default.yml");
 
     private String path;
 

@@ -37,9 +37,9 @@ set-data:
   1:
     type: basic
     damage-increase: 1.25
-    damage-reduction: 0
+    damage-reduction: -1
     health: 16
-    kb: 0
+    kb: -1
 
 #
 set-pieces:

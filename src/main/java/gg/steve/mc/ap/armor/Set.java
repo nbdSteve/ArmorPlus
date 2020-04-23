@@ -8,6 +8,7 @@ import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.utils.CommandUtil;
 import gg.steve.mc.ap.utils.ItemBuilderUtil;
 import gg.steve.mc.ap.utils.YamlFileUtil;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -15,6 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,11 +33,12 @@ public class Set {
         this.fileUtil = fileUtil;
         this.config = this.fileUtil.get();
         this.setPieces = new HashMap<>();
+        this.data = new ArrayList<>();
         ConfigurationSection dataTypes = config.getConfigurationSection("set-data");
         for (String entry : dataTypes.getKeys(false)) {
             switch (dataTypes.getString(entry + ".type")) {
                 case "basic":
-                    this.data.add(new BasicSetData(config.getDouble("modifiers.damage-increase"), config.getDouble("modifiers.damage-decrease"), config.getDouble("modifiers.kb")));
+                    this.data.add(new BasicSetData(dataTypes.getDouble(entry + ".damage-increase"), dataTypes.getDouble(entry + ".damage-decrease"), dataTypes.getDouble(entry + ".kb"), dataTypes.getDouble(entry + ".health")));
                     break;
                 case "yijiki":
                     break;
@@ -58,53 +61,38 @@ public class Set {
         }
     }
 
-    public boolean hasFullSet(Player player) {
-        for (Map.Entry item : setPieces.entrySet()) {
-            NBTItem nbtItem = null;
-            switch (item.getKey().toString()) {
-                case "HELMET":
-                    nbtItem = new NBTItem(player.getInventory().getHelmet());
-                    break;
-                case "CHESTPLATE":
-                    nbtItem = new NBTItem(player.getInventory().getChestplate());
-                    break;
-                case "LEGGINGS":
-                    nbtItem = new NBTItem(player.getInventory().getLeggings());
-                    break;
-                case "BOOTS":
-                    nbtItem = new NBTItem(player.getInventory().getBoots());
-                    break;
-                case "HAND":
-                    nbtItem = new NBTItem(player.getInventory().getItemInHand());
-                    break;
-            }
-            if (!nbtItem.getString("armor+.set").equalsIgnoreCase(name)) return false;
-        }
-        return true;
-    }
-
-    public boolean hadFullSet(Player player, ArmorType type, ItemStack oldItem) {
-        if (!verifyOldPiece(oldItem)) return false;
+    public boolean isWearingSet(Player player, ArmorType type, ItemStack changedItem) {
+        if (!verifyPiece(changedItem)) return false;
         for (Map.Entry item : setPieces.entrySet()) {
             NBTItem nbtItem = null;
             switch (item.getKey().toString()) {
                 case "HELMET":
                     if (type.toString().equalsIgnoreCase("HELMET")) continue;
+                    if (player.getInventory().getHelmet() == null || player.getInventory().getHelmet().getType().equals(Material.AIR))
+                        return false;
                     nbtItem = new NBTItem(player.getInventory().getHelmet());
                     break;
                 case "CHESTPLATE":
                     if (type.toString().equalsIgnoreCase("CHESTPLATE")) continue;
+                    if (player.getInventory().getChestplate() == null || player.getInventory().getChestplate().getType().equals(Material.AIR))
+                        return false;
                     nbtItem = new NBTItem(player.getInventory().getChestplate());
                     break;
                 case "LEGGINGS":
                     if (type.toString().equalsIgnoreCase("LEGGINGS")) continue;
+                    if (player.getInventory().getLeggings() == null || player.getInventory().getLeggings().getType().equals(Material.AIR))
+                        return false;
                     nbtItem = new NBTItem(player.getInventory().getLeggings());
                     break;
                 case "BOOTS":
                     if (type.toString().equalsIgnoreCase("HAND")) continue;
+                    if (player.getInventory().getBoots() == null || player.getInventory().getBoots().getType().equals(Material.AIR))
+                        return false;
                     nbtItem = new NBTItem(player.getInventory().getBoots());
                     break;
                 case "HAND":
+                    if (player.getInventory().getItemInHand() == null || player.getInventory().getItemInHand().getType().equals(Material.AIR))
+                        return false;
                     nbtItem = new NBTItem(player.getInventory().getItemInHand());
                     break;
             }
@@ -114,39 +102,38 @@ public class Set {
         return true;
     }
 
-    public boolean verifyOldPiece(ItemStack oldItem) {
+    public boolean verifyPiece(ItemStack oldItem) {
         NBTItem nbtItem = new NBTItem(oldItem);
         if (nbtItem.getString("armor+.set") == null) return false;
         return nbtItem.getString("armor+.set").equalsIgnoreCase(this.name);
     }
 
-    public void apply(Player player) {
-        if (config.getBoolean("apply.message.enabled")) {
-            MessageType.doMessage(player, config.getStringList("apply.message.text"));
+    public void notifyPlayer(String method, Player player) {
+        if (config.getBoolean(method + ".message.enabled")) {
+            MessageType.doMessage(player, config.getStringList(method + ".message.text"));
         }
-        if (config.getBoolean("apply.sound.enabled")) {
+        if (config.getBoolean(method + ".sound.enabled")) {
             player.playSound(player.getLocation(),
-                    Sound.valueOf(config.getString("apply.sound.type").toUpperCase()),
-                    config.getInt("apply.sound.volume"),
-                    config.getInt("apply.sound.pitch"));
+                    Sound.valueOf(config.getString(method + ".sound.type").toUpperCase()),
+                    config.getInt(method + ".sound.volume"),
+                    config.getInt(method + ".sound.pitch"));
         }
-        if (config.getBoolean("apply.commands.enabled")) {
-            CommandUtil.execute(config.getStringList("apply.commands.list"), player);
+        if (config.getBoolean(method + ".commands.enabled")) {
+            CommandUtil.execute(config.getStringList(method + ".commands.list"), player);
+        }
+    }
+
+    public void apply(Player player) {
+        notifyPlayer("apply", player);
+        for (SetData setData : this.data) {
+            setData.onApply(player);
         }
     }
 
     public void remove(Player player) {
-        if (config.getBoolean("remove.message.enabled")) {
-            MessageType.doMessage(player, config.getStringList("remove.message.text"));
-        }
-        if (config.getBoolean("remove.sound.enabled")) {
-            player.playSound(player.getLocation(),
-                    Sound.valueOf(config.getString("remove.sound.type").toUpperCase()),
-                    config.getInt("remove.sound.volume"),
-                    config.getInt("remove.sound.pitch"));
-        }
-        if (config.getBoolean("remove.commands.enabled")) {
-            CommandUtil.execute(config.getStringList("remove.commands.list"), player);
+        notifyPlayer("remove", player);
+        for (SetData setData : this.data) {
+            setData.onRemoval(player);
         }
     }
 

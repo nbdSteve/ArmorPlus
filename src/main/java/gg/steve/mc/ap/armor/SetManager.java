@@ -23,6 +23,10 @@ public class SetManager {
         }
     }
 
+    public static Map<String, Set> getSets() {
+        return sets;
+    }
+
     public static Set getSet(String name) {
         return sets.get(name);
     }
