@@ -9,7 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum MessageType {
-    FILLER("debug");
+    PURCHASE("purchase", "{piece}", "{set-name}"),
+    INSUFFICIENT_FUNDS("insufficient-funds");
 
     private String path;
     private List<String> placeholders;

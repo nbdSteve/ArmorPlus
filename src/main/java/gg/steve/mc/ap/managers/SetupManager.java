@@ -2,6 +2,7 @@ package gg.steve.mc.ap.managers;
 
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.armorequipevent.ArmorListener;
+import gg.steve.mc.ap.gui.GuiClickListener;
 import gg.steve.mc.ap.listener.PlayerCommandListener;
 import gg.steve.mc.ap.listener.PlayerDamageListener;
 import gg.steve.mc.ap.listener.PlayerEquipListener;
@@ -47,5 +48,6 @@ public class SetupManager {
         pm.registerEvents(new PlayerUnequipListener(), instance);
         pm.registerEvents(new PlayerCommandListener(), instance);
         pm.registerEvents(new PlayerDamageListener(), instance);
+        pm.registerEvents(new GuiClickListener(), instance);
     }
 }

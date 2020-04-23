@@ -1,0 +1,5 @@
+insufficient-funds:
+  - '&5&lArmor&d&l+ &f>> &7You do not have sufficient funds to purchase that.'
+
+purchase:
+  - '&5&lArmor&d&l+ &f>> &7Successfully purchased the &6{piece} &7piece from the &6{set-name} &7set.'

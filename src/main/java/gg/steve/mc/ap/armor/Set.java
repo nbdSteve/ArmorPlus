@@ -27,6 +27,7 @@ public class Set {
     private YamlConfiguration config;
     private List<SetData> data;
     private Map<Piece, ItemStack> setPieces;
+    private SetGui gui;
 
     public Set(String name, YamlFileUtil fileUtil) {
         this.name = name;
@@ -59,6 +60,7 @@ public class Set {
             builder.addNBT(name);
             setPieces.put(piece, builder.getItem());
         }
+        this.gui = new SetGui(config.getConfigurationSection("gui"), this);
     }
 
     public boolean isWearingSet(Player player, ArmorType type, ItemStack changedItem) {
@@ -149,6 +151,10 @@ public class Set {
         }
     }
 
+    public void openGui(Player player) {
+        this.gui.open(player);
+    }
+
     // <-- Getters and Setters from this point on -->
     public String getName() {
         return name;
@@ -188,5 +194,13 @@ public class Set {
 
     public void setSetPieces(Map<Piece, ItemStack> setPieces) {
         this.setPieces = setPieces;
+    }
+
+    public SetGui getGui() {
+        return gui;
+    }
+
+    public void setGui(SetGui gui) {
+        this.gui = gui;
     }
 }

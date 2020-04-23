@@ -5,10 +5,13 @@ import gg.steve.mc.ap.managers.FileManager;
 import gg.steve.mc.ap.managers.SetupManager;
 import gg.steve.mc.ap.player.SetPlayerManager;
 import gg.steve.mc.ap.utils.LogUtil;
+import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ArmorPlus extends JavaPlugin {
     private static ArmorPlus instance;
+    private static Economy economy;
 
     @Override
     public void onEnable() {
@@ -19,6 +22,13 @@ public final class ArmorPlus extends JavaPlugin {
         SetupManager.registerEvents(instance);
         SetManager.loadSets();
         SetPlayerManager.init();
+        // verify that the server is running vault so that eco features can be used
+        if (Bukkit.getPluginManager().getPlugin("Vault") != null) {
+            economy = getServer().getServicesManager().getRegistration(Economy.class).getProvider();
+        } else {
+            LogUtil.info("Unable to find economy instance, disabling economy features.");
+            economy = null;
+        }
         LogUtil.info("Thanks for using Armor+, please contact nbdSteve#0583 on discord if you find any bugs!");
     }
 
@@ -30,5 +40,9 @@ public final class ArmorPlus extends JavaPlugin {
 
     public static ArmorPlus get() {
         return instance;
+    }
+
+    public static Economy eco() {
+        return economy;
     }
 }

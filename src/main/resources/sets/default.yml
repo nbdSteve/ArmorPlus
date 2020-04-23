@@ -66,7 +66,7 @@ gui:
   size: 5
   1:
     slot: 0
-    set-piece: HELMET
+    action: helmet
     name: '&c&lPhantom Hood'
     item: diamond_helmet
     data: 0
@@ -87,7 +87,7 @@ gui:
     cost: 25000.0
   2:
     slot: 4
-    set-piece: NONE
+    action: close
     name: '&c&lExit'
     item: barrier
     data: 0

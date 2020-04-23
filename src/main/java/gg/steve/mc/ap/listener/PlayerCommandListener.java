@@ -21,6 +21,10 @@ public class PlayerCommandListener implements Listener {
         }
         if (setName == null) return;
         Set set = SetManager.getSet(setName);
+        if (args.length == 1) {
+            set.openGui(event.getPlayer());
+            return;
+        }
         if (args[1].equalsIgnoreCase("g") || args[1].equalsIgnoreCase("give")) {
             for (ItemStack piece : set.getSetPieces().values()) {
                 event.getPlayer().getInventory().addItem(piece);

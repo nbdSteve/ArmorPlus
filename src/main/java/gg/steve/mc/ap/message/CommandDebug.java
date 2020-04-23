@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum CommandDebug {
+    GUI_CONFIGURATION_ERROR("gui-configuration-error"),
     FILLER("debug");
 
     private final String path;
