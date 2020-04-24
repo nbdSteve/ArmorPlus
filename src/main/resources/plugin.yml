@@ -6,3 +6,12 @@ prefix: Armor+
 authors: [nbdSteve]
 description: Comprehensive and free custom armor plugin, developed by Steve.
 website: http://steve.gg
+commands:
+  ap:
+    usage: /<command>
+    description: Use this command with no arguments to open the Armor+ purchase gui
+    aliases:
+      - armor+
+      - armorplus
+      - aplus
+      - ca

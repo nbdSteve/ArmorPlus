@@ -1,0 +1,33 @@
+async-potion-check-delay: 20
+
+gui:
+  name: '&5&lArmor&d&l+'
+  type: "none"
+  size: 9
+  1:
+    slot: 0
+    action: default
+    name: '&c&lPhantom Set'
+    item: feather
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase phantom armor))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  2:
+    slot: 8
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes

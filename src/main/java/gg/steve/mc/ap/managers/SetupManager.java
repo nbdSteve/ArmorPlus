@@ -2,6 +2,7 @@ package gg.steve.mc.ap.managers;
 
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.armorequipevent.ArmorListener;
+import gg.steve.mc.ap.cmd.ApCmd;
 import gg.steve.mc.ap.gui.GuiClickListener;
 import gg.steve.mc.ap.listener.PlayerCommandListener;
 import gg.steve.mc.ap.listener.PlayerDamageListener;
@@ -32,7 +33,7 @@ public class SetupManager {
     }
 
     public static void registerCommands(ArmorPlus instance) {
-//        instance.getCommand("ap").setExecutor(new FactionsCmd());
+        instance.getCommand("ap").setExecutor(new ApCmd());
     }
 
     /**

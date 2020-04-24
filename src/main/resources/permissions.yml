@@ -1,0 +1,9 @@
+purchase:
+  enabled: true
+  node: armor+.purchase. #the armor set name will be appended to this
+
+command:
+  gui: armor+.gui
+  help: armor+.help
+  reload: armor+.help
+  give: armor+.give

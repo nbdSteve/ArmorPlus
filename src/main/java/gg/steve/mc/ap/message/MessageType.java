@@ -10,6 +10,10 @@ import java.util.List;
 
 public enum MessageType {
     PURCHASE("purchase", "{piece}", "{set-name}"),
+    RELOAD("reload"),
+    HELP("help"),
+    GIVE_GIVER("give-piece-giver", "{player}", "{piece}", "{set-name}", "{amount}"),
+    GIVE_RECEIVER("give-piece-receiver", "{piece}", "{set-name}", "{amount}"),
     INSUFFICIENT_FUNDS("insufficient-funds");
 
     private String path;

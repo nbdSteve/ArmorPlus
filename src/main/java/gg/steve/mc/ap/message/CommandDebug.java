@@ -10,7 +10,15 @@ import java.util.List;
 
 public enum CommandDebug {
     GUI_CONFIGURATION_ERROR("gui-configuration-error"),
-    FILLER("debug");
+    INSUFFICIENT_PERMISSION("insufficient-permission", "{node}"),
+    INVALID_AMOUNT("invalid-amount"),
+    INVALID_PIECE("invalid-piece"),
+    INVALID_NUMBER_OF_ARGUMENTS("invalid-number-of-arguments"),
+    INVALID_COMMAND("invalid-command"),
+    TARGET_NOT_ONLINE("target-not-online"),
+    INVALID_SET("invalid-set"),
+    PIECE_DOES_NOT_EXIST("piece-does-not-exist"),
+    ONLY_PLAYERS_ACCESSIBLE("only-player-accessible");
 
     private final String path;
     private List<String> placeholders;

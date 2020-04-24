@@ -35,7 +35,7 @@ public class Set {
         this.config = this.fileUtil.get();
         this.setPieces = new HashMap<>();
         this.data = new ArrayList<>();
-        ConfigurationSection dataTypes = config.getConfigurationSection("set-data");
+        ConfigurationSection dataTypes = this.config.getConfigurationSection("set-data");
         for (String entry : dataTypes.getKeys(false)) {
             switch (dataTypes.getString(entry + ".type")) {
                 case "basic":
@@ -58,14 +58,14 @@ public class Set {
             builder.addEnchantments(section.getStringList(entry + ".enchantments"));
             builder.addItemFlags(section.getStringList(entry + ".item-flags"));
             builder.addNBT(name);
-            setPieces.put(piece, builder.getItem());
+            this.setPieces.put(piece, builder.getItem());
         }
         this.gui = new SetGui(config.getConfigurationSection("gui"), this);
     }
 
     public boolean isWearingSet(Player player, ArmorType type, ItemStack changedItem) {
         if (!verifyPiece(changedItem)) return false;
-        for (Map.Entry item : setPieces.entrySet()) {
+        for (Map.Entry item : this.setPieces.entrySet()) {
             NBTItem nbtItem = null;
             switch (item.getKey().toString()) {
                 case "HELMET":
@@ -99,7 +99,7 @@ public class Set {
                     break;
             }
             if (nbtItem.getString("armor+.set") == null) return false;
-            if (!nbtItem.getString("armor+.set").equalsIgnoreCase(name)) return false;
+            if (!nbtItem.getString("armor+.set").equalsIgnoreCase(this.name)) return false;
         }
         return true;
     }
@@ -111,17 +111,17 @@ public class Set {
     }
 
     public void notifyPlayer(String method, Player player) {
-        if (config.getBoolean(method + ".message.enabled")) {
-            MessageType.doMessage(player, config.getStringList(method + ".message.text"));
+        if (this.config.getBoolean(method + ".message.enabled")) {
+            MessageType.doMessage(player, this.config.getStringList(method + ".message.text"));
         }
         if (config.getBoolean(method + ".sound.enabled")) {
             player.playSound(player.getLocation(),
-                    Sound.valueOf(config.getString(method + ".sound.type").toUpperCase()),
-                    config.getInt(method + ".sound.volume"),
-                    config.getInt(method + ".sound.pitch"));
+                    Sound.valueOf(this.config.getString(method + ".sound.type").toUpperCase()),
+                    this.config.getInt(method + ".sound.volume"),
+                    this.config.getInt(method + ".sound.pitch"));
         }
         if (config.getBoolean(method + ".commands.enabled")) {
-            CommandUtil.execute(config.getStringList(method + ".commands.list"), player);
+            CommandUtil.execute(this.config.getStringList(method + ".commands.list"), player);
         }
     }
 
@@ -153,6 +153,10 @@ public class Set {
 
     public void openGui(Player player) {
         this.gui.open(player);
+    }
+
+    public ItemStack getPiece(Piece piece) {
+        return this.setPieces.get(piece);
     }
 
     // <-- Getters and Setters from this point on -->

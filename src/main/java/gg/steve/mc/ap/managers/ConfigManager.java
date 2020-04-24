@@ -6,6 +6,7 @@ import java.io.File;
 
 public enum ConfigManager {
     CONFIG("armor+.yml"),
+    PERMISSIONS("permissions.yml"),
     DEBUG("lang" + File.separator + "debug.yml"),
     MESSAGES("lang" + File.separator + "messages.yml"),
     BLOCKED("assets" + File.separator + "blocked.yml"),

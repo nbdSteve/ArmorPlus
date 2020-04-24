@@ -3,7 +3,6 @@ package gg.steve.mc.ap.gui;
 import gg.steve.mc.ap.utils.ColorUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -29,12 +28,12 @@ public abstract class AbstractGui {
     /**
      * Constructor the create a new Gui
      */
-    public AbstractGui(ConfigurationSection section, String type, Integer... size) {
+    public AbstractGui(ConfigurationSection section, String type, Integer size) {
         this.inventoryID = UUID.randomUUID();
-        if (!type.equalsIgnoreCase("null")) {
+        if (!type.equalsIgnoreCase("none")) {
             this.inventory = Bukkit.createInventory(null, InventoryType.valueOf(type), ColorUtil.colorize(section.getString("name")));
         } else {
-            this.inventory = Bukkit.createInventory(null, size[0], ColorUtil.colorize(section.getString("name")));
+            this.inventory = Bukkit.createInventory(null, size, ColorUtil.colorize(section.getString("name")));
         }
         this.clickActions = new HashMap<>();
         inventoriesByID.put(getInventoryID(), this);

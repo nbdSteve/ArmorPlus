@@ -1,15 +1,17 @@
-package gg.steve.mc.ap.armor;
+package gg.steve.mc.ap.gui;
 
-import gg.steve.mc.ap.gui.AbstractGui;
+import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.utils.GuiItemUtil;
 import org.bukkit.configuration.ConfigurationSection;
 
-public class SetGui extends AbstractGui {
+public class ApGui extends AbstractGui {
 
     /**
      * Constructor the create a new Gui
+     *
+     * @param section
      */
-    public SetGui(ConfigurationSection section, Set set) {
+    public ApGui(ConfigurationSection section) {
         super(section, section.getString("type"), section.getInt("size"));
         for (String entry : section.getKeys(false)) {
             try {
@@ -17,7 +19,7 @@ public class SetGui extends AbstractGui {
             } catch (Exception e) {
                 continue;
             }
-            setItemInSlot(section.getInt(entry + ".slot"), GuiItemUtil.createItem(section, entry, set), player -> {
+            setItemInSlot(section.getInt(entry + ".slot"), GuiItemUtil.createItem(section, entry, null), player -> {
                 switch (section.getString(entry + ".action")) {
                     case "none":
                         break;
@@ -25,7 +27,7 @@ public class SetGui extends AbstractGui {
                         player.closeInventory();
                         break;
                     default:
-                        GuiItemUtil.purchase(section, entry, player, set);
+                        SetManager.getSet(section.getString(entry + ".action")).openGui(player);
                         break;
                 }
             });
