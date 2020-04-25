@@ -2,6 +2,7 @@ package gg.steve.mc.ap.armor;
 
 import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.data.BasicSetData;
+import gg.steve.mc.ap.data.LightningSetData;
 import gg.steve.mc.ap.data.SetData;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
@@ -41,7 +42,8 @@ public class Set {
                 case "basic":
                     this.data.add(new BasicSetData(dataTypes.getDouble(entry + ".damage-increase"), dataTypes.getDouble(entry + ".damage-decrease"), dataTypes.getDouble(entry + ".kb"), dataTypes.getDouble(entry + ".health")));
                     break;
-                case "yijiki":
+                case "lightning":
+                    this.data.add(new LightningSetData(dataTypes.getBoolean(entry + ".random-radius"), dataTypes.getDouble(entry + ".radius"), dataTypes.getInt(entry + ".total-strikes"), dataTypes.getLong(entry + ".strike-delay-ticks"), dataTypes.getDouble(entry + ".damage-per-strike")));
                     break;
                 case "warp":
                     break;

@@ -40,7 +40,15 @@ set-data:
     damage-reduction: -1
     health: 16
     kb: -1
-
+    potion-effects:
+  2:
+    type: lightning
+    chance: 0.1
+    random-radius: true
+    radius: 5.3
+    total-strikes: 5
+    strike-delay-ticks: 10
+    damage-per-strike: 0.4
 #
 set-pieces:
   HELMET:

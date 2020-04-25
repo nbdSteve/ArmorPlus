@@ -24,6 +24,6 @@ public class PlayerDamageListener implements Listener {
         if (!(event.getEntity() instanceof Player)) return;
         if (!SetPlayerManager.isWearingSet((Player) event.getEntity())) return;
         SetPlayer player = SetPlayerManager.getSetPlayer((Player) event.getEntity());
-        player.getSet().onHit(event);
+        player.getSet().onDamage(event);
     }
 }

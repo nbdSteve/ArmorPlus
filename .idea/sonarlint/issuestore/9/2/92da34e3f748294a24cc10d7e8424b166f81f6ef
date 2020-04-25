@@ -1,18 +1,18 @@
 
-W
-java:S1874`"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8ßÓ³š.
-C	java:S131(""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8ŒÙ€š.
-W
-java:S1874`"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8Ş—Ô³š.
-=	java:S131F""Add a default case to this switch.(è¾÷d8–ôĞ³š.
+C	java:S131)""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8ï­šıš.
 g
-java:S2259e"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(¶¼çƒşÿÿÿÿ8Ì¸Ó³š.
-A
-java:S1640$"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8÷÷¸³š.
+java:S2259g"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(¶¼çƒşÿÿÿÿ8ï­šıš.
+=	java:S131H""Add a default case to this switch.(è¾÷d8ï­šıš.
 o
-java:S3776B"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ëÁŸ8–ôĞ³š.
-m
-java:S1192e"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(¶¼çƒşÿÿÿÿ8Ì¸Ó³š.
-u	java:S135D"YReduce the total number of break and continue statements in this loop to use at most one.(Áµ˜õ8–ôĞ³š.
+java:S3776D"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ëÁŸ8ï­šıš.
+A
+java:S1640%"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8ï­šıš.
 W
-java:S1874b"5Remove this use of "getItemInHand"; it is deprecated.(²¹Ò÷şÿÿÿÿ8Ì¸Ó³š.
+java:S1874d"5Remove this use of "getItemInHand"; it is deprecated.(²¹Ò÷şÿÿÿÿ8ï­šıš.
+W
+java:S1874b"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8ï­šıš.
+m
+java:S1192g"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(¶¼çƒşÿÿÿÿ8ï­šıš.
+u	java:S135F"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8ï­šıš.
+W
+java:S1874b"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8ï­šıš.

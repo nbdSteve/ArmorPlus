@@ -95,3 +95,11 @@ a
 1src/main/java/gg/steve/mc/ap/gui/AbstractGui.java,a\2\a2e5abd3477b5ec66974af0e5d049dd3196019c6
 ^
 .src/main/java/gg/steve/mc/ap/armor/SetGui.java,7\2\7241222a8676b64518454536f52a74479cc28045
+[
++src/main/java/gg/steve/mc/ap/gui/ApGui.java,8\e\8e89759ab2bfe418ff45047a27ab7bafe39fbaba
+a
+1src/main/java/gg/steve/mc/ap/cmd/sub/GiveCmd.java,e\1\e12db435f626f17455a360377c1899d8fd93ccbd
+g
+7src/main/java/gg/steve/mc/ap/data/LightningSetData.java,0\6\0634f889373d17431eac65be214fd4093ae1fab2
+p
+@src/main/java/gg/steve/mc/ap/data/utils/LightningEffectUtil.java,f\5\f51d74ab7d772a30c814fe81ab7614d2e65062aa
