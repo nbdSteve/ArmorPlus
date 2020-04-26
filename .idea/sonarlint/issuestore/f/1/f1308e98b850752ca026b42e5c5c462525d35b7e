@@ -1,13 +1,17 @@
 
-P
-java:S18741"4Remove this use of "setMaxHealth"; it is deprecated.(ÀşÈI8Â¨ë³š.
-S
-java:S1874"6Remove this use of "DamageModifier"; it is deprecated.(ø¥çş8™Î¬®š.
+I
+java:S1874"",Remove this use of "BASE"; it is deprecated.(ùû8¬Ì°®š.
 Q
-java:S1874*"4Remove this use of "setMaxHealth"; it is deprecated.(‹ôä™8ğĞê³š.
-I
-java:S1874",Remove this use of "BASE"; it is deprecated.(ø¥çş8™Î¬®š.
-I
-java:S1874 ",Remove this use of "BASE"; it is deprecated.(ùû8¬Ì°®š.
+java:S1874,"4Remove this use of "setMaxHealth"; it is deprecated.(‹ôä™8ğĞê³š.
+
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àü®Š8­˜¬›.
 S
-java:S1874 "6Remove this use of "DamageModifier"; it is deprecated.(ùû8¬Ì°®š.
+java:S1874"6Remove this use of "DamageModifier"; it is deprecated.(ø¥çş8™Î¬®š.
+£
+java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ…‹Èıÿÿÿÿ8­˜¬›.
+I
+java:S1874",Remove this use of "BASE"; it is deprecated.(ø¥çş8™Î¬®š.
+S
+java:S1874""6Remove this use of "DamageModifier"; it is deprecated.(ùû8¬Ì°®š.
+P
+java:S18743"4Remove this use of "setMaxHealth"; it is deprecated.(ÀşÈI8Â¨ë³š.

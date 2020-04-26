@@ -1,14 +1,37 @@
 async-potion-check-delay: 20
 
+loaded-sets:
+  - phantom
+  - yeti
+  - yijiki
+  #- traveller
+  #- ranger
+  #- warp
+  #- stun
+  - feather
+  - feast
+
+armor-switch:
+  enabled: true
+  sound:
+    enabled: true
+    type: 'level_up'
+    volume: 1
+    pitch: 2
+  message:
+    enabled: false
+    text:
+      - '&7&l** &oARMOR PIECE SWITCHED &7&l**'
+
 gui:
   name: '&5&lArmor&d&l+'
   type: "none"
   size: 9
   1:
     slot: 0
-    action: default
+    action: phantom
     name: '&c&lPhantom Set'
-    item: feather
+    item: blaze_powder
     data: 0
     lore:
       - '&7'
@@ -19,6 +42,62 @@ gui:
     item-flags:
       - hide_enchants
   2:
+    slot: 1
+    action: yeti
+    name: '&b&lYeti Set'
+    item: ice
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase yeti armor))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  3:
+    slot: 2
+    action: yijiki
+    name: '&f&lYijiki Set'
+    item: flint_and_steel
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase yijiki armor))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  4:
+    slot: 3
+    action: feather
+    name: '&e&lFeather Set'
+    item: feather
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase feather armor))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  5:
+    slot: 4
+    action: feast
+    name: '&a&lFeast Set'
+    item: cooked_beef
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase feast armor))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  6:
     slot: 8
     action: close
     name: '&c&lExit'

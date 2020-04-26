@@ -1,6 +1,7 @@
 package gg.steve.mc.ap.armor;
 
 import gg.steve.mc.ap.ArmorPlus;
+import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.utils.YamlFileUtil;
 
 import java.io.File;
@@ -14,12 +15,10 @@ public class SetManager {
     public static void loadSets() {
         setConfigs = new HashMap<>();
         sets = new HashMap<>();
-        File setFolder = new File("plugins" + File.separator + "ArmorPlus" + File.separator + "sets");
-        for (File set : setFolder.listFiles()) {
-            String name = set.getName().split(".yml")[0];
-            YamlFileUtil fileUtil = new YamlFileUtil("sets" + File.separator + set.getName(), ArmorPlus.get());
-            setConfigs.put(name, fileUtil);
-            sets.put(name, new Set(name, fileUtil));
+        for (String set : ConfigManager.CONFIG.get().getStringList("loaded-sets")) {
+            YamlFileUtil fileUtil = new YamlFileUtil("sets" + File.separator + set + ".yml", ArmorPlus.get());
+            setConfigs.put(set, fileUtil);
+            sets.put(set, new Set(set, fileUtil));
         }
     }
 

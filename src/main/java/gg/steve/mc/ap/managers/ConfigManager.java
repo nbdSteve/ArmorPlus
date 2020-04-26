@@ -9,10 +9,9 @@ public enum ConfigManager {
     PERMISSIONS("permissions.yml"),
     DEBUG("lang" + File.separator + "debug.yml"),
     MESSAGES("lang" + File.separator + "messages.yml"),
-    BLOCKED("assets" + File.separator + "blocked.yml"),
-    DEFAULT("sets" + File.separator + "default.yml");
+    BLOCKED("assets" + File.separator + "blocked.yml");
 
-    private String path;
+    private final String path;
 
     ConfigManager(String path) {
         this.path = path;

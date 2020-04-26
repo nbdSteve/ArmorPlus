@@ -2,7 +2,11 @@ package gg.steve.mc.ap.data;
 
 public enum SetDataType {
     BASIC,
-    YIJIKI,
+    LIGHTNING,
     WARP,
-    POTION;
+    POTION,
+    FALL,
+    HUNGER,
+    TRAVELLER,
+    RANGER;
 }

@@ -25,7 +25,6 @@ public final class ArmorPlus extends JavaPlugin {
         SetupManager.registerEvents(instance);
         SetManager.loadSets();
         SetPlayerManager.init();
-        apGui = new ApGui(ConfigManager.CONFIG.get().getConfigurationSection("gui"));
         // verify that the server is running vault so that eco features can be used
         if (Bukkit.getPluginManager().getPlugin("Vault") != null) {
             economy = getServer().getServicesManager().getRegistration(Economy.class).getProvider();
@@ -51,6 +50,9 @@ public final class ArmorPlus extends JavaPlugin {
     }
 
     public static ApGui getApGui() {
+        if (apGui == null) {
+            apGui = new ApGui(ConfigManager.CONFIG.get().getConfigurationSection("gui"));
+        }
         return apGui;
     }
 }

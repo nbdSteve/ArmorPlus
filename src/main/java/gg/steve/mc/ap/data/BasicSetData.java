@@ -1,8 +1,10 @@
 package gg.steve.mc.ap.data;
 
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 
 public class BasicSetData implements SetData {
     private SetDataType type;
@@ -11,12 +13,12 @@ public class BasicSetData implements SetData {
     private double kb;
     private double health;
 
-    public BasicSetData(double increase, double reduction, double kb, double health) {
+    public BasicSetData(ConfigurationSection section, String entry) {
         this.type = SetDataType.BASIC;
-        this.increase = increase;
-        this.reduction = reduction;
-        this.kb = kb;
-        this.health = health;
+        this.increase = section.getDouble(entry + ".damage-increase");
+        this.reduction = section.getDouble(entry + ".damage-decrease");
+        this.kb = section.getDouble(entry + ".kb");
+        this.health = section.getDouble(entry + ".health");
     }
 
     @Override
@@ -50,6 +52,16 @@ public class BasicSetData implements SetData {
         }
     }
 
+    @Override
+    public void onFall(EntityDamageEvent event) {
+
+    }
+
+    @Override
+    public void onHungerDeplete(FoodLevelChangeEvent event) {
+
+    }
+
     // <-- Getters and Setters from this point on -->
     public SetDataType getType() {
         return type;
@@ -81,5 +93,13 @@ public class BasicSetData implements SetData {
 
     public void setKb(double kb) {
         this.kb = kb;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
     }
 }

@@ -1,18 +1,30 @@
 
-C	java:S131)""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8ï­šıš.
-g
-java:S2259g"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(¶¼çƒşÿÿÿÿ8ï­šıš.
-=	java:S131H""Add a default case to this switch.(è¾÷d8ï­šıš.
-o
-java:S3776D"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ëÁŸ8ï­šıš.
-A
-java:S1640%"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8ï­šıš.
-W
-java:S1874d"5Remove this use of "getItemInHand"; it is deprecated.(²¹Ò÷şÿÿÿÿ8ï­šıš.
-W
-java:S1874b"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8ï­šıš.
+=	java:S131D""Add a default case to this switch.(è¾÷d8Ôˆä°›.
 m
-java:S1192g"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(¶¼çƒşÿÿÿÿ8ï­šıš.
-u	java:S135F"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8ï­šıš.
+java:S1192k"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(¶¼çƒşÿÿÿÿ8Ôˆä°›.
+R
+java:S1191"5Use classes from the Java API instead of Sun classes.(±§¡ñ8€»¹¥›.
+K
+java:S1066G"/Merge this if statement with the enclosing one.(ıìt8Ôˆä°›.
+L
+java:S1066O"/Merge this if statement with the enclosing one.(Áå•Ö8Ôˆä°›.
+Q
+java:S1066_"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8Ôˆä°›.
+g
+java:S2259k"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(¶¼çƒşÿÿÿÿ8Ôˆä°›.
+u	java:S135B"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8Ôˆä°›.
+o
+java:S3776@"RRefactor this method to reduce its Cognitive Complexity from 57 to the 15 allowed.(İ·ıÌ8Ôˆä°›.
 W
-java:S1874b"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8ï­šıš.
+java:S1874f"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8Ôˆä°›.
+W
+java:S1874f"5Remove this use of "getItemInHand"; it is deprecated.(ûóÿÅùÿÿÿÿ8Ôˆä°›.
+W
+java:S1874h"5Remove this use of "getItemInHand"; it is deprecated.(²¹Ò÷şÿÿÿÿ8Ôˆä°›.
+K
+java:S1128	".Remove this unused import 'org.bukkit.Bukkit'.(Ø­æ8Ôˆä°›.
+Q
+java:S1066W"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8Ôˆä°›.
+A
+java:S1640""Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8ï­šıš.
+C	java:S131&""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8¥ªş€›.

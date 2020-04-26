@@ -1,0 +1,191 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&c&l** &oPHANTOM SET BONUS ACTIVATED &c&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 0
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&c&l** &oPHANTOM SET BONUS DE-ACTIVATED &c&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_no'
+    volume: 1
+    pitch: 0
+#
+set-data:
+  1:
+    type: basic
+    damage-increase: 1.25
+    damage-reduction: -1
+    health: -1
+    kb: -1
+    potion-effects:
+#
+set-pieces:
+  helmet:
+    name: '&c&lPhantom Hood'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&cThe fabled hood of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  chestplate:
+    name: '&c&lPhantom Shroud'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&cThe legendary shroud of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  leggings:
+    name: '&c&lPhantom Robeset'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&cThe demonic robe of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  boots:
+    name: '&c&lPhantom Sandals'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&cThe silent sandals of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+#
+gui:
+  name: '&7&lPURCHASE &c&lPHANTOM SET'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: helmet
+    name: '&c&lPhantom Hood'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&cThe fabled hood of the phantom'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  2:
+    slot: 1
+    action: chestplate
+    name: '&c&lPhantom Shroud'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&cThe legendary shroud of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  3:
+    slot: 2
+    action: leggings
+    name: '&c&lPhantom Robeset'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&cThe demonic robe of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  4:
+    slot: 3
+    action: boots
+    name: '&c&lPhantom Sandals'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&cThe silent sandals of the Phantom.'
+      - ''
+      - '&c&lPHANTOM SET BONUS'
+      - '&c* Deal +25% damage to all enemies.'
+      - '&7&o(Requires all 4 phantom items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  5:
+    slot: 4
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes

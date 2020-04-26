@@ -3,6 +3,7 @@ package gg.steve.mc.ap.message;
 import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.utils.ColorUtil;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -51,6 +52,24 @@ public enum MessageType {
     public static void doMessage(Player receiver, List<String> lines) {
         for (String line : lines) {
             receiver.sendMessage(ColorUtil.colorize(line));
+        }
+    }
+
+    public static void doProcMessage(ConfigurationSection section, String entry, Player receiver) {
+        if (section.getBoolean(entry + ".message.enabled")) {
+            doMessage(receiver, section.getStringList(entry + ".message.text"));
+        }
+    }
+
+    public static void doAttackedMessage(ConfigurationSection section, String entry, Player receiver) {
+        if (section.getBoolean(entry + ".message.enabled")) {
+            doMessage(receiver, section.getStringList(entry + ".message.attacked"));
+        }
+    }
+
+    public static void doAttackerMessage(ConfigurationSection section, String entry, Player receiver) {
+        if (section.getBoolean(entry + ".message.enabled")) {
+            doMessage(receiver, section.getStringList(entry + ".message.attacker"));
         }
     }
 }

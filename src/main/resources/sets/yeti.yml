@@ -1,0 +1,200 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&b&l** &oYETI SET BONUS ACTIVATED &b&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 0
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&b&l** &oYETI SET BONUS DE-ACTIVATED &b&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_no'
+    volume: 1
+    pitch: 0
+#
+#
+set-data:
+  1:
+    type: basic
+    damage-increase: 1.1
+    damage-reduction: 0.9
+    health: -1
+    kb: -1
+    potion-effects:
+#
+set-pieces:
+  helmet:
+    name: '&b&lYeti Facemask'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&bThe savage mask of the Yeti.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  chestplate:
+    name: '&b&lBloody Yeti Torse'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&bThe impermeable chestplate of the Yeti.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  leggings:
+    name: '&b&lFuzzy Yeti Leggings'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&bThe cozy yet monstrous legs of the Yeti.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  boots:
+    name: '&b&lBig-Yeti Boots'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&bBigfoot has nothing on these boots.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+#
+gui:
+  name: '&7&lPURCHASE &b&lYETI SET'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: helmet
+    name: '&b&lYeti Facemask'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&bThe savage mask of the Yeti.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  2:
+    slot: 1
+    action: chestplate
+    name: '&b&lBloody Yeti Torse'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&bThe impermeable chestplate of the Yeti.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  3:
+    slot: 2
+    action: leggings
+    name: '&b&lFuzzy Yeti Leggings'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&bThe cozy yet monstrous legs of the Yeti.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  4:
+    slot: 3
+    action: boots
+    name: '&b&lBig-Yeti Boots'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&bBigfoot has nothing on these boots.'
+      - ''
+      - '&b&lYETI SET BONUS'
+      - '&b* Deal +10% damage to all enemies.'
+      - '&b* Enemies deal 10% less damage to you.'
+      - '&7&o(Requires all 4 yeti items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  5:
+    slot: 4
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes

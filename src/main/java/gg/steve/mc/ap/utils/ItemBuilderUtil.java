@@ -94,8 +94,8 @@ public class ItemBuilderUtil {
     }
 
     public ItemStack getItem() {
-        if (nbtItem != null) {
-            return nbtItem.getItem();
+        if (this.nbtItem != null) {
+            return this.nbtItem.getItem();
         }
         return this.item;
     }

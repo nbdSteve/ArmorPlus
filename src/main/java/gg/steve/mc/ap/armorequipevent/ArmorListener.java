@@ -53,6 +53,7 @@ public class ArmorListener implements Listener {
             return;
         }
         if (shift) {
+            if (e.getRawSlot() != ArmorType.HELMET.getSlot() && (isHeadItem(e.getCurrentItem()) || isHeadItem(e.getCursor()))) return;
             newArmorType = ArmorType.matchType(e.getCurrentItem());
             if (newArmorType != null) {
                 boolean equipping = true;
@@ -124,6 +125,7 @@ public class ArmorListener implements Listener {
             }
             ArmorType newArmorType = ArmorType.matchType(e.getItem());
             if (newArmorType != null) {
+                if (isHeadItem(e.getItem())) return;
                 if (newArmorType.equals(ArmorType.HELMET) && isAirOrNull(e.getPlayer().getInventory().getHelmet()) || newArmorType.equals(ArmorType.CHESTPLATE) && isAirOrNull(e.getPlayer().getInventory().getChestplate()) || newArmorType.equals(ArmorType.LEGGINGS) && isAirOrNull(e.getPlayer().getInventory().getLeggings()) || newArmorType.equals(ArmorType.BOOTS) && isAirOrNull(e.getPlayer().getInventory().getBoots())) {
                     ArmorEquipEvent armorEquipEvent = new ArmorEquipEvent(e.getPlayer(), ArmorEquipEvent.EquipMethod.HOTBAR, ArmorType.matchType(e.getItem()), null, e.getItem());
                     Bukkit.getServer().getPluginManager().callEvent(armorEquipEvent);
@@ -205,5 +207,12 @@ public class ArmorListener implements Listener {
      */
     public static boolean isAirOrNull(ItemStack item) {
         return item == null || item.getType().equals(Material.AIR);
+    }
+
+    public static boolean isHeadItem(ItemStack item) {
+        String type = item.getType().name();
+        if (type.endsWith("SKULL_ITEM") || type.endsWith("_SKULL") || type.endsWith("PLAYER_HEAD"))
+            return true;
+        return false;
     }
 }

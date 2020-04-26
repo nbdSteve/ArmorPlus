@@ -1,26 +1,23 @@
 package gg.steve.mc.ap.armor;
 
+import com.sun.istack.internal.Nullable;
 import gg.steve.mc.ap.armorequipevent.ArmorType;
-import gg.steve.mc.ap.data.BasicSetData;
-import gg.steve.mc.ap.data.LightningSetData;
-import gg.steve.mc.ap.data.SetData;
+import gg.steve.mc.ap.data.*;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.utils.CommandUtil;
-import gg.steve.mc.ap.utils.ItemBuilderUtil;
-import gg.steve.mc.ap.utils.YamlFileUtil;
+import gg.steve.mc.ap.utils.*;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Set {
     private String name;
@@ -40,56 +37,63 @@ public class Set {
         for (String entry : dataTypes.getKeys(false)) {
             switch (dataTypes.getString(entry + ".type")) {
                 case "basic":
-                    this.data.add(new BasicSetData(dataTypes.getDouble(entry + ".damage-increase"), dataTypes.getDouble(entry + ".damage-decrease"), dataTypes.getDouble(entry + ".kb"), dataTypes.getDouble(entry + ".health")));
+                    this.data.add(new BasicSetData(dataTypes, entry));
                     break;
                 case "lightning":
-                    this.data.add(new LightningSetData(dataTypes.getBoolean(entry + ".random-radius"), dataTypes.getDouble(entry + ".radius"), dataTypes.getInt(entry + ".total-strikes"), dataTypes.getLong(entry + ".strike-delay-ticks"), dataTypes.getDouble(entry + ".damage-per-strike")));
+                    this.data.add(new LightningSetData(dataTypes, entry));
                     break;
                 case "warp":
                     break;
                 case "potion":
+                    break;
+                case "fall":
+                    this.data.add(new FallSetData(dataTypes, entry));
+                    break;
+                case "hunger":
+                    this.data.add(new HungerSetData(dataTypes, entry));
                     break;
             }
         }
         ConfigurationSection section = config.getConfigurationSection("set-pieces");
         for (String entry : section.getKeys(false)) {
             Piece piece = Piece.valueOf(entry.toUpperCase());
-            ItemBuilderUtil builder = new ItemBuilderUtil(section.getString(entry + ".item"), section.getString(entry + ".data"));
-            builder.addName(section.getString(entry + ".name"));
-            builder.addLore(section.getStringList(entry + ".lore"));
-            builder.addEnchantments(section.getStringList(entry + ".enchantments"));
-            builder.addItemFlags(section.getStringList(entry + ".item-flags"));
-            builder.addNBT(name);
-            this.setPieces.put(piece, builder.getItem());
+            this.setPieces.put(piece, GuiItemUtil.createItem(section, entry, this));
         }
-        this.gui = new SetGui(config.getConfigurationSection("gui"), this);
     }
 
-    public boolean isWearingSet(Player player, ArmorType type, ItemStack changedItem) {
-        if (!verifyPiece(changedItem)) return false;
+    public boolean isWearingSet(Player player, @Nullable ArmorType type, @Nullable ItemStack changedItem) {
+        if (changedItem != null && !verifyPiece(changedItem)) return false;
         for (Map.Entry item : this.setPieces.entrySet()) {
             NBTItem nbtItem = null;
             switch (item.getKey().toString()) {
                 case "HELMET":
-                    if (type.toString().equalsIgnoreCase("HELMET")) continue;
+                    if (type != null) {
+                        if (type.toString().equalsIgnoreCase("HELMET")) continue;
+                    }
                     if (player.getInventory().getHelmet() == null || player.getInventory().getHelmet().getType().equals(Material.AIR))
                         return false;
                     nbtItem = new NBTItem(player.getInventory().getHelmet());
                     break;
                 case "CHESTPLATE":
-                    if (type.toString().equalsIgnoreCase("CHESTPLATE")) continue;
+                    if (type != null) {
+                        if (type.toString().equalsIgnoreCase("CHESTPLATE")) continue;
+                    }
                     if (player.getInventory().getChestplate() == null || player.getInventory().getChestplate().getType().equals(Material.AIR))
                         return false;
                     nbtItem = new NBTItem(player.getInventory().getChestplate());
                     break;
                 case "LEGGINGS":
-                    if (type.toString().equalsIgnoreCase("LEGGINGS")) continue;
+                    if (type != null) {
+                        if (type.toString().equalsIgnoreCase("LEGGINGS")) continue;
+                    }
                     if (player.getInventory().getLeggings() == null || player.getInventory().getLeggings().getType().equals(Material.AIR))
                         return false;
                     nbtItem = new NBTItem(player.getInventory().getLeggings());
                     break;
                 case "BOOTS":
-                    if (type.toString().equalsIgnoreCase("HAND")) continue;
+                    if (type != null) {
+                        if (type.toString().equalsIgnoreCase("BOOTS")) continue;
+                    }
                     if (player.getInventory().getBoots() == null || player.getInventory().getBoots().getType().equals(Material.AIR))
                         return false;
                     nbtItem = new NBTItem(player.getInventory().getBoots());
@@ -100,7 +104,7 @@ public class Set {
                     nbtItem = new NBTItem(player.getInventory().getItemInHand());
                     break;
             }
-            if (nbtItem.getString("armor+.set") == null) return false;
+            if (nbtItem.getString("armor+.set").equalsIgnoreCase("")) return false;
             if (!nbtItem.getString("armor+.set").equalsIgnoreCase(this.name)) return false;
         }
         return true;
@@ -108,7 +112,7 @@ public class Set {
 
     public boolean verifyPiece(ItemStack oldItem) {
         NBTItem nbtItem = new NBTItem(oldItem);
-        if (nbtItem.getString("armor+.set") == null) return false;
+        if (nbtItem.getString("armor+.set").equalsIgnoreCase("")) return false;
         return nbtItem.getString("armor+.set").equalsIgnoreCase(this.name);
     }
 
@@ -153,7 +157,22 @@ public class Set {
         }
     }
 
+    public void onFall(EntityDamageEvent event) {
+        for (SetData setData : this.data) {
+            setData.onFall(event);
+        }
+    }
+
+    public void onHungerDeplete(FoodLevelChangeEvent event) {
+        for (SetData setData : this.data) {
+            setData.onHungerDeplete(event);
+        }
+    }
+
     public void openGui(Player player) {
+        if (this.gui == null) {
+            this.gui = new SetGui(config.getConfigurationSection("gui"), this);
+        }
         this.gui.open(player);
     }
 

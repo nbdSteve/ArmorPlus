@@ -85,8 +85,6 @@ b
 2src/main/java/gg/steve/mc/ap/player/SetPlayer.java,0\4\04c79083f7d6d2b75a11ac9c80fa9941826bd807
 i
 9src/main/java/gg/steve/mc/ap/player/SetPlayerManager.java,0\1\01a6066db7fe70ed06c25da15357e19d07edd902
-o
-?src/main/java/gg/steve/mc/ap/listener/PlayerDamageListener.java,5\9\597be8c6c4e147c6f9334a4289f76011c307cfc8
 p
 @src/main/java/gg/steve/mc/ap/listener/PlayerCommandListener.java,c\5\c5aac0be441f5b19f07463f01e7a4aedfa6f1cb1
 f
@@ -103,3 +101,15 @@ g
 7src/main/java/gg/steve/mc/ap/data/LightningSetData.java,0\6\0634f889373d17431eac65be214fd4093ae1fab2
 p
 @src/main/java/gg/steve/mc/ap/data/utils/LightningEffectUtil.java,f\5\f51d74ab7d772a30c814fe81ab7614d2e65062aa
+l
+<src/main/java/gg/steve/mc/ap/listener/ArmorBuffListener.java,0\e\0e14eb6a60dcc72df5fb1e422c86c40d10fde6b3
+a
+1src/main/java/gg/steve/mc/ap/utils/SoundUtil.java,9\7\979231b7cffd92c0f9788aa0cb79d92590bb712c
+b
+2src/main/java/gg/steve/mc/ap/data/FallSetData.java,d\5\d5bd6bc566157b192a8f0455912b50eb8e7c9c79
+d
+4src/main/java/gg/steve/mc/ap/data/HungerSetData.java,6\4\646fa749d8bf351617a9e0661c03cfb1054b7786
+c
+3src/main/java/gg/steve/mc/ap/utils/GuiItemUtil.java,7\c\7c6322edb27ed6004cf2e36ed43012bd4d10e006
+n
+>src/main/java/gg/steve/mc/ap/listener/ArmorSwitchListener.java,d\5\d584863761ce24ad82b23b91bccf7aadee2e61e7
