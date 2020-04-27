@@ -37,6 +37,9 @@ set-data:
     health: -1
     kb: -1
     status-effects:
+      health_boost:
+        duration: 999999
+        level: 2
 #
 set-pieces:
   helmet:

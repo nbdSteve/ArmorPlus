@@ -1,6 +1,7 @@
 package gg.steve.mc.ap.nbt;
 
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -8,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
  * autosave to the Itemstack, use getItem to get the changed ItemStack
  *
  * @author tr7zw
+ *
  */
 public class NBTItem extends NBTCompound {
 
@@ -20,8 +22,8 @@ public class NBTItem extends NBTCompound {
      */
     public NBTItem(ItemStack item) {
         super(null, null);
-        if (item == null) {
-            throw new NullPointerException("ItemStack can't be null!");
+        if (item == null || item.getType() == Material.AIR) {
+            throw new NullPointerException("ItemStack can't be null/Air!");
         }
         bukkitItem = item.clone();
     }
@@ -80,5 +82,4 @@ public class NBTItem extends NBTCompound {
         return (ItemStack) ReflectionMethod.ITEMSTACK_BUKKITMIRROR.run(null,
                 NBTReflectionUtil.convertNBTCompoundtoNMSItem(comp));
     }
-
 }

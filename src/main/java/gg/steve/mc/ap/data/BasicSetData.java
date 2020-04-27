@@ -116,4 +116,36 @@ public class BasicSetData implements SetData {
     public void setHealth(double health) {
         this.health = health;
     }
+
+    public ConfigurationSection getSection() {
+        return section;
+    }
+
+    public void setSection(ConfigurationSection section) {
+        this.section = section;
+    }
+
+    public String getEntry() {
+        return entry;
+    }
+
+    public void setEntry(String entry) {
+        this.entry = entry;
+    }
+
+    public Set getSet() {
+        return set;
+    }
+
+    public void setSet(Set set) {
+        this.set = set;
+    }
+
+    public SetStatusEffectsManager getEffectsManager() {
+        return effectsManager;
+    }
+
+    public void setEffectsManager(SetStatusEffectsManager effectsManager) {
+        this.effectsManager = effectsManager;
+    }
 }

@@ -1,0 +1,241 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&4&l** &oALCHEMIST SET BONUS ACTIVATED &4&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 0
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&4&l** &oALCHEMIST SET BONUS DE-ACTIVATED &4&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_no'
+    volume: 1
+    pitch: 0
+#
+set-data:
+  1:
+    type: basic
+    damage-increase: -1
+    damage-reduction: 0.80
+    health: -1
+    kb: -1
+    status-effects:
+  2:
+    type: potion
+    chance: 0.1
+    activation: passive
+    random-radius: true
+    radius: 5.3
+    effect:
+      potion: slow
+      duration: 60 # in ticks, 20 ticks in 1 second
+      level: 4
+    sound:
+      enabled: true
+      type: 'anvil_break'
+      volume: 1
+      pitch: 0
+    message:
+      enabled: true
+      attacked:
+        - '&4&l** &oALCHEMIST UNLEASHED A SLOWNESS ATTACK &4&l**'
+      attacker:
+        - '&4&l** &oALCHEMIST IS ON YOUR SIDE AND HAS SLOWED YOUR ENEMIES &4&l**'
+  3:
+    type: potion
+    chance: 0.1
+    activation: aggressive
+    random-radius: true
+    radius: 5.3
+    effect:
+      potion: poison
+      duration: 60
+      level: 4
+    sound:
+      enabled: true
+      type: 'wolf_hurt'
+      volume: 1
+      pitch: 2
+    message:
+      enabled: true
+      attacked:
+        - '&4&l** &oALCHEMIST UNLEASHED A POISON ATTACK &4&l**'
+      attacker:
+        - '&4&l** &oALCHEMIST IS ON YOUR SIDE AND HAS POISONED YOUR ENEMIES &4&l**'
+#
+set-pieces:
+  helmet:
+    name: '&4&lAlchemist Hood'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  chestplate:
+    name: '&4&lAlchemist Shroud'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  leggings:
+    name: '&4&lAlchemist Robeset'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  boots:
+    name: '&4&lAlchemist Sandals'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+#
+gui:
+  name: '&7&lPURCHASE &4&lALCHEMIST SET'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: helmet
+    name: '&4&lAlchemist Hood'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  2:
+    slot: 1
+    action: chestplate
+    name: '&4&lAlchemist Shroud'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  3:
+    slot: 2
+    action: leggings
+    name: '&4&lAlchemist Robeset'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  4:
+    slot: 3
+    action: boots
+    name: '&4&lAlchemist Sandals'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&4Harness the power of Alchemy.'
+      - ''
+      - '&4&lALCHEMIST SET BONUS'
+      - '&4* Enemies deal 20% less damage to you.'
+      - '&4* Alchemist Passive & Aggressive Abilities.'
+      - '&7&o(Requires all 4 alchemist items.)'
+      - '&7'
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  5:
+    slot: 4
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes

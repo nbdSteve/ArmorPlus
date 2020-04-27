@@ -51,6 +51,7 @@ public class Set {
                     this.data.add(new WarpSetData(dataTypes, entry));
                     break;
                 case "potion":
+                    this.data.add(new PotionSetData(dataTypes, entry, this));
                     break;
                 case "fall":
                     this.data.add(new FallSetData(dataTypes, entry));
@@ -59,6 +60,9 @@ public class Set {
                     this.data.add(new HungerSetData(dataTypes, entry));
                     break;
                 case "traveller":
+                    this.data.add(new TravellerSetData(dataTypes, entry));
+                    break;
+                case "stun":
                     break;
                 case "hand":
                     this.handData = new HandSetData(dataTypes, entry);

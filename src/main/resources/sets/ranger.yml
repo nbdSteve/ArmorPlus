@@ -116,9 +116,6 @@ set-pieces:
       - '&aDeal +30% bow damage to all enemies.'
       - '&7&o(Requires all 4 ranger set items.)'
     enchantments:
-      - infinity:1
-      - power:5
-      - flame:1
       - durability:3
     item-flags:
 #
@@ -222,9 +219,6 @@ gui:
       - '&7'
       - '&c&lCost: $25,000'
     enchantments:
-      - infinity:1
-      - power:5
-      - flame:1
       - durability:3
     item-flags:
     cost: 25000.0

@@ -3,6 +3,7 @@ package gg.steve.mc.ap.managers;
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.armorequipevent.ArmorListener;
 import gg.steve.mc.ap.cmd.ApCmd;
+import gg.steve.mc.ap.data.utils.TravellerAttackUtil;
 import gg.steve.mc.ap.gui.GuiClickListener;
 import gg.steve.mc.ap.listener.*;
 import org.bukkit.plugin.Plugin;
@@ -48,5 +49,6 @@ public class SetupManager {
         pm.registerEvents(new ArmorBuffListener(), instance);
         pm.registerEvents(new GuiClickListener(), instance);
         pm.registerEvents(new ArmorSwitchListener(), instance);
+        pm.registerEvents(new TravellerAttackUtil(), instance);
     }
 }

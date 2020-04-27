@@ -4,7 +4,8 @@ loaded-sets:
   - phantom
   - yeti
   - yijiki
-  #- traveller
+  - alchemist
+  - traveller
   - ranger
   - warp
   #- stun
@@ -26,7 +27,7 @@ armor-switch:
 gui:
   name: '&5&lArmor&d&l+'
   type: none
-  size: 9
+  size: 18
   1:
     slot: 0
     action: phantom
@@ -126,7 +127,35 @@ gui:
     item-flags:
       - hide_enchants
   8:
+    slot: 7
+    action: alchemist
+    name: '&4&lAlchemist Set'
+    item: brewing_stand_item
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase alchemist armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  9:
     slot: 8
+    action: traveller
+    name: '&5&lTraveller Set'
+    item: sand
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase traveller armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  10:
+    slot: 13
     action: close
     name: '&c&lExit'
     item: barrier

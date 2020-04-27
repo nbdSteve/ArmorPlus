@@ -1,6 +1,6 @@
 package gg.steve.mc.ap.data;
 
-import gg.steve.mc.ap.data.utils.LightningEffectUtil;
+import gg.steve.mc.ap.data.utils.LightningAttackUtil;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.configuration.ConfigurationSection;
@@ -48,8 +48,8 @@ public class LightningSetData implements SetData {
 
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
-        if (Math.random() * 1 > chance) return;
-        new LightningEffectUtil(this.randomRadius, this.radius, this.totalStrikes, this.delay, this.damage, this.section, this.entry).doHitTask(event);
+        if (Math.random() * 1 > this.chance) return;
+        new LightningAttackUtil(this.randomRadius, this.radius, this.totalStrikes, this.delay, this.damage, this.section, this.entry).doHitTask(event);
         SoundUtil.playSound(this.section, this.entry, (Player) event.getEntity());
         MessageType.doAttackerMessage(this.section, this.entry, (Player) event.getEntity());
     }

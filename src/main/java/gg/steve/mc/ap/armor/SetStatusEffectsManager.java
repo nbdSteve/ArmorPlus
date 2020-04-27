@@ -5,7 +5,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import sun.rmi.runtime.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class SetStatusEffectsManager {
         if (this.effects.isEmpty()) return;
         for (PotionEffect effect : this.effects) {
             potionCheck(player, effect.getType(), effect.getAmplifier());
-            player.addPotionEffect(new PotionEffect(effect.getType(), effect.getDuration(), effect.getAmplifier()));
+            player.addPotionEffect(effect);
         }
     }
 
@@ -51,7 +50,7 @@ public class SetStatusEffectsManager {
      * @param type  the effect to check
      * @param level the amplifier of the new effect
      */
-    public void potionCheck(Player p, PotionEffectType type, int level) {
+    public static void potionCheck(Player p, PotionEffectType type, int level) {
         if (p.getActivePotionEffects().size() > 0) {
             if (p.hasPotionEffect(type)) {
                 if (p.getActivePotionEffects().iterator().next().getType().equals(type)) {
@@ -61,5 +60,13 @@ public class SetStatusEffectsManager {
                 }
             }
         }
+    }
+
+    public List<PotionEffect> getEffects() {
+        return effects;
+    }
+
+    public void setEffects(List<PotionEffect> effects) {
+        this.effects = effects;
     }
 }

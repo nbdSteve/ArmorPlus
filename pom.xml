@@ -83,5 +83,10 @@
             <version>1.7</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>minecraft-server</artifactId>
+            <version>1.12.2-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

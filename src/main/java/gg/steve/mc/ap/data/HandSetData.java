@@ -31,4 +31,41 @@ public class HandSetData implements HandItemData {
     public EntityDamageEvent.DamageCause getActiveCause() {
         return this.activeCause;
     }
+
+    // <-- Getters and Setters from this point on -->
+    public SetDataType getType() {
+        return type;
+    }
+
+    public void setType(SetDataType type) {
+        this.type = type;
+    }
+
+    public ConfigurationSection getSection() {
+        return section;
+    }
+
+    public void setSection(ConfigurationSection section) {
+        this.section = section;
+    }
+
+    public String getEntry() {
+        return entry;
+    }
+
+    public void setEntry(String entry) {
+        this.entry = entry;
+    }
+
+    public double getIncrease() {
+        return increase;
+    }
+
+    public void setIncrease(double increase) {
+        this.increase = increase;
+    }
+
+    public void setActiveCause(EntityDamageEvent.DamageCause activeCause) {
+        this.activeCause = activeCause;
+    }
 }

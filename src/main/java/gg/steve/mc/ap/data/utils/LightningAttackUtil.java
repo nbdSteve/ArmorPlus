@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class LightningEffectUtil {
+public class LightningAttackUtil {
     private boolean randomRadius;
     private double radius;
     private int totalStrikes;
@@ -28,7 +28,7 @@ public class LightningEffectUtil {
     private BukkitTask task;
     private List<UUID> messaged;
 
-    public LightningEffectUtil(boolean randomRadius, double radius, int totalStrikes, long delay, double damage, ConfigurationSection section, String entry) {
+    public LightningAttackUtil(boolean randomRadius, double radius, int totalStrikes, long delay, double damage, ConfigurationSection section, String entry) {
         this.randomRadius = randomRadius;
         this.radius = radius;
         this.totalStrikes = totalStrikes;
