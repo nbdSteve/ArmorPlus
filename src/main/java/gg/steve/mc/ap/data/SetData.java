@@ -11,7 +11,7 @@ public interface SetData {
 
     void onRemoval(Player player);
 
-    void onHit(EntityDamageByEntityEvent event);
+    void onHit(EntityDamageByEntityEvent event, Player damager);
 
     void onDamage(EntityDamageByEntityEvent event);
 

@@ -1,5 +1,6 @@
 package gg.steve.mc.ap.data;
 
+import gg.steve.mc.ap.data.utils.WarpUtil;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.configuration.ConfigurationSection;
@@ -8,15 +9,19 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-public class HungerSetData implements SetData {
+public class WarpSetData implements SetData {
     private SetDataType type;
     private ConfigurationSection section;
     private String entry;
+    private double chance;
+    private double distance;
 
-    public HungerSetData(ConfigurationSection section, String entry) {
-        this.type = SetDataType.HUNGER;
+    public WarpSetData(ConfigurationSection section, String entry) {
+        this.type = SetDataType.WARP;
         this.section = section;
         this.entry = entry;
+        this.chance = section.getDouble(entry + ".chance");
+        this.distance = section.getDouble(entry + ".distance");
     }
 
     @Override
@@ -36,7 +41,10 @@ public class HungerSetData implements SetData {
 
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
-
+        if (Math.random() * 1 > chance) return;
+        WarpUtil.warp((Player) event.getEntity(), event.getDamager(), this.distance, this.section, this.entry);
+        SoundUtil.playSound(this.section, this.entry, (Player) event.getEntity());
+        MessageType.doAttackerMessage(this.section, this.entry, (Player) event.getEntity());
     }
 
     @Override
@@ -46,11 +54,7 @@ public class HungerSetData implements SetData {
 
     @Override
     public void onHungerDeplete(FoodLevelChangeEvent event) {
-        event.setCancelled(true);
-        ((Player) event.getEntity()).setFoodLevel(20);
-        ((Player) event.getEntity()).setSaturation(20f);
-        SoundUtil.playSound(this.section, this.entry, (Player) event.getEntity());
-        MessageType.doProcMessage(this.section, this.entry, (Player) event.getEntity());
+
     }
 
     // <-- Getters and Setters from this point on -->
@@ -68,6 +72,22 @@ public class HungerSetData implements SetData {
 
     public void setEntry(String entry) {
         this.entry = entry;
+    }
+
+    public double getChance() {
+        return chance;
+    }
+
+    public void setChance(double chance) {
+        this.chance = chance;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
     public SetDataType getType() {

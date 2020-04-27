@@ -47,13 +47,13 @@ set-data:
     damage-per-strike: 0.4
     sound:
       enabled: true
-      type: 'level_up'
+      type: 'GHAST_SCREAM'
       volume: 1
-      pitch: 2
+      pitch: 0
     message:
       enabled: true
       attacked:
-        - '&f&l** &oFEEL THE WRATH Of YIJIKI SUMMONED BY {player}&f&l**'
+        - '&f&l** &oFEEL THE WRATH Of YIJIKI &f&l**'
       attacker:
         - '&f&l** &oYIJIKI IS ON YOUR SIDE AND HAS DAMAGED YOUR ENEMIES &f&l**'
 #

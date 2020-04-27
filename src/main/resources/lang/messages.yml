@@ -15,3 +15,6 @@ give-piece-giver:
 
 give-piece-receiver:
   - '&5&lArmor&d&l+ &f>> &7You have received &6{amount}x &7the &6{piece} &7piece(s) from the &6{set-name} &7set.'
+
+unsafe-warp-location:
+  - '&5&lArmor&d&l+ &f>> &7Your &3&lWARP SET &7tried to teleport you but the location was deemed unsafe by the server.'

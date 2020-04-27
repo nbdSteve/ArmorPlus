@@ -15,6 +15,7 @@ public enum MessageType {
     HELP("help"),
     GIVE_GIVER("give-piece-giver", "{player}", "{piece}", "{set-name}", "{amount}"),
     GIVE_RECEIVER("give-piece-receiver", "{piece}", "{set-name}", "{amount}"),
+    UNSAFE_WARP_LOCATION("unsafe-warp-location"),
     INSUFFICIENT_FUNDS("insufficient-funds");
 
     private String path;

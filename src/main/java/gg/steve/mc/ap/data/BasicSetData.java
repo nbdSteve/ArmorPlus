@@ -1,29 +1,40 @@
 package gg.steve.mc.ap.data;
 
+import gg.steve.mc.ap.armor.Set;
+import gg.steve.mc.ap.utils.LogUtil;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
+import sun.rmi.runtime.Log;
 
 public class BasicSetData implements SetData {
     private SetDataType type;
+    private ConfigurationSection section;
+    private String entry;
+    private Set set;
     private double increase;
     private double reduction;
     private double kb;
     private double health;
 
-    public BasicSetData(ConfigurationSection section, String entry) {
+    public BasicSetData(ConfigurationSection section, String entry, Set set) {
         this.type = SetDataType.BASIC;
-        this.increase = section.getDouble(entry + ".damage-increase");
-        this.reduction = section.getDouble(entry + ".damage-decrease");
-        this.kb = section.getDouble(entry + ".kb");
-        this.health = section.getDouble(entry + ".health");
+        this.section = section;
+        this.entry = entry;
+        this.set = set;
+        this.increase = this.section.getDouble(this.entry + ".damage-increase");
+        this.reduction = this.section.getDouble(this.entry + ".damage-decrease");
+        this.kb = this.section.getDouble(this.entry + ".kb");
+        this.health = this.section.getDouble(this.entry + ".health");
     }
 
     @Override
-    public void onHit(EntityDamageByEntityEvent event) {
-        if (this.increase != -1) {
+    public void onHit(EntityDamageByEntityEvent event, Player damager) {
+        if (this.set.getHandData() != null && this.set.verifyPiece(damager.getItemInHand()) && event.getCause().equals(this.set.getHandData().getActiveCause())) {
+            event.setDamage(EntityDamageEvent.DamageModifier.BASE, this.set.getHandData().calculateFinalDamage(event.getDamage(), this.increase));
+        } else if (this.increase != -1) {
             event.setDamage(EntityDamageEvent.DamageModifier.BASE, event.getDamage() * this.increase);
         }
     }

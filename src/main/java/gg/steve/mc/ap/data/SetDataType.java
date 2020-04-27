@@ -8,5 +8,6 @@ public enum SetDataType {
     FALL,
     HUNGER,
     TRAVELLER,
-    RANGER;
+    STUN,
+    HAND;
 }

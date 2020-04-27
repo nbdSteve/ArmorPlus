@@ -2,6 +2,8 @@ package gg.steve.mc.ap.listener;
 
 import gg.steve.mc.ap.player.SetPlayer;
 import gg.steve.mc.ap.player.SetPlayerManager;
+import gg.steve.mc.ap.utils.LogUtil;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,10 +16,20 @@ public class ArmorBuffListener implements Listener {
     @EventHandler
     public void onHit(EntityDamageByEntityEvent event) {
         if (event.isCancelled()) return;
-        if (!(event.getDamager() instanceof Player)) return;
-        if (!SetPlayerManager.isWearingSet((Player) event.getDamager())) return;
-        SetPlayer player = SetPlayerManager.getSetPlayer((Player) event.getDamager());
-        player.getSet().onHit(event);
+        Player damager = null;
+        if (event.getDamager() instanceof Arrow) {
+            Arrow arrow = (Arrow) event.getDamager();
+            if (arrow.getShooter() instanceof Player) {
+                damager = (Player) arrow.getShooter();
+            }
+        }
+        if (!(event.getDamager() instanceof Player) && damager == null) return;
+        if (damager == null) {
+            damager = (Player) event.getDamager();
+        }
+        if (!SetPlayerManager.isWearingSet(damager)) return;
+        SetPlayer player = SetPlayerManager.getSetPlayer(damager);
+        player.getSet().onHit(event, damager);
     }
 
     @EventHandler

@@ -43,7 +43,7 @@ public class LightningSetData implements SetData {
     }
 
     @Override
-    public void onHit(EntityDamageByEntityEvent event) {
+    public void onHit(EntityDamageByEntityEvent event, Player damager) {
     }
 
     @Override

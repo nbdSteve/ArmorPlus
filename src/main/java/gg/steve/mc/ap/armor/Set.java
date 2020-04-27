@@ -1,12 +1,13 @@
 package gg.steve.mc.ap.armor;
 
-import com.sun.istack.internal.Nullable;
 import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.data.*;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.utils.*;
-import org.bukkit.Bukkit;
+import gg.steve.mc.ap.utils.CommandUtil;
+import gg.steve.mc.ap.utils.GuiItemUtil;
+import gg.steve.mc.ap.utils.LogUtil;
+import gg.steve.mc.ap.utils.YamlFileUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
@@ -17,13 +18,17 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Set {
     private String name;
     private YamlFileUtil fileUtil;
     private YamlConfiguration config;
     private List<SetData> data;
+    private HandItemData handData;
     private Map<Piece, ItemStack> setPieces;
     private SetGui gui;
 
@@ -37,12 +42,13 @@ public class Set {
         for (String entry : dataTypes.getKeys(false)) {
             switch (dataTypes.getString(entry + ".type")) {
                 case "basic":
-                    this.data.add(new BasicSetData(dataTypes, entry));
+                    this.data.add(new BasicSetData(dataTypes, entry, this));
                     break;
                 case "lightning":
                     this.data.add(new LightningSetData(dataTypes, entry));
                     break;
                 case "warp":
+                    this.data.add(new WarpSetData(dataTypes, entry));
                     break;
                 case "potion":
                     break;
@@ -51,6 +57,12 @@ public class Set {
                     break;
                 case "hunger":
                     this.data.add(new HungerSetData(dataTypes, entry));
+                    break;
+                case "traveller":
+                    break;
+                case "hand":
+                    this.handData = new HandSetData(dataTypes, entry);
+                    LogUtil.info(this.handData.getActiveCause().toString());
                     break;
             }
         }
@@ -61,9 +73,10 @@ public class Set {
         }
     }
 
-    public boolean isWearingSet(Player player, @Nullable ArmorType type, @Nullable ItemStack changedItem) {
+    public boolean isWearingSet(Player player, ArmorType type, ItemStack changedItem) {
         if (changedItem != null && !verifyPiece(changedItem)) return false;
         for (Map.Entry item : this.setPieces.entrySet()) {
+            if (item.getKey().toString().equalsIgnoreCase("HAND")) continue;
             NBTItem nbtItem = null;
             switch (item.getKey().toString()) {
                 case "HELMET":
@@ -97,11 +110,6 @@ public class Set {
                     if (player.getInventory().getBoots() == null || player.getInventory().getBoots().getType().equals(Material.AIR))
                         return false;
                     nbtItem = new NBTItem(player.getInventory().getBoots());
-                    break;
-                case "HAND":
-                    if (player.getInventory().getItemInHand() == null || player.getInventory().getItemInHand().getType().equals(Material.AIR))
-                        return false;
-                    nbtItem = new NBTItem(player.getInventory().getItemInHand());
                     break;
             }
             if (nbtItem.getString("armor+.set").equalsIgnoreCase("")) return false;
@@ -145,9 +153,9 @@ public class Set {
         }
     }
 
-    public void onHit(EntityDamageByEntityEvent event) {
+    public void onHit(EntityDamageByEntityEvent event, Player damager) {
         for (SetData setData : this.data) {
-            setData.onHit(event);
+            setData.onHit(event, damager);
         }
     }
 
@@ -227,5 +235,13 @@ public class Set {
 
     public void setGui(SetGui gui) {
         this.gui = gui;
+    }
+
+    public HandItemData getHandData() {
+        return handData;
+    }
+
+    public void setHandData(HandItemData handData) {
+        this.handData = handData;
     }
 }

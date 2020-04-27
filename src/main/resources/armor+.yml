@@ -5,8 +5,8 @@ loaded-sets:
   - yeti
   - yijiki
   #- traveller
-  #- ranger
-  #- warp
+  - ranger
+  - warp
   #- stun
   - feather
   - feast
@@ -25,7 +25,7 @@ armor-switch:
 
 gui:
   name: '&5&lArmor&d&l+'
-  type: "none"
+  type: none
   size: 9
   1:
     slot: 0
@@ -35,7 +35,7 @@ gui:
     data: 0
     lore:
       - '&7'
-      - '&7&o((left-click to purchase phantom armor))'
+      - '&7&o((left-click to purchase phantom armor.))'
       - '&7'
     enchantments:
       - lure:1
@@ -49,7 +49,7 @@ gui:
     data: 0
     lore:
       - '&7'
-      - '&7&o((left-click to purchase yeti armor))'
+      - '&7&o((left-click to purchase yeti armor.))'
       - '&7'
     enchantments:
       - lure:1
@@ -63,7 +63,7 @@ gui:
     data: 0
     lore:
       - '&7'
-      - '&7&o((left-click to purchase yijiki armor))'
+      - '&7&o((left-click to purchase yijiki armor.))'
       - '&7'
     enchantments:
       - lure:1
@@ -77,7 +77,7 @@ gui:
     data: 0
     lore:
       - '&7'
-      - '&7&o((left-click to purchase feather armor))'
+      - '&7&o((left-click to purchase feather armor.))'
       - '&7'
     enchantments:
       - lure:1
@@ -91,13 +91,41 @@ gui:
     data: 0
     lore:
       - '&7'
-      - '&7&o((left-click to purchase feast armor))'
+      - '&7&o((left-click to purchase feast armor.))'
       - '&7'
     enchantments:
       - lure:1
     item-flags:
       - hide_enchants
   6:
+    slot: 5
+    action: warp
+    name: '&3&lWarp Set'
+    item: ender_pearl
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase warp armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  7:
+    slot: 6
+    action: ranger
+    name: '&2&lRanger Set'
+    item: bow
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase ranger armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  8:
     slot: 8
     action: close
     name: '&c&lExit'

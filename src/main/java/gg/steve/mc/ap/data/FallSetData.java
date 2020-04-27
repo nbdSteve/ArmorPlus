@@ -9,10 +9,12 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
 public class FallSetData implements SetData {
+    private SetDataType type;
     private ConfigurationSection section;
     private String entry;
 
     public FallSetData(ConfigurationSection section, String entry) {
+        this.type = SetDataType.FALL;
         this.section = section;
         this.entry = entry;
     }
@@ -28,7 +30,7 @@ public class FallSetData implements SetData {
     }
 
     @Override
-    public void onHit(EntityDamageByEntityEvent event) {
+    public void onHit(EntityDamageByEntityEvent event, Player damager) {
 
     }
 
@@ -64,5 +66,13 @@ public class FallSetData implements SetData {
 
     public void setEntry(String entry) {
         this.entry = entry;
+    }
+
+    public SetDataType getType() {
+        return type;
+    }
+
+    public void setType(SetDataType type) {
+        this.type = type;
     }
 }

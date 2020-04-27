@@ -24,7 +24,6 @@ public class ArmorSwitchListener implements Listener {
         if (event.getItem() == null || event.getItem().getType().equals(Material.AIR)) return;
         if (ArmorType.matchType(event.getItem()) == null) return;
         if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled")) return;
-        event.setCancelled(true);
         ArmorType type = ArmorType.matchType(event.getItem());
         Player player = event.getPlayer();
         ArmorEquipEvent change;
@@ -34,6 +33,7 @@ public class ArmorSwitchListener implements Listener {
                     change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getHelmet(), event.getItem());
                     Bukkit.getPluginManager().callEvent(change);
                     if (change.isCancelled()) return;
+                    event.setCancelled(true);
                     player.getInventory().setHelmet(change.getNewArmorPiece());
                     player.setItemInHand(new ItemStack(Material.AIR));
                     return;
