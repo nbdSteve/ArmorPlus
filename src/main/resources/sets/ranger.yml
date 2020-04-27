@@ -37,7 +37,7 @@ set-data:
     damage-reduction: 0.75
     health: -1
     kb: -1
-    potion-effects:
+    status-effects:
   2:
     type: hand
     damage-increase: 1.30

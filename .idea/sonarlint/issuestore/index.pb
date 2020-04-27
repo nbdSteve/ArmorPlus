@@ -123,3 +123,5 @@ c
 3src/main/java/gg/steve/mc/ap/data/HandItemData.java,e\9\e9dc5d1203226d31bf4338efc6baa17903c2235d
 b
 2src/main/java/gg/steve/mc/ap/data/HandSetData.java,1\7\17d644e55eb4c27e58d43708e0e659f9a513ba2c
+o
+?src/main/java/gg/steve/mc/ap/armor/SetStatusEffectsManager.java,2\c\2c67151504a5387298e67a9cc8daab9bb6439857

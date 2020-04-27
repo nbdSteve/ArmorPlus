@@ -1,13 +1,12 @@
 package gg.steve.mc.ap.data;
 
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.utils.LogUtil;
+import gg.steve.mc.ap.armor.SetStatusEffectsManager;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
-import sun.rmi.runtime.Log;
 
 public class BasicSetData implements SetData {
     private SetDataType type;
@@ -18,6 +17,7 @@ public class BasicSetData implements SetData {
     private double reduction;
     private double kb;
     private double health;
+    private SetStatusEffectsManager effectsManager;
 
     public BasicSetData(ConfigurationSection section, String entry, Set set) {
         this.type = SetDataType.BASIC;
@@ -28,6 +28,7 @@ public class BasicSetData implements SetData {
         this.reduction = this.section.getDouble(this.entry + ".damage-decrease");
         this.kb = this.section.getDouble(this.entry + ".kb");
         this.health = this.section.getDouble(this.entry + ".health");
+        this.effectsManager = new SetStatusEffectsManager(this.section, this.entry, this.set);
     }
 
     @Override
@@ -54,6 +55,7 @@ public class BasicSetData implements SetData {
         if (this.health != -1) {
             player.setMaxHealth(this.health);
         }
+        this.effectsManager.applyEffects(player);
     }
 
     @Override
@@ -61,6 +63,7 @@ public class BasicSetData implements SetData {
         if (this.health != -1) {
             player.setMaxHealth(20.0);
         }
+        this.effectsManager.removeEffects(player);
     }
 
     @Override

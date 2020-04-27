@@ -36,7 +36,7 @@ set-data:
     damage-reduction: 0.7
     health: -1
     kb: -1
-    potion-effects:
+    status-effects:
   2:
     type: lightning
     chance: 0.1

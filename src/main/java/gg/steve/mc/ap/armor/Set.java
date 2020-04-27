@@ -62,7 +62,6 @@ public class Set {
                     break;
                 case "hand":
                     this.handData = new HandSetData(dataTypes, entry);
-                    LogUtil.info(this.handData.getActiveCause().toString());
                     break;
             }
         }

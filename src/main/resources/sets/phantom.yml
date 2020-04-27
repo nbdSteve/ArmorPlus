@@ -36,7 +36,7 @@ set-data:
     damage-reduction: -1
     health: -1
     kb: -1
-    potion-effects:
+    status-effects:
 #
 set-pieces:
   helmet:
