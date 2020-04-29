@@ -184,6 +184,7 @@ public class Set {
         if (this.gui == null) {
             this.gui = new SetGui(config.getConfigurationSection("gui"), this);
         }
+        this.gui.refresh();
         this.gui.open(player);
     }
 

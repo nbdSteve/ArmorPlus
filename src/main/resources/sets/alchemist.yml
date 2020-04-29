@@ -159,7 +159,7 @@ gui:
       - '&4* Enemies deal 20% less damage to you.'
       - '&4* Alchemist Passive & Aggressive Abilities.'
       - '&7&o(Requires all 4 alchemist items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -179,7 +179,7 @@ gui:
       - '&4* Enemies deal 20% less damage to you.'
       - '&4* Alchemist Passive & Aggressive Abilities.'
       - '&7&o(Requires all 4 alchemist items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -199,7 +199,7 @@ gui:
       - '&4* Enemies deal 20% less damage to you.'
       - '&4* Alchemist Passive & Aggressive Abilities.'
       - '&7&o(Requires all 4 alchemist items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -219,7 +219,7 @@ gui:
       - '&4* Enemies deal 20% less damage to you.'
       - '&4* Alchemist Passive & Aggressive Abilities.'
       - '&7&o(Requires all 4 alchemist items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

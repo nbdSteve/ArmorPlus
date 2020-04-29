@@ -1,6 +1,5 @@
 package gg.steve.mc.ap.nbt.utils.nmsmappings;
 
-import com.mojang.authlib.GameProfile;
 import gg.steve.mc.ap.nbt.NbtApiException;
 import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 import org.bukkit.inventory.ItemStack;
@@ -99,7 +98,6 @@ public enum ReflectionMethod {
     REGISTRYMATERIALS_GETKEY(ClassWrapper.NMS_REGISTRYMATERIALS.getClazz(), new Class[]{Object.class}, MinecraftVersion.MC1_13_R2, new Since(MinecraftVersion.MC1_13_R2, "getKey")),
 
     GAMEPROFILE_DESERIALIZE(ClassWrapper.NMS_GAMEPROFILESERIALIZER.getClazz(), new Class[]{ClassWrapper.NMS_NBTTAGCOMPOUND.getClazz()}, MinecraftVersion.MC1_7_R4, new Since(MinecraftVersion.MC1_7_R4, "deserialize")),
-    GAMEPROFILE_SERIALIZE(ClassWrapper.NMS_GAMEPROFILESERIALIZER.getClazz(), new Class[]{ClassWrapper.NMS_NBTTAGCOMPOUND.getClazz(), GameProfile.class}, MinecraftVersion.MC1_7_R4, new Since(MinecraftVersion.MC1_7_R4, "serialize")),
     ;
 
     private MinecraftVersion removedAfter;

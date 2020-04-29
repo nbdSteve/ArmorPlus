@@ -134,7 +134,7 @@ gui:
       - '&e* Enemies deal 5% less damage to you.'
       - '&e* Take no damage from falling.'
       - '&7&o(Requires all 4 feather items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -155,7 +155,7 @@ gui:
       - '&e* Enemies deal 5% less damage to you.'
       - '&e* Take no damage from falling.'
       - '&7&o(Requires all 4 feather items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -176,7 +176,7 @@ gui:
       - '&e* Enemies deal 5% less damage to you.'
       - '&e* Take no damage from falling.'
       - '&7&o(Requires all 4 feather items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -197,7 +197,7 @@ gui:
       - '&e* Enemies deal 5% less damage to you.'
       - '&e* Take no damage from falling.'
       - '&7&o(Requires all 4 feather items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

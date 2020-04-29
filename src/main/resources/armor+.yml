@@ -1,5 +1,5 @@
-async-potion-check-delay: 20
-
+# Armor+ - Developed by nbdSteve, free for all! <3
+#
 loaded-sets:
   - phantom
   - yeti
@@ -7,11 +7,11 @@ loaded-sets:
   - alchemist
   - traveller
   - ranger
-  - warp
-  #- stun
+  - shift
   - feather
   - feast
-
+  - developer
+#
 armor-switch:
   enabled: true
   sound:
@@ -23,7 +23,7 @@ armor-switch:
     enabled: false
     text:
       - '&7&l** &oARMOR PIECE SWITCHED &7&l**'
-
+#
 gui:
   name: '&5&lArmor&d&l+'
   type: none
@@ -101,12 +101,12 @@ gui:
   6:
     slot: 5
     action: warp
-    name: '&3&lWarp Set'
+    name: '&3&lShift Set'
     item: ender_pearl
     data: 0
     lore:
       - '&7'
-      - '&7&o((left-click to purchase warp armor.))'
+      - '&7&o((left-click to purchase shit armor.))'
       - '&7'
     enchantments:
       - lure:1
@@ -130,7 +130,7 @@ gui:
     slot: 7
     action: alchemist
     name: '&4&lAlchemist Set'
-    item: brewing_stand_item
+    item: magma_cream
     data: 0
     lore:
       - '&7'
@@ -144,7 +144,7 @@ gui:
     slot: 8
     action: traveller
     name: '&5&lTraveller Set'
-    item: sand
+    item: map
     data: 0
     lore:
       - '&7'
@@ -155,7 +155,22 @@ gui:
     item-flags:
       - hide_enchants
   10:
-    slot: 13
+    slot: 9
+    action: developer
+    name: '&6&lDeveloper Set'
+    item: skull_item
+    data: 3
+    owner: 9914cdba-4333-4da2-a316-70e1b39d8f46
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase developer armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  11:
+    slot: 17
     action: close
     name: '&c&lExit'
     item: barrier

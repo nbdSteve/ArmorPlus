@@ -125,7 +125,7 @@ set-pieces:
     item-flags:
 #
 gui:
-  name: '&7&lPURCHASE &4&lALCHEMIST SET'
+  name: '&7&lPURCHASE &5&lTRAVELLER SET'
   type: HOPPER
   size: 5
   1:
@@ -142,7 +142,7 @@ gui:
       - '&D* You deal 30% more damage.'
       - '&D* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -164,7 +164,7 @@ gui:
       - '&D* You deal 30% more damage.'
       - '&D* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -186,7 +186,7 @@ gui:
       - '&D* You deal 30% more damage.'
       - '&D* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -208,7 +208,7 @@ gui:
       - '&D* You deal 30% more damage.'
       - '&D* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

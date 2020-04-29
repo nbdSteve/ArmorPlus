@@ -5,6 +5,7 @@ import gg.steve.mc.ap.utils.GuiItemUtil;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class ApGui extends AbstractGui {
+    private ConfigurationSection section;
 
     /**
      * Constructor the create a new Gui
@@ -13,6 +14,11 @@ public class ApGui extends AbstractGui {
      */
     public ApGui(ConfigurationSection section) {
         super(section, section.getString("type"), section.getInt("size"));
+        this.section = section;
+        refresh();
+    }
+
+    public void refresh() {
         for (String entry : section.getKeys(false)) {
             try {
                 Integer.parseInt(entry);

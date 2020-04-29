@@ -5,5 +5,5 @@ purchase:
 command:
   gui: armor+.gui
   help: armor+.help
-  reload: armor+.help
+  reload: armor+.reload
   give: armor+.give

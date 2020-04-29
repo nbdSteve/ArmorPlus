@@ -46,18 +46,15 @@ public class SetStatusEffectsManager {
     /**
      * If the player has that potion effect but the amplifier is less that the level, remove it
      *
-     * @param p     the player being checked
-     * @param type  the effect to check
-     * @param level the amplifier of the new effect
+     * @param player    the player being checked
+     * @param type      the effect to check
+     * @param amplifier the amplifier of the new effect
      */
-    public static void potionCheck(Player p, PotionEffectType type, int level) {
-        if (p.getActivePotionEffects().size() > 0) {
-            if (p.hasPotionEffect(type)) {
-                if (p.getActivePotionEffects().iterator().next().getType().equals(type)) {
-                    if (p.getActivePotionEffects().iterator().next().getAmplifier() <= level) {
-                        p.removePotionEffect(type);
-                    }
-                }
+    public static void potionCheck(Player player, PotionEffectType type, int amplifier) {
+        for (PotionEffect active : player.getActivePotionEffects()) {
+            if (!active.getType().equals(type)) continue;
+            if (active.getAmplifier() <= amplifier) {
+                player.removePotionEffect(type);
             }
         }
     }

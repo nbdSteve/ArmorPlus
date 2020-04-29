@@ -141,7 +141,7 @@ gui:
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -162,7 +162,7 @@ gui:
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -183,7 +183,7 @@ gui:
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -204,7 +204,7 @@ gui:
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

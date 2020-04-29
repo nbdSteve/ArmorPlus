@@ -53,6 +53,7 @@ public final class ArmorPlus extends JavaPlugin {
         if (apGui == null) {
             apGui = new ApGui(ConfigManager.CONFIG.get().getConfigurationSection("gui"));
         }
+        apGui.refresh();
         return apGui;
     }
 }

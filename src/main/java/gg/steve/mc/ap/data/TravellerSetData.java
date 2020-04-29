@@ -46,7 +46,7 @@ public class TravellerSetData implements SetData {
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
         if (!(event.getDamager() instanceof Player)) return;
-//        if (Math.random() * 1 > this.chance) return;
+        if (Math.random() * 1 > this.chance) return;
         TravellerAttackUtil.attack((Player) event.getDamager(), (Player) event.getEntity(), this.size, this.damage, this.height, this.section, this.entry);
         SoundUtil.playSound(this.section, this.entry, (Player) event.getEntity());
         MessageType.doAttackerMessage(this.section, this.entry, (Player) event.getEntity());

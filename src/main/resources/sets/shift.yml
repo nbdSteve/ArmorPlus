@@ -3,7 +3,7 @@ apply:
   message:
     enabled: true
     text:
-      - '&3&l** &oWARP SET BONUS ACTIVATED &3&l**'
+      - '&3&l** &oSHIFT SET BONUS ACTIVATED &3&l**'
   commands:
     enabled: false
     list:
@@ -18,7 +18,7 @@ remove:
   message:
     enabled: true
     text:
-      - '&3&l** &oWARP SET BONUS DE-ACTIVATED &3&l**'
+      - '&3&l** &oSHIFT SET BONUS DE-ACTIVATED &3&l**'
   commands:
     enabled: false
     list:
@@ -39,7 +39,7 @@ set-data:
     kb: -1
     status-effects:
   2:
-    type: warp
+    type: shift
     chance: 1
     distance: 5.3
     sound:
@@ -50,9 +50,9 @@ set-data:
     message:
       enabled: true
       attacked:
-        - '&3&l** &oA PLAYER WARPED BEHIND YOU &3&l**'
+        - '&3&l** &oA PLAYER SHIFTED BEHIND YOU &3&l**'
       attacker:
-        - '&3&l** &oTHE WARP SET TELEPORTED YOU &3&l**'
+        - '&3&l** &oTHE SHIFT SET TELEPORTED YOU &3&l**'
 #
 set-pieces:
   helmet:
@@ -62,10 +62,10 @@ set-pieces:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
+      - '&7&o(Requires all 4 shift items.)'
     enchantments:
       - protection_environmental:4
       - durability:3
@@ -77,10 +77,10 @@ set-pieces:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
+      - '&7&o(Requires all 4 shift items.)'
     enchantments:
       - protection_environmental:4
       - durability:3
@@ -92,10 +92,10 @@ set-pieces:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
+      - '&7&o(Requires all 4 shift items.)'
     enchantments:
       - protection_environmental:4
       - durability:3
@@ -107,17 +107,17 @@ set-pieces:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
+      - '&7&o(Requires all 4 shift items.)'
     enchantments:
       - protection_environmental:4
       - durability:3
     item-flags:
 #
 gui:
-  name: '&7&lPURCHASE &3&lWARP SET'
+  name: '&7&lPURCHASE &3&lSHIFT SET'
   type: HOPPER
   size: 5
   1:
@@ -129,11 +129,11 @@ gui:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
-      - '&7'
+      - '&7&o(Requires all 4 shift items.)'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -149,11 +149,11 @@ gui:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
-      - '&7'
+      - '&7&o(Requires all 4 shift items.)'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -169,11 +169,11 @@ gui:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
-      - '&7'
+      - '&7&o(Requires all 4 shift items.)'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -189,11 +189,11 @@ gui:
     lore:
       - '&3Constantly changing location.'
       - ''
-      - '&3&lWARP SET BONUS'
+      - '&3&lSHIFT SET BONUS'
       - '&3* Enemies deal 30% less damage to you.'
       - '&3* Master of Teleportaion Passive Ability.'
-      - '&7&o(Requires all 4 warp items.)'
-      - '&7'
+      - '&7&o(Requires all 4 shift items.)'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

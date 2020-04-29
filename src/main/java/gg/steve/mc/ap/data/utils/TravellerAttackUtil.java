@@ -1,15 +1,13 @@
 package gg.steve.mc.ap.data.utils;
 
 import gg.steve.mc.ap.message.MessageType;
-import gg.steve.mc.ap.utils.LogUtil;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 
@@ -19,21 +17,6 @@ import java.util.UUID;
 
 public class TravellerAttackUtil implements Listener {
     private static List<UUID> fallingBlocks = new ArrayList<>();
-//    private static BukkitTask task;
-//
-//    public static BukkitTask init() {
-//        task = Bukkit.getScheduler().runTaskTimer(ArmorPlus.get(), () -> {
-//            if (fallingBlocks.isEmpty()) return;
-//            for (FallingBlock block : fallingBlocks) {
-//                if (block.set) {
-//                    block.getLocation().getBlock().setType(Material.AIR);
-//                    fallingBlocks.remove(block);
-//                }
-//            }
-//            task.cancel();
-//        },0l, 1l);
-//        return task;
-//    }
 
     public static void attack(Player player, Player damager, int size, double damage, double height, ConfigurationSection section, String entry) {
         for (int x = -size; x <= size; x++) {
@@ -43,16 +26,13 @@ public class TravellerAttackUtil implements Listener {
                 fallingBlocks.add(falling.getUniqueId());
             }
         }
-//        if (task == null) {
-//            init();
-//        }
         player.damage(damage, damager);
         player.setVelocity(player.getVelocity().subtract(player.getVelocity()));
         SoundUtil.playSound(section, entry, player);
         MessageType.doAttackedMessage(section, entry, player);
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void blockPlace(EntityChangeBlockEvent event) {
         if (fallingBlocks.contains(event.getEntity().getUniqueId())) {
             event.setCancelled(true);

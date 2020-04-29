@@ -41,7 +41,7 @@ public class WarpSetData implements SetData {
 
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
-        if (Math.random() * 1 > chance) return;
+        if (Math.random() * 1 > this.chance) return;
         WarpUtil.warp((Player) event.getEntity(), event.getDamager(), this.distance, this.section, this.entry);
         SoundUtil.playSound(this.section, this.entry, (Player) event.getEntity());
         MessageType.doAttackerMessage(this.section, this.entry, (Player) event.getEntity());

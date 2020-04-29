@@ -1,20 +1,24 @@
 
-u	java:S135N"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8³„Í›.
-Q
-java:S1066d"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8³„Í›.
-C	java:S131+""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8³„Í›.
-b
-java:S2259s"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(Ÿû–8Îí¦Í›.
-Q
-java:S1066l"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8³„Í›.
-o
-java:S3776L"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ëÁŸ8³„Í›.
 h
-java:S1192s"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(Ÿû–8œ¤Í›.
+java:S1192v"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(Ÿû–8œ¤Í›.
+C	java:S131+""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8³„Í›.
+Q
+java:S1066o"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8³„Í›.
+K
+java:S1066W"/Merge this if statement with the enclosing one.(ıìt8³„Í›.
+[
+java:S1128	"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8áäÑ›.
+b
+java:S2259v"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(Ÿû–8Îí¦Í›.
+Q
+java:S1066g"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8³„Í›.
 A
 java:S1640'"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8³„Í›.
-=	java:S131Q""Add a default case to this switch.(è¾÷d8Îí¦Í›.
-K
-java:S1066T"/Merge this if statement with the enclosing one.(ıìt8³„Í›.
+=	java:S131T""Add a default case to this switch.(è¾÷d8Îí¦Í›.
 L
-java:S1066\"/Merge this if statement with the enclosing one.(Áå•Ö8³„Í›.
+java:S1066_"/Merge this if statement with the enclosing one.(Áå•Ö8³„Í›.
+o
+java:S3776O"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ëÁŸ8³„Í›.
+u	java:S135Q"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8³„Í›.
+L
+java:S3740Q"/Provide the parametrized type for this generic.(Û‡€Š8å÷÷Ÿœ.

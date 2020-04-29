@@ -155,7 +155,7 @@ gui:
       - '&a* Enemies deal 5% less damage to you.'
       - '&a* Your hunger bar will not deplete.'
       - '&7&o(Requires all 4 feast items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -176,7 +176,7 @@ gui:
       - '&a* Enemies deal 5% less damage to you.'
       - '&a* Your hunger bar will not deplete.'
       - '&7&o(Requires all 4 feast items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -197,7 +197,7 @@ gui:
       - '&a* Enemies deal 5% less damage to you.'
       - '&a* Your hunger bar will not deplete.'
       - '&7&o(Requires all 4 feast items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

@@ -36,10 +36,6 @@ set-data:
     damage-reduction: -1
     health: -1
     kb: -1
-    status-effects:
-      health_boost:
-        duration: 999999
-        level: 2
 #
 set-pieces:
   helmet:
@@ -115,7 +111,7 @@ gui:
       - '&c&lPHANTOM SET BONUS'
       - '&c* Deal +25% damage to all enemies.'
       - '&7&o(Requires all 4 phantom items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -134,7 +130,7 @@ gui:
       - '&c&lPHANTOM SET BONUS'
       - '&c* Deal +25% damage to all enemies.'
       - '&7&o(Requires all 4 phantom items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -153,7 +149,7 @@ gui:
       - '&c&lPHANTOM SET BONUS'
       - '&c* Deal +25% damage to all enemies.'
       - '&7&o(Requires all 4 phantom items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -172,7 +168,7 @@ gui:
       - '&c&lPHANTOM SET BONUS'
       - '&c* Deal +25% damage to all enemies.'
       - '&7&o(Requires all 4 phantom items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4

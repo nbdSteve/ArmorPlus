@@ -136,7 +136,7 @@ gui:
       - '&a* Enemies deal 25% less damage to you.'
       - '&a* Deal +30% damage to all enemies with ranger bow.'
       - '&7&o(Requires all 4 ranger items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -156,7 +156,7 @@ gui:
       - '&a* Enemies deal 25% less damage to you.'
       - '&a* Deal +30% damage to all enemies with ranger bow.'
       - '&7&o(Requires all 4 ranger items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -177,7 +177,7 @@ gui:
       - '&a* Enemies deal 25% less damage to you.'
       - '&a* Deal +30% damage to all enemies with ranger bow.'
       - '&7&o(Requires all 4 ranger items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -197,7 +197,7 @@ gui:
       - '&a* Enemies deal 25% less damage to you.'
       - '&a* Deal +30% damage to all enemies with ranger bow.'
       - '&7&o(Requires all 4 ranger items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - protection_environmental:4
@@ -216,7 +216,7 @@ gui:
       - '&2&lRANGER WEAPON BONUS'
       - '&aDeal +30% bow damage to all enemies.'
       - '&7&o(Requires all 4 ranger set items.)'
-      - '&7'
+      - ''
       - '&c&lCost: $25,000'
     enchantments:
       - durability:3

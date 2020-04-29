@@ -5,12 +5,20 @@ import gg.steve.mc.ap.utils.GuiItemUtil;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class SetGui extends AbstractGui {
+    private ConfigurationSection section;
+    private Set set;
 
     /**
      * Constructor the create a new Gui
      */
     public SetGui(ConfigurationSection section, Set set) {
         super(section, section.getString("type"), section.getInt("size"));
+        this.section = section;
+        this.set = set;
+        refresh();
+    }
+
+    public void refresh() {
         for (String entry : section.getKeys(false)) {
             try {
                 Integer.parseInt(entry);
