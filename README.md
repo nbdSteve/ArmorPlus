@@ -5,7 +5,7 @@ Currently the plugin is free to download from [Spigot](https://www.spigotmc.org/
 
 Carmor can be downloaded from the [plugin page](https://www.spigotmc.org/resources/armorlite-cosmic-armor-yijiki-phantom-more-custom-sets.56616/).
 
-For more information about the plugin, permissions, and commands please refer to the [wiki](https://github.com/nbdSteve/Armor+/wiki).
+For more information about the plugin, permissions, and commands please refer to the [wiki](https://github.com/nbdSteve/ArmorPlus/wiki).
  
 ## Soft Dependencies
 *(required for economy features)*.
