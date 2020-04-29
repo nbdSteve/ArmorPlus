@@ -1,0 +1,13 @@
+
+L
+java:S1874"/Remove this use of "getData"; it is deprecated.(˜Ì8™ûÙâ›.
+V
+java:S1874"9Remove this use of "spawnFallingBlock"; it is deprecated.(˜Ì8ÌÇ¤ã›.
+P
+java:S1128"5Remove this unused import 'org.bukkit.entity.Entity'.(ßº¢õ8ó¥ëä›.
+[
+java:S1128"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8ó¥ëä›.
+T
+java:S1128"9Remove this unused import 'org.bukkit.entity.EntityType'.(‹âÌ8ó¥ëä›.
+a
+java:S1128"?Remove this unused import 'org.bukkit.potion.PotionEffectType'.(«‹éøøÿÿÿÿ8ÜÑß œ.

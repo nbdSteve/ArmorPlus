@@ -1,0 +1,13 @@
+
+
+java:S11868"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àü®Š8öûîà›.
+£
+java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Æù¯äÿÿÿÿÿ8öûîà›.
+£
+java:S1186="€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ…‹Èıÿÿÿÿ8öûîà›.
+
+java:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ì¸†€8öûîà›.
+J
+java:S1068"(Remove this unused "type" private field.(ÚúñŒÿÿÿÿÿ8—‡÷à›.
+£
+java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô¡ìóüÿÿÿÿ8öûîà›.

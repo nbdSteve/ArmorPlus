@@ -11,6 +11,8 @@ commands:
     usage: /<command>
     description: Use this command with no arguments to open the Armor+ purchase gui
     aliases:
+      - a+
+      - armor
       - armor+
       - armorplus
       - aplus
