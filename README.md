@@ -12,4 +12,4 @@ For more information about the plugin, permissions, and commands please refer to
 * [Vault](https://www.spigotmc.org/resources/vault.34315/)
 
 ## Authors
-* Stephen Goodhill - *[Nuer](https://nuer.dev)*
+* Stephen Goodhill - *[nbdSteve](http://steve.gg)*
