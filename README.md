@@ -1,15 +1,15 @@
-# Carmor
-Carmor is a custom armor plugin that aims to emulate the armor mechanics on the popular minecraft server, CosmicPVP. The goal of Carmor is to give server owners the opportunity to add their own take on custom armor to their server. Furthermore, players can utilise these armor sets to change the way they fight other players.
+# Armor+
+Armor+ is a custom armor plugin that aims to emulate the armor mechanics on the popular minecraft server, CosmicPVP. The goal of Carmor is to give server owners the opportunity to add their own take on custom armor to their server. Furthermore, players can utilise these armor sets to change the way they fight other players.
 
 Currently the plugin is free to download from [Spigot](https://www.spigotmc.org/), spigot is an event API for minecraft servers that Carmor uses to enhance the game.
 
 Carmor can be downloaded from the [plugin page](https://www.spigotmc.org/resources/armorlite-cosmic-armor-yijiki-phantom-more-custom-sets.56616/).
 
-For more information about the plugin, permissions, and commands please refer to the [wiki](https://github.com/nbdSteve/Carmor/wiki).
+For more information about the plugin, permissions, and commands please refer to the [wiki](https://github.com/nbdSteve/ArmorPlus/wiki).
  
 ## Soft Dependencies
 *(required for economy features)*.
 * [Vault](https://www.spigotmc.org/resources/vault.34315/)
 
 ## Authors
-* Stephen Goodhill - *[Nuer](https://nuer.dev)*
+* Stephen Goodhill - *[nbdSteve](http://steve.gg)*
