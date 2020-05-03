@@ -1,18 +1,18 @@
 
-S
-java:S1874³"5Remove this use of "setDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.
-d
-java:S1126Ö"AReplace this if-then-else statement by a single return statement.(ï¤‡ïıÿÿÿÿ8×‡ï¶›.
 n
 java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 90 to the 15 allowed.(òìÛ8—Äş™.
+I
+java:S1659""'Declare "numberkey" on a separate line.(ì¨÷‚ÿÿÿÿÿ8—Äş™.
 ]	java:S125O"<This block of commented-out lines of code should be removed.(÷Œ†”ÿÿÿÿÿ8—Äş™.
-t
-java:S3776o"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(‹àŠ¥øÿÿÿÿ8’ó†°›.
-S
-java:S1874³"5Remove this use of "getDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.
 Q
 java:S1066v"/Merge this if statement with the enclosing one.(óä°öùÿÿÿÿ8’ó†°›.
 ]	java:S125_"<This block of commented-out lines of code should be removed.(–‰¡Ğüÿÿÿÿ8—Äş™.
-I
-java:S1659""'Declare "numberkey" on a separate line.(ì¨÷‚ÿÿÿÿÿ8—Äş™.
+S
+java:S1874³"5Remove this use of "setDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.
+t
+java:S3776o"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(‹àŠ¥øÿÿÿÿ8’ó†°›.
+d
+java:S1126Ö"AReplace this if-then-else statement by a single return statement.(ï¤‡ïıÿÿÿÿ8×‡ï¶›.
 X	java:S125"<This block of commented-out lines of code should be removed.(Ê¿Óc8×‡ï¶›.
+S
+java:S1874³"5Remove this use of "getDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.

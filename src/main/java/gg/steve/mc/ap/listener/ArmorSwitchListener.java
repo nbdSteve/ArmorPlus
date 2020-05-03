@@ -5,6 +5,7 @@ import gg.steve.mc.ap.armorequipevent.ArmorListener;
 import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.message.MessageType;
+import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -30,12 +31,17 @@ public class ArmorSwitchListener implements Listener {
         switch (type) {
             case HELMET:
                 if (ArmorListener.isHeadItem(event.getItem())){
+                    if (new NBTItem(event.getItem()).getString("armor+.set").equalsIgnoreCase("")) return;
                     change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getHelmet(), event.getItem());
                     Bukkit.getPluginManager().callEvent(change);
                     if (change.isCancelled()) return;
                     event.setCancelled(true);
                     player.getInventory().setHelmet(change.getNewArmorPiece());
-                    player.setItemInHand(new ItemStack(Material.AIR));
+                    if (change.getOldArmorPiece() != null && !change.getOldArmorPiece().getType().equals(Material.AIR)) {
+                        player.setItemInHand(change.getOldArmorPiece());
+                    } else {
+                        player.setItemInHand(new ItemStack(Material.AIR));
+                    }
                     return;
                 }
                 if (player.getInventory().getHelmet() == null || player.getInventory().getHelmet().getType().equals(Material.AIR)) return;

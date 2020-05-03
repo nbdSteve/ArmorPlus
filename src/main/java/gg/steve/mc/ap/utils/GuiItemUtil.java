@@ -8,6 +8,7 @@ import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.permission.PermissionNode;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -18,7 +19,15 @@ import java.util.UUID;
 public class GuiItemUtil {
 
     public static ItemStack createItem(ConfigurationSection section, String entry, Set set) {
-        ItemBuilderUtil builder = new ItemBuilderUtil(section.getString(entry + ".item"), section.getString(entry + ".data"));
+        String material = section.getString(entry + ".item");
+        if (material.equalsIgnoreCase("skull_item")) {
+            try {
+                Material.valueOf(material.toUpperCase());
+            } catch (NullPointerException e) {
+                material = "legacy_skull_item";
+            }
+        }
+        ItemBuilderUtil builder = new ItemBuilderUtil(material, section.getString(entry + ".data"));
         if (section.getString(entry + ".owner") != null) {
             SkullMeta meta = (SkullMeta) builder.getItemMeta();
             meta.setOwner(Bukkit.getOfflinePlayer(UUID.fromString(section.getString(entry + ".owner"))).getName());
