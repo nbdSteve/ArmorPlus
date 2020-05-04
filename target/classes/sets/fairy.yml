@@ -1,0 +1,215 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&d&l** &oFAIRY SET BONUS ACTIVATED &d&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 0
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&d&l** &oFAIRY SET BONUS DE-ACTIVATED &d&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_no'
+    volume: 1
+    pitch: 0
+#
+#
+set-data:
+  1:
+    type: basic
+    damage-increase: -1
+    damage-reduction: 0.95
+    health: -1
+    kb: -1
+    status-effects:
+      speed:
+        duration: 999999
+        level: 2
+  2:
+    type: fairy
+#
+set-pieces:
+  helmet:
+    name: '&d&lFairy Hood'
+    item: leather_helmet
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+  chestplate:
+    name: '&d&lFairy Shroud'
+    item: leather_chestplate
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+      - hide_attributes
+  leggings:
+    name: '&d&lFairy Robeset'
+    item: leather_leggings
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+  boots:
+    name: '&d&lFairy Sandals'
+    item: leather_boots
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+#
+gui:
+  name: '&7&lPURCHASE &e&lFEATHER SET'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: helmet
+    name: '&d&lFairy Hood'
+    item: leather_helmet
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+    cost: 25000.0
+  2:
+    slot: 1
+    action: chestplate
+    name: '&d&lFairy Shroud'
+    item: leather_chestplate
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+    cost: 25000.0
+  3:
+    slot: 2
+    action: leggings
+    name: '&d&lFairy Robeset'
+    item: leather_leggings
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+    cost: 25000.0
+  4:
+    slot: 3
+    action: boots
+    name: '&d&lFairy Sandals'
+    item: leather_boots
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&dMagical fairy powers, spooky!'
+      - ''
+      - '&d&lFAIRY SET BONUS'
+      - '&d* Enemies deal 5% less damage to you.'
+      - '&d* Permanent speed 2.'
+      - '&7&o(Requires all 4 fairy items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:10
+      - durability:10
+    item-flags:
+    cost: 25000.0
+  5:
+    slot: 4
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    color: 51:255:51
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes

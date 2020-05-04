@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ArmorPlus.iml" filepath="$PROJECT_DIR$/ArmorPlus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../private/Argus/Kingdoms/Kingdoms.iml" filepath="$PROJECT_DIR$/../../private/Argus/Kingdoms/Kingdoms.iml" />
     </modules>
   </component>
 </project>

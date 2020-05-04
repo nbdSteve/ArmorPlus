@@ -8,10 +8,12 @@ import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.permission.PermissionNode;
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.UUID;
@@ -32,6 +34,19 @@ public class GuiItemUtil {
             SkullMeta meta = (SkullMeta) builder.getItemMeta();
             meta.setOwner(Bukkit.getOfflinePlayer(UUID.fromString(section.getString(entry + ".owner"))).getName());
             builder.setItemMeta(meta);
+        }
+        if (section.getString(entry + ".color") != null) {
+            if (material.startsWith("leather")) {
+                String[] parts = section.getString(entry + ".color").split(":");
+                if (parts.length != 3) {
+                    LogUtil.warning("Error when trying to apply color to pieces from the " + set.getName() + " armor set, please check your configuration.");
+                } else {
+                    Color color = Color.fromRGB(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+                    LeatherArmorMeta meta = (LeatherArmorMeta) builder.getItemMeta();
+                    meta.setColor(color);
+                    builder.setItemMeta(meta);
+                }
+            }
         }
         builder.addName(section.getString(entry + ".name"));
         builder.addLore(section.getStringList(entry + ".lore"));

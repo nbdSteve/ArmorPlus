@@ -2,11 +2,11 @@ package gg.steve.mc.ap.armor;
 
 import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.data.*;
+import gg.steve.mc.ap.data.types.*;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.utils.CommandUtil;
 import gg.steve.mc.ap.utils.GuiItemUtil;
-import gg.steve.mc.ap.utils.LogUtil;
 import gg.steve.mc.ap.utils.YamlFileUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -62,10 +62,11 @@ public class Set {
                 case "traveller":
                     this.data.add(new TravellerSetData(dataTypes, entry));
                     break;
-                case "stun":
-                    break;
                 case "hand":
                     this.handData = new HandSetData(dataTypes, entry);
+                    break;
+                case "fairy":
+                    this.data.add(new FairySetData());
                     break;
             }
         }

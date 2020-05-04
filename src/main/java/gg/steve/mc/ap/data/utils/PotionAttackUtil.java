@@ -1,7 +1,7 @@
 package gg.steve.mc.ap.data.utils;
 
 import gg.steve.mc.ap.armor.SetStatusEffectsManager;
-import gg.steve.mc.ap.data.PotionSetData;
+import gg.steve.mc.ap.data.types.PotionSetData;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.configuration.ConfigurationSection;

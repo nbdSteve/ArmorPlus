@@ -1,8 +1,11 @@
 package gg.steve.mc.ap.listener;
 
+import gg.steve.mc.ap.armor.Set;
+import gg.steve.mc.ap.armor.SetManager;
+import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.player.SetPlayer;
 import gg.steve.mc.ap.player.SetPlayerManager;
-import gg.steve.mc.ap.utils.LogUtil;
+import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,7 +30,15 @@ public class ArmorBuffListener implements Listener {
         if (damager == null) {
             damager = (Player) event.getDamager();
         }
-        if (!SetPlayerManager.isWearingSet(damager)) return;
+        if (!SetPlayerManager.isWearingSet(damager)) {
+            if (damager.getItemInHand() == null || damager.getItemInHand().getType().equals(Material.AIR))
+                return;
+            NBTItem nbtItem = new NBTItem(damager.getItemInHand());
+            if (nbtItem.getString("armor+.set").equalsIgnoreCase("")) return;
+            Set set = SetManager.getSet(nbtItem.getString("armor+.set"));
+            set.getHandData().hitWithoutSetBuff(event, damager);
+            return;
+        }
         SetPlayer player = SetPlayerManager.getSetPlayer(damager);
         player.getSet().onHit(event, damager);
     }

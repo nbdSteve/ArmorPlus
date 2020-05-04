@@ -1,0 +1,226 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&f&l** &oYIJIKI SET BONUS ACTIVATED &f&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 0
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&f&l** &oYIJIKI SET BONUS DE-ACTIVATED &f&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_no'
+    volume: 1
+    pitch: 0
+#
+set-data:
+  1:
+    type: basic
+    damage-increase: -1
+    damage-reduction: 0.7
+    health: -1
+    kb: -1
+    status-effects:
+  2:
+    type: lightning
+    chance: 0.1
+    random-radius: true
+    radius: 5.3
+    total-strikes: 5
+    strike-delay-ticks: 10
+    damage-per-strike: 0.4
+    sound:
+      enabled: true
+      type: 'GHAST_SCREAM'
+      volume: 1
+      pitch: 0
+    message:
+      enabled: true
+      attacked:
+        - '&f&l** &oFEEL THE WRATH Of YIJIKI &f&l**'
+      attacker:
+        - '&f&l** &oYIJIKI IS ON YOUR SIDE AND HAS DAMAGED YOUR ENEMIES &f&l**'
+#
+set-pieces:
+  helmet:
+    name: '&f&lMask of Yijki the Destroyer of Worlds'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&fThe god-mask of Yijki, imbued with'
+      - '&fthe power of absolute destruction.'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  chestplate:
+    name: '&f&lMantel of Yijki the Destroyer of Worlds'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&fThe forbidden mantel of Yijki'
+      - '&fwoven from the dust of fallen stars'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  leggings:
+    name: '&f&lRobset of Yijki the Destroyer of Worlds'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&fThe fabled robes of Yijki'
+      - '&fhalf angelic, half demonic'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+  boots:
+    name: '&f&lFootwraps of Yijki the Destroyer of Worlds'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&fLight as a feather, heavy as'
+      - '&fa mountain - the footwraps of Yijki'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+#
+gui:
+  name: '&7&lPURCHASE &f&lYIJIKI SET'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: helmet
+    name: '&f&lMask of Yijki the Destroyer of Worlds'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&fThe god-mask of Yijki, imbued with'
+      - '&fthe power of absolute destruction.'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  2:
+    slot: 1
+    action: chestplate
+    name: '&f&lMantel of Yijki the Destroyer of Worlds'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&fThe forbidden mantel of Yijki'
+      - '&fwoven from the dust of fallen stars'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  3:
+    slot: 2
+    action: leggings
+    name: '&f&lRobset of Yijki the Destroyer of Worlds'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&fThe fabled robes of Yijki'
+      - '&fhalf angelic, half demonic'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  4:
+    slot: 3
+    action: boots
+    name: '&f&lFootwraps of Yijki the Destroyer of Worlds'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&fLight as a feather, heavy as'
+      - '&fa mountain - the footwraps of Yijki'
+      - ''
+      - '&f&lYIJKI SET BONUS'
+      - '&f* Enemies deal 30% less damage to you.'
+      - '&f* Revenge of Yijki Passive Ability.'
+      - '&7&o(Requires all four yijiki items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    cost: 25000.0
+  5:
+    slot: 4
+    action: close
+    name: '&c&lExit'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to close this gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes
