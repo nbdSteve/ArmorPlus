@@ -1,3 +1,9 @@
 
-[
-java:S1128"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8Ÿ¹äÎ›.
+R
+java:S1874""5Remove this use of "getItemInHand"; it is deprecated.(¨±Ï„8ÂÜï.
+R
+java:S1874""5Remove this use of "getItemInHand"; it is deprecated.(¨±Ï„8ÅíØï.
+Q
+java:S1874$"5Remove this use of "getItemInHand"; it is deprecated.(Ú›8Á²ßï.
+U
+java:S2589""8Remove this expression which always evaluates to "false"(¨±Ï„8ÂÜï.

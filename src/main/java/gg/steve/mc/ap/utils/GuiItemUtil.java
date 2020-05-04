@@ -25,7 +25,7 @@ public class GuiItemUtil {
         if (material.equalsIgnoreCase("skull_item")) {
             try {
                 Material.valueOf(material.toUpperCase());
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
                 material = "legacy_skull_item";
             }
         }
