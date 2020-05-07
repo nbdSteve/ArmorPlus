@@ -18,7 +18,6 @@ public class ItemBuilderUtil {
     private ItemStack item;
     private ItemMeta itemMeta;
     private List<String> lore = new ArrayList<>();
-    private Map<Enchantment, Integer> enchantments = new HashMap<>();
     private Set<ItemFlag> flags = new HashSet<>();
     private List<String> placeholders = new ArrayList<>();
     private NBTItem nbtItem;
@@ -29,7 +28,6 @@ public class ItemBuilderUtil {
         this.dataValue = item.getDurability();
         this.itemMeta = item.getItemMeta();
         this.lore = item.getItemMeta().getLore();
-        this.enchantments = item.getEnchantments();
         this.flags = item.getItemMeta().getItemFlags();
     }
 
@@ -66,8 +64,6 @@ public class ItemBuilderUtil {
             String[] enchantmentParts = enchantment.split(":");
             itemMeta.addEnchant(Enchantment.getByName(enchantmentParts[0].toUpperCase()),
                     Integer.parseInt(enchantmentParts[1]), true);
-            this.enchantments.put(Enchantment.getByName(enchantmentParts[0].toUpperCase()),
-                    Integer.parseInt(enchantmentParts[1]));
         }
         item.setItemMeta(itemMeta);
     }
@@ -109,7 +105,7 @@ public class ItemBuilderUtil {
     }
 
     public Map<Enchantment, Integer> getEnchantments() {
-        return enchantments;
+        return itemMeta.getEnchants();
     }
 
     public Set<ItemFlag> getFlags() {

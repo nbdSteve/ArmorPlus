@@ -1,5 +1,6 @@
 package gg.steve.mc.ap;
 
+import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.gui.ApGui;
 import gg.steve.mc.ap.managers.ConfigManager;
@@ -33,6 +34,12 @@ public final class ArmorPlus extends JavaPlugin {
             economy = null;
         }
         LogUtil.info("Thanks for using Armor+, please contact nbdSteve#0583 on discord if you find any bugs!");
+        Bukkit.getScheduler().runTaskLater(this, () -> {
+            for (Set set : SetManager.getSets().values()) {
+                set.loadPieces();
+            }
+            LogUtil.info("Delayed loading of armor set items complete, you may now use commands");
+        }, 10 * 20L);
     }
 
     @Override

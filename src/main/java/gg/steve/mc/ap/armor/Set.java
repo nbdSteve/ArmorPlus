@@ -70,7 +70,10 @@ public class Set {
                     break;
             }
         }
-        ConfigurationSection section = config.getConfigurationSection("set-pieces");
+    }
+
+    public void loadPieces() {
+        ConfigurationSection section = this.config.getConfigurationSection("set-pieces");
         for (String entry : section.getKeys(false)) {
             Piece piece = Piece.valueOf(entry.toUpperCase());
             this.setPieces.put(piece, GuiItemUtil.createItem(section, entry, this));

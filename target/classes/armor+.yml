@@ -161,9 +161,8 @@ gui:
     slot: 9
     action: developer
     name: '&6&lDeveloper Set'
-    item: skull_item
-    data: 3
-    owner: 9914cdba-4333-4da2-a316-70e1b39d8f46
+    item: hdb-1004
+    data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase developer armor.))'

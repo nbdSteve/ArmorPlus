@@ -6,6 +6,8 @@ prefix: Armor+
 authors: [nbdSteve]
 description: Comprehensive and free custom armor plugin, developed by Steve.
 website: http://steve.gg
+softdepend:
+  - HeadDatabase
 commands:
   ap:
     usage: /<command>

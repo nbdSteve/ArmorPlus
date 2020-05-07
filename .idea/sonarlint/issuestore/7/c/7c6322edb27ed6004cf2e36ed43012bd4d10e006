@@ -1,7 +1,15 @@
 
-R
-java:S1874#"0Remove this use of "setOwner"; it is deprecated.(¾€°˜üÿÿÿÿ8ğÆ°›.
 L
-java:S1066'"/Merge this if statement with the enclosing one.(»‡×ˆ8«ÉÒî.
+java:S10663"/Merge this if statement with the enclosing one.(»‡×ˆ8«ÉÒî.
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(õ§’Ş8ôÀèû.
+R
+java:S1874/"0Remove this use of "setOwner"; it is deprecated.(¾€°˜üÿÿÿÿ8ğÆ°›.
 P
-java:S1118":Add a private constructor to hide the implicit public one.(Üâ§º
+java:S1118":Add a private constructor to hide the implicit public one.(Üâ§º
+a
+java:S2259?"EA "NullPointerException" could be thrown; "builder" is nullable here.(â¼†%8£òêû.
+g
+java:S22599"EA "NullPointerException" could be thrown; "builder" is nullable here.(‚‹“šşÿÿÿÿ8£òêû.
+b
+java:S2259."EA "NullPointerException" could be thrown; "builder" is nullable here.(²Øç8£òêû.

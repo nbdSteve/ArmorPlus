@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
+import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -22,14 +23,25 @@ public class GuiItemUtil {
 
     public static ItemStack createItem(ConfigurationSection section, String entry, Set set) {
         String material = section.getString(entry + ".item");
-        if (material.equalsIgnoreCase("skull_item")) {
+        ItemBuilderUtil builder = null;
+        if (material.startsWith("hdb")) {
+            String[] id = section.getString(entry + ".item").split("-");
+            try {
+                builder = new ItemBuilderUtil(new HeadDatabaseAPI().getItemHead(id[1]));
+            } catch (NullPointerException e) {
+                LogUtil.info("Tried to create hdn item but the required plugin 'HeadDatabase' was not found, default type set to stone.");
+                material = "stone";
+            }
+        } else if (material.equalsIgnoreCase("skull_item")) {
             try {
                 Material.valueOf(material.toUpperCase());
             } catch (Exception e) {
                 material = "legacy_skull_item";
             }
+            builder = new ItemBuilderUtil(material, section.getString(entry + ".data"));
+        } else {
+            builder = new ItemBuilderUtil(material, section.getString(entry + ".data"));
         }
-        ItemBuilderUtil builder = new ItemBuilderUtil(material, section.getString(entry + ".data"));
         if (section.getString(entry + ".owner") != null) {
             SkullMeta meta = (SkullMeta) builder.getItemMeta();
             meta.setOwner(Bukkit.getOfflinePlayer(UUID.fromString(section.getString(entry + ".owner"))).getName());

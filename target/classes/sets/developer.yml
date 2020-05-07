@@ -50,9 +50,8 @@ set-data:
 set-pieces:
   helmet:
     name: '&6&lDeveloper Cranium'
-    item: skull_item
-    data: 3
-    owner: 9914cdba-4333-4da2-a316-70e1b39d8f46
+    item: hdb-1004
+    data: 0
     lore:
       - '&6The fabled cranium of the Developer.'
       - ''
@@ -121,9 +120,8 @@ gui:
     slot: 0
     action: helmet
     name: '&6&lDeveloper Cranium'
-    item: skull_item
-    data: 3
-    owner: 9914cdba-4333-4da2-a316-70e1b39d8f46
+    item: hdb-1004
+    data: 0
     lore:
       - '&6The fabled cranium of the Developer.'
       - ''
