@@ -7,6 +7,7 @@ import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.utils.CommandUtil;
 import gg.steve.mc.ap.utils.GuiItemUtil;
+import gg.steve.mc.ap.utils.SoundUtil;
 import gg.steve.mc.ap.utils.YamlFileUtil;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -66,10 +67,11 @@ public class Set {
                     this.handData = new HandSetData(dataTypes, entry);
                     break;
                 case "fairy":
-                    this.data.add(new FairySetData());
+                    this.data.add(new FairySetData(dataTypes, entry));
                     break;
             }
         }
+        loadPieces();
     }
 
     public void loadPieces() {
@@ -78,6 +80,10 @@ public class Set {
             Piece piece = Piece.valueOf(entry.toUpperCase());
             this.setPieces.put(piece, GuiItemUtil.createItem(section, entry, this));
         }
+    }
+
+    public void loadPiece(Piece piece) {
+        this.setPieces.put(piece, GuiItemUtil.createItem(this.config.getConfigurationSection("set-pieces"), piece.name().toLowerCase(), this));
     }
 
     public boolean isWearingSet(Player player, ArmorType type, ItemStack changedItem) {
@@ -135,12 +141,7 @@ public class Set {
         if (this.config.getBoolean(method + ".message.enabled")) {
             MessageType.doMessage(player, this.config.getStringList(method + ".message.text"));
         }
-        if (config.getBoolean(method + ".sound.enabled")) {
-            player.playSound(player.getLocation(),
-                    Sound.valueOf(this.config.getString(method + ".sound.type").toUpperCase()),
-                    this.config.getInt(method + ".sound.volume"),
-                    this.config.getInt(method + ".sound.pitch"));
-        }
+        SoundUtil.playSound(config, method, player);
         if (config.getBoolean(method + ".commands.enabled")) {
             CommandUtil.execute(this.config.getStringList(method + ".commands.list"), player);
         }
@@ -187,12 +188,14 @@ public class Set {
     public void openGui(Player player) {
         if (this.gui == null) {
             this.gui = new SetGui(config.getConfigurationSection("gui"), this);
+        } else {
+            this.gui.refresh();
         }
-        this.gui.refresh();
         this.gui.open(player);
     }
 
     public ItemStack getPiece(Piece piece) {
+        loadPiece(piece);
         return this.setPieces.get(piece);
     }
 

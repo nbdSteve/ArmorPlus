@@ -13,8 +13,6 @@ loaded-sets:
   - developer
   - fairy
 #
-fairy-delay: 0 # This is how often the color of fairy armor will change - the smaller you make this the more laggy the server will be.
-#
 armor-switch:
   enabled: true
   sound:

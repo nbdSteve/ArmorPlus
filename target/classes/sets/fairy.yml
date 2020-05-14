@@ -43,6 +43,9 @@ set-data:
         level: 2
   2:
     type: fairy
+    runnable-delay: 0 # delay in ticks that the runnable will run, the higher this is the less lag it will cause
+    color-jump: 17 # valid values are: 1, 5, 15, 17, 51 (anything that fits into 255 perfectly)
+    top-to-bottom-delay: -1 # set this to -1 if you want all pieces to be the same color at the same time.
 #
 set-pieces:
   helmet:

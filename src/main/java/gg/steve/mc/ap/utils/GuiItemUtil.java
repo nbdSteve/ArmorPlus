@@ -23,14 +23,17 @@ public class GuiItemUtil {
 
     public static ItemStack createItem(ConfigurationSection section, String entry, Set set) {
         String material = section.getString(entry + ".item");
-        ItemBuilderUtil builder = null;
+        ItemBuilderUtil builder = new ItemBuilderUtil("diamond_helmet", "0");
         if (material.startsWith("hdb")) {
-            String[] id = section.getString(entry + ".item").split("-");
-            try {
-                builder = new ItemBuilderUtil(new HeadDatabaseAPI().getItemHead(id[1]));
-            } catch (NullPointerException e) {
-                LogUtil.info("Tried to create hdn item but the required plugin 'HeadDatabase' was not found, default type set to stone.");
-                material = "stone";
+            if (Bukkit.getPluginManager().getPlugin("HeadDatabase") == null) {
+                LogUtil.warning("Tried to create hdb item but the required plugin 'HeadDatabase' was not found, default type set to diamond_helmet.");
+            } else {
+                String[] id = section.getString(entry + ".item").split("-");
+                try {
+                    builder = new ItemBuilderUtil(new HeadDatabaseAPI().getItemHead(id[1]));
+                } catch (NullPointerException e) {
+                    LogUtil.warning("Tried to create hdb item but the required plugin 'HeadDatabase' was not yet loaded, default type set to diamond_helmet.");
+                }
             }
         } else if (material.equalsIgnoreCase("skull_item")) {
             try {
@@ -90,17 +93,18 @@ public class GuiItemUtil {
             NBTItem nbtItem = new NBTItem(set.getPiece(piece));
             nbtItem.setString("armor+.uuid", String.valueOf(UUID.randomUUID()));
             player.getInventory().addItem(nbtItem.getItem());
-        }
-        if (ArmorPlus.eco().getBalance(player) >= section.getDouble(entry + ".cost")) {
-            ArmorPlus.eco().withdrawPlayer(player, section.getDouble(entry + ".cost"));
-            // add a random uuid to the armor piece, it will make the item unstackable
-            NBTItem nbtItem = new NBTItem(set.getPiece(piece));
-            nbtItem.setString("armor+.uuid", String.valueOf(UUID.randomUUID()));
-            player.getInventory().addItem(nbtItem.getItem());
-            MessageType.PURCHASE.message(player, piece.toString(), set.getName());
         } else {
-            player.closeInventory();
-            MessageType.INSUFFICIENT_FUNDS.message(player);
+            if (ArmorPlus.eco().getBalance(player) >= section.getDouble(entry + ".cost")) {
+                ArmorPlus.eco().withdrawPlayer(player, section.getDouble(entry + ".cost"));
+                // add a random uuid to the armor piece, it will make the item unstackable
+                NBTItem nbtItem = new NBTItem(set.getPiece(piece));
+                nbtItem.setString("armor+.uuid", String.valueOf(UUID.randomUUID()));
+                player.getInventory().addItem(nbtItem.getItem());
+                MessageType.PURCHASE.message(player, piece.toString(), set.getName());
+            } else {
+                player.closeInventory();
+                MessageType.INSUFFICIENT_FUNDS.message(player);
+            }
         }
     }
 }

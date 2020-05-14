@@ -1,22 +1,24 @@
 
-Q
-java:S1066k"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8³„Í›.
-L
-java:S3740U"/Provide the parametrized type for this generic.(Û‡€Š8å÷÷Ÿœ.
-h
-java:S1192z"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(Ÿû–8œ¤Í›.
-b
-java:S2259z"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(Ÿû–8Îí¦Í›.
-C	java:S131+""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8³„Í›.
-L
-java:S1066c"/Merge this if statement with the enclosing one.(Áå•Ö8³„Í›.
-Q
-java:S1066s"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8³„Í›.
-u	java:S135U"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8³„Í›.
-K
-java:S1066["/Merge this if statement with the enclosing one.(ıìt8³„Í›.
-=	java:S131X""Add a default case to this switch.(è¾÷d8Îí¦Í›.
+c
+java:S2259€"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(Ÿû–8Îí¦Í›.
+=	java:S131^""Add a default case to this switch.(è¾÷d8Îí¦Í›.
 A
-java:S1640'"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8³„Í›.
+java:S1640("Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8³„Í›.
+L
+java:S1066i"/Merge this if statement with the enclosing one.(Áå•Ö8³„Í›.
+i
+java:S1192€"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(Ÿû–8œ¤Í›.
+K
+java:S1066a"/Merge this if statement with the enclosing one.(ıìt8³„Í›.
+Q
+java:S1066y"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8³„Í›.
 o
-java:S3776S"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ëÁŸ8³„Í›.
+java:S3776Y"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ëÁŸ8³„Í›.
+C	java:S131,""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8³„Í›.
+Q
+java:S1066q"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8³„Í›.
+u	java:S135["YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8³„Í›.
+L
+java:S3740["/Provide the parametrized type for this generic.(Û‡€Š8å÷÷Ÿœ.
+J
+java:S1128"-Remove this unused import 'org.bukkit.Sound'.(‘Ü‘8‡ÜŒŒ¡.

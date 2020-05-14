@@ -2,10 +2,10 @@ package gg.steve.mc.ap.data.types;
 
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.data.SetData;
-import gg.steve.mc.ap.managers.ConfigManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -18,84 +18,114 @@ import java.util.List;
 import java.util.UUID;
 
 public class FairySetData implements SetData {
-    private static List<UUID> fairyPlayers;
-    private static int state, r, g, b;
+    private List<UUID> fairyPlayers;
+    private int state, r, g, b, count, colorJump, topBottomDelay;
+    private Long runnableDelay;
 
-    public FairySetData() {
+    public FairySetData(ConfigurationSection section, String entry) {
+        runnableDelay = section.getLong(entry + ".runnable-delay");
+        colorJump = section.getInt(entry + ".color-jump");
+        topBottomDelay = section.getInt(entry + ".top-to-bottom-delay");
         if (fairyPlayers == null) {
             initialise();
         }
     }
 
-    public static void initialise() {
+    public void initialise() {
         fairyPlayers = new ArrayList<>();
         r = 255;
+        count = 0;
         Bukkit.getScheduler().runTaskTimer(ArmorPlus.get(), () -> {
             if (fairyPlayers.isEmpty()) return;
             if (state == 0) {
-                g++;
+                g += colorJump;
                 if (g == 255)
                     state = 1;
             }
             if (state == 1) {
-                r--;
+                r -= colorJump;
                 if (r == 0)
                     state = 2;
             }
             if (state == 2) {
-                b++;
+                b += colorJump;
                 if (b == 255)
                     state = 3;
             }
             if (state == 3) {
-                g--;
+                g -= colorJump;
                 if (g == 0)
                     state = 4;
             }
             if (state == 4) {
-                r++;
+                r += colorJump;
                 if (r == 255)
                     state = 5;
             }
             if (state == 5) {
-                b--;
+                b -= colorJump;
                 if (b == 0)
                     state = 0;
+            }
+            if (topBottomDelay != -1) {
+                count++;
             }
             Color color = Color.fromRGB(r, g, b);
             for (UUID playerId : fairyPlayers) {
                 Player player = Bukkit.getPlayer(playerId);
-                if (player.getInventory().getHelmet().getType().equals(Material.LEATHER_HELMET)) {
-                    player.getInventory().setHelmet(getColorArmor(player.getInventory().getHelmet(), color));
-                }
-                if (player.getInventory().getChestplate().getType().equals(Material.LEATHER_CHESTPLATE)) {
-                    player.getInventory().setChestplate(getColorArmor(player.getInventory().getChestplate(), color));
-                }
-                if (player.getInventory().getLeggings().getType().equals(Material.LEATHER_LEGGINGS)) {
-                    player.getInventory().setLeggings(getColorArmor(player.getInventory().getLeggings(), color));
-                }
-                if (player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
-                    player.getInventory().setBoots(getColorArmor(player.getInventory().getBoots(), color));
+                if (topBottomDelay == -1) {
+                    if (player.getInventory().getHelmet().getType().equals(Material.LEATHER_HELMET)) {
+                        player.getInventory().setHelmet(getColorArmor(player.getInventory().getHelmet(), color));
+                    }
+                    if (player.getInventory().getChestplate().getType().equals(Material.LEATHER_CHESTPLATE)) {
+                        player.getInventory().setChestplate(getColorArmor(player.getInventory().getChestplate(), color));
+                    }
+                    if (player.getInventory().getLeggings().getType().equals(Material.LEATHER_LEGGINGS)) {
+                        player.getInventory().setLeggings(getColorArmor(player.getInventory().getLeggings(), color));
+                    }
+                    if (player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
+                        player.getInventory().setBoots(getColorArmor(player.getInventory().getBoots(), color));
+                    }
+                } else {
+                    if (count < topBottomDelay) {
+                        if (player.getInventory().getHelmet().getType().equals(Material.LEATHER_HELMET)) {
+                            player.getInventory().setHelmet(getColorArmor(player.getInventory().getHelmet(), color));
+                        }
+                    } else if (count < topBottomDelay * 2) {
+                        if (player.getInventory().getChestplate().getType().equals(Material.LEATHER_CHESTPLATE)) {
+                            player.getInventory().setChestplate(getColorArmor(player.getInventory().getChestplate(), color));
+                        }
+                    } else if (count < topBottomDelay * 3) {
+                        if (player.getInventory().getLeggings().getType().equals(Material.LEATHER_LEGGINGS)) {
+                            player.getInventory().setLeggings(getColorArmor(player.getInventory().getLeggings(), color));
+                        }
+                    } else if (count < topBottomDelay * 4) {
+                        if (player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
+                            player.getInventory().setBoots(getColorArmor(player.getInventory().getBoots(), color));
+                        }
+                    } else {
+                        count = 0;
+                    }
                 }
             }
-        }, 0L, ConfigManager.CONFIG.get().getLong("fairy-delay"));
+        }, 0L, runnableDelay);
     }
 
-    public static boolean isFairyPlayer(UUID playerId) {
+    public boolean isFairyPlayer(UUID playerId) {
         return fairyPlayers.contains(playerId);
     }
 
-    public static void addFairyPlayer(UUID playerId) {
+    public void addFairyPlayer(UUID playerId) {
         if (fairyPlayers.contains(playerId)) return;
         fairyPlayers.add(playerId);
     }
 
-    public static void removeFairyPlayer(UUID playerId) {
+    public void removeFairyPlayer(UUID playerId) {
         if (!fairyPlayers.contains(playerId)) return;
         fairyPlayers.remove(playerId);
     }
 
-    public static ItemStack getColorArmor(ItemStack item, Color color) {
+    public ItemStack getColorArmor(ItemStack item, Color color) {
         LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         meta.setColor(color);
         item.setItemMeta(meta);
@@ -133,43 +163,43 @@ public class FairySetData implements SetData {
     }
 
     // <-- Getters and Setters from this point on -->
-    public static List<UUID> getFairyPlayers() {
+    public List<UUID> getFairyPlayers() {
         return fairyPlayers;
     }
 
-    public static void setFairyPlayers(List<UUID> fairyPlayers) {
-        FairySetData.fairyPlayers = fairyPlayers;
+    public void setFairyPlayers(List<UUID> fairyPlayers) {
+        this.fairyPlayers = fairyPlayers;
     }
 
-    public static int getState() {
+    public int getState() {
         return state;
     }
 
-    public static void setState(int state) {
-        FairySetData.state = state;
+    public void setState(int state) {
+        this.state = state;
     }
 
-    public static int getR() {
+    public int getR() {
         return r;
     }
 
-    public static void setR(int r) {
-        FairySetData.r = r;
+    public void setR(int r) {
+        this.r = r;
     }
 
-    public static int getG() {
+    public int getG() {
         return g;
     }
 
-    public static void setG(int g) {
-        FairySetData.g = g;
+    public void setG(int g) {
+        this.g = g;
     }
 
-    public static int getB() {
+    public int getB() {
         return b;
     }
 
-    public static void setB(int b) {
-        FairySetData.b = b;
+    public void setB(int b) {
+        this.b = b;
     }
 }

@@ -8,6 +8,7 @@ description: Comprehensive and free custom armor plugin, developed by Steve.
 website: http://steve.gg
 softdepend:
   - HeadDatabase
+  - Vault
 commands:
   ap:
     usage: /<command>

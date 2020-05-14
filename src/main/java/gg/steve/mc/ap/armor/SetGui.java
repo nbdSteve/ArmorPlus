@@ -1,8 +1,10 @@
 package gg.steve.mc.ap.armor;
 
+import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.gui.AbstractGui;
 import gg.steve.mc.ap.utils.GuiItemUtil;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Player;
 
 public class SetGui extends AbstractGui {
     private ConfigurationSection section;
@@ -28,6 +30,9 @@ public class SetGui extends AbstractGui {
             setItemInSlot(section.getInt(entry + ".slot"), GuiItemUtil.createItem(section, entry, set), player -> {
                 switch (section.getString(entry + ".action")) {
                     case "none":
+                        break;
+                    case "back":
+                        ArmorPlus.getApGui().open(player);
                         break;
                     case "close":
                         player.closeInventory();

@@ -2,6 +2,7 @@ package gg.steve.mc.ap.data;
 
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetStatusEffectsManager;
+import gg.steve.mc.ap.utils.LogUtil;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -25,7 +26,7 @@ public class BasicSetData implements SetData {
         this.entry = entry;
         this.set = set;
         this.increase = this.section.getDouble(this.entry + ".damage-increase");
-        this.reduction = this.section.getDouble(this.entry + ".damage-decrease");
+        this.reduction = this.section.getDouble(this.entry + ".damage-reduction");
         this.kb = this.section.getDouble(this.entry + ".kb");
         this.health = this.section.getDouble(this.entry + ".health");
         this.effectsManager = new SetStatusEffectsManager(this.section, this.entry, this.set);
@@ -34,16 +35,16 @@ public class BasicSetData implements SetData {
     @Override
     public void onHit(EntityDamageByEntityEvent event, Player damager) {
         if (this.set.getHandData() != null && this.set.verifyPiece(damager.getItemInHand()) && event.getCause().equals(this.set.getHandData().getActiveCause())) {
-            event.setDamage(EntityDamageEvent.DamageModifier.BASE, this.set.getHandData().calculateFinalDamage(event.getDamage(), this.increase));
+            event.setDamage(this.set.getHandData().calculateFinalDamage(event.getDamage(), this.increase));
         } else if (this.increase != -1) {
-            event.setDamage(EntityDamageEvent.DamageModifier.BASE, event.getDamage() * this.increase);
+            event.setDamage(event.getDamage() * this.increase);
         }
     }
 
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
         if (this.reduction != -1) {
-            event.setDamage(EntityDamageEvent.DamageModifier.BASE, event.getDamage() * this.reduction);
+            event.setDamage(event.getDamage() * this.reduction);
         }
         if (this.kb != -1) {
             event.getEntity().setVelocity(event.getDamager().getLocation().getDirection().setY(0).normalize().multiply(this.kb));
