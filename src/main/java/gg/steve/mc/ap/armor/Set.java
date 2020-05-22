@@ -1,16 +1,14 @@
 package gg.steve.mc.ap.armor;
 
 import gg.steve.mc.ap.armorequipevent.ArmorType;
-import gg.steve.mc.ap.data.*;
+import gg.steve.mc.ap.data.BasicSetData;
+import gg.steve.mc.ap.data.HandItemData;
+import gg.steve.mc.ap.data.SetData;
 import gg.steve.mc.ap.data.types.*;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.utils.CommandUtil;
-import gg.steve.mc.ap.utils.GuiItemUtil;
-import gg.steve.mc.ap.utils.SoundUtil;
-import gg.steve.mc.ap.utils.YamlFileUtil;
+import gg.steve.mc.ap.utils.*;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -68,6 +66,9 @@ public class Set {
                     break;
                 case "fairy":
                     this.data.add(new FairySetData(dataTypes, entry));
+                    break;
+                case "engineer":
+                    this.data.add(new EngineerSetData(dataTypes, entry));
                     break;
             }
         }

@@ -61,12 +61,12 @@ set-pieces:
     item: diamond_helmet
     data: 0
     lore:
-      - '&7A hood that fades in and out'
-      - '&7Existance inside the dimension of the owner'
+      - '&dA hood that fades in and out'
+      - '&dExistance inside the dimension of the owner'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
     enchantments:
       - protection_environmental:4
@@ -77,13 +77,13 @@ set-pieces:
     item: diamond_chestplate
     data: 0
     lore:
-      - '&7A cross-dimensional chestplate'
-      - '&7with impossibly infinite density'
-      - '&7and defensive properties.'
+      - '&dA cross-dimensional chestplate'
+      - '&dwith impossibly infinite density'
+      - '&dand defensive properties.'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
     enchantments:
       - protection_environmental:4
@@ -94,13 +94,13 @@ set-pieces:
     item: diamond_leggings
     data: 0
     lore:
-      - '&7Robes that evade the 4th dimension'
-      - '&7are in a state of constant existence'
-      - '&7cross all planets of reality.'
+      - '&dRobes that evade the 4th dimension'
+      - '&dare in a state of constant existence'
+      - '&dcross all planets of reality.'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
     enchantments:
       - protection_environmental:4
@@ -111,13 +111,13 @@ set-pieces:
     item: diamond_boots
     data: 0
     lore:
-      - '&7Sandals capable of breaking through'
-      - '&7dimensional barriers to allow the barer'
-      - '&7to preform impossible feats.'
+      - '&dSandals capable of breaking through'
+      - '&ddimensional barriers to allow the barer'
+      - '&dto preform impossible feats.'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
     enchantments:
       - protection_environmental:4
@@ -135,12 +135,12 @@ gui:
     item: diamond_helmet
     data: 0
     lore:
-      - '&7A hood that fades in and out'
-      - '&7Existance inside the dimension of the owner'
+      - '&dA hood that fades in and out'
+      - '&dExistance inside the dimension of the owner'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
       - ''
       - '&c&lCost: $25,000'
@@ -156,13 +156,13 @@ gui:
     item: diamond_chestplate
     data: 0
     lore:
-      - '&7A cross-dimensional chestplate'
-      - '&7with impossibly infinite density'
-      - '&7and defensive properties.'
+      - '&dA cross-dimensional chestplate'
+      - '&dwith impossibly infinite density'
+      - '&dand defensive properties.'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
       - ''
       - '&c&lCost: $25,000'
@@ -178,13 +178,13 @@ gui:
     item: diamond_leggings
     data: 0
     lore:
-      - '&7Robes that evade the 4th dimension'
-      - '&7are in a state of constant existence'
-      - '&7cross all planets of reality.'
+      - '&dRobes that evade the 4th dimension'
+      - '&dare in a state of constant existence'
+      - '&dcross all planets of reality.'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
       - ''
       - '&c&lCost: $25,000'
@@ -200,13 +200,13 @@ gui:
     item: diamond_boots
     data: 0
     lore:
-      - '&7Sandals capable of breaking through'
-      - '&7dimensional barriers to allow the barer'
-      - '&7to preform impossible feats.'
+      - '&dSandals capable of breaking through'
+      - '&ddimensional barriers to allow the barer'
+      - '&dto preform impossible feats.'
       - ''
       - '&5&lTRAVELLER SET BONUS"'
-      - '&D* You deal 30% more damage.'
-      - '&D* Dimensional Shift Passive Ability.'
+      - '&d* You deal 30% more damage.'
+      - '&d* Dimensional Shift Passive Ability.'
       - '&7&o(Requires all four traveller items.)'
       - ''
       - '&c&lCost: $25,000'

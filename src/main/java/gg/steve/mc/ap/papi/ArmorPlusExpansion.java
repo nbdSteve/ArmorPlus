@@ -3,10 +3,13 @@ package gg.steve.mc.ap.papi;
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetManager;
+import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.player.SetPlayerManager;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+
+import java.nio.file.Files;
 
 public class ArmorPlusExpansion extends PlaceholderExpansion {
     private ArmorPlus instance;
@@ -43,11 +46,12 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player player, String identifier) {
         if (player == null) return "";
+        String fallback = ConfigManager.CONFIG.get().getString("fallback-placeholder");
         if (identifier.equalsIgnoreCase("current_name")) {
             if (SetPlayerManager.isWearingSet(player)) {
                 return SetPlayerManager.getSetPlayer(player).getSet().getName();
             } else {
-                return "N/A";
+                return fallback;
             }
         }
         if (identifier.contains("current_increase")) {
@@ -82,7 +86,7 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
                 }
             }
             if (!SetPlayerManager.isWearingSet(player) && increase == 0) {
-                return "N/A";
+                return fallback;
             }
             if (identifier.endsWith("raw")) {
                 return String.valueOf(increase);
@@ -105,7 +109,7 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
                     return ArmorPlus.formatNumber(Math.abs((SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getReduction() - 1) * 100)) + "%";
                 }
             } else {
-                return "N/A";
+                return fallback;
             }
         }
         if (identifier.contains("current_kb")) {
@@ -119,7 +123,7 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
                     return ArmorPlus.formatNumber(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getKb());
                 }
             } else {
-                return "N/A";
+                return fallback;
             }
         }
         if (identifier.contains("current_health")) {
@@ -135,7 +139,7 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
                     return ArmorPlus.formatNumber(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getHealth() / 2) + ChatColor.RED + "❤";
                 }
             } else {
-                return "N/A";
+                return fallback;
             }
         }
         if (identifier.endsWith("pieces_wearing")) {

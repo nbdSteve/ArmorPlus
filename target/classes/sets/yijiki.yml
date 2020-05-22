@@ -66,7 +66,7 @@ set-pieces:
       - '&fThe god-mask of Yijki, imbued with'
       - '&fthe power of absolute destruction.'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -82,7 +82,7 @@ set-pieces:
       - '&fThe forbidden mantel of Yijki'
       - '&fwoven from the dust of fallen stars'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -91,14 +91,14 @@ set-pieces:
       - durability:3
     item-flags:
   leggings:
-    name: '&f&lRobset of Yijki the Destroyer of Worlds'
+    name: '&f&lRobeset of Yijki the Destroyer of Worlds'
     item: diamond_leggings
     data: 0
     lore:
       - '&fThe fabled robes of Yijki'
       - '&fhalf angelic, half demonic'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -114,7 +114,7 @@ set-pieces:
       - '&fLight as a feather, heavy as'
       - '&fa mountain - the footwraps of Yijki'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -137,7 +137,7 @@ gui:
       - '&fThe god-mask of Yijki, imbued with'
       - '&fthe power of absolute destruction.'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -158,7 +158,7 @@ gui:
       - '&fThe forbidden mantel of Yijki'
       - '&fwoven from the dust of fallen stars'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -172,14 +172,14 @@ gui:
   3:
     slot: 2
     action: leggings
-    name: '&f&lRobset of Yijki the Destroyer of Worlds'
+    name: '&f&lRobeset of Yijki the Destroyer of Worlds'
     item: diamond_leggings
     data: 0
     lore:
       - '&fThe fabled robes of Yijki'
       - '&fhalf angelic, half demonic'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'
@@ -200,7 +200,7 @@ gui:
       - '&fLight as a feather, heavy as'
       - '&fa mountain - the footwraps of Yijki'
       - ''
-      - '&f&lYIJKI SET BONUS'
+      - '&f&lYIJIKI SET BONUS'
       - '&f* Enemies deal 30% less damage to you.'
       - '&f* Revenge of Yijki Passive Ability.'
       - '&7&o(Requires all four yijiki items.)'

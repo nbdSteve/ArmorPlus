@@ -12,6 +12,9 @@ loaded-sets:
   - feast
   - developer
   - fairy
+  - engineer
+#
+fallback-placeholder: 'N/A'
 #
 armor-switch:
   enabled: true
@@ -101,7 +104,7 @@ gui:
       - hide_enchants
   6:
     slot: 5
-    action: warp
+    action: shift
     name: '&3&lShift Set'
     item: ender_pearl
     data: 0
@@ -184,6 +187,20 @@ gui:
     item-flags:
       - hide_enchants
   12:
+    slot: 11
+    action: engineer
+    name: '&6&lEngineer Set'
+    item: tnt
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase engineer armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  13:
     slot: 17
     action: close
     name: '&c&lExit'

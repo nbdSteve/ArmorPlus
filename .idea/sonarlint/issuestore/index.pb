@@ -147,3 +147,7 @@ m
 =src/main/java/gg/steve/mc/ap/data/types/TravellerSetData.java,c\3\c3f5ce2f52d81c5ddb6d08d5e31ab04ee014954d
 i
 9src/main/java/gg/steve/mc/ap/papi/ArmorPlusExpansion.java,6\f\6fef2a1010e432d580b0c770b77eab0206f4e475
+l
+<src/main/java/gg/steve/mc/ap/data/types/EngineerSetData.java,d\d\dd65a82b5cee38332ac44115c417ef5ce2c6dbfe
+o
+?src/main/java/gg/steve/mc/ap/data/utils/EngineerAttackUtil.java,6\5\65785f3b71caf98008595b89eea58afae39ac18e

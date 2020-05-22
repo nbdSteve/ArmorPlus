@@ -3,6 +3,7 @@ package gg.steve.mc.ap.managers;
 import gg.steve.mc.ap.ArmorPlus;
 import gg.steve.mc.ap.armorequipevent.ArmorListener;
 import gg.steve.mc.ap.cmd.ApCmd;
+import gg.steve.mc.ap.data.utils.EngineerAttackUtil;
 import gg.steve.mc.ap.data.utils.TravellerAttackUtil;
 import gg.steve.mc.ap.gui.GuiClickListener;
 import gg.steve.mc.ap.listener.*;
@@ -50,5 +51,6 @@ public class SetupManager {
         pm.registerEvents(new GuiClickListener(), instance);
         pm.registerEvents(new ArmorSwitchListener(), instance);
         pm.registerEvents(new TravellerAttackUtil(), instance);
+        pm.registerEvents(new EngineerAttackUtil(), instance);
     }
 }

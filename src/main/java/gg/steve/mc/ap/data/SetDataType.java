@@ -9,5 +9,6 @@ public enum SetDataType {
     HUNGER,
     TRAVELLER,
     STUN,
-    HAND;
+    HAND,
+    ENGINEER;
 }

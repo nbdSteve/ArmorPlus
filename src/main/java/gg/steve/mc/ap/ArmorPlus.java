@@ -25,6 +25,7 @@ public final class ArmorPlus extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         instance = this;
+        apGui = null;
         SetupManager.setupFiles(new FileManager(instance));
         SetupManager.registerCommands(instance);
         SetupManager.registerEvents(instance);
