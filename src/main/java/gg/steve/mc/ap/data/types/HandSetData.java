@@ -1,5 +1,6 @@
 package gg.steve.mc.ap.data.types;
 
+import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.data.HandItemData;
 import gg.steve.mc.ap.data.SetDataType;
 import org.bukkit.configuration.ConfigurationSection;
@@ -14,14 +15,16 @@ public class HandSetData implements HandItemData {
     private double increase;
     private boolean requireSet;
     private EntityDamageEvent.DamageCause activeCause;
+    private Set set;
 
-    public HandSetData(ConfigurationSection section, String entry) {
+    public HandSetData(ConfigurationSection section, String entry, Set set) {
         this.type = SetDataType.HAND;
         this.section = section;
         this.entry = entry;
         this.increase = this.section.getDouble(this.entry + ".damage-increase");
         this.requireSet = this.section.getBoolean(this.entry + ".require-set");
         this.activeCause = EntityDamageEvent.DamageCause.valueOf(this.section.getString(this.entry + ".damage-cause").toUpperCase());
+        this.set = set;
     }
 
     @Override
@@ -43,6 +46,21 @@ public class HandSetData implements HandItemData {
     @Override
     public EntityDamageEvent.DamageCause getActiveCause() {
         return this.activeCause;
+    }
+
+    @Override
+    public double getIncrease() {
+        return increase;
+    }
+
+    @Override
+    public double getReduction() {
+        return 0;
+    }
+
+    @Override
+    public boolean requiresFullSet() {
+        return requireSet;
     }
 
     // <-- Getters and Setters from this point on -->
@@ -68,10 +86,6 @@ public class HandSetData implements HandItemData {
 
     public void setEntry(String entry) {
         this.entry = entry;
-    }
-
-    public double getIncrease() {
-        return increase;
     }
 
     public void setIncrease(double increase) {

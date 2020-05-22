@@ -1,22 +1,22 @@
 name: ArmorPlus
-version: 2.1.3
+version: 2.1.4
 main: gg.steve.mc.ap.ArmorPlus
 api-version: 1.13
 prefix: Armor+
-authors: [nbdSteve]
+authors: [stevegoodhill]
 description: Comprehensive and free custom armor plugin, developed by Steve.
 website: http://steve.gg
 softdepend:
   - HeadDatabase
   - Vault
+  - PlaceholderAPI
 commands:
   ap:
     usage: /<command>
-    description: Use this command with no arguments to open the Armor+ purchase gui
+    description: Use this command with no arguments to open the Armor+ purchase gui.
     aliases:
       - a+
       - armor
       - armor+
       - armorplus
       - aplus
-      - ca

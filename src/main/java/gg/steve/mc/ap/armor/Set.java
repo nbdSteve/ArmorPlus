@@ -64,7 +64,7 @@ public class Set {
                     this.data.add(new TravellerSetData(dataTypes, entry));
                     break;
                 case "hand":
-                    this.handData = new HandSetData(dataTypes, entry);
+                    this.handData = new HandSetData(dataTypes, entry, this);
                     break;
                 case "fairy":
                     this.data.add(new FairySetData(dataTypes, entry));
@@ -132,6 +132,7 @@ public class Set {
     }
 
     public boolean verifyPiece(ItemStack oldItem) {
+        if (oldItem == null || oldItem.getType().equals(Material.AIR)) return false;
         NBTItem nbtItem = new NBTItem(oldItem);
         if (nbtItem.getString("armor+.set").equalsIgnoreCase("")) return false;
         return nbtItem.getString("armor+.set").equalsIgnoreCase(this.name);
@@ -183,6 +184,10 @@ public class Set {
         for (SetData setData : this.data) {
             setData.onHungerDeplete(event);
         }
+    }
+
+    public BasicSetData getBasicData() {
+        return (BasicSetData) this.data.get(0);
     }
 
     public void openGui(Player player) {

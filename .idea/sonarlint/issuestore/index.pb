@@ -145,3 +145,5 @@ h
 8src/main/java/gg/steve/mc/ap/data/types/HandSetData.java,b\e\beb04398610b4da5f2a038c4bd77b40503cf47cc
 m
 =src/main/java/gg/steve/mc/ap/data/types/TravellerSetData.java,c\3\c3f5ce2f52d81c5ddb6d08d5e31ab04ee014954d
+i
+9src/main/java/gg/steve/mc/ap/papi/ArmorPlusExpansion.java,6\f\6fef2a1010e432d580b0c770b77eab0206f4e475

@@ -1,3 +1,9 @@
 
+W
+java:S18745"5Remove this use of "getItemInHand"; it is deprecated.(á¯×Šùÿÿÿÿ8¬ÄÈÚ£.
 \
-java:S1118	":Add a private constructor to hide the implicit public one.(÷çöıÿÿÿÿ8„ˆ´š.
+java:S1118":Add a private constructor to hide the implicit public one.(÷çöıÿÿÿÿ8„ˆ´š.
+o
+java:S3776$"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(·æ„“8¬ÄÈÚ£.
+o
+java:S1128"RRemove this unused import 'me.clip.placeholderapi.expansion.PlaceholderExpansion'.(£È¶Ÿ8¬ÄÈÚ£.

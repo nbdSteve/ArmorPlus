@@ -1,9 +1,9 @@
 
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(υ§’ή8τΐθϋ.
-R
-java:S18742"0Remove this use of "setOwner"; it is deprecated.(Ύ€°όÿÿÿÿ8πΖ°›.
 P
 java:S1118":Add a private constructor to hide the implicit public one.(άβ§Ί
 L
 java:S10666"/Merge this if statement with the enclosing one.(»‡Χ8«ΙÒξ.
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(υ§’ή8τΐθϋ.
+R
+java:S18742"0Remove this use of "setOwner"; it is deprecated.(Ύ€°όÿÿÿÿ8πΖ°›.

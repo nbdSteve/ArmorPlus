@@ -10,5 +10,11 @@ public interface HandItemData {
 
     double calculateFinalDamage(double damage, double setIncrease);
 
+    double getIncrease();
+
+    double getReduction();
+
+    boolean requiresFullSet();
+
     EntityDamageEvent.DamageCause getActiveCause();
 }

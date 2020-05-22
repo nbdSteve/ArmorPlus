@@ -1,5 +1,12 @@
 package gg.steve.mc.ap.player;
 
+import gg.steve.mc.ap.armor.Piece;
+import gg.steve.mc.ap.armor.Set;
+import gg.steve.mc.ap.armor.SetManager;
+import gg.steve.mc.ap.nbt.NBTItem;
+import gg.steve.mc.ap.utils.LogUtil;
+import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -28,5 +35,36 @@ public class SetPlayerManager {
 
     public static SetPlayer getSetPlayer(Player player) {
         return playersWearingSets.get(player.getUniqueId());
+    }
+
+    public static int getPiecesWearing(Set set, Player player) {
+        int wearing = 0;
+        for (Piece piece : set.getSetPieces().keySet()) {
+            switch (piece) {
+                case HELMET:
+                    if (set.verifyPiece(player.getInventory().getHelmet())) wearing++;
+                    break;
+                case CHESTPLATE:
+                    if (set.verifyPiece(player.getInventory().getChestplate())) wearing++;
+                    break;
+                case LEGGINGS:
+                    if (set.verifyPiece(player.getInventory().getLeggings())) wearing++;
+                    break;
+                case BOOTS:
+                    if (set.verifyPiece(player.getInventory().getBoots())) wearing++;
+                    break;
+                case HAND:
+                    if (set.verifyPiece(player.getInventory().getItemInHand())) wearing++;
+                    break;
+            }
+        }
+        return wearing;
+    }
+
+    public static Set getSetFromHand(Player player) {
+        if (player.getItemInHand() == null || player.getItemInHand().getType().equals(Material.AIR)) return null;
+        NBTItem hand = new NBTItem(player.getItemInHand());
+        if (hand.getString("armor+.set").equalsIgnoreCase("")) return null;
+        return SetManager.getSet(hand.getString("armor+.set"));
     }
 }
