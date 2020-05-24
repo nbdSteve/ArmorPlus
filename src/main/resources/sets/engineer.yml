@@ -39,7 +39,7 @@ set-data:
     status-effects:
   2:
     type: engineer
-    chance: 1.0
+    chance: 0.04
     random-radius: true
     radius: 5.3
     total-tnt: 5

@@ -6,6 +6,7 @@ import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
+import gg.steve.mc.ap.utils.LogUtil;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -27,10 +28,10 @@ public class ArmorSwitchListener implements Listener {
         if (!new NBTItem(event.getItem()).getString("armor+.set").equalsIgnoreCase("") && ArmorListener.isHeadItem(event.getItem())) {
             event.setCancelled(true);
         }
-        if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled")) return;
         ArmorType type = ArmorType.matchType(event.getItem());
         Player player = event.getPlayer();
         ArmorEquipEvent change;
+        if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled") && !ArmorListener.isHeadItem(event.getItem()) && !event.getPlayer().getInventory().getHelmet().getType().equals(Material.AIR)) return;
         switch (type) {
             case HELMET:
                 if (ArmorListener.isHeadItem(event.getItem())){

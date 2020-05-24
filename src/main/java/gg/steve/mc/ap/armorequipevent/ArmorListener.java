@@ -1,5 +1,7 @@
 package gg.steve.mc.ap.armorequipevent;
 
+import gg.steve.mc.ap.managers.ConfigManager;
+import gg.steve.mc.ap.utils.LogUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -33,7 +35,10 @@ public class ArmorListener implements Listener {
     public final void inventoryClick(final InventoryClickEvent e) {
         boolean shift = false, numberkey = false;
         if (e.isCancelled()) return;
-        if (e.getAction() == InventoryAction.NOTHING) return;// Why does this get called if nothing happens??
+        if (e.getAction() == InventoryAction.NOTHING) {
+            if (e.getCursor() == null || !ConfigManager.CONFIG.get().getStringList("head-items").contains(e.getCursor().getType().toString().toLowerCase()))
+                return;// Why does this get called if nothing happens??
+        }
         if (e.getClick().equals(ClickType.SHIFT_LEFT) || e.getClick().equals(ClickType.SHIFT_RIGHT)) {
             shift = true;
         }
@@ -53,7 +58,8 @@ public class ArmorListener implements Listener {
             return;
         }
         if (shift) {
-            if (e.getRawSlot() != ArmorType.HELMET.getSlot() && (isHeadItem(e.getCurrentItem()) || isHeadItem(e.getCursor()))) return;
+            if (e.getRawSlot() != ArmorType.HELMET.getSlot() && (isHeadItem(e.getCurrentItem()) || isHeadItem(e.getCursor())))
+                return;
             newArmorType = ArmorType.matchType(e.getCurrentItem());
             if (newArmorType != null) {
                 boolean equipping = true;
@@ -211,7 +217,7 @@ public class ArmorListener implements Listener {
 
     public static boolean isHeadItem(ItemStack item) {
         String type = item.getType().name();
-        if (type.endsWith("SKULL_ITEM") || type.endsWith("_SKULL") || type.endsWith("PLAYER_HEAD"))
+        if (type.endsWith("SKULL_ITEM") || type.endsWith("_SKULL") || type.endsWith("PLAYER_HEAD") || ConfigManager.CONFIG.get().getStringList("head-items").contains(type.toLowerCase()))
             return true;
         return false;
     }

@@ -19,7 +19,7 @@ public final class ArmorPlus extends JavaPlugin {
     private static Economy economy;
     private static ApGui apGui;
     private static DecimalFormat numberFormat = new DecimalFormat("#,###.##");
-    private static String version = "2.1.4";
+    private static String version = "2.1.5";
 
     @Override
     public void onEnable() {

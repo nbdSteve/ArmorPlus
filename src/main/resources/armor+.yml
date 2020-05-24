@@ -16,6 +16,9 @@ loaded-sets:
 #
 fallback-placeholder: 'N/A'
 #
+head-items:
+  #- stone
+#
 armor-switch:
   enabled: true
   sound:

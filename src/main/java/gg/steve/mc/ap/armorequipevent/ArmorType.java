@@ -1,5 +1,6 @@
 package gg.steve.mc.ap.armorequipevent;
 
+import gg.steve.mc.ap.managers.ConfigManager;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -24,7 +25,7 @@ public enum ArmorType {
     public static ArmorType matchType(final ItemStack itemStack) {
         if (ArmorListener.isAirOrNull(itemStack)) return null;
         String type = itemStack.getType().name();
-        if (type.endsWith("_HELMET") || type.endsWith("SKULL_ITEM") || type.endsWith("_SKULL") || type.endsWith("PLAYER_HEAD"))
+        if (type.endsWith("_HELMET") || type.endsWith("SKULL_ITEM") || type.endsWith("_SKULL") || type.endsWith("PLAYER_HEAD") || ConfigManager.CONFIG.get().getStringList("head-items").contains(type.toLowerCase()))
             return HELMET;
         else if (type.endsWith("_CHESTPLATE") || type.endsWith("ELYTRA")) return CHESTPLATE;
         else if (type.endsWith("_LEGGINGS")) return LEGGINGS;
