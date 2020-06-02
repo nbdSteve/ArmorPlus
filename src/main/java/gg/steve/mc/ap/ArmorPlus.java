@@ -9,10 +9,14 @@ import gg.steve.mc.ap.papi.ArmorPlusExpansion;
 import gg.steve.mc.ap.player.SetPlayerManager;
 import gg.steve.mc.ap.utils.LogUtil;
 import net.milkbowl.vault.economy.Economy;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.Callable;
 
 public final class ArmorPlus extends JavaPlugin {
     private static ArmorPlus instance;
@@ -25,6 +29,7 @@ public final class ArmorPlus extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         instance = this;
+        // reset apgui to null for reloading
         apGui = null;
         SetupManager.setupFiles(new FileManager(instance));
         SetupManager.registerCommands(instance);
@@ -39,10 +44,20 @@ public final class ArmorPlus extends JavaPlugin {
             LogUtil.info("Unable to find economy instance, disabling economy features. If you intend to use economy please install Vault and an economy plugin.");
             economy = null;
         }
+        // placeholder hook
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             LogUtil.info("PlaceholderAPI found, registering expansion with it now...");
             new ArmorPlusExpansion(instance).register();
         }
+        // metrics, just doing it here for now
+        Metrics metrics = new Metrics(this, 7719);
+        metrics.addCustomChart(new Metrics.MultiLineChart("players_and_servers", () -> {
+            Map<String, Integer> valueMap = new HashMap<>();
+            valueMap.put("servers", 1);
+            valueMap.put("players", Bukkit.getOnlinePlayers().size());
+            return valueMap;
+        }));
+        // send nice message
         LogUtil.info("Thanks for using Armor+ v" + version + ", please contact nbdSteve#0583 on discord if you find any bugs.");
     }
 

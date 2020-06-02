@@ -37,5 +37,15 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.shynixn.headdatabase:hdb-api:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: me.clip:placeholderapi:2.10.3" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: me.anybody:advancedabilitiesapi:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/main/lib/AdvancedAbilitiesAPI.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Maven: org.bstats:bstats-bukkit:1.7" level="project" />
   </component>
 </module>

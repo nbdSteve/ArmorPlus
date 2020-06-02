@@ -13,6 +13,7 @@ loaded-sets:
   - developer
   - fairy
   - engineer
+  - color-way
 #
 fallback-placeholder: 'N/A'
 #
@@ -204,6 +205,20 @@ gui:
     item-flags:
       - hide_enchants
   13:
+    slot: 12
+    action: color-way
+    name: '&b&lColor Way Set'
+    item: bucket
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase color way armor.))'
+      - '&7'
+    enchantments:
+      - lure:1
+    item-flags:
+      - hide_enchants
+  14:
     slot: 17
     action: close
     name: '&c&lExit'

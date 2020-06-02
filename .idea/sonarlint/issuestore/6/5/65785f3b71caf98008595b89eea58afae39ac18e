@@ -1,0 +1,16 @@
+
+C
+java:S1659"'Declare "fuseDelay" on a separate line.(…Ûs8ïÕ›æ£.
+D
+java:S1659"(Declare "tntDropped" on a separate line.(…Ûs8Éùîä£.
+t
+java:S37765"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÀËÀƒÿÿÿÿÿ8ö½øä£.
+F
+java:S1659"$Declare "height" on a separate line.(Ïñ‚Áşÿÿÿÿ8©•îä£.
+]	java:S107'"AConstructor has 9 parameters, which is greater than 7 authorized.(õÜ½õ8ÍÎğä£.
+]	java:S125a"<This block of commented-out lines of code should be removed.(Î¥«íùÿÿÿÿ8öç‹ç£.
+t	java:S135?"YReduce the total number of break and continue statements in this loop to use at most one.(ïê³D8ö½øä£.
+[
+java:S1128"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8“¿Ûæ£.
+F
+java:S1659"$Declare "damage" on a separate line.(Ïñ‚Áşÿÿÿÿ8©•îä£.

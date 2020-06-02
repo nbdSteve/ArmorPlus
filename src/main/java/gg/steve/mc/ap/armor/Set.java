@@ -7,7 +7,10 @@ import gg.steve.mc.ap.data.SetData;
 import gg.steve.mc.ap.data.types.*;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.utils.*;
+import gg.steve.mc.ap.utils.CommandUtil;
+import gg.steve.mc.ap.utils.GuiItemUtil;
+import gg.steve.mc.ap.utils.SoundUtil;
+import gg.steve.mc.ap.utils.YamlFileUtil;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -69,6 +72,9 @@ public class Set {
                     break;
                 case "engineer":
                     this.data.add(new EngineerSetData(dataTypes, entry));
+                    break;
+                case "color-way":
+                    this.data.add(new ColorWaySetData(dataTypes, entry, this));
                     break;
             }
         }

@@ -6,7 +6,6 @@ import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.utils.LogUtil;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -31,10 +30,11 @@ public class ArmorSwitchListener implements Listener {
         ArmorType type = ArmorType.matchType(event.getItem());
         Player player = event.getPlayer();
         ArmorEquipEvent change;
-        if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled") && !ArmorListener.isHeadItem(event.getItem()) && !event.getPlayer().getInventory().getHelmet().getType().equals(Material.AIR)) return;
+        if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled") && !ArmorListener.isHeadItem(event.getItem()) && !event.getPlayer().getInventory().getHelmet().getType().equals(Material.AIR))
+            return;
         switch (type) {
             case HELMET:
-                if (ArmorListener.isHeadItem(event.getItem())){
+                if (ArmorListener.isHeadItem(event.getItem())) {
                     if (new NBTItem(event.getItem()).getString("armor+.set").equalsIgnoreCase("")) return;
                     change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getHelmet(), event.getItem());
                     Bukkit.getPluginManager().callEvent(change);
@@ -47,28 +47,32 @@ public class ArmorSwitchListener implements Listener {
                     }
                     return;
                 }
-                if (player.getInventory().getHelmet() == null || player.getInventory().getHelmet().getType().equals(Material.AIR)) return;
+                if (player.getInventory().getHelmet() == null || player.getInventory().getHelmet().getType().equals(Material.AIR))
+                    return;
                 change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getHelmet(), event.getItem());
                 Bukkit.getPluginManager().callEvent(change);
                 if (change.isCancelled()) return;
                 player.getInventory().setHelmet(change.getNewArmorPiece());
                 break;
             case CHESTPLATE:
-                if (player.getInventory().getChestplate() == null || player.getInventory().getChestplate().getType().equals(Material.AIR)) return;
+                if (player.getInventory().getChestplate() == null || player.getInventory().getChestplate().getType().equals(Material.AIR))
+                    return;
                 change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getChestplate(), event.getItem());
                 Bukkit.getPluginManager().callEvent(change);
                 if (change.isCancelled()) return;
                 player.getInventory().setChestplate(change.getNewArmorPiece());
                 break;
             case LEGGINGS:
-                if (player.getInventory().getLeggings() == null || player.getInventory().getLeggings().getType().equals(Material.AIR)) return;
+                if (player.getInventory().getLeggings() == null || player.getInventory().getLeggings().getType().equals(Material.AIR))
+                    return;
                 change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getLeggings(), event.getItem());
                 Bukkit.getPluginManager().callEvent(change);
                 if (change.isCancelled()) return;
                 player.getInventory().setLeggings(change.getNewArmorPiece());
                 break;
             case BOOTS:
-                if (player.getInventory().getBoots() == null || player.getInventory().getBoots().getType().equals(Material.AIR)) return;
+                if (player.getInventory().getBoots() == null || player.getInventory().getBoots().getType().equals(Material.AIR))
+                    return;
                 change = new ArmorEquipEvent(player, ArmorEquipEvent.EquipMethod.HOTBAR_SWAP, type, player.getInventory().getBoots(), event.getItem());
                 Bukkit.getPluginManager().callEvent(change);
                 if (change.isCancelled()) return;
@@ -77,8 +81,8 @@ public class ArmorSwitchListener implements Listener {
             default:
                 return;
         }
-        SoundUtil.playSound(ConfigManager.CONFIG.get(),"armor-switch", player);
-        MessageType.doProcMessage(ConfigManager.CONFIG.get(),"armor-switch", player);
+        SoundUtil.playSound(ConfigManager.CONFIG.get(), "armor-switch", player);
+        MessageType.doProcMessage(ConfigManager.CONFIG.get(), "armor-switch", player);
         player.setItemInHand(change.getOldArmorPiece());
     }
 }

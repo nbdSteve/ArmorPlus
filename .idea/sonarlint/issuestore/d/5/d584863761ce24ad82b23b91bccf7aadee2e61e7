@@ -1,9 +1,11 @@
 
 W
-java:S1874-"5Remove this use of "setItemInHand"; it is deprecated.(æ¥šûÿÿÿÿ8§¦Ü¶›.
+java:S1874,"5Remove this use of "setItemInHand"; it is deprecated.(¤Â¨¨úÿÿÿÿ8œÖˆÏ.
 W
-java:S1874Q"5Remove this use of "setItemInHand"; it is deprecated.(¤Â¨¨úÿÿÿÿ8éÅ²›.
+java:S1874."5Remove this use of "setItemInHand"; it is deprecated.(æ¥šûÿÿÿÿ8§¦Ü¶›.
 o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(»òœ…8æô—³›.
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(»òœ…8æô—³›.
+[
+java:S1128	"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8çÈ°¤.
 W
-java:S1874+"5Remove this use of "setItemInHand"; it is deprecated.(¤Â¨¨úÿÿÿÿ8œÖˆÏ.
+java:S1874R"5Remove this use of "setItemInHand"; it is deprecated.(¤Â¨¨úÿÿÿÿ8éÅ²›.

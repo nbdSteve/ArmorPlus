@@ -10,5 +10,7 @@ public enum SetDataType {
     TRAVELLER,
     STUN,
     HAND,
-    ENGINEER;
+    ENGINEER,
+    ADVANCED_ABILITY,
+    COLOR_WAY;
 }

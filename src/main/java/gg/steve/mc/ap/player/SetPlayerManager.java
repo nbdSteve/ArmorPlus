@@ -6,6 +6,7 @@ import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.nbt.NBTItem;
 import gg.steve.mc.ap.utils.LogUtil;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
@@ -18,6 +19,14 @@ public class SetPlayerManager {
 
     public static void init() {
         playersWearingSets = new HashMap<>();
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            for (Set set : SetManager.getSets().values()) {
+                if (!set.isWearingSet(player, null, null)) continue;
+                SetPlayerManager.addSetPlayer(player, set.getName());
+                set.apply(player);
+                return;
+            }
+        }
     }
 
     public static void addSetPlayer(Player player, String setName) {

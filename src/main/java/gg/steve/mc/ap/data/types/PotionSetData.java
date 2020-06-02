@@ -1,6 +1,7 @@
 package gg.steve.mc.ap.data.types;
 
 import gg.steve.mc.ap.armor.Set;
+import gg.steve.mc.ap.armor.SetStatusEffectsManager;
 import gg.steve.mc.ap.data.SetData;
 import gg.steve.mc.ap.data.SetDataType;
 import gg.steve.mc.ap.data.utils.PotionAttackUtil;
@@ -27,7 +28,8 @@ public class PotionSetData implements SetData {
 
     public enum ActivationType {
         PASSIVE,
-        AGGRESSIVE;
+        AGGRESSIVE,
+        ATTACK;
     }
 
     public PotionSetData(ConfigurationSection section, String entry, Set set) {
@@ -62,9 +64,15 @@ public class PotionSetData implements SetData {
     public void onHit(EntityDamageByEntityEvent event, Player damager) {
         if (activation.equals(ActivationType.PASSIVE)) return;
         if (Math.random() * 1 > this.chance) return;
-        new PotionAttackUtil(this.effect, this.randomRadius, this.radius, this.activation, this.section, this.entry).applyEffects(event, damager);
-        SoundUtil.playSound(this.section, this.entry, damager);
-        MessageType.doAttackerMessage(this.section, this.entry, damager);
+        if (activation.equals(ActivationType.AGGRESSIVE)) {
+            new PotionAttackUtil(this.effect, this.randomRadius, this.radius, this.activation, this.section, this.entry).applyEffects(event, damager);
+            SoundUtil.playSound(this.section, this.entry, damager);
+            MessageType.doAttackerMessage(this.section, this.entry, damager);
+        } else if (activation.equals(ActivationType.ATTACK)) {
+            SetStatusEffectsManager.potionCheck(damager, this.effect.getType(), this.effect.getAmplifier());
+            SoundUtil.playSound(this.section, this.entry, damager);
+            MessageType.doAttackerMessage(this.section, this.entry, damager);
+        }
     }
 
     @Override

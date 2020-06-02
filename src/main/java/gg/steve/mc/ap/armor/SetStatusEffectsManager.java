@@ -43,6 +43,14 @@ public class SetStatusEffectsManager {
         }
     }
 
+    public List<PotionEffect> getEffects() {
+        return effects;
+    }
+
+    public void setEffects(List<PotionEffect> effects) {
+        this.effects = effects;
+    }
+
     /**
      * If the player has that potion effect but the amplifier is less that the level, remove it
      *
@@ -57,13 +65,5 @@ public class SetStatusEffectsManager {
                 player.removePotionEffect(type);
             }
         }
-    }
-
-    public List<PotionEffect> getEffects() {
-        return effects;
-    }
-
-    public void setEffects(List<PotionEffect> effects) {
-        this.effects = effects;
     }
 }

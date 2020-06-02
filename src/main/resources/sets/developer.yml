@@ -49,6 +49,12 @@ set-data:
 #
 set-pieces:
   helmet:
+    #commands run when the player equips the piece
+    commands:
+      apply:
+        - say example equip command for {player} helmet
+      remove:
+        - say example removal command for {player} helmet
     name: '&6&lDeveloper Cranium'
     item: hdb-1004
     data: 0
