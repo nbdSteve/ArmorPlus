@@ -9,16 +9,17 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-public class WarpSetData implements SetData {
+public class ShiftSetData implements SetData {
     private SetDataType type;
     private ConfigurationSection section;
     private String entry;
     private double chance;
     private double distance;
 
-    public WarpSetData(ConfigurationSection section, String entry) {
+    public ShiftSetData(ConfigurationSection section, String entry) {
         this.type = SetDataType.WARP;
         this.section = section;
         this.entry = entry;
@@ -56,6 +57,11 @@ public class WarpSetData implements SetData {
 
     @Override
     public void onHungerDeplete(FoodLevelChangeEvent event) {
+
+    }
+
+    @Override
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
 
     }
 

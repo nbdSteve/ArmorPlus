@@ -1,22 +1,22 @@
 
-i
-java:S1192"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(Ÿû–8”ÿ¦å£.
-A
-java:S1640&"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8³„Í›.
-L
-java:S1066j"/Merge this if statement with the enclosing one.(Áå•Ö8”ÿ¦å£.
-=	java:S131_""Add a default case to this switch.(è¾÷d8”ÿ¦å£.
-c
-java:S2259"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(Ÿû–8”ÿ¦å£.
-Q
-java:S1066r"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8”ÿ¦å£.
 o
-java:S3776Z"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ëÁŸ8”ÿ¦å£.
-u	java:S135\"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8”ÿ¦å£.
-L
-java:S3740\"/Provide the parametrized type for this generic.(Û‡€Š8”ÿ¦å£.
+java:S3776d"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ëÁŸ8‘´–Â².
+R
+java:S1066„"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8‘´–Â².
+=	java:S131i""Add a default case to this switch.(è¾÷d8‘´–Â².
+A
+java:S1640*"Convert this Map to an EnumMap.(¦‚”ÿÿÿÿÿ8³„Í›.
+u	java:S135f"YReduce the total number of break and continue statements in this loop to use at most one.(Û‡€Š8‘´–Â².
 K
-java:S1066b"/Merge this if statement with the enclosing one.(ıìt8”ÿ¦å£.
-C	java:S131*""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8³„Í›.
+java:S1066l"/Merge this if statement with the enclosing one.(ıìt8‘´–Â².
+L
+java:S1066t"/Merge this if statement with the enclosing one.(Áå•Ö8‘´–Â².
+C	java:S131.""Add a default case to this switch.(Ñï¶™üÿÿÿÿ8³„Í›.
+L
+java:S3740f"/Provide the parametrized type for this generic.(Û‡€Š8‘´–Â².
+i
+java:S1192‹"KDefine a constant instead of duplicating this literal "armor+.set" 4 times.(Ÿû–8‘´–Â².
+c
+java:S2259‹"EA "NullPointerException" could be thrown; "nbtItem" is nullable here.(Ÿû–8‘´–Â².
 Q
-java:S1066z"/Merge this if statement with the enclosing one.(…ÛÍûÿÿÿÿ8”ÿ¦å£.
+java:S1066|"/Merge this if statement with the enclosing one.(¡š„úÿÿÿÿ8‘´–Â².

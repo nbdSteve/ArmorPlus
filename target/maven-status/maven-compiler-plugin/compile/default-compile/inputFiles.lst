@@ -10,7 +10,6 @@ D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\utils\WarpUti
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\PotionSetData.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\armor\SetManager.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\HandSetData.java
-D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\WarpSetData.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\utils\actionbarapi\ActionBarType.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTType.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\SetData.java
@@ -45,6 +44,7 @@ D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\armor\SetType.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\AdvancedAbilitiesSetData.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\gui\GuiClickListener.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\player\SetPlayer.java
+D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\ExperienceSetData.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\listener\PlayerUnequipListener.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\nmsmappings\PackageWrapper.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\cmd\sub\GiveCmd.java
@@ -53,6 +53,7 @@ D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\utils\Travell
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\cmd\sub\HelpCmd.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\armorequipevent\DispenserArmorListener.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\FairySetData.java
+D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\ShiftSetData.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\gui\ApGui.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\utils\GuiItemUtil.java
 D:\Java\minecraft\free\ArmorPlus\src\main\java\gg\steve\mc\ap\ArmorPlus.java

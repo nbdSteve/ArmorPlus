@@ -1,6 +1,7 @@
 package gg.steve.mc.ap.data.types;
 
 import gg.steve.mc.ap.ArmorPlus;
+import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.data.AbstractSetData;
 import gg.steve.mc.ap.data.SetData;
@@ -12,6 +13,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -22,6 +24,7 @@ public class ColorWaySetData extends AbstractSetData implements SetData {
     private List<UUID> colorWayPlayers;
     private Map<ColorType, List<Integer>> colorMap;
     private int r, g, b, rCount, gCount, bCount, count, topBottomDelay;
+//    private Map<ItemStack, Color> baseColors;
     private Long runnableDelay;
 
     public enum ColorType {
@@ -34,6 +37,11 @@ public class ColorWaySetData extends AbstractSetData implements SetData {
         super(SetDataType.COLOR_WAY, section, entry, set);
         runnableDelay = section.getLong(entry + ".runnable-delay");
         topBottomDelay = section.getInt(entry + ".top-to-bottom-delay");
+//        baseColors = new HashMap<>();
+//        for (ItemStack item : set.getSetPieces().values()) {
+//            LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
+//            baseColors.put(item, meta.getColor());
+//        }
         colorMap = new HashMap<>();
         for (ColorType color : ColorType.values()) {
             colorMap.put(color, new ArrayList<>(section.getIntegerList(entry + "." + color.name().toLowerCase())));
@@ -72,43 +80,52 @@ public class ColorWaySetData extends AbstractSetData implements SetData {
                 count++;
             }
             Color color = Color.fromRGB(r, g, b);
+            List<UUID> removed = new ArrayList<>();
             for (UUID playerId : colorWayPlayers) {
                 Player player = Bukkit.getPlayer(playerId);
-                if (topBottomDelay == -1) {
-                    if (player.getInventory().getHelmet().getType().equals(Material.LEATHER_HELMET)) {
-                        player.getInventory().setHelmet(getColorArmor(player.getInventory().getHelmet(), color));
-                    }
-                    if (player.getInventory().getChestplate().getType().equals(Material.LEATHER_CHESTPLATE)) {
-                        player.getInventory().setChestplate(getColorArmor(player.getInventory().getChestplate(), color));
-                    }
-                    if (player.getInventory().getLeggings().getType().equals(Material.LEATHER_LEGGINGS)) {
-                        player.getInventory().setLeggings(getColorArmor(player.getInventory().getLeggings(), color));
-                    }
-                    if (player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
-                        player.getInventory().setBoots(getColorArmor(player.getInventory().getBoots(), color));
-                    }
-                } else {
-                    if (count < topBottomDelay) {
+                try {
+                    if (topBottomDelay == -1) {
                         if (player.getInventory().getHelmet().getType().equals(Material.LEATHER_HELMET)) {
                             player.getInventory().setHelmet(getColorArmor(player.getInventory().getHelmet(), color));
                         }
-                    } else if (count < topBottomDelay * 2) {
                         if (player.getInventory().getChestplate().getType().equals(Material.LEATHER_CHESTPLATE)) {
                             player.getInventory().setChestplate(getColorArmor(player.getInventory().getChestplate(), color));
                         }
-                    } else if (count < topBottomDelay * 3) {
                         if (player.getInventory().getLeggings().getType().equals(Material.LEATHER_LEGGINGS)) {
                             player.getInventory().setLeggings(getColorArmor(player.getInventory().getLeggings(), color));
                         }
-                    } else if (count < topBottomDelay * 4) {
                         if (player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
                             player.getInventory().setBoots(getColorArmor(player.getInventory().getBoots(), color));
                         }
                     } else {
-                        count = 0;
+                        if (count < topBottomDelay) {
+                            if (player.getInventory().getHelmet().getType().equals(Material.LEATHER_HELMET)) {
+                                player.getInventory().setHelmet(getColorArmor(player.getInventory().getHelmet(), color));
+                            }
+                        } else if (count < topBottomDelay * 2) {
+                            if (player.getInventory().getChestplate().getType().equals(Material.LEATHER_CHESTPLATE)) {
+                                player.getInventory().setChestplate(getColorArmor(player.getInventory().getChestplate(), color));
+                            }
+                        } else if (count < topBottomDelay * 3) {
+                            if (player.getInventory().getLeggings().getType().equals(Material.LEATHER_LEGGINGS)) {
+                                player.getInventory().setLeggings(getColorArmor(player.getInventory().getLeggings(), color));
+                            }
+                        } else if (count < topBottomDelay * 4) {
+                            if (player.getInventory().getBoots().getType().equals(Material.LEATHER_BOOTS)) {
+                                player.getInventory().setBoots(getColorArmor(player.getInventory().getBoots(), color));
+                            }
+                        } else {
+                            count = 0;
+                        }
                     }
+                } catch (NullPointerException e) {
+                    removed.add(playerId);
                 }
             }
+            for (UUID playerId : removed) {
+                removeColorWayPlayer(playerId);
+            }
+            removed.clear();
         }, 0L, runnableDelay);
     }
 
@@ -135,12 +152,12 @@ public class ColorWaySetData extends AbstractSetData implements SetData {
 
     @Override
     public void onApply(Player player) {
-        colorWayPlayers.add(player.getUniqueId());
+        addColorWayPlayer(player.getUniqueId());
     }
 
     @Override
     public void onRemoval(Player player) {
-        colorWayPlayers.remove(player.getUniqueId());
+        removeColorWayPlayer(player.getUniqueId());
     }
 
     @Override
@@ -160,6 +177,11 @@ public class ColorWaySetData extends AbstractSetData implements SetData {
 
     @Override
     public void onHungerDeplete(FoodLevelChangeEvent event) {
+
+    }
+
+    @Override
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
 
     }
 }

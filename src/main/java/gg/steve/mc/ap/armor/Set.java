@@ -17,6 +17,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -49,8 +50,8 @@ public class Set {
                 case "lightning":
                     this.data.add(new LightningSetData(dataTypes, entry));
                     break;
-                case "warp":
-                    this.data.add(new WarpSetData(dataTypes, entry));
+                case "shift":
+                    this.data.add(new ShiftSetData(dataTypes, entry));
                     break;
                 case "potion":
                     this.data.add(new PotionSetData(dataTypes, entry, this));
@@ -75,6 +76,9 @@ public class Set {
                     break;
                 case "color-way":
                     this.data.add(new ColorWaySetData(dataTypes, entry, this));
+                    break;
+                case "experience":
+                    this.data.add(new ExperienceSetData(dataTypes, entry, this));
                     break;
             }
         }
@@ -190,6 +194,12 @@ public class Set {
     public void onHungerDeplete(FoodLevelChangeEvent event) {
         for (SetData setData : this.data) {
             setData.onHungerDeplete(event);
+        }
+    }
+
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
+        for (SetData setData : this.data) {
+            setData.onTargetDeath(event, killer);
         }
     }
 

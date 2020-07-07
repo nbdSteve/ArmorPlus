@@ -1,23 +1,23 @@
 
+o
+java:S37761"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(·æ„“8¬ÄÈÚ£.
+R
+java:S1874J"5Remove this use of "getItemInHand"; it is deprecated.(É‘ÿ¾8à¶¿à£.
 H
-java:S1168A"+Return an empty collection instead of null.(É‘ÿ¾8à¶¿à£.
-R
-java:S1874A"5Remove this use of "getItemInHand"; it is deprecated.(É‘ÿ¾8à¶¿à£.
+java:S1168L"+Return an empty collection instead of null.(•ä”8ğ±Âà£.
 W
-java:S1874B"5Remove this use of "getItemInHand"; it is deprecated.(’”÷âûÿÿÿÿ8Ş²Àà£.
-R
-java:S1874A"5Remove this use of "getItemInHand"; it is deprecated.(É‘ÿ¾8à¶¿à£.
+java:S1874K"5Remove this use of "getItemInHand"; it is deprecated.(’”÷âûÿÿÿÿ8Ş²Àà£.
+W
+java:S1874B"5Remove this use of "getItemInHand"; it is deprecated.(á¯×Šùÿÿÿÿ8¬ÄÈÚ£.
+H
+java:S1168J"+Return an empty collection instead of null.(É‘ÿ¾8à¶¿à£.
 o
 java:S1128"RRemove this unused import 'me.clip.placeholderapi.expansion.PlaceholderExpansion'.(£È¶Ÿ8¬ÄÈÚ£.
-o
-java:S3776("RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(·æ„“8¬ÄÈÚ£.
-H
-java:S1168C"+Return an empty collection instead of null.(•ä”8ğ±Âà£.
-\
-java:S1118":Add a private constructor to hide the implicit public one.(÷çöıÿÿÿÿ8„ˆ´š.
-W
-java:S18749"5Remove this use of "getItemInHand"; it is deprecated.(á¯×Šùÿÿÿÿ8¬ÄÈÚ£.
-U
-java:S2589A"8Remove this expression which always evaluates to "false"(É‘ÿ¾8à¶¿à£.
 [
 java:S1128"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8‹°äà£.
+\
+java:S1118":Add a private constructor to hide the implicit public one.(÷çöıÿÿÿÿ8„ˆ´š.
+R
+java:S1874J"5Remove this use of "getItemInHand"; it is deprecated.(É‘ÿ¾8à¶¿à£.
+U
+java:S2589J"8Remove this expression which always evaluates to "false"(É‘ÿ¾8à¶¿à£.

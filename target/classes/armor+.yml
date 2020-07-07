@@ -1,19 +1,20 @@
 # Armor+ - Developed by nbdSteve, free for all! <3
 #
 loaded-sets:
-  - phantom
-  - yeti
-  - yijiki
-  - alchemist
-  - traveller
-  - ranger
-  - shift
-  - feather
-  - feast
-  - developer
-  - fairy
-  - engineer
-  - color-way
+  - 'phantom'
+  - 'yeti'
+  - 'yijiki'
+  - 'alchemist'
+  - 'traveller'
+  - 'ranger'
+  - 'shift'
+  - 'feather'
+  - 'feast'
+  - 'developer'
+  - 'fairy'
+  - 'engineer'
+  - 'color-way'
+  - 'experience'
 #
 fallback-placeholder: 'N/A'
 #
@@ -34,195 +35,209 @@ armor-switch:
 #
 gui:
   name: '&5&lArmor&d&l+'
-  type: none
+  type: 'none'
   size: 18
   1:
     slot: 0
-    action: phantom
+    action: 'phantom'
     name: '&c&lPhantom Set'
-    item: blaze_powder
+    item: 'blaze_powder'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase phantom armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   2:
     slot: 1
-    action: yeti
+    action: 'yeti'
     name: '&b&lYeti Set'
-    item: ice
+    item: 'ice'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase yeti armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   3:
     slot: 2
-    action: yijiki
+    action: 'yijiki'
     name: '&f&lYijiki Set'
-    item: flint_and_steel
+    item: 'flint_and_steel'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase yijiki armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   4:
     slot: 3
-    action: feather
+    action: 'feather'
     name: '&e&lFeather Set'
-    item: feather
+    item: 'feather'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase feather armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   5:
     slot: 4
-    action: feast
+    action: 'feast'
     name: '&a&lFeast Set'
-    item: cooked_beef
+    item: 'cooked_beef'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase feast armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   6:
     slot: 5
-    action: shift
+    action: 'shift'
     name: '&3&lShift Set'
-    item: ender_pearl
+    item: 'ender_pearl'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase shit armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   7:
     slot: 6
-    action: ranger
+    action: 'ranger'
     name: '&2&lRanger Set'
-    item: bow
+    item: 'bow'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase ranger armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   8:
     slot: 7
-    action: alchemist
+    action: 'alchemist'
     name: '&4&lAlchemist Set'
-    item: magma_cream
+    item: 'magma_cream'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase alchemist armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   9:
     slot: 8
-    action: traveller
+    action: 'traveller'
     name: '&5&lTraveller Set'
-    item: map
+    item: 'map'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase traveller armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   10:
     slot: 9
-    action: developer
+    action: 'developer'
     name: '&6&lDeveloper Set'
-    item: hdb-1004
+    item: 'hdb-1004'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase developer armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   11:
     slot: 10
-    action: fairy
+    action: 'fairy'
     name: '&d&lFairy Set'
-    item: stick
+    item: 'stick'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase fairy armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   12:
     slot: 11
-    action: engineer
+    action: 'engineer'
     name: '&6&lEngineer Set'
-    item: tnt
+    item: 'tnt'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase engineer armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   13:
     slot: 12
-    action: color-way
+    action: 'color-way'
     name: '&b&lColor Way Set'
-    item: bucket
+    item: 'bucket'
     data: 0
     lore:
       - '&7'
       - '&7&o((left-click to purchase color way armor.))'
       - '&7'
     enchantments:
-      - lure:1
+      - 'lure:1'
     item-flags:
-      - hide_enchants
+      - 'hide_enchants'
   14:
+    slot: 13
+    action: 'experience'
+    name: '&5&lExperience Set'
+    item: 'stone'
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left-click to purchase experience armor.))'
+      - '&7'
+    enchantments:
+      - 'lure:1'
+    item-flags:
+      - 'hide_enchants'
+  15:
     slot: 17
-    action: close
+    action: 'close'
     name: '&c&lExit'
-    item: barrier
+    item: 'barrier'
     data: 0
     lore:
       - '&7'
@@ -230,4 +245,4 @@ gui:
       - '&7'
     enchantments:
     item-flags:
-      - hide_attributes
+      - 'hide_attributes'

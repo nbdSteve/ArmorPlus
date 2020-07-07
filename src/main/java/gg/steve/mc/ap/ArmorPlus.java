@@ -16,7 +16,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 public final class ArmorPlus extends JavaPlugin {
     private static ArmorPlus instance;

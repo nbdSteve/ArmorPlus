@@ -2,6 +2,11 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="vault-repo" />
       <option name="name" value="vault-repo" />
       <option name="url" value="http://nexus.hc.to/content/repositories/pub_releases" />
@@ -30,6 +35,11 @@
       <option name="id" value="CodeMC" />
       <option name="name" value="CodeMC" />
       <option name="url" value="https://repo.codemc.org/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="github" />
+      <option name="name" value="GitHub nbdSteve Apache Maven Packages" />
+      <option name="url" value="https://maven.pkg.github.com/nbdSteve/ToolsPlus" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="spigotmc-repo" />

@@ -9,6 +9,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
 public class EngineerSetData implements SetData {
@@ -64,6 +65,11 @@ public class EngineerSetData implements SetData {
 
     @Override
     public void onHungerDeplete(FoodLevelChangeEvent event) {
+
+    }
+
+    @Override
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
 
     }
 

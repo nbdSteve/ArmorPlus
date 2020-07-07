@@ -37,10 +37,17 @@ set-data:
     damage-reduction: 0.70
     health: -1
     kb: -1
+    speed:
+      walk:
+        set: -1
+        default: -1
+      fly:
+        set: -1
+        default: -1
     status-effects:
   2:
     type: shift
-    chance: 1
+    chance: 0.09
     distance: 5.3
     sound:
       enabled: true
@@ -56,7 +63,7 @@ set-data:
 #
 set-pieces:
   helmet:
-    name: '&3&lWarp Hood'
+    name: '&3&lShift Hood'
     item: diamond_helmet
     data: 0
     lore:
@@ -71,7 +78,7 @@ set-pieces:
       - durability:3
     item-flags:
   chestplate:
-    name: '&3&lWarp Shroud'
+    name: '&3&lShift Shroud'
     item: diamond_chestplate
     data: 0
     lore:
@@ -86,7 +93,7 @@ set-pieces:
       - durability:3
     item-flags:
   leggings:
-    name: '&3&lWarp Robeset'
+    name: '&3&lShift Robeset'
     item: diamond_leggings
     data: 0
     lore:
@@ -101,7 +108,7 @@ set-pieces:
       - durability:3
     item-flags:
   boots:
-    name: '&3&lWarp Sandals'
+    name: '&3&lShift Sandals'
     item: diamond_boots
     data: 0
     lore:
@@ -123,7 +130,7 @@ gui:
   1:
     slot: 0
     action: helmet
-    name: '&3&lWarp Hood'
+    name: '&3&lShift Hood'
     item: diamond_helmet
     data: 0
     lore:
@@ -143,7 +150,7 @@ gui:
   2:
     slot: 1
     action: chestplate
-    name: '&3&lWarp Shroud'
+    name: '&3&lShift Shroud'
     item: diamond_chestplate
     data: 0
     lore:
@@ -163,7 +170,7 @@ gui:
   3:
     slot: 2
     action: leggings
-    name: '&3&lWarp Robeset'
+    name: '&3&lShift Robeset'
     item: diamond_leggings
     data: 0
     lore:
@@ -183,7 +190,7 @@ gui:
   4:
     slot: 3
     action: boots
-    name: '&3&lWarp Sandals'
+    name: '&3&lShift Sandals'
     item: diamond_boots
     data: 0
     lore:

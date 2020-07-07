@@ -76,8 +76,11 @@ public class ItemBuilderUtil {
         item.setItemMeta(itemMeta);
     }
 
-    public void addNBT(String name) {
+    public void addNBT(String name, boolean unbreakable) {
         nbtItem = new NBTItem(item);
+        if (unbreakable) {
+            nbtItem.setBoolean("Unbreakable", true);
+        }
         nbtItem.setString("armor+.set", name);
     }
 

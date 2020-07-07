@@ -4,10 +4,10 @@ import gg.steve.mc.ap.armor.Set;
 import org.bukkit.configuration.ConfigurationSection;
 
 public abstract class AbstractSetData {
-    private SetDataType dataType;
-    private ConfigurationSection section;
-    private String entry;
-    private Set set;
+    protected SetDataType dataType;
+    protected ConfigurationSection section;
+    protected String entry;
+    protected Set set;
 
     public AbstractSetData(SetDataType dataType, ConfigurationSection section, String entry, Set set) {
         this.dataType = dataType;
@@ -30,5 +30,21 @@ public abstract class AbstractSetData {
 
     public Set getSet() {
         return set;
+    }
+
+    public void setDataType(SetDataType dataType) {
+        this.dataType = dataType;
+    }
+
+    public void setSection(ConfigurationSection section) {
+        this.section = section;
+    }
+
+    public void setEntry(String entry) {
+        this.entry = entry;
+    }
+
+    public void setSet(Set set) {
+        this.set = set;
     }
 }

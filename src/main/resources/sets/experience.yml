@@ -1,0 +1,221 @@
+#
+apply:
+  message:
+    enabled: true
+    text:
+      - '&5&l** &oEXPERIENCE SET BONUS ACTIVATED &5&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 0
+#
+remove:
+  message:
+    enabled: true
+    text:
+      - '&5&l** &oEXPERIENCE SET BONUS DE-ACTIVATED &5&l**'
+  commands:
+    enabled: false
+    list:
+      - msg {player} example command
+  sound:
+    enabled: true
+    type: 'villager_no'
+    volume: 1
+    pitch: 0
+#
+set-data:
+  1:
+    type: basic
+    damage-increase: -1
+    damage-reduction: 0.65
+    health: -1
+    kb: -1
+    speed:
+      walk:
+        set: 0.1
+        default: 1.0
+      fly:
+        set: -1
+        default: -1
+    status-effects:
+  2:
+    type: 'experience'
+    chance: 1.00
+    multiplier:
+      random: true
+      minimum: 1.8
+      maximum: 3.2
+#
+set-pieces:
+  helmet:
+    name: '&5&lExperience Face Mask'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&dNew age experience helmet for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+  chestplate:
+    name: '&5&lExperience Explosive-Proof Vest'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&dNew age experience chestplate for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+  leggings:
+    name: '&5&lExperience Protective Chaps'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&dNew age experience leggings for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+  boots:
+    name: '&5&lExperience Steel Toed Boots'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&dNew age experience boots for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+#
+gui:
+  name: '&7&lPURCHASE &5&lEXPERIENCE SET'
+  type: HOPPER
+  size: 5
+  1:
+    slot: 0
+    action: helmet
+    name: '&5&lExperience Face Mask'
+    item: diamond_helmet
+    data: 0
+    lore:
+      - '&dNew age experience helmet for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+    cost: 25000.0
+  2:
+    slot: 1
+    action: chestplate
+    name: '&5&lExperience Explosive-Proof Vest'
+    item: diamond_chestplate
+    data: 0
+    lore:
+      - '&dNew age experience chestplate for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+    cost: 25000.0
+  3:
+    slot: 2
+    action: leggings
+    name: '&5&lExperience Protective Chaps'
+    item: diamond_leggings
+    data: 0
+    lore:
+      - '&dNew age experience leggings for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+    cost: 25000.0
+  4:
+    slot: 3
+    action: boots
+    name: '&5&lExperience Steel Toed Boots'
+    item: diamond_boots
+    data: 0
+    lore:
+      - '&dNew age experience boots for competent looters.'
+      - ''
+      - '&5&lEXPERIENCE SET BONUS'
+      - '&d* Enemies deal %15 less damage to you.'
+      - '&d* All entities drop 30-50% more experience.'
+      - '&7&o(Requires all four experience items.)'
+      - ''
+      - '&c&lCost: $25,000'
+    enchantments:
+      - protection_environmental:4
+      - durability:3
+    item-flags:
+    unbreakable: true
+    cost: 25000.0
+  5:
+    slot: 4
+    action: back
+    name: '&c&lBack'
+    item: barrier
+    data: 0
+    lore:
+      - '&7'
+      - '&7&o((left click to return to the previous gui))'
+      - '&7'
+    enchantments:
+    item-flags:
+      - hide_attributes

@@ -3,6 +3,7 @@ package gg.steve.mc.ap.data;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
 public interface SetData {
@@ -18,4 +19,6 @@ public interface SetData {
     void onFall(EntityDamageEvent event);
 
     void onHungerDeplete(FoodLevelChangeEvent event);
+
+    void onTargetDeath(EntityDeathEvent event, Player killer);
 }

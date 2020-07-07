@@ -68,7 +68,7 @@ public class GuiItemUtil {
         builder.addEnchantments(section.getStringList(entry + ".enchantments"));
         builder.addItemFlags(section.getStringList(entry + ".item-flags"));
         if (set != null) {
-            builder.addNBT(set.getName());
+            builder.addNBT(set.getName(), section.getBoolean(entry + ".unbreakable"));
         }
         return builder.getItem();
     }

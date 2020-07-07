@@ -8,6 +8,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
 public class HungerSetData implements SetData {
@@ -53,6 +54,11 @@ public class HungerSetData implements SetData {
         ((Player) event.getEntity()).setSaturation(20f);
         SoundUtil.playSound(this.section, this.entry, (Player) event.getEntity());
         MessageType.doProcMessage(this.section, this.entry, (Player) event.getEntity());
+    }
+
+    @Override
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
+
     }
 
     // <-- Getters and Setters from this point on -->

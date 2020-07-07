@@ -1,22 +1,22 @@
 
-t
-java:S3776u"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(‹àŠ¥øÿÿÿÿ8’ó†°›.
-I
-java:S1659$"'Declare "numberkey" on a separate line.(ì¨÷‚ÿÿÿÿÿ8—Äş™.
-S
-java:S1874¹"5Remove this use of "setDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.
-]	java:S125e"<This block of commented-out lines of code should be removed.(–‰¡Ğüÿÿÿÿ8—Äş™.
-d
-java:S1126Ü"AReplace this if-then-else statement by a single return statement.(ÕÃ”ÿÿÿÿÿ8€ß­¤.
-X	java:S125¤"<This block of commented-out lines of code should be removed.(Ê¿Óc8×‡ï¶›.
+]	java:S125U"<This block of commented-out lines of code should be removed.(÷Œ†”ÿÿÿÿÿ8—Äş™.
 K
 java:S1066'"/Merge this if statement with the enclosing one.(ã“›+8·†ğ°¤.
-]	java:S125U"<This block of commented-out lines of code should be removed.(÷Œ†”ÿÿÿÿÿ8—Äş™.
+t
+java:S3776u"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(‹àŠ¥øÿÿÿÿ8’ó†°›.
+]	java:S125e"<This block of commented-out lines of code should be removed.(–‰¡Ğüÿÿÿÿ8—Äş™.
+I
+java:S1659$"'Declare "numberkey" on a separate line.(ì¨÷‚ÿÿÿÿÿ8—Äş™.
 n
 java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 93 to the 15 allowed.(òìÛ8—Äş™.
+X	java:S125¤"<This block of commented-out lines of code should be removed.(Ê¿Óc8×‡ï¶›.
+S
+java:S1874¹"5Remove this use of "setDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.
 Q
 java:S1066|"/Merge this if statement with the enclosing one.(óä°öùÿÿÿÿ8’ó†°›.
-[
-java:S1128"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8¸í†±¤.
+d
+java:S1126Ü"AReplace this if-then-else statement by a single return statement.(ÕÃ”ÿÿÿÿÿ8€ß­¤.
 S
 java:S1874¹"5Remove this use of "getDurability"; it is deprecated.(’¹Ãı8×‡ï¶›.
+[
+java:S1128"9Remove this unused import 'gg.steve.mc.ap.utils.LogUtil'.(¿¤ù„şÿÿÿÿ8¸í†±¤.

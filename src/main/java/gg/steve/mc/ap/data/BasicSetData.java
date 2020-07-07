@@ -2,33 +2,28 @@ package gg.steve.mc.ap.data;
 
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetStatusEffectsManager;
-import gg.steve.mc.ap.utils.LogUtil;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 
-public class BasicSetData implements SetData {
-    private SetDataType type;
-    private ConfigurationSection section;
-    private String entry;
-    private Set set;
-    private double increase;
-    private double reduction;
-    private double kb;
-    private double health;
+public class BasicSetData extends AbstractSetData implements SetData {
+    private double increase, reduction, kb, health;
+    private float walkSpeedSet, walkSpeedDefault, flySpeedSet, flySpeedDefault;
     private SetStatusEffectsManager effectsManager;
 
     public BasicSetData(ConfigurationSection section, String entry, Set set) {
-        this.type = SetDataType.BASIC;
-        this.section = section;
-        this.entry = entry;
-        this.set = set;
+        super(SetDataType.BASIC, section, entry, set);
         this.increase = this.section.getDouble(this.entry + ".damage-increase");
         this.reduction = this.section.getDouble(this.entry + ".damage-reduction");
         this.kb = this.section.getDouble(this.entry + ".kb");
         this.health = this.section.getDouble(this.entry + ".health");
+        this.walkSpeedSet = (float) this.section.getDouble(this.entry + ".speed.walk.set");
+        this.walkSpeedDefault = (float) this.section.getDouble(this.entry + ".speed.walk.default");
+        this.flySpeedSet = (float) this.section.getDouble(this.entry + ".speed.fly.set");
+        this.flySpeedDefault = (float) this.section.getDouble(this.entry + ".speed.fly.default");
         this.effectsManager = new SetStatusEffectsManager(this.section, this.entry, this.set);
     }
 
@@ -56,6 +51,12 @@ public class BasicSetData implements SetData {
         if (this.health != -1) {
             player.setMaxHealth(this.health);
         }
+        if (this.walkSpeedSet != -1) {
+            player.setWalkSpeed(this.walkSpeedSet);
+        }
+        if (this.flySpeedSet != -1) {
+            player.setFlySpeed(this.flySpeedSet);
+        }
         this.effectsManager.applyEffects(player);
     }
 
@@ -63,6 +64,12 @@ public class BasicSetData implements SetData {
     public void onRemoval(Player player) {
         if (this.health != -1) {
             player.setMaxHealth(20.0);
+        }
+        if (this.walkSpeedDefault != -1) {
+            player.setWalkSpeed(this.walkSpeedDefault);
+        }
+        if (this.flySpeedDefault != -1) {
+            player.setFlySpeed(this.flySpeedDefault);
         }
         this.effectsManager.removeEffects(player);
     }
@@ -77,15 +84,12 @@ public class BasicSetData implements SetData {
 
     }
 
+    @Override
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
+
+    }
+
     // <-- Getters and Setters from this point on -->
-    public SetDataType getType() {
-        return type;
-    }
-
-    public void setType(SetDataType type) {
-        this.type = type;
-    }
-
     public double getIncrease() {
         return increase;
     }
@@ -118,35 +122,43 @@ public class BasicSetData implements SetData {
         this.health = health;
     }
 
-    public ConfigurationSection getSection() {
-        return section;
-    }
-
-    public void setSection(ConfigurationSection section) {
-        this.section = section;
-    }
-
-    public String getEntry() {
-        return entry;
-    }
-
-    public void setEntry(String entry) {
-        this.entry = entry;
-    }
-
-    public Set getSet() {
-        return set;
-    }
-
-    public void setSet(Set set) {
-        this.set = set;
-    }
-
     public SetStatusEffectsManager getEffectsManager() {
         return effectsManager;
     }
 
     public void setEffectsManager(SetStatusEffectsManager effectsManager) {
         this.effectsManager = effectsManager;
+    }
+
+    public float getWalkSpeedSet() {
+        return walkSpeedSet;
+    }
+
+    public void setWalkSpeedSet(float walkSpeedSet) {
+        this.walkSpeedSet = walkSpeedSet;
+    }
+
+    public float getWalkSpeedDefault() {
+        return walkSpeedDefault;
+    }
+
+    public void setWalkSpeedDefault(float walkSpeedDefault) {
+        this.walkSpeedDefault = walkSpeedDefault;
+    }
+
+    public float getFlySpeedSet() {
+        return flySpeedSet;
+    }
+
+    public void setFlySpeedSet(float flySpeedSet) {
+        this.flySpeedSet = flySpeedSet;
+    }
+
+    public float getFlySpeedDefault() {
+        return flySpeedDefault;
+    }
+
+    public void setFlySpeedDefault(float flySpeedDefault) {
+        this.flySpeedDefault = flySpeedDefault;
     }
 }

@@ -1,7 +1,7 @@
 
-G
-java:S1874%"1Remove this use of "ItemStack"; it is deprecated.(‚¼é«
-P
-java:S1874"5Remove this use of "getDurability"; it is deprecated.(Ž“Ïýþÿÿÿÿ
 L
 java:S1874A"1Remove this use of "getByName"; it is deprecated.(·éÁ˜üÿÿÿÿ
+P
+java:S1874"5Remove this use of "getDurability"; it is deprecated.(Ž“Ïýþÿÿÿÿ
+G
+java:S1874%"1Remove this use of "ItemStack"; it is deprecated.(‚¼é«

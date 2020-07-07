@@ -37,6 +37,13 @@ set-data:
     damage-reduction: 0.95
     health: -1
     kb: -1
+    speed:
+      walk:
+        set: -1
+        default: -1
+      fly:
+        set: -1
+        default: -1
     status-effects:
   2:
     type: fall

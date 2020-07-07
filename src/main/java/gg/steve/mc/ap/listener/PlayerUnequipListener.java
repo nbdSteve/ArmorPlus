@@ -41,7 +41,7 @@ public class PlayerUnequipListener implements Listener {
     }
 
     @EventHandler
-    public void join(PlayerQuitEvent event) {
+    public void quit(PlayerQuitEvent event) {
         for (Set set : SetManager.getSets().values()) {
             if (!set.isWearingSet(event.getPlayer(), null, null)) continue;
             SetPlayerManager.removeSetPlayer(event.getPlayer());

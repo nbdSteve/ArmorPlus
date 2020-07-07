@@ -151,3 +151,13 @@ l
 <src/main/java/gg/steve/mc/ap/data/types/EngineerSetData.java,d\d\dd65a82b5cee38332ac44115c417ef5ce2c6dbfe
 o
 ?src/main/java/gg/steve/mc/ap/data/utils/EngineerAttackUtil.java,6\5\65785f3b71caf98008595b89eea58afae39ac18e
+u
+Esrc/main/java/gg/steve/mc/ap/data/types/AdvancedAbilitiesSetData.java,c\0\c0cb7ab62aba4371caacaa3454823750a1824959
+f
+6src/main/java/gg/steve/mc/ap/data/AbstractSetData.java,4\8\48284c32741ee8d29d3a1c4e2f618e952c9b431f
+l
+<src/main/java/gg/steve/mc/ap/data/types/ColorWaySetData.java,5\4\54ba80ab35c33f518ef543812c1a03c4e40b87b3
+n
+>src/main/java/gg/steve/mc/ap/data/types/ExperienceSetData.java,e\f\efca8a39310abbdfddbfa376ba77c56e330c47ec
+i
+9src/main/java/gg/steve/mc/ap/data/types/ShiftSetData.java,b\f\bf986678e1a9b1504c6234fbb516445f8cf3de7c

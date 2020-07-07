@@ -12,5 +12,6 @@ public enum SetDataType {
     HAND,
     ENGINEER,
     ADVANCED_ABILITY,
-    COLOR_WAY;
+    COLOR_WAY,
+    EXPERIENCE;
 }

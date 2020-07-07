@@ -12,6 +12,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -91,6 +92,11 @@ public class PotionSetData implements SetData {
 
     @Override
     public void onHungerDeplete(FoodLevelChangeEvent event) {
+
+    }
+
+    @Override
+    public void onTargetDeath(EntityDeathEvent event, Player killer) {
 
     }
 
