@@ -30,15 +30,18 @@ public class SetPlayerManager {
     }
 
     public static void addSetPlayer(Player player, String setName) {
+        if (playersWearingSets == null) playersWearingSets = new HashMap<>();
         if (playersWearingSets.containsKey(player.getUniqueId())) removeSetPlayer(player);
         playersWearingSets.put(player.getUniqueId(), new SetPlayer(player, setName));
     }
 
     public static void removeSetPlayer(Player player) {
+        if (playersWearingSets == null) playersWearingSets = new HashMap<>();
         playersWearingSets.remove(player.getUniqueId());
     }
 
     public static boolean isWearingSet(Player player) {
+        if (playersWearingSets == null) playersWearingSets = new HashMap<>();
         return playersWearingSets.containsKey(player.getUniqueId());
     }
 

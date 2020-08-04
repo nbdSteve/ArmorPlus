@@ -26,13 +26,13 @@ public class GuiItemUtil {
         ItemBuilderUtil builder = new ItemBuilderUtil("diamond_helmet", "0");
         if (material.startsWith("hdb")) {
             if (Bukkit.getPluginManager().getPlugin("HeadDatabase") == null) {
-                LogUtil.warning("Tried to create hdb item but the required plugin 'HeadDatabase' was not found, default type set to diamond_helmet.");
+//                LogUtil.warning("Tried to create hdb item but the required plugin 'HeadDatabase' was not found, default type set to diamond_helmet.");
             } else {
                 String[] id = section.getString(entry + ".item").split("-");
                 try {
                     builder = new ItemBuilderUtil(new HeadDatabaseAPI().getItemHead(id[1]));
                 } catch (NullPointerException e) {
-                    LogUtil.warning("Tried to create hdb item but the required plugin 'HeadDatabase' was not yet loaded, default type set to diamond_helmet.");
+//                    LogUtil.warning("Tried to create hdb item but the required plugin 'HeadDatabase' was not yet loaded, default type set to diamond_helmet.");
                 }
             }
         } else if (material.equalsIgnoreCase("skull_item")) {

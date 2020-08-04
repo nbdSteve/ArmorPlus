@@ -30,8 +30,12 @@ public class ArmorSwitchListener implements Listener {
         ArmorType type = ArmorType.matchType(event.getItem());
         Player player = event.getPlayer();
         ArmorEquipEvent change;
-        if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled") && !ArmorListener.isHeadItem(event.getItem()) && !event.getPlayer().getInventory().getHelmet().getType().equals(Material.AIR))
+        if (event.getPlayer().getInventory().getHelmet() != null
+                && !ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled")
+                && !ArmorListener.isHeadItem(event.getItem())
+                && !event.getPlayer().getInventory().getHelmet().getType().equals(Material.AIR)) {
             return;
+        }
         switch (type) {
             case HELMET:
                 if (ArmorListener.isHeadItem(event.getItem())) {

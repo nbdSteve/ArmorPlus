@@ -12,7 +12,7 @@ public class SoundUtil {
             try {
                 Sound.valueOf(sound);
             } catch (Exception e) {
-                LogUtil.warning("You are using old sound values for your Minecraft version, the plugin automatically converts most of them. However, it is recommended that you change them in the configuration to the latest values from here: https://https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html");
+//                LogUtil.warning("You are using old sound values for your Minecraft version, the plugin automatically converts most of them. However, it is recommended that you change them in the configuration to the latest values from here: https://https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html");
                 String attempt1 = "ENTITY_" + sound;
                 try {
                     Sound.valueOf(attempt1);

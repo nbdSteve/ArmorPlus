@@ -22,7 +22,6 @@ public final class ArmorPlus extends JavaPlugin {
     private static Economy economy;
     private static ApGui apGui;
     private static DecimalFormat numberFormat = new DecimalFormat("#,###.##");
-    private static String version = "2.1.5";
 
     @Override
     public void onEnable() {
@@ -57,13 +56,13 @@ public final class ArmorPlus extends JavaPlugin {
             return valueMap;
         }));
         // send nice message
-        LogUtil.info("Thanks for using Armor+ v" + version + ", please contact nbdSteve#0583 on discord if you find any bugs.");
+        LogUtil.info("Thanks for using Armor+ v" + getDescription().getVersion() + ", please contact nbdSteve#0583 on discord if you find any bugs.");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        LogUtil.info("Thanks for using Armor+ v" + version + ", please contact nbdSteve#0583 on discord if you find any bugs.");
+        LogUtil.info("Thanks for using Armor+ v" + getDescription().getVersion() + ", please contact nbdSteve#0583 on discord if you find any bugs.");
     }
 
     public static ArmorPlus get() {
