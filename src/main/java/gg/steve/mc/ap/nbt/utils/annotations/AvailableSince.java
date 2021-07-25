@@ -1,6 +1,6 @@
-package gg.steve.mc.dazzer.mt.nbt.utils.annotations;
+package gg.steve.mc.ap.nbt.utils.annotations;
 
-import gg.steve.mc.dazzer.mt.nbt.utils.MinecraftVersion;
+import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

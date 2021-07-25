@@ -1,12 +1,12 @@
-package gg.steve.mc.dazzer.mt.nbt.utils.nmsmappings;
+package gg.steve.mc.ap.nbt.utils.nmsmappings;
 
-import gg.steve.mc.dazzer.mt.nbt.NbtApiException;
-import gg.steve.mc.dazzer.mt.nbt.utils.MinecraftVersion;
+import gg.steve.mc.ap.nbt.NbtApiException;
+import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 
 import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 
-import static gg.steve.mc.dazzer.mt.nbt.utils.MinecraftVersion.getLogger;
+import static gg.steve.mc.ap.nbt.utils.MinecraftVersion.getLogger;
 
 /**
  * This Enum wraps Constructors for NMS classes
