@@ -8,8 +8,12 @@ import gg.steve.mc.ap.message.CommandDebug;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 
-public class ApCmd implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ApCmd implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -42,5 +46,20 @@ public class ApCmd implements CommandExecutor {
                 break;
         }
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> tab = new ArrayList<>();
+        if (args.length == 1) {
+            tab.add("give");
+            tab.add("gui");
+            tab.add("help");
+            tab.add("reload");
+        }
+        if (args.length >= 2) {
+
+        }
+        return null;
     }
 }

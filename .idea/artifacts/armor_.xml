@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="armor+">
-    <output-path>$PROJECT_DIR$/../../test-server/spigot-server/plugins</output-path>
-    <root id="archive" name="armor+.jar">
+  <artifact type="jar" name="Armor+">
+    <output-path>$PROJECT_DIR$/../../servers/1_16-server/plugins</output-path>
+    <root id="archive" name="Armor+.jar">
       <element id="module-output" name="ArmorPlus" />
     </root>
   </artifact>

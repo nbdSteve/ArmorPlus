@@ -1,0 +1,17 @@
+gg\steve\mc\ap\nbt\NBTEntity.class
+gg\steve\mc\ap\nbt\utils\VersionChecker.class
+gg\steve\mc\ap\nbt\NBTPersistentDataContainer.class
+gg\steve\mc\ap\nbt\NBTFloatList.class
+gg\steve\mc\ap\nbt\NBTChunk.class
+gg\steve\mc\ap\nbt\NBTIntegerList.class
+gg\steve\mc\ap\nbt\utils\ApiMetricsLite$1.class
+gg\steve\mc\ap\nbt\NBTLongList.class
+gg\steve\mc\ap\nbt\NBTDoubleList.class
+gg\steve\mc\ap\nbt\NBTFile.class
+gg\steve\mc\ap\nbt\NBTGameProfile.class
+gg\steve\mc\ap\nbt\NBTTileEntity.class
+gg\steve\mc\ap\nbt\utils\ApiMetricsLite$2.class
+gg\steve\mc\ap\nbt\utils\annotations\AvailableSince.class
+gg\steve\mc\ap\nbt\utils\ApiMetricsLite.class
+gg\steve\mc\ap\nbt\NBTCompound$1.class
+gg\steve\mc\ap\nbt\NBTBlock.class

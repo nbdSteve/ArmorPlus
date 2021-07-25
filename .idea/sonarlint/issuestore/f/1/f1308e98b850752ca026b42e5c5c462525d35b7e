@@ -1,25 +1,0 @@
-
-W
-java:S1874 "5Remove this use of "getItemInHand"; it is deprecated.(¸ÆÔ¨ùÿÿÿÿ8õÌÇÎ›.
-J
-java:S1659".Declare "walkSpeedDefault" on a separate line.(öæİ*8«ƒ¨À².
-E
-java:S1659")Declare "flySpeedSet" on a separate line.(öæİ*8«ƒ¨À².
-I
-java:S1659"-Declare "flySpeedDefault" on a separate line.(öæİ*8«ƒ¨À².
-P
-java:S1874B"4Remove this use of "setMaxHealth"; it is deprecated.(ÀşÈI8Â¨ë³š.
-B
-java:S1659" Declare "kb" on a separate line.(Ñö¦üüÿÿÿÿ8¼Ë¨À².
-
-java:S1186N"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àü®Š8­˜¬›.
-£
-java:S1186S"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ…‹Èıÿÿÿÿ8­˜¬›.
-I
-java:S1659"'Declare "reduction" on a separate line.(Ñö¦üüÿÿÿÿ8¨ó¨À².
-
-java:S1186X"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(œå¶¶8ş´¾Ä².
-Q
-java:S18744"4Remove this use of "setMaxHealth"; it is deprecated.(‹ôä™8ğĞê³š.
-F
-java:S1659"$Declare "health" on a separate line.(Ñö¦üüÿÿÿÿ8¼Ë¨À².

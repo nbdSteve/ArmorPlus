@@ -1,11 +1,0 @@
-
-~
-java:S41651"cRemove this useless assignment; "field" already holds the assigned value along all execution paths.(ãæÿûÿÿÿÿ
-u
-java:S3008"ZRename this field "field_modifiers" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯â÷úùÿÿÿÿ
-ˆ
-java:S1130&"mRemove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a runtime exception.(ÌˆËáúÿÿÿÿ
-ˆ
-java:S1130/"mRemove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a runtime exception.(Ä¹®ëûÿÿÿÿ
-P
-java:S1118	":Add a private constructor to hide the implicit public one.(•„×Õ
