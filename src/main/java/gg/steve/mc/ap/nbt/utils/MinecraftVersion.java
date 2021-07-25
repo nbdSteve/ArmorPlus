@@ -26,7 +26,15 @@ public enum MinecraftVersion {
     MC1_14_R1(1141),
     MC1_15_R1(1151),
     MC1_16_R1(1161),
-    MC1_16_R2(1162);
+    MC1_16_R2(1162),
+    MC1_16_R3(1163),
+    MC1_17_R1(1171),
+    MC1_17_R2(1172),
+    MC1_17_R3(1173),
+    MC1_18_R1(1181),
+    MC1_18_R2(1182),
+    MC1_18_R3(1183),
+    MC1_19_R1(1191);
 
     private static MinecraftVersion version;
     private static Boolean hasGsonSupport;
@@ -36,10 +44,10 @@ public enum MinecraftVersion {
     /**
      * Logger used by the api
      */
-    public static final Logger logger = Logger.getLogger("NBTAPI");
+    private static Logger logger = Logger.getLogger("NBTAPI");
 
     // NBT-API Version
-    protected static final String VERSION = "2.3.0-SNAPSHOT";
+    protected static final String VERSION = "2.8.1-SNAPSHOT";
 
     private final int versionId;
 
@@ -52,6 +60,26 @@ public enum MinecraftVersion {
      */
     public int getVersionId() {
         return versionId;
+    }
+
+    /**
+     * Returns true if the current versions is at least the given Version
+     *
+     * @param version The minimum version
+     * @return
+     */
+    public static boolean isAtLeastVersion(MinecraftVersion version) {
+        return getVersion().getVersionId() >= version.getVersionId();
+    }
+
+    /**
+     * Returns true if the current versions newer (not equal) than the given version
+     *
+     * @param version The minimum version
+     * @return
+     */
+    public static boolean isNewerThan(MinecraftVersion version) {
+        return getVersion().getVersionId() > version.getVersionId();
     }
 
     /**
@@ -70,7 +98,41 @@ public enum MinecraftVersion {
         } catch (IllegalArgumentException ex) {
             version = MinecraftVersion.UNKNOWN;
         }
+        init();
         return version;
+    }
+
+    private static void init() {
+        try {
+            if (hasGsonSupport() && !bStatsDisabled)
+                new ApiMetricsLite();
+        } catch (Exception ex) {
+        }
+
+        if (hasGsonSupport() && !updateCheckDisabled)
+            new Thread(() -> {
+                try {
+                    VersionChecker.checkForUpdates();
+                } catch (Exception ex) {
+                }
+            }).start();
+        // Maven's Relocate is clever and changes strings, too. So we have to use this
+        // little "trick" ... :D (from bStats)
+        final String defaultPackage = new String(new byte[]{'d', 'e', '.', 't', 'r', '7', 'z', 'w', '.', 'c', 'h',
+                'a', 'n', 'g', 'e', 'm', 'e', '.', 'n', 'b', 't', 'a', 'p', 'i', '.', 'u', 't', 'i', 'l', 's'});
+        if (!disablePackageWarning && MinecraftVersion.class.getPackage().getName().equals(defaultPackage)) {
+            logger.warning(
+                    "#########################################- NBTAPI -#########################################");
+            logger.warning(
+                    "The NBT-API package has not been moved! This *will* cause problems with other plugins containing");
+            logger.warning(
+                    "a different version of the api! Please read the guide on the plugin page on how to get the");
+            logger.warning(
+                    "Maven Shade plugin to relocate the api to your personal location! If you are not the developer,");
+            logger.warning("please check your plugins and contact their developer, so he can fix this issue.");
+            logger.warning(
+                    "#########################################- NBTAPI -#########################################");
+        }
     }
 
     /**
@@ -98,8 +160,8 @@ public enum MinecraftVersion {
     }
 
     /**
-     * Disables the update check. Uses Spiget to get the current version and
-     * prints a warning when outdated.
+     * Disables the update check. Uses Spiget to get the current version and prints
+     * a warning when outdated.
      */
     public static void disableUpdateCheck() {
         updateCheckDisabled = true;
@@ -114,4 +176,22 @@ public enum MinecraftVersion {
     public static void disablePackageWarning() {
         disablePackageWarning = true;
     }
+
+    /**
+     * @return Logger used by the NBT-API
+     */
+    public static Logger getLogger() {
+        return logger;
+    }
+
+    /**
+     * Replaces the NBT-API logger with a custom implementation.
+     *
+     * @param logger The new logger(can not be null!)
+     */
+    public static void replaceLogger(Logger logger) {
+        if (logger == null) throw new NullPointerException("Logger can not be null!");
+        MinecraftVersion.logger = logger;
+    }
+
 }

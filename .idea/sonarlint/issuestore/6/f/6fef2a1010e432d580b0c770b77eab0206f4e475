@@ -1,17 +1,0 @@
-
-M
-java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8ìÓêæ£.
-l
-java:S1192]"JDefine a constant instead of duplicating this literal "formatted" 4 times.(®«óÓøÿÿÿÿ8–µ™á£.
-j
-java:S1192P"HDefine a constant instead of duplicating this literal "Default" 4 times.(÷´¾¹şÿÿÿÿ8Ï…‘Û£.
-n
-java:S1871G"LThis branch's code block is the same as the block for the branch on line 69.(—‚øßıÿÿÿÿ8·Š®á£.
-L
-java:S1066U"/Merge this if statement with the enclosing one.(Ê—ÖË8½´á£.
-m
-java:S1192D"KDefine a constant instead of duplicating this literal "percentage" 4 times.(õÔÂşÿÿÿÿ8ÁœÒà£.
-o
-java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 96 to the 15 allowed.(§¤µĞ8ä¹ÛÚ£.
-n
-java:S1871A"LThis branch's code block is the same as the block for the branch on line 63.(—‚øßıÿÿÿÿ8‹ß­á£.

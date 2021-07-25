@@ -1,14 +1,15 @@
 name: ArmorPlus
 version: ${project.version}
 main: gg.steve.mc.ap.ArmorPlus
-api-version: 1.13
+api-version: 1.17
 prefix: Armor+
 authors: [stevegoodhill]
 description: Comprehensive and free custom armor plugin, developed by Steve.
-website: http://steve.gg
+website: https://steve.gg
+depend:
+  - Vault
 softdepend:
   - HeadDatabase
-  - Vault
   - PlaceholderAPI
 commands:
   ap:

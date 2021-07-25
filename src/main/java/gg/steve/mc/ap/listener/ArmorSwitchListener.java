@@ -6,6 +6,7 @@ import gg.steve.mc.ap.armorequipevent.ArmorType;
 import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.nbt.NBTItem;
+import gg.steve.mc.ap.utils.LogUtil;
 import gg.steve.mc.ap.utils.SoundUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -22,6 +23,7 @@ public class ArmorSwitchListener implements Listener {
     public void switchPiece(PlayerInteractEvent event) {
         if (!(event.getAction().equals(Action.RIGHT_CLICK_BLOCK) || event.getAction().equals(Action.RIGHT_CLICK_AIR)))
             return;
+        if (!ConfigManager.CONFIG.get().getBoolean("armor-switch.enabled")) return;
         if (event.getItem() == null || event.getItem().getType().equals(Material.AIR)) return;
         if (ArmorType.matchType(event.getItem()) == null) return;
         if (!new NBTItem(event.getItem()).getString("armor+.set").equalsIgnoreCase("") && ArmorListener.isHeadItem(event.getItem())) {
@@ -85,7 +87,11 @@ public class ArmorSwitchListener implements Listener {
             default:
                 return;
         }
-        SoundUtil.playSound(ConfigManager.CONFIG.get(), "armor-switch", player);
+        try {
+            SoundUtil.playSound(ConfigManager.CONFIG.get(), "armor-switch", player);
+        } catch (Exception e) {
+            LogUtil.warning("You are using an unsupported sound value, please change it in the configuration.");
+        }
         MessageType.doProcMessage(ConfigManager.CONFIG.get(), "armor-switch", player);
         player.setItemInHand(change.getOldArmorPiece());
     }

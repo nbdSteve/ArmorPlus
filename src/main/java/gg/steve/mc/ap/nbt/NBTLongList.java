@@ -7,35 +7,38 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * String implementation for NBTLists
+ * Long implementation for NBTLists
  * 
  * @author tr7zw
  *
  */
-public class NBTStringList extends NBTList<String> {
+public class NBTLongList extends NBTList<Long> {
 
-	protected NBTStringList(NBTCompound owner, String name, NBTType type, Object list) {
+	protected NBTLongList(NBTCompound owner, String name, NBTType type, Object list) {
 		super(owner, name, type, list);
 	}
 
 	@Override
-	public String get(int index) {
+	protected Object asTag(Long object) {
 		try {
-			return (String) ReflectionMethod.LIST_GET_STRING.run(listObject, index);
-		} catch (Exception ex) {
-			throw new NbtApiException(ex);
-		}
-	}
-
-	@Override
-	protected Object asTag(String object) {
-		try {
-			Constructor<?> con = ClassWrapper.NMS_NBTTAGSTRING.getClazz().getDeclaredConstructor(String.class);
+			Constructor<?> con = ClassWrapper.NMS_NBTTAGLONG.getClazz().getDeclaredConstructor(long.class);
 			con.setAccessible(true);
 			return con.newInstance(object);
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e) {
 			throw new NbtApiException("Error while wrapping the Object " + object + " to it's NMS object!", e);
+		}
+	}
+
+	@Override
+	public Long get(int index) {
+		try {
+			Object obj = ReflectionMethod.LIST_GET.run(listObject, index);
+			return Long.valueOf(obj.toString().replace("L", ""));
+		} catch (NumberFormatException nf) {
+			return 0l;
+		} catch (Exception ex) {
+			throw new NbtApiException(ex);
 		}
 	}
 
