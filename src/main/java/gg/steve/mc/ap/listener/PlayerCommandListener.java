@@ -13,8 +13,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.inventory.ItemStack;
 
-import javax.swing.*;
-
 public class PlayerCommandListener implements Listener {
 
     @EventHandler
@@ -30,7 +28,7 @@ public class PlayerCommandListener implements Listener {
         if (setName == null) return;
         Set set = SetManager.getSet(setName);
         if (args.length == 1) {
-            if (!PermissionNode.GUI.hasPermission(event.getPlayer())) {
+            if (PermissionNode.GUI.hasPermission(event.getPlayer())) {
                 CommandDebug.INSUFFICIENT_PERMISSION.message(event.getPlayer(), PermissionNode.GUI.get());
             } else {
                 set.openGui(event.getPlayer());
@@ -42,7 +40,7 @@ public class PlayerCommandListener implements Listener {
                 CommandDebug.INVALID_NUMBER_OF_ARGUMENTS.message(event.getPlayer());
                 return;
             }
-            if (!PermissionNode.GIVE.hasPermission(event.getPlayer())) {
+            if (PermissionNode.GIVE.hasPermission(event.getPlayer())) {
                 CommandDebug.INSUFFICIENT_PERMISSION.message(event.getPlayer(), PermissionNode.GIVE.get());
                 return;
             }
