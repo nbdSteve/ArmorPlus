@@ -9,11 +9,10 @@
     <version>3.0.0</version>
     <packaging>jar</packaging>
 
-    <name>ArmorPlus</name>
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>laspi94</name>
+            <name>ArmorPlus</name>
             <url>https://maven.pkg.github.com/laspi94/ArmorPlus</url>
         </repository>
     </distributionManagement>
