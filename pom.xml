@@ -10,6 +10,13 @@
     <packaging>jar</packaging>
 
     <name>ArmorPlus</name>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Laspi94 Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/laspi94/ArmorPlus</url>
+        </repository>
+    </distributionManagement>
 
     <description>Comprehensive and free custom armor plugin, developed by Steve.</description>
     <properties>
