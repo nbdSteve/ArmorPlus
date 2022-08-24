@@ -1,9 +1,10 @@
 package gg.steve.mc.ap.nbt;
 
-import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
 
 /**
  * NBT class to access vanilla/custom tags on ItemStacks. This class doesn't
@@ -38,7 +39,7 @@ public class NBTItem extends NBTCompound {
 	public NBTItem(ItemStack item, boolean directApply) {
 		super(null, null);
 		if (item == null || item.getType() == Material.AIR) {
-			throw new NullPointerException("ItemStack can't be null/Air!");
+			throw new NullPointerException("ItemStack can't be null/Air! This is not a NBTAPI bug!");
 		}
 		this.directApply = directApply;
 		bukkitItem = item.clone();
@@ -70,7 +71,7 @@ public class NBTItem extends NBTCompound {
 	 */
 	public void applyNBT(ItemStack item) {
 		if (item == null || item.getType() == Material.AIR) {
-			throw new NullPointerException("ItemStack can't be null/Air!");
+			throw new NullPointerException("ItemStack can't be null/Air! This is not a NBTAPI bug!");
 		}
 		NBTItem nbti = new NBTItem(new ItemStack(item.getType()));
 		nbti.mergeCompound(this);

@@ -1,5 +1,7 @@
 package gg.steve.mc.ap.nbt;
 
+import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
+
 /**
  * A generic {@link RuntimeException} that can be thrown by most methods in the
  * NBTAPI.
@@ -13,6 +15,13 @@ public class NbtApiException extends RuntimeException {
 	 * 
 	 */
 	private static final long serialVersionUID = -993309714559452334L;
+	/**
+	 * Keep track of the plugin selfcheck. 
+	 * Null = not checked(silentquickstart/shaded)
+	 * true = selfcheck failed
+	 * false = everything should be fine, but apparently wasn't?
+	 */
+	public static Boolean confirmedBroken = null;
 
 	/**
 	 * 
@@ -28,7 +37,7 @@ public class NbtApiException extends RuntimeException {
 	 * @param writableStackTrace
 	 */
 	public NbtApiException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
+		super(generateMessage(message), cause, enableSuppression, writableStackTrace);
 	}
 
 	/**
@@ -36,21 +45,32 @@ public class NbtApiException extends RuntimeException {
 	 * @param cause
 	 */
 	public NbtApiException(String message, Throwable cause) {
-		super(message, cause);
+		super(generateMessage(message), cause);
 	}
 
 	/**
 	 * @param message
 	 */
 	public NbtApiException(String message) {
-		super(message);
+		super(generateMessage(message));
 	}
 
 	/**
 	 * @param cause
 	 */
 	public NbtApiException(Throwable cause) {
-		super(cause);
+		super(generateMessage(cause==null ? null : cause.toString()), cause);
+	}
+	
+	private static String generateMessage(String message) {
+	    if(message == null)return null;
+	    if(confirmedBroken == null) {
+            return "[?]"+message;
+        }else if(confirmedBroken == false) {
+	        return "[Selfchecked]"+message;
+	    }
+	    
+	    return "[" + MinecraftVersion.getVersion() + "]There were errors detected during the server self-check! Please, make sure that NBT-API is up to date. Error message: " + message;
 	}
 
 }

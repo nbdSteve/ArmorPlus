@@ -82,7 +82,7 @@ public class ApiMetricsLite {
 
 		// Get the config file
 		File bStatsFolder = new File(plugin.getDataFolder().getParentFile(), "bStats");
-		File configFile = new File(bStatsFolder, "media-top.yml");
+		File configFile = new File(bStatsFolder, "config.yml");
 		YamlConfiguration config = YamlConfiguration.loadConfiguration(configFile);
 
 		// Check if the config file exists
@@ -326,7 +326,7 @@ public class ApiMetricsLite {
 			throw new IllegalAccessException("This method must not be called from the main thread!");
 		}
 		if (logSentData) {
-			System.out.println("[NBTAPI][BSTATS] Sending data to bStats: " + data.toString());
+		    MinecraftVersion.getLogger().info("[NBTAPI][BSTATS] Sending data to bStats: " + data.toString());
 			// Not using the plugins logger since the plugin isn't the plugin containing the NBT-Api most of the time
 			//plugin.getLogger().info("Sending data to bStats: " + data.toString());
 		}

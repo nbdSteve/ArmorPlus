@@ -1,8 +1,10 @@
 package gg.steve.mc.ap.nbt;
 
+import org.bukkit.Bukkit;
+import org.bukkit.block.BlockState;
+
 import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 import gg.steve.mc.ap.nbt.utils.annotations.AvailableSince;
-import org.bukkit.block.BlockState;
 
 /**
  * NBT class to access vanilla tags from TileEntities. TileEntities don't
@@ -30,11 +32,13 @@ public class NBTTileEntity extends NBTCompound {
 
 	@Override
 	public Object getCompound() {
+	    if(!Bukkit.isPrimaryThread())throw new NbtApiException("BlockEntity NBT needs to be accessed sync!");
 		return NBTReflectionUtil.getTileEntityNBTTagCompound(tile);
 	}
 
 	@Override
 	protected void setCompound(Object compound) {
+	    if(!Bukkit.isPrimaryThread())throw new NbtApiException("BlockEntity NBT needs to be accessed sync!");
 		NBTReflectionUtil.setTileEntityNBTTagCompound(tile, compound);
 	}
 
@@ -46,7 +50,7 @@ public class NBTTileEntity extends NBTCompound {
 	 */
 	@AvailableSince(version = MinecraftVersion.MC1_14_R1)
 	public NBTCompound getPersistentDataContainer() {
-		if (hasKey("PublicBukkitValues")) {
+		if (hasTag("PublicBukkitValues")) {
 			return getCompound("PublicBukkitValues");
 		} else {
 			NBTContainer container = new NBTContainer();

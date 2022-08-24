@@ -1,10 +1,10 @@
 package gg.steve.mc.ap.nbt;
 
-import gg.steve.mc.ap.nbt.utils.nmsmappings.ClassWrapper;
-import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+
+import gg.steve.mc.ap.nbt.utils.nmsmappings.ClassWrapper;
+import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
 
 /**
  * Double implementation for NBTLists

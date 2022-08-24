@@ -1,9 +1,15 @@
 package gg.steve.mc.ap.nbt;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
 import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
-
-import java.util.*;
 
 /**
  * Abstract List implementation for ListCompounds

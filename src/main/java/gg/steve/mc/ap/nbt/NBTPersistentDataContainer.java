@@ -1,15 +1,16 @@
 package gg.steve.mc.ap.nbt;
 
-import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
+import java.util.Map;
+
 import org.bukkit.persistence.PersistentDataContainer;
 
-import java.util.Map;
+import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
 
 public class NBTPersistentDataContainer extends NBTCompound {
 
 	private final PersistentDataContainer container;
 	
-	protected NBTPersistentDataContainer(PersistentDataContainer container) {
+	public NBTPersistentDataContainer(PersistentDataContainer container) {
 		super(null, null);
 		this.container = container;
 	}

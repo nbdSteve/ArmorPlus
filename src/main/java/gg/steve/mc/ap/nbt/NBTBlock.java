@@ -1,7 +1,8 @@
 package gg.steve.mc.ap.nbt;
 
-import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 import org.bukkit.block.Block;
+
+import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 
 public class NBTBlock {
 

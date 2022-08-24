@@ -1,10 +1,10 @@
 package gg.steve.mc.ap.nbt;
 
+import java.io.InputStream;
+
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ClassWrapper;
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ObjectCreator;
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
-
-import java.io.InputStream;
 
 /**
  * A Standalone {@link NBTCompound} implementation. All data is just kept inside

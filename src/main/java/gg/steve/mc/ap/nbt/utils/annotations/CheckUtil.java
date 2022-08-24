@@ -1,9 +1,9 @@
 package gg.steve.mc.ap.nbt.utils.annotations;
 
+import java.lang.reflect.Method;
+
 import gg.steve.mc.ap.nbt.NbtApiException;
 import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
-
-import java.lang.reflect.Method;
 
 public class CheckUtil {
 

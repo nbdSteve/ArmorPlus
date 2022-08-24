@@ -1,10 +1,10 @@
 package gg.steve.mc.ap.nbt.utils;
 
-import gg.steve.mc.ap.nbt.NbtApiException;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+
+import gg.steve.mc.ap.nbt.NbtApiException;
 
 public final class ReflectionUtil {
 

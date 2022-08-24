@@ -1,10 +1,12 @@
 package gg.steve.mc.ap.nbt;
 
 import com.mojang.authlib.GameProfile;
+
+import gg.steve.mc.ap.nbt.NBTGameProfile;
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ObjectCreator;
 import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
 
-public class NBTGameProfile {
+public class NBTGameProfile{
 
 	/**
 	 * Convert a GameProfile to NBT. The NBT then can be modified or be stored

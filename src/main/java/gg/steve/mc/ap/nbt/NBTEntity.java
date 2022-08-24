@@ -1,8 +1,10 @@
 package gg.steve.mc.ap.nbt;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
+
 import gg.steve.mc.ap.nbt.utils.MinecraftVersion;
 import gg.steve.mc.ap.nbt.utils.annotations.AvailableSince;
-import org.bukkit.entity.Entity;
 
 /**
  * NBT class to access vanilla tags from Entities. Entities don't support custom
@@ -29,18 +31,20 @@ public class NBTEntity extends NBTCompound {
 
 	@Override
 	public Object getCompound() {
+	    if(!Bukkit.isPrimaryThread())throw new NbtApiException("Entity NBT needs to be accessed sync!");
 		return NBTReflectionUtil.getEntityNBTTagCompound(NBTReflectionUtil.getNMSEntity(ent));
 	}
 
 	@Override
 	protected void setCompound(Object compound) {
+	    if(!Bukkit.isPrimaryThread())throw new NbtApiException("Entity NBT needs to be accessed sync!");
 		NBTReflectionUtil.setEntityNBTTag(compound, NBTReflectionUtil.getNMSEntity(ent));
 	}
 
 	/**
 	 * Gets the NBTCompound used by spigots PersistentDataAPI. This method is only
 	 * available for 1.14+!
-	 * 
+	 *
 	 * @return NBTCompound containing the data of the PersistentDataAPI
 	 */
 	@AvailableSince(version = MinecraftVersion.MC1_14_R1)
