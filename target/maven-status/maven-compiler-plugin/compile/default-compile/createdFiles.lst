@@ -4,9 +4,11 @@ gg\steve\mc\ap\nbt\NBTContainer.class
 gg\steve\mc\ap\nbt\NBTReflectionUtil.class
 gg\steve\mc\ap\utils\GuiItemUtil.class
 gg\steve\mc\ap\nbt\utils\UUIDUtil.class
+gg\steve\mc\ap\nbt\utils\nmsmappings\MojangToMapping$6.class
 gg\steve\mc\ap\nbt\utils\VersionChecker.class
 gg\steve\mc\ap\nbt\NBTPersistentDataContainer.class
 gg\steve\mc\ap\nbt\utils\nmsmappings\MojangToMapping$3.class
+gg\steve\mc\ap\nbt\iface\ReadableNBT.class
 gg\steve\mc\ap\message\MessageType.class
 gg\steve\mc\ap\data\AbstractSetData.class
 gg\steve\mc\ap\data\utils\WarpUtil.class
@@ -18,6 +20,7 @@ gg\steve\mc\ap\armorequipevent\ArmorListener.class
 gg\steve\mc\ap\player\SetPlayerManager.class
 gg\steve\mc\ap\data\SetData.class
 gg\steve\mc\ap\nbt\NBTStringList.class
+gg\steve\mc\ap\nbt\iface\ReadWriteNBTCompoundList.class
 gg\steve\mc\ap\nbt\NBTFloatList.class
 gg\steve\mc\ap\managers\FileManager.class
 gg\steve\mc\ap\nbt\NBTChunk.class
@@ -54,6 +57,7 @@ gg\steve\mc\ap\nbt\NBTList$2.class
 gg\steve\mc\ap\nbt\utils\GsonWrapper.class
 gg\steve\mc\ap\data\utils\PotionAttackUtil.class
 gg\steve\mc\ap\nbt\utils\ReflectionUtil.class
+gg\steve\mc\ap\nbt\iface\ReadWriteItemNBT.class
 gg\steve\mc\ap\nbt\NBTGameProfile.class
 gg\steve\mc\ap\utils\CommandUtil.class
 gg\steve\mc\ap\nbt\NBTTileEntity.class
@@ -79,6 +83,7 @@ gg\steve\mc\ap\nbt\utils\ApiMetricsLite$2.class
 gg\steve\mc\ap\data\types\EngineerSetData.class
 gg\steve\mc\ap\cmd\sub\ReloadCmd.class
 gg\steve\mc\ap\message\CommandDebug.class
+gg\steve\mc\ap\nbt\iface\ReadWriteNBTList.class
 gg\steve\mc\ap\nbt\NbtApiException.class
 gg\steve\mc\ap\listener\PlayerEquipListener.class
 gg\steve\mc\ap\nbt\utils\annotations\AvailableSince.class
@@ -103,11 +108,14 @@ gg\steve\mc\ap\nbt\NBTBlock.class
 gg\steve\mc\ap\armor\SetType.class
 gg\steve\mc\ap\gui\AbstractGui$inventoryClickActions.class
 gg\steve\mc\ap\nbt\NBTItem.class
+gg\steve\mc\ap\nbt\iface\ReadWriteNBT.class
 gg\steve\mc\ap\nbt\NBTListCompound.class
 gg\steve\mc\ap\armorequipevent\ArmorEquipEvent.class
 gg\steve\mc\ap\ArmorPlus.class
+gg\steve\mc\ap\nbt\utils\nmsmappings\MojangToMapping$5.class
 gg\steve\mc\ap\utils\actionbarapi\ActionBarType.class
 gg\steve\mc\ap\data\types\ShiftSetData.class
+gg\steve\mc\ap\nbt\iface\ReadableNBTList.class
 gg\steve\mc\ap\nbt\utils\nmsmappings\PackageWrapper.class
 gg\steve\mc\ap\data\types\ColorWaySetData.class
 gg\steve\mc\ap\armor\Set.class

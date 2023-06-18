@@ -1,3 +1,4 @@
+C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\iface\ReadWriteNBTList.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\ShiftSetData.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTIntArrayList.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTEntity.java
@@ -12,6 +13,7 @@ C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\utils\P
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\armor\Piece.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\cmd\sub\GiveCmd.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\cmd\sub\HelpCmd.java
+C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\iface\ReadableNBT.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\ApiMetricsLite.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\player\SetPlayer.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\nmsmappings\Forge1710Mappings.java
@@ -37,6 +39,7 @@ C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\utils\E
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\utils\CommandUtil.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\HungerSetData.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\player\SetPlayerManager.java
+C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\iface\ReadableNBTList.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\message\CommandDebug.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTDoubleList.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\UUIDUtil.java
@@ -59,6 +62,7 @@ C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTCompo
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\utils\LightningAttackUtil.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\armorequipevent\ArmorEquipEvent.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\AbstractSetData.java
+C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\iface\ReadWriteNBT.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTFile.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\cmd\sub\GuiCmd.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\nmsmappings\MojangToMapping.java
@@ -77,6 +81,7 @@ C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBT.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\utils\TravellerAttackUtil.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\utils\PlayerDirectionUtil.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\armorequipevent\DispenserArmorListener.java
+C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\iface\ReadWriteItemNBT.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\MinecraftVersion.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\utils\actionbarapi\ActionBarMessageEvent.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\utils\ItemBuilderUtil.java
@@ -92,6 +97,7 @@ C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\data\types\F
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTFloatList.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\gui\AbstractGui.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\NBTContainer.java
+C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\iface\ReadWriteNBTCompoundList.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\armor\SetStatusEffectsManager.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\listener\PlayerUnequipListener.java
 C:\Users\Fox\Desktop\plugins\ArmorPlus\src\main\java\gg\steve\mc\ap\nbt\utils\nmsmappings\ReflectionMethod.java
