@@ -12,7 +12,7 @@ public enum PermissionNode {
     GIVE("command.give"),
     HELP("command.help");
 
-    private String path;
+    private final String path;
 
     PermissionNode(String path) {
         this.path = path;
