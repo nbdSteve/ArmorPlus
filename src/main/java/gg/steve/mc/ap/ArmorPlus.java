@@ -11,6 +11,7 @@ import gg.steve.mc.ap.utils.LogUtil;
 import net.milkbowl.vault.economy.Economy;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.text.DecimalFormat;
@@ -37,7 +38,11 @@ public final class ArmorPlus extends JavaPlugin {
         // verify that the server is running vault so that eco features can be used
         if (Bukkit.getPluginManager().getPlugin("Vault") != null) {
             LogUtil.info("Vault found, hooking into it now...");
-            economy = getServer().getServicesManager().getRegistration(Economy.class).getProvider();
+            RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+
+            if (rsp != null) {
+                economy = rsp.getProvider();
+            }
         } else {
             LogUtil.info("Unable to find economy instance, disabling economy features. If you intend to use economy please install Vault and an economy plugin.");
             economy = null;
