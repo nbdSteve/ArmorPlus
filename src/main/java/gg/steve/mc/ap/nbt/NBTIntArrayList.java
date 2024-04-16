@@ -12,16 +12,19 @@ import gg.steve.mc.ap.nbt.utils.nmsmappings.ReflectionMethod;
  * @author tr7zw
  *
  */
-public class NBTIntegerList extends NBTList<Integer> {
+public class NBTIntArrayList extends NBTList<int[]> {
 
-    protected NBTIntegerList(NBTCompound owner, String name, NBTType type, Object list) {
+    private final NBTContainer tmpContainer;
+
+    protected NBTIntArrayList(NBTCompound owner, String name, NBTType type, Object list) {
         super(owner, name, type, list);
+        this.tmpContainer = new NBTContainer();
     }
 
     @Override
-    protected Object asTag(Integer object) {
+    protected Object asTag(int[] object) {
         try {
-            Constructor<?> con = ClassWrapper.NMS_NBTTAGINT.getClazz().getDeclaredConstructor(int.class);
+            Constructor<?> con = ClassWrapper.NMS_NBTTAGINTARRAY.getClazz().getDeclaredConstructor(int[].class);
             con.setAccessible(true);
             return con.newInstance(object);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
@@ -31,12 +34,15 @@ public class NBTIntegerList extends NBTList<Integer> {
     }
 
     @Override
-    public Integer get(int index) {
+    public int[] get(int index) {
         try {
             Object obj = ReflectionMethod.LIST_GET.run(listObject, index);
-            return Integer.valueOf(obj.toString());
+            ReflectionMethod.COMPOUND_SET.run(tmpContainer.getCompound(), "tmp", obj);
+            int[] val = tmpContainer.getIntArray("tmp");
+            tmpContainer.removeKey("tmp");
+            return val;
         } catch (NumberFormatException nf) {
-            return 0;
+            return null;
         } catch (Exception ex) {
             throw new NbtApiException(ex);
         }

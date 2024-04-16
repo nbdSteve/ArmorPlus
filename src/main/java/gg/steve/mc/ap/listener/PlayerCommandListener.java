@@ -13,8 +13,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.inventory.ItemStack;
 
-import javax.swing.*;
-
 public class PlayerCommandListener implements Listener {
 
     @EventHandler

@@ -58,7 +58,7 @@ public class ApCmd implements TabExecutor {
             tab.add("reload");
         }
         if (args.length >= 2) {
-
+            tab.add("");
         }
         return null;
     }
