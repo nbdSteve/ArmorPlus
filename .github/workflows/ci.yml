@@ -20,8 +20,8 @@ jobs:
           java-version: '25'
           cache: maven
 
-      - name: Build
-        run: mvn -B clean package
+      - name: Build & Test
+        run: mvn -B clean verify
 
       - uses: actions/upload-artifact@v4
         with:
@@ -29,3 +29,9 @@ jobs:
           path: |
             target/*.jar
             !target/original-*.jar
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
