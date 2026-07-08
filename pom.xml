@@ -19,7 +19,8 @@
 
     <description>Comprehensive and free custom armor plugin, developed by Steve.</description>
     <properties>
-        <java.version>1.8</java.version>
+        <!-- Emitted plugin bytecode stays at Java 8 (major version 52); the build JDK is modern (>= 25, enforced below). -->
+        <maven.compiler.release>8</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <url>https://steve.gg</url>
@@ -30,11 +31,32 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.14.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>enforce-build-jdk</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>[25,)</version>
+                                    <message>ArmorPlus must be built with JDK 25 or newer. Emitted bytecode stays at Java 8.</message>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -100,15 +122,6 @@
             <id>paper-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
-        <repository>
-            <id>codemc-repo</id>
-            <url>https://repo.codemc.org/repository/maven-public/</url>
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -141,13 +154,6 @@
             <artifactId>placeholderapi</artifactId>
             <version>2.10.3</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>me.anybody</groupId>
-            <artifactId>advancedabilitiesapi</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/src/main/lib/AdvancedAbilitiesAPI.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>
