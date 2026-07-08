@@ -19,7 +19,7 @@
 
     <description>Comprehensive and free custom armor plugin, developed by Steve.</description>
     <properties>
-        <!-- Emitted plugin bytecode stays at Java 8 (major version 52); the build JDK is modern (>= 17, enforced below). -->
+        <!-- Emitted plugin bytecode stays at Java 8 (major version 52); the build JDK is modern (>= 25, enforced below). -->
         <maven.compiler.release>8</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -50,8 +50,8 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>[17,)</version>
-                                    <message>ArmorPlus must be built with JDK 17 or newer (JDK 25 recommended). Emitted bytecode stays at Java 8.</message>
+                                    <version>[25,)</version>
+                                    <message>ArmorPlus must be built with JDK 25 or newer. Emitted bytecode stays at Java 8.</message>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
