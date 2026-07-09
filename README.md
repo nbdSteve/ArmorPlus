@@ -12,7 +12,7 @@ For more information about the plugin, permissions, and commands please refer to
 ## Code Coverage
 
 JaCoCo runs on every CI build (`mvn verify`).
-The build enforces 100% line and branch coverage on the pure-logic core classes (`PlayerDirectionUtil`, `ColorUtil`, `Piece`, `SetType`, `SetDataType`); a coverage drop on any of these will fail the build.
+The build enforces 100% line and branch coverage on the pure-logic core classes (`PlayerDirectionUtil`, `ColorUtil`, `Piece`, `SetType`, `SetDataType`, `ArmorHandItem`, `TypedString`, `StringId`); a coverage drop on any of these will fail the build.
 The HTML coverage report is uploaded as the **jacoco-report** artifact on each workflow run - download it from the [Actions tab](https://github.com/nbdSteve/ArmorPlus/actions/workflows/ci.yml).
 
 ## Soft Dependencies

@@ -33,3 +33,4 @@ target/
 repo/
 out/
 META-INF/
+build.log
