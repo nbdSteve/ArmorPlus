@@ -18,7 +18,7 @@ class PlayerDirectionUtilTest {
     }
 
     @Test
-    void facingWest_onlyPositiveX() {
+    void facingEast_onlyPositiveX() {
         PlayerDirectionUtil dir = new PlayerDirectionUtil(270.0);
         assertTrue(dir.positiveX());
         assertFalse(dir.negativeX());
@@ -36,7 +36,7 @@ class PlayerDirectionUtilTest {
     }
 
     @Test
-    void facingEast_onlyNegativeX() {
+    void facingWest_onlyNegativeX() {
         PlayerDirectionUtil dir = new PlayerDirectionUtil(90.0);
         assertTrue(dir.negativeX());
         assertFalse(dir.positiveX());
