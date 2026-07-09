@@ -6,24 +6,24 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArmorHandItemSpecTest {
+class ArmorHandItemTest {
 
     @Test
     void builderCreatesExpectedValues() {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(2.5)
                 .requireSet(true)
                 .damageCause("ENTITY_ATTACK")
                 .build();
 
-        assertEquals(2.5, spec.getIncrease());
-        assertTrue(spec.isRequireSet());
-        assertEquals("ENTITY_ATTACK", spec.getDamageCause());
+        assertEquals(2.5, item.getIncrease());
+        assertTrue(item.isRequireSet());
+        assertEquals("ENTITY_ATTACK", item.getDamageCause());
     }
 
     @Test
     void calculateFinalDamage_withSetIncrease_combinesBothMultipliers() {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(1.5)
                 .requireSet(false)
                 .damageCause("ENTITY_ATTACK")
@@ -31,12 +31,12 @@ class ArmorHandItemSpecTest {
 
         // setIncrease != -1: result = damage * (setIncrease - 1 + handIncrease)
         // damage=10, setIncrease=2.0 -> 10 * (2.0 - 1 + 1.5) = 10 * 2.5 = 25.0
-        assertEquals(25.0, spec.calculateFinalDamage(10.0, 2.0), 0.0001);
+        assertEquals(25.0, item.calculateFinalDamage(10.0, 2.0), 0.0001);
     }
 
     @Test
     void calculateFinalDamage_withoutSetIncrease_usesHandMultiplierOnly() {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(1.5)
                 .requireSet(false)
                 .damageCause("ENTITY_ATTACK")
@@ -44,7 +44,7 @@ class ArmorHandItemSpecTest {
 
         // setIncrease == -1: result = damage * handIncrease
         // damage=10, setIncrease=-1 -> 10 * 1.5 = 15.0
-        assertEquals(15.0, spec.calculateFinalDamage(10.0, -1), 0.0001);
+        assertEquals(15.0, item.calculateFinalDamage(10.0, -1), 0.0001);
     }
 
     @ParameterizedTest
@@ -56,13 +56,13 @@ class ArmorHandItemSpecTest {
     })
     void calculateFinalDamage_withSetIncrease_parametrized(
             double damage, double increase, double setIncrease, double expected) {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(increase)
                 .requireSet(false)
                 .damageCause("ENTITY_ATTACK")
                 .build();
 
-        assertEquals(expected, spec.calculateFinalDamage(damage, setIncrease), 0.0001);
+        assertEquals(expected, item.calculateFinalDamage(damage, setIncrease), 0.0001);
     }
 
     @ParameterizedTest
@@ -74,33 +74,33 @@ class ArmorHandItemSpecTest {
     })
     void calculateFinalDamage_withoutSetIncrease_parametrized(
             double damage, double increase, double expected) {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(increase)
                 .requireSet(false)
                 .damageCause("ENTITY_ATTACK")
                 .build();
 
-        assertEquals(expected, spec.calculateFinalDamage(damage, -1), 0.0001);
+        assertEquals(expected, item.calculateFinalDamage(damage, -1), 0.0001);
     }
 
     @Test
     void calculateFinalDamage_setIncreaseOfOne_yieldsHandMultiplierOnly() {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(2.0)
                 .requireSet(true)
                 .damageCause("PROJECTILE")
                 .build();
 
-        assertEquals(20.0, spec.calculateFinalDamage(10.0, 1.0), 0.0001);
+        assertEquals(20.0, item.calculateFinalDamage(10.0, 1.0), 0.0001);
     }
 
     @Test
     void equalsAndHashCode() {
-        ArmorHandItemSpec a = ArmorHandItemSpec.builder()
+        ArmorHandItem a = ArmorHandItem.builder()
                 .increase(1.5).requireSet(true).damageCause("ENTITY_ATTACK").build();
-        ArmorHandItemSpec b = ArmorHandItemSpec.builder()
+        ArmorHandItem b = ArmorHandItem.builder()
                 .increase(1.5).requireSet(true).damageCause("ENTITY_ATTACK").build();
-        ArmorHandItemSpec c = ArmorHandItemSpec.builder()
+        ArmorHandItem c = ArmorHandItem.builder()
                 .increase(2.0).requireSet(false).damageCause("PROJECTILE").build();
 
         assertEquals(a, b);
@@ -110,9 +110,9 @@ class ArmorHandItemSpecTest {
 
     @Test
     void toStringContainsFields() {
-        ArmorHandItemSpec spec = ArmorHandItemSpec.builder()
+        ArmorHandItem item = ArmorHandItem.builder()
                 .increase(1.5).requireSet(true).damageCause("ENTITY_ATTACK").build();
-        String s = spec.toString();
+        String s = item.toString();
         assertTrue(s.contains("1.5"));
         assertTrue(s.contains("ENTITY_ATTACK"));
     }

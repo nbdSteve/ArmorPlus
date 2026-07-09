@@ -5,7 +5,7 @@ import lombok.Value;
 
 @Value
 @Builder
-public class ArmorHandItemSpec {
+public class ArmorHandItem {
     double increase;
     boolean requireSet;
     String damageCause;

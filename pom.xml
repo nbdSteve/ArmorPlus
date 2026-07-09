@@ -114,7 +114,7 @@
                                         <include>gg.steve.mc.ap.armor.Piece</include>
                                         <include>gg.steve.mc.ap.armor.SetType</include>
                                         <include>gg.steve.mc.ap.data.SetDataType</include>
-                                        <include>gg.steve.mc.ap.model.ability.ArmorHandItemSpec</include>
+                                        <include>gg.steve.mc.ap.model.ability.ArmorHandItem</include>
                                     </includes>
                                     <limits>
                                         <limit>
