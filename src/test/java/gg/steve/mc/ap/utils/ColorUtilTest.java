@@ -8,7 +8,7 @@ class ColorUtilTest {
 
     @Test
     void constructor_instantiates() {
-        new ColorUtil();
+        assertNotNull(new ColorUtil());
     }
 
     @Test
