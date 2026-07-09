@@ -16,6 +16,11 @@ class PlayerIdTest {
     }
 
     @Test
+    void ofNullThrows() {
+        assertThrows(NullPointerException.class, () -> PlayerId.of(null));
+    }
+
+    @Test
     void equalsAndHashCode() {
         UUID uuid = UUID.fromString("00000000-0000-0000-0000-000000000001");
         PlayerId a = PlayerId.of(uuid);

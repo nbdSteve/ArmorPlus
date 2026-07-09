@@ -13,6 +13,11 @@ class DamageCauseIdTest {
     }
 
     @Test
+    void ofNullThrows() {
+        assertThrows(NullPointerException.class, () -> DamageCauseId.of(null));
+    }
+
+    @Test
     void equalsAndHashCode() {
         DamageCauseId a = DamageCauseId.of("ENTITY_ATTACK");
         DamageCauseId b = DamageCauseId.of("ENTITY_ATTACK");

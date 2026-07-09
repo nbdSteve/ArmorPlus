@@ -13,6 +13,11 @@ class PotionEffectIdTest {
     }
 
     @Test
+    void ofNullThrows() {
+        assertThrows(NullPointerException.class, () -> PotionEffectId.of(null));
+    }
+
+    @Test
     void equalsAndHashCode() {
         PotionEffectId a = PotionEffectId.of("SPEED");
         PotionEffectId b = PotionEffectId.of("SPEED");

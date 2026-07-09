@@ -13,6 +13,11 @@ class ArmorSetIdTest {
     }
 
     @Test
+    void ofNullThrows() {
+        assertThrows(NullPointerException.class, () -> ArmorSetId.of(null));
+    }
+
+    @Test
     void equalsAndHashCode() {
         ArmorSetId a = ArmorSetId.of("dragon");
         ArmorSetId b = ArmorSetId.of("dragon");

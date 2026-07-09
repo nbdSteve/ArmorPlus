@@ -13,6 +13,11 @@ class SoundIdTest {
     }
 
     @Test
+    void ofNullThrows() {
+        assertThrows(NullPointerException.class, () -> SoundId.of(null));
+    }
+
+    @Test
     void equalsAndHashCode() {
         SoundId a = SoundId.of("DING");
         SoundId b = SoundId.of("DING");
