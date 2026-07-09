@@ -1,6 +1,6 @@
 package gg.steve.mc.ap.model.notification;
 
-import gg.steve.mc.ap.model.effect.NotificationSoundSpec;
+import gg.steve.mc.ap.model.effect.NotificationSound;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ class ArmorSetNotificationTest {
 
     @Test
     void builderCreatesExpectedValues() {
-        NotificationSoundSpec sound = new NotificationSoundSpec("DING", 1.0f, 1.0f);
+        NotificationSound sound = new NotificationSound("DING", 1.0f, 1.0f);
 
         ArmorSetNotification notification = ArmorSetNotification.builder()
                 .message("Welcome!")
@@ -29,7 +29,7 @@ class ArmorSetNotificationTest {
 
     @Test
     void equalsAndHashCode() {
-        NotificationSoundSpec sound = new NotificationSoundSpec("DING", 1.0f, 1.0f);
+        NotificationSound sound = new NotificationSound("DING", 1.0f, 1.0f);
         ArmorSetNotification a = ArmorSetNotification.builder()
                 .message("Hi")
                 .sound(sound)
