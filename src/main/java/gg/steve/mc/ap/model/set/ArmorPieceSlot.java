@@ -1,6 +1,6 @@
 package gg.steve.mc.ap.model.set;
 
-public enum PieceSlot {
+public enum ArmorPieceSlot {
     HELMET,
     CHESTPLATE,
     LEGGINGS,

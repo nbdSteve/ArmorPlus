@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SoundSpecTest {
+class NotificationSoundSpecTest {
 
     @Test
     void constructsWithExpectedValues() {
-        SoundSpec spec = new SoundSpec("ENTITY_PLAYER_LEVELUP", 1.0f, 0.5f);
+        NotificationSoundSpec spec = new NotificationSoundSpec("ENTITY_PLAYER_LEVELUP", 1.0f, 0.5f);
         assertEquals("ENTITY_PLAYER_LEVELUP", spec.getName());
         assertEquals(1.0f, spec.getVolume());
         assertEquals(0.5f, spec.getPitch());
@@ -16,9 +16,9 @@ class SoundSpecTest {
 
     @Test
     void equalsAndHashCode() {
-        SoundSpec a = new SoundSpec("DING", 1.0f, 1.0f);
-        SoundSpec b = new SoundSpec("DING", 1.0f, 1.0f);
-        SoundSpec c = new SoundSpec("BOOM", 0.5f, 2.0f);
+        NotificationSoundSpec a = new NotificationSoundSpec("DING", 1.0f, 1.0f);
+        NotificationSoundSpec b = new NotificationSoundSpec("DING", 1.0f, 1.0f);
+        NotificationSoundSpec c = new NotificationSoundSpec("BOOM", 0.5f, 2.0f);
 
         assertEquals(a, b);
         assertEquals(a.hashCode(), b.hashCode());

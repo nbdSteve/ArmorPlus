@@ -6,14 +6,14 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DamageContextTest {
+class CombatDamageContextTest {
 
     @Test
     void builderCreatesExpectedValues() {
         UUID attacker = UUID.randomUUID();
         UUID target = UUID.randomUUID();
 
-        DamageContext ctx = DamageContext.builder()
+        CombatDamageContext ctx = CombatDamageContext.builder()
                 .attacker(attacker)
                 .target(target)
                 .baseDamage(10.0)
@@ -33,10 +33,10 @@ class DamageContextTest {
         UUID attacker = UUID.fromString("00000000-0000-0000-0000-000000000001");
         UUID target = UUID.fromString("00000000-0000-0000-0000-000000000002");
 
-        DamageContext a = DamageContext.builder()
+        CombatDamageContext a = CombatDamageContext.builder()
                 .attacker(attacker).target(target)
                 .baseDamage(5.0).cause("PROJECTILE").projectile(true).build();
-        DamageContext b = DamageContext.builder()
+        CombatDamageContext b = CombatDamageContext.builder()
                 .attacker(attacker).target(target)
                 .baseDamage(5.0).cause("PROJECTILE").projectile(true).build();
 

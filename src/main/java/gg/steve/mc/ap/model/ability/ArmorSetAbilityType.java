@@ -1,6 +1,6 @@
 package gg.steve.mc.ap.model.ability;
 
-public enum AbilityType {
+public enum ArmorSetAbilityType {
     BASIC,
     LIGHTNING,
     WARP,

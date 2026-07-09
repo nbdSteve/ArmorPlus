@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Value
 @Builder
-public class DamageContext {
+public class CombatDamageContext {
     UUID attacker;
     UUID target;
     double baseDamage;

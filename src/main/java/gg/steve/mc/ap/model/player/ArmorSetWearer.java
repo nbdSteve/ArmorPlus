@@ -5,7 +5,7 @@ import lombok.Value;
 import java.util.UUID;
 
 @Value
-public class Wearer {
+public class ArmorSetWearer {
     UUID playerId;
     String setName;
 }

@@ -4,18 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AbilityTypeTest {
+class ArmorSetAbilityTypeTest {
 
     @Test
     void allValuesPresent() {
-        AbilityType[] values = AbilityType.values();
+        ArmorSetAbilityType[] values = ArmorSetAbilityType.values();
         assertEquals(12, values.length);
     }
 
     @Test
     void valueOfRoundTrips() {
-        for (AbilityType type : AbilityType.values()) {
-            assertEquals(type, AbilityType.valueOf(type.name()));
+        for (ArmorSetAbilityType type : ArmorSetAbilityType.values()) {
+            assertEquals(type, ArmorSetAbilityType.valueOf(type.name()));
         }
     }
 }

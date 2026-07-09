@@ -5,7 +5,7 @@ import lombok.Value;
 
 @Value
 @Builder
-public class BasicStats {
+public class ArmorSetBasicStats {
     double increase;
     double reduction;
     double knockback;

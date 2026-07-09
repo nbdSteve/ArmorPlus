@@ -1,6 +1,6 @@
 package gg.steve.mc.ap.model.notification;
 
-import gg.steve.mc.ap.model.effect.SoundSpec;
+import gg.steve.mc.ap.model.effect.NotificationSoundSpec;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,15 +9,15 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class NotificationTest {
+class ArmorSetNotificationTest {
 
     @Test
     void builderCreatesExpectedValues() {
-        SoundSpec sound = new SoundSpec("DING", 1.0f, 1.0f);
+        NotificationSoundSpec sound = new NotificationSoundSpec("DING", 1.0f, 1.0f);
         List<String> messages = Arrays.asList("Welcome!", "Enjoy your armor.");
         List<String> commands = Collections.singletonList("give %player% diamond 1");
 
-        Notification notification = Notification.builder()
+        ArmorSetNotification notification = ArmorSetNotification.builder()
                 .messages(messages)
                 .sound(sound)
                 .commands(commands)
@@ -30,13 +30,13 @@ class NotificationTest {
 
     @Test
     void equalsAndHashCode() {
-        SoundSpec sound = new SoundSpec("DING", 1.0f, 1.0f);
-        Notification a = Notification.builder()
+        NotificationSoundSpec sound = new NotificationSoundSpec("DING", 1.0f, 1.0f);
+        ArmorSetNotification a = ArmorSetNotification.builder()
                 .messages(Collections.singletonList("Hi"))
                 .sound(sound)
                 .commands(Collections.emptyList())
                 .build();
-        Notification b = Notification.builder()
+        ArmorSetNotification b = ArmorSetNotification.builder()
                 .messages(Collections.singletonList("Hi"))
                 .sound(sound)
                 .commands(Collections.emptyList())
@@ -48,7 +48,7 @@ class NotificationTest {
 
     @Test
     void nullFieldsPermitted() {
-        Notification notification = Notification.builder()
+        ArmorSetNotification notification = ArmorSetNotification.builder()
                 .messages(null)
                 .sound(null)
                 .commands(null)

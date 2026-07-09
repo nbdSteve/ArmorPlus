@@ -1,6 +1,6 @@
 package gg.steve.mc.ap.model.notification;
 
-import gg.steve.mc.ap.model.effect.SoundSpec;
+import gg.steve.mc.ap.model.effect.NotificationSoundSpec;
 import lombok.Builder;
 import lombok.Value;
 
@@ -8,8 +8,8 @@ import java.util.List;
 
 @Value
 @Builder
-public class Notification {
+public class ArmorSetNotification {
     List<String> messages;
-    SoundSpec sound;
+    NotificationSoundSpec sound;
     List<String> commands;
 }

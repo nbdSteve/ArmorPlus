@@ -14,7 +14,7 @@ This file is the project's committed home for project-intrinsic agent knowledge:
 - Domain model package: `gg.steve.mc.ap.model` with sub-packages `set`, `ability`, `combat`, `effect`, `notification`, `player`. Contains pure-Java value types with ZERO Bukkit/NMS/NBT imports. Uses Lombok (`@Value`, `@Builder`) for boilerplate elimination. The `lombok.config` at repo root sets `lombok.addLombokGeneratedAnnotation=true` so JaCoCo auto-excludes generated code.
 - Domain model conventions: No class may use the `Manager` suffix (use Registry, Service, Store, Factory, Source, Resolver, etc.). Use string/UUID IDs as identity currency - never reference Bukkit Player/ItemStack/World in the model layer. Use `@Value` + `@Builder` for multi-field value types.
 - Lombok dependency: `org.projectlombok:lombok:1.18.38` (provided scope). Annotation processor configured in maven-compiler-plugin's `<annotationProcessorPaths>`. Works with JDK 25 and emits Java 8 bytecode.
-- JaCoCo core gate includes `gg.steve.mc.ap.model.ability.HandItemSpec` (has hand-written `calculateFinalDamage` logic). Pure Lombok data carriers are tested but not in the strict gate.
+- JaCoCo core gate includes `gg.steve.mc.ap.model.ability.ArmorHandItemSpec` (has hand-written `calculateFinalDamage` logic). Pure Lombok data carriers are tested but not in the strict gate.
 - No-Bukkit-in-model rule: verified by grep (no ArchUnit yet). The `model` package must have zero imports of `org.bukkit.*`, `net.minecraft.*`, `de.tr7zw.*`, or any plugin class outside `model`.
 
 ## Maintaining this file

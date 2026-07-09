@@ -6,12 +6,12 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WearerTest {
+class ArmorSetWearerTest {
 
     @Test
     void constructsWithExpectedValues() {
         UUID id = UUID.randomUUID();
-        Wearer wearer = new Wearer(id, "dragon");
+        ArmorSetWearer wearer = new ArmorSetWearer(id, "dragon");
 
         assertEquals(id, wearer.getPlayerId());
         assertEquals("dragon", wearer.getSetName());
@@ -20,9 +20,9 @@ class WearerTest {
     @Test
     void equalsAndHashCode() {
         UUID id = UUID.fromString("00000000-0000-0000-0000-000000000001");
-        Wearer a = new Wearer(id, "dragon");
-        Wearer b = new Wearer(id, "dragon");
-        Wearer c = new Wearer(id, "knight");
+        ArmorSetWearer a = new ArmorSetWearer(id, "dragon");
+        ArmorSetWearer b = new ArmorSetWearer(id, "dragon");
+        ArmorSetWearer c = new ArmorSetWearer(id, "knight");
 
         assertEquals(a, b);
         assertEquals(a.hashCode(), b.hashCode());

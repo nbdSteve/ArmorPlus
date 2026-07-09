@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BasicStatsTest {
+class ArmorSetBasicStatsTest {
 
     @Test
     void builderCreatesExpectedValues() {
-        BasicStats stats = BasicStats.builder()
+        ArmorSetBasicStats stats = ArmorSetBasicStats.builder()
                 .increase(1.5)
                 .reduction(0.8)
                 .knockback(0.3)
@@ -31,11 +31,11 @@ class BasicStatsTest {
 
     @Test
     void equalsAndHashCode() {
-        BasicStats a = BasicStats.builder()
+        ArmorSetBasicStats a = ArmorSetBasicStats.builder()
                 .increase(1.5).reduction(0.8).knockback(0.3).health(30.0)
                 .walkSpeed(0.25f).walkSpeedDefault(0.2f)
                 .flySpeed(0.15f).flySpeedDefault(0.1f).build();
-        BasicStats b = BasicStats.builder()
+        ArmorSetBasicStats b = ArmorSetBasicStats.builder()
                 .increase(1.5).reduction(0.8).knockback(0.3).health(30.0)
                 .walkSpeed(0.25f).walkSpeedDefault(0.2f)
                 .flySpeed(0.15f).flySpeedDefault(0.1f).build();
@@ -46,7 +46,7 @@ class BasicStatsTest {
 
     @Test
     void disabledValuesUseNegativeOne() {
-        BasicStats stats = BasicStats.builder()
+        ArmorSetBasicStats stats = ArmorSetBasicStats.builder()
                 .increase(-1).reduction(-1).knockback(-1).health(-1)
                 .walkSpeed(-1f).walkSpeedDefault(-1f)
                 .flySpeed(-1f).flySpeedDefault(-1f).build();
