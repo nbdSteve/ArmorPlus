@@ -35,6 +35,13 @@
                 <version>3.14.0</version>
                 <configuration>
                     <release>${maven.compiler.release}</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.38</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
@@ -107,6 +114,7 @@
                                         <include>gg.steve.mc.ap.armor.Piece</include>
                                         <include>gg.steve.mc.ap.armor.SetType</include>
                                         <include>gg.steve.mc.ap.data.SetDataType</include>
+                                        <include>gg.steve.mc.ap.model.ability.HandItemSpec</include>
                                     </includes>
                                     <limits>
                                         <limit>
@@ -233,6 +241,12 @@
             <groupId>com.mojang</groupId>
             <artifactId>authlib</artifactId>
             <version>1.5.21</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
         <!-- Test dependencies -->
