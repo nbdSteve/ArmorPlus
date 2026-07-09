@@ -21,22 +21,22 @@ public class PlayerDirectionUtil {
                 (facing + 360);
         if (facing <= 22.5 || facing > 337.5) {
             positiveZ = true;
-        } else if (facing > 292.5 && facing <= 337.5) {
+        } else if (facing > 292.5) {
             positiveX = true;
             positiveZ = true;
-        } else if (facing > 247.5 && facing <= 292.5) {
+        } else if (facing > 247.5) {
             positiveX = true;
-        } else if (facing > 202.5 && facing <= 247.5) {
+        } else if (facing > 202.5) {
             positiveX = true;
             negativeZ = true;
-        } else if (facing > 157.5 && facing <= 202.5) {
+        } else if (facing > 157.5) {
             negativeZ = true;
-        } else if (facing > 112.5 && facing <= 157.5) {
+        } else if (facing > 112.5) {
             negativeX = true;
             negativeZ = true;
-        } else if (facing > 67.5 && facing <= 112.5) {
+        } else if (facing > 67.5) {
             negativeX = true;
-        } else if (facing > 22.5 && facing <= 67.5) {
+        } else {
             negativeX = true;
             positiveZ = true;
         }
