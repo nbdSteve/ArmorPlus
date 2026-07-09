@@ -1,19 +1,18 @@
 package gg.steve.mc.ap.model.id;
 
-import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public abstract class TypedString {
     private final String id;
 
     protected TypedString(String id) {
-        Validate.notNull(id);
-        this.id = id;
+        this.id = Objects.requireNonNull(id, "id must not be null");
     }
 
     @Override
