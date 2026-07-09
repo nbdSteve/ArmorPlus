@@ -117,6 +117,9 @@
                                         <include>gg.steve.mc.ap.model.ability.ArmorHandItem</include>
                                         <include>gg.steve.mc.ap.model.id.TypedString</include>
                                         <include>gg.steve.mc.ap.model.id.StringId</include>
+                                        <include>gg.steve.mc.ap.model.id.ItemHandle</include>
+                                        <include>gg.steve.mc.ap.model.id.TaskHandle</include>
+                                        <include>gg.steve.mc.ap.model.player.WornArmor</include>
                                     </includes>
                                     <limits>
                                         <limit>
