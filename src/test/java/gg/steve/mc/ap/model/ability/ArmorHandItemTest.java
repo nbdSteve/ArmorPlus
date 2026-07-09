@@ -1,5 +1,6 @@
 package gg.steve.mc.ap.model.ability;
 
+import gg.steve.mc.ap.model.id.DamageCauseId;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -8,17 +9,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArmorHandItemTest {
 
+    private static final DamageCauseId ENTITY_ATTACK = DamageCauseId.of("ENTITY_ATTACK");
+    private static final DamageCauseId PROJECTILE = DamageCauseId.of("PROJECTILE");
+
     @Test
     void builderCreatesExpectedValues() {
         ArmorHandItem item = ArmorHandItem.builder()
                 .increase(2.5)
                 .requireSet(true)
-                .damageCause("ENTITY_ATTACK")
+                .damageCause(ENTITY_ATTACK)
                 .build();
 
         assertEquals(2.5, item.getIncrease());
         assertTrue(item.isRequireSet());
-        assertEquals("ENTITY_ATTACK", item.getDamageCause());
+        assertEquals(ENTITY_ATTACK, item.getDamageCause());
     }
 
     @Test
@@ -26,11 +30,9 @@ class ArmorHandItemTest {
         ArmorHandItem item = ArmorHandItem.builder()
                 .increase(1.5)
                 .requireSet(false)
-                .damageCause("ENTITY_ATTACK")
+                .damageCause(ENTITY_ATTACK)
                 .build();
 
-        // setIncrease != -1: result = damage * (setIncrease - 1 + handIncrease)
-        // damage=10, setIncrease=2.0 -> 10 * (2.0 - 1 + 1.5) = 10 * 2.5 = 25.0
         assertEquals(25.0, item.calculateFinalDamage(10.0, 2.0), 0.0001);
     }
 
@@ -39,11 +41,9 @@ class ArmorHandItemTest {
         ArmorHandItem item = ArmorHandItem.builder()
                 .increase(1.5)
                 .requireSet(false)
-                .damageCause("ENTITY_ATTACK")
+                .damageCause(ENTITY_ATTACK)
                 .build();
 
-        // setIncrease == -1: result = damage * handIncrease
-        // damage=10, setIncrease=-1 -> 10 * 1.5 = 15.0
         assertEquals(15.0, item.calculateFinalDamage(10.0, -1), 0.0001);
     }
 
@@ -59,7 +59,7 @@ class ArmorHandItemTest {
         ArmorHandItem item = ArmorHandItem.builder()
                 .increase(increase)
                 .requireSet(false)
-                .damageCause("ENTITY_ATTACK")
+                .damageCause(ENTITY_ATTACK)
                 .build();
 
         assertEquals(expected, item.calculateFinalDamage(damage, setIncrease), 0.0001);
@@ -77,7 +77,7 @@ class ArmorHandItemTest {
         ArmorHandItem item = ArmorHandItem.builder()
                 .increase(increase)
                 .requireSet(false)
-                .damageCause("ENTITY_ATTACK")
+                .damageCause(ENTITY_ATTACK)
                 .build();
 
         assertEquals(expected, item.calculateFinalDamage(damage, -1), 0.0001);
@@ -88,7 +88,7 @@ class ArmorHandItemTest {
         ArmorHandItem item = ArmorHandItem.builder()
                 .increase(2.0)
                 .requireSet(true)
-                .damageCause("PROJECTILE")
+                .damageCause(PROJECTILE)
                 .build();
 
         assertEquals(20.0, item.calculateFinalDamage(10.0, 1.0), 0.0001);
@@ -97,11 +97,11 @@ class ArmorHandItemTest {
     @Test
     void equalsAndHashCode() {
         ArmorHandItem a = ArmorHandItem.builder()
-                .increase(1.5).requireSet(true).damageCause("ENTITY_ATTACK").build();
+                .increase(1.5).requireSet(true).damageCause(ENTITY_ATTACK).build();
         ArmorHandItem b = ArmorHandItem.builder()
-                .increase(1.5).requireSet(true).damageCause("ENTITY_ATTACK").build();
+                .increase(1.5).requireSet(true).damageCause(ENTITY_ATTACK).build();
         ArmorHandItem c = ArmorHandItem.builder()
-                .increase(2.0).requireSet(false).damageCause("PROJECTILE").build();
+                .increase(2.0).requireSet(false).damageCause(PROJECTILE).build();
 
         assertEquals(a, b);
         assertEquals(a.hashCode(), b.hashCode());
@@ -111,7 +111,7 @@ class ArmorHandItemTest {
     @Test
     void toStringContainsFields() {
         ArmorHandItem item = ArmorHandItem.builder()
-                .increase(1.5).requireSet(true).damageCause("ENTITY_ATTACK").build();
+                .increase(1.5).requireSet(true).damageCause(ENTITY_ATTACK).build();
         String s = item.toString();
         assertTrue(s.contains("1.5"));
         assertTrue(s.contains("ENTITY_ATTACK"));

@@ -1,5 +1,6 @@
 package gg.steve.mc.ap.model.ability;
 
+import gg.steve.mc.ap.model.id.DamageCauseId;
 import lombok.Builder;
 import lombok.Value;
 
@@ -8,7 +9,7 @@ import lombok.Value;
 public class ArmorHandItem {
     double increase;
     boolean requireSet;
-    String damageCause;
+    DamageCauseId damageCause;
 
     /**
      * Pure damage calculation mirroring HandSetData.calculateFinalDamage.

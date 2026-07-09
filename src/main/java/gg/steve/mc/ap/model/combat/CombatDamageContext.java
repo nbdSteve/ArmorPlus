@@ -1,16 +1,16 @@
 package gg.steve.mc.ap.model.combat;
 
+import gg.steve.mc.ap.model.id.DamageCauseId;
+import gg.steve.mc.ap.model.id.PlayerId;
 import lombok.Builder;
 import lombok.Value;
-
-import java.util.UUID;
 
 @Value
 @Builder
 public class CombatDamageContext {
-    UUID attacker;
-    UUID target;
+    PlayerId attacker;
+    PlayerId target;
     double baseDamage;
-    String cause;
+    DamageCauseId cause;
     boolean projectile;
 }

@@ -1,5 +1,7 @@
 package gg.steve.mc.ap.model.combat;
 
+import gg.steve.mc.ap.model.id.DamageCauseId;
+import gg.steve.mc.ap.model.id.PlayerId;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -10,35 +12,37 @@ class CombatDamageContextTest {
 
     @Test
     void builderCreatesExpectedValues() {
-        UUID attacker = UUID.randomUUID();
-        UUID target = UUID.randomUUID();
+        PlayerId attacker = PlayerId.of(UUID.randomUUID());
+        PlayerId target = PlayerId.of(UUID.randomUUID());
+        DamageCauseId cause = DamageCauseId.of("ENTITY_ATTACK");
 
         CombatDamageContext ctx = CombatDamageContext.builder()
                 .attacker(attacker)
                 .target(target)
                 .baseDamage(10.0)
-                .cause("ENTITY_ATTACK")
+                .cause(cause)
                 .projectile(false)
                 .build();
 
         assertEquals(attacker, ctx.getAttacker());
         assertEquals(target, ctx.getTarget());
         assertEquals(10.0, ctx.getBaseDamage());
-        assertEquals("ENTITY_ATTACK", ctx.getCause());
+        assertEquals(cause, ctx.getCause());
         assertFalse(ctx.isProjectile());
     }
 
     @Test
     void equalsAndHashCode() {
-        UUID attacker = UUID.fromString("00000000-0000-0000-0000-000000000001");
-        UUID target = UUID.fromString("00000000-0000-0000-0000-000000000002");
+        PlayerId attacker = PlayerId.of(UUID.fromString("00000000-0000-0000-0000-000000000001"));
+        PlayerId target = PlayerId.of(UUID.fromString("00000000-0000-0000-0000-000000000002"));
+        DamageCauseId cause = DamageCauseId.of("PROJECTILE");
 
         CombatDamageContext a = CombatDamageContext.builder()
                 .attacker(attacker).target(target)
-                .baseDamage(5.0).cause("PROJECTILE").projectile(true).build();
+                .baseDamage(5.0).cause(cause).projectile(true).build();
         CombatDamageContext b = CombatDamageContext.builder()
                 .attacker(attacker).target(target)
-                .baseDamage(5.0).cause("PROJECTILE").projectile(true).build();
+                .baseDamage(5.0).cause(cause).projectile(true).build();
 
         assertEquals(a, b);
         assertEquals(a.hashCode(), b.hashCode());
