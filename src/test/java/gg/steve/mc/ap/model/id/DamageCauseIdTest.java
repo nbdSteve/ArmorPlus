@@ -9,12 +9,17 @@ class DamageCauseIdTest {
     @Test
     void ofCreatesExpectedValue() {
         DamageCauseId id = DamageCauseId.of("ENTITY_ATTACK");
-        assertEquals("ENTITY_ATTACK", id.getValue());
+        assertEquals("ENTITY_ATTACK", id.toString());
     }
 
     @Test
     void ofNullThrows() {
         assertThrows(NullPointerException.class, () -> DamageCauseId.of(null));
+    }
+
+    @Test
+    void ofEmptyThrows() {
+        assertThrows(IllegalArgumentException.class, () -> DamageCauseId.of(""));
     }
 
     @Test

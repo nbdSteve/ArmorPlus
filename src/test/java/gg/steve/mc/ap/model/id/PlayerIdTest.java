@@ -31,4 +31,11 @@ class PlayerIdTest {
         assertEquals(a.hashCode(), b.hashCode());
         assertNotEquals(a, c);
     }
+
+    @Test
+    void toStringReturnsUuidString() {
+        UUID uuid = UUID.fromString("00000000-0000-0000-0000-000000000001");
+        PlayerId id = PlayerId.of(uuid);
+        assertEquals("00000000-0000-0000-0000-000000000001", id.toString());
+    }
 }

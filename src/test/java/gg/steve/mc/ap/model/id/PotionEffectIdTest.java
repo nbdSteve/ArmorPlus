@@ -9,12 +9,17 @@ class PotionEffectIdTest {
     @Test
     void ofCreatesExpectedValue() {
         PotionEffectId id = PotionEffectId.of("SPEED");
-        assertEquals("SPEED", id.getValue());
+        assertEquals("SPEED", id.toString());
     }
 
     @Test
     void ofNullThrows() {
         assertThrows(NullPointerException.class, () -> PotionEffectId.of(null));
+    }
+
+    @Test
+    void ofEmptyThrows() {
+        assertThrows(IllegalArgumentException.class, () -> PotionEffectId.of(""));
     }
 
     @Test

@@ -115,6 +115,8 @@
                                         <include>gg.steve.mc.ap.armor.SetType</include>
                                         <include>gg.steve.mc.ap.data.SetDataType</include>
                                         <include>gg.steve.mc.ap.model.ability.ArmorHandItem</include>
+                                        <include>gg.steve.mc.ap.model.id.TypedString</include>
+                                        <include>gg.steve.mc.ap.model.id.StringId</include>
                                     </includes>
                                     <limits>
                                         <limit>
@@ -144,6 +146,10 @@
                             <pattern>org.bstats</pattern>
                             <!-- Replace this with your package! -->
                             <shadedPattern>gg.steve.mc.ap</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.apache.commons.lang3</pattern>
+                            <shadedPattern>gg.steve.mc.ap.lib.commons.lang3</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -235,6 +241,12 @@
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
             <version>1.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

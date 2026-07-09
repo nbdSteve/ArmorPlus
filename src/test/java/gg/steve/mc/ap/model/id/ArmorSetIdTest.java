@@ -9,12 +9,17 @@ class ArmorSetIdTest {
     @Test
     void ofCreatesExpectedValue() {
         ArmorSetId id = ArmorSetId.of("dragon");
-        assertEquals("dragon", id.getValue());
+        assertEquals("dragon", id.toString());
     }
 
     @Test
     void ofNullThrows() {
         assertThrows(NullPointerException.class, () -> ArmorSetId.of(null));
+    }
+
+    @Test
+    void ofEmptyThrows() {
+        assertThrows(IllegalArgumentException.class, () -> ArmorSetId.of(""));
     }
 
     @Test

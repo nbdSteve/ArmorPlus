@@ -9,12 +9,17 @@ class SoundIdTest {
     @Test
     void ofCreatesExpectedValue() {
         SoundId id = SoundId.of("ENTITY_PLAYER_LEVELUP");
-        assertEquals("ENTITY_PLAYER_LEVELUP", id.getValue());
+        assertEquals("ENTITY_PLAYER_LEVELUP", id.toString());
     }
 
     @Test
     void ofNullThrows() {
         assertThrows(NullPointerException.class, () -> SoundId.of(null));
+    }
+
+    @Test
+    void ofEmptyThrows() {
+        assertThrows(IllegalArgumentException.class, () -> SoundId.of(""));
     }
 
     @Test
