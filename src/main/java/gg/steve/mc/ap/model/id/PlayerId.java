@@ -2,7 +2,7 @@ package gg.steve.mc.ap.model.id;
 
 import java.util.UUID;
 
-public class PlayerId extends TypedString {
+public final class PlayerId extends TypedString {
     private final UUID uuid;
 
     private PlayerId(UUID value) {
