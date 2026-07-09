@@ -1,14 +1,13 @@
 package gg.steve.mc.ap.model.id;
 
+import lombok.NonNull;
 import lombok.Value;
-
-import java.util.Objects;
 
 @Value
 public class PotionEffectId {
-    String value;
+    @NonNull String value;
 
     public static PotionEffectId of(String value) {
-        return new PotionEffectId(Objects.requireNonNull(value, "value must not be null"));
+        return new PotionEffectId(value);
     }
 }

@@ -1,15 +1,15 @@
 package gg.steve.mc.ap.model.id;
 
+import lombok.NonNull;
 import lombok.Value;
 
-import java.util.Objects;
 import java.util.UUID;
 
 @Value
 public class PlayerId {
-    UUID value;
+    @NonNull UUID value;
 
     public static PlayerId of(UUID value) {
-        return new PlayerId(Objects.requireNonNull(value, "value must not be null"));
+        return new PlayerId(value);
     }
 }
