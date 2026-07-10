@@ -33,26 +33,23 @@ public class BasicSetData extends AbstractSetData implements SetData {
     public void onHit(EntityDamageByEntityEvent event, Player damager) {
         if (this.set.getHandData() != null && this.set.verifyPiece(damager.getItemInHand()) && event.getCause().equals(this.set.getHandData().getActiveCause())) {
             event.setDamage(this.set.getHandData().calculateFinalDamage(event.getDamage(), this.increase));
-        } else {
-            double newDamage = BasicDamageCalculator.calculateAttackDamage(
-                    event.getDamage(), this.increase);
-            if (this.increase != -1) {
-                event.setDamage(newDamage);
-            }
+        } else if (this.increase != -1) {
+            event.setDamage(BasicDamageCalculator.calculateAttackDamage(
+                    event.getDamage(), this.increase));
         }
     }
 
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
-        CombatDamageModification mod = BasicDamageCalculator.calculateDefense(
-                event.getDamage(), this.reduction, this.kb);
         if (this.reduction != -1) {
+            CombatDamageModification mod = BasicDamageCalculator.calculateDefense(
+                    event.getDamage(), this.reduction, this.kb);
             event.setDamage(mod.getNewDamage());
         }
-        if (mod.getKnockbackMultiplier() != -1) {
+        if (this.kb != -1) {
             event.getEntity().setVelocity(
                     event.getDamager().getLocation().getDirection().setY(0).normalize()
-                            .multiply(mod.getKnockbackMultiplier()));
+                            .multiply(this.kb));
         }
     }
 

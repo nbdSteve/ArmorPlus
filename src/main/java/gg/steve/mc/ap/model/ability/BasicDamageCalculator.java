@@ -16,7 +16,6 @@ public final class BasicDamageCalculator {
     public static CombatDamageModification calculateDefense(double baseDamage,
                                                             double reduction, double knockback) {
         double newDamage = (reduction != -1) ? baseDamage * reduction : baseDamage;
-        double kb = (knockback != -1) ? knockback : -1;
-        return new CombatDamageModification(newDamage, kb);
+        return new CombatDamageModification(newDamage, knockback);
     }
 }
