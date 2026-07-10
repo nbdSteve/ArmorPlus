@@ -2,6 +2,8 @@ package gg.steve.mc.ap.data;
 
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetStatusEffectsManager;
+import gg.steve.mc.ap.model.ability.BasicDamageCalculator;
+import gg.steve.mc.ap.model.combat.CombatDamageModification;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -31,18 +33,26 @@ public class BasicSetData extends AbstractSetData implements SetData {
     public void onHit(EntityDamageByEntityEvent event, Player damager) {
         if (this.set.getHandData() != null && this.set.verifyPiece(damager.getItemInHand()) && event.getCause().equals(this.set.getHandData().getActiveCause())) {
             event.setDamage(this.set.getHandData().calculateFinalDamage(event.getDamage(), this.increase));
-        } else if (this.increase != -1) {
-            event.setDamage(event.getDamage() * this.increase);
+        } else {
+            double newDamage = BasicDamageCalculator.calculateAttackDamage(
+                    event.getDamage(), this.increase);
+            if (this.increase != -1) {
+                event.setDamage(newDamage);
+            }
         }
     }
 
     @Override
     public void onDamage(EntityDamageByEntityEvent event) {
+        CombatDamageModification mod = BasicDamageCalculator.calculateDefense(
+                event.getDamage(), this.reduction, this.kb);
         if (this.reduction != -1) {
-            event.setDamage(event.getDamage() * this.reduction);
+            event.setDamage(mod.getNewDamage());
         }
-        if (this.kb != -1) {
-            event.getEntity().setVelocity(event.getDamager().getLocation().getDirection().setY(0).normalize().multiply(this.kb));
+        if (mod.getKnockbackMultiplier() != -1) {
+            event.getEntity().setVelocity(
+                    event.getDamager().getLocation().getDirection().setY(0).normalize()
+                            .multiply(mod.getKnockbackMultiplier()));
         }
     }
 

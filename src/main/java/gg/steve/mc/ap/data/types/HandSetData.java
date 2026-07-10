@@ -3,6 +3,8 @@ package gg.steve.mc.ap.data.types;
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.data.HandItemData;
 import gg.steve.mc.ap.data.SetDataType;
+import gg.steve.mc.ap.model.ability.ArmorHandItem;
+import gg.steve.mc.ap.model.id.DamageCauseId;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -36,11 +38,12 @@ public class HandSetData implements HandItemData {
 
     @Override
     public double calculateFinalDamage(double damage, double setIncrease) {
-        if (setIncrease != -1) {
-            double set = setIncrease - 1;
-            return damage * (set + this.increase);
-        }
-        return damage * this.increase;
+        ArmorHandItem domainItem = ArmorHandItem.builder()
+                .increase(this.increase)
+                .requireSet(this.requireSet)
+                .damageCause(DamageCauseId.of(this.activeCause.name()))
+                .build();
+        return domainItem.calculateFinalDamage(damage, setIncrease);
     }
 
     @Override
