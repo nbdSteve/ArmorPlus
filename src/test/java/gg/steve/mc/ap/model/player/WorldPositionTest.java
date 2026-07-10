@@ -27,4 +27,10 @@ class WorldPositionTest {
         assertEquals(a.hashCode(), b.hashCode());
         assertNotEquals(a, c);
     }
+
+    @Test
+    void nullWorldThrows() {
+        assertThrows(NullPointerException.class,
+                () -> new WorldPosition(null, 0, 0, 0, 0f, 0f));
+    }
 }

@@ -11,7 +11,7 @@ import gg.steve.mc.ap.model.id.TaskHandle;
  */
 public interface SchedulerPort {
 
-    TaskHandle runRepeating(Runnable task, long delayTicks);
+    TaskHandle runRepeating(Runnable task, long initialDelayTicks, long periodTicks);
 
     void cancel(TaskHandle handle);
 }

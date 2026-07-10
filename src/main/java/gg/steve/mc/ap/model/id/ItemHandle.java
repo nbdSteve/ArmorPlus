@@ -6,12 +6,8 @@ package gg.steve.mc.ap.model.id;
  * the NbtPort for tag reads/writes. Adapters wrap platform item types
  * (e.g. Bukkit ItemStack) behind this identity.
  */
-public final class ItemHandle extends TypedString {
+public final class ItemHandle extends StringId {
     private ItemHandle(String value) { super(value); }
 
-    public static ItemHandle of(String value) {
-        if (value == null) throw new NullPointerException("value must not be null");
-        if (value.isEmpty()) throw new IllegalArgumentException("value must not be empty");
-        return new ItemHandle(value);
-    }
+    public static ItemHandle of(String value) { return new ItemHandle(value); }
 }
