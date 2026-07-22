@@ -121,6 +121,8 @@
                                         <include>gg.steve.mc.ap.model.id.ItemHandle</include>
                                         <include>gg.steve.mc.ap.model.id.TaskHandle</include>
                                         <include>gg.steve.mc.ap.model.player.WornArmor</include>
+                                        <include>gg.steve.mc.ap.model.player.PlayerArmorWearerRegistry</include>
+                                        <include>gg.steve.mc.ap.model.set.ArmorSetRegistry</include>
                                     </includes>
                                     <limits>
                                         <limit>

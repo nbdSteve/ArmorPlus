@@ -3,22 +3,19 @@ package gg.steve.mc.ap.player;
 import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetManager;
+import gg.steve.mc.ap.model.id.ArmorSetId;
+import gg.steve.mc.ap.model.id.PlayerId;
+import gg.steve.mc.ap.model.player.PlayerArmorWearerRegistry;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.utils.LogUtil;
-import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 public class SetPlayerManager {
-    private static Map<UUID, SetPlayer> playersWearingSets;
+    private static final PlayerArmorWearerRegistry registry = new PlayerArmorWearerRegistry();
 
     public static void init() {
-        playersWearingSets = new HashMap<>();
+        registry.clear();
         for (Player player : Bukkit.getOnlinePlayers()) {
             for (Set set : SetManager.getSets().values()) {
                 if (!set.isWearingSet(player, null, null)) continue;
@@ -30,23 +27,21 @@ public class SetPlayerManager {
     }
 
     public static void addSetPlayer(Player player, String setName) {
-        if (playersWearingSets == null) playersWearingSets = new HashMap<>();
-        if (playersWearingSets.containsKey(player.getUniqueId())) removeSetPlayer(player);
-        playersWearingSets.put(player.getUniqueId(), new SetPlayer(player, setName));
+        registry.add(PlayerId.of(player.getUniqueId()), ArmorSetId.of(setName));
     }
 
     public static void removeSetPlayer(Player player) {
-        if (playersWearingSets == null) playersWearingSets = new HashMap<>();
-        playersWearingSets.remove(player.getUniqueId());
+        registry.remove(PlayerId.of(player.getUniqueId()));
     }
 
     public static boolean isWearingSet(Player player) {
-        if (playersWearingSets == null) playersWearingSets = new HashMap<>();
-        return playersWearingSets.containsKey(player.getUniqueId());
+        return registry.isWearing(PlayerId.of(player.getUniqueId()));
     }
 
     public static SetPlayer getSetPlayer(Player player) {
-        return playersWearingSets.get(player.getUniqueId());
+        return registry.get(PlayerId.of(player.getUniqueId()))
+                .map(wearer -> new SetPlayer(player, wearer.getSetId().toString()))
+                .orElse(null);
     }
 
     public static int getPiecesWearing(Set set, Player player) {
