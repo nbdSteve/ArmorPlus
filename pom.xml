@@ -115,6 +115,7 @@
                                         <include>gg.steve.mc.ap.armor.SetType</include>
                                         <include>gg.steve.mc.ap.data.SetDataType</include>
                                         <include>gg.steve.mc.ap.model.ability.ArmorHandItem</include>
+                                        <include>gg.steve.mc.ap.model.ability.BasicDamageCalculator</include>
                                         <include>gg.steve.mc.ap.model.id.TypedString</include>
                                         <include>gg.steve.mc.ap.model.id.StringId</include>
                                         <include>gg.steve.mc.ap.model.id.ItemHandle</include>

@@ -12,7 +12,7 @@ public class ArmorHandItem {
     DamageCauseId damageCause;
 
     /**
-     * Pure damage calculation mirroring HandSetData.calculateFinalDamage.
+     * Pure hand-item damage calculation; HandSetData.calculateFinalDamage delegates here.
      * When setIncrease is -1, the set bonus is not applied.
      */
     public double calculateFinalDamage(double damage, double setIncrease) {
