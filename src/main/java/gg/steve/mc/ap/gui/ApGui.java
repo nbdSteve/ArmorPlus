@@ -1,20 +1,23 @@
 package gg.steve.mc.ap.gui;
 
-import gg.steve.mc.ap.armor.SetManager;
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.utils.GuiItemUtil;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class ApGui extends AbstractGui {
     private ConfigurationSection section;
+    private final ArmorSetCatalog catalog;
 
     /**
      * Constructor the create a new Gui
      *
      * @param section
+     * @param catalog the armor-set catalog used to resolve the set a slot action opens
      */
-    public ApGui(ConfigurationSection section) {
+    public ApGui(ConfigurationSection section, ArmorSetCatalog catalog) {
         super(section, section.getString("type"), section.getInt("size"));
         this.section = section;
+        this.catalog = catalog;
         refresh();
     }
 
@@ -33,7 +36,7 @@ public class ApGui extends AbstractGui {
                         player.closeInventory();
                         break;
                     default:
-                        SetManager.getSet(section.getString(entry + ".action")).openGui(player);
+                        catalog.getSet(section.getString(entry + ".action")).openGui(player);
                         break;
                 }
             });

@@ -1,8 +1,9 @@
 package gg.steve.mc.ap.player;
 
+import com.google.inject.Inject;
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.model.id.ArmorSetId;
 import gg.steve.mc.ap.model.id.PlayerId;
 import gg.steve.mc.ap.model.player.PlayerArmorWearerRegistry;
@@ -11,40 +12,57 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-public class SetPlayerManager {
-    private static final PlayerArmorWearerRegistry registry = new PlayerArmorWearerRegistry();
+/**
+ * Tracks which online players are currently wearing which armor set and answers the
+ * platform's questions about worn sets.
+ * <p>
+ * Wearer state lives in the injected pure {@link PlayerArmorWearerRegistry}; the injected
+ * {@link ArmorSetCatalog} resolves set names to {@link Set} instances. This is a shared
+ * singleton passed to its callers (listeners and the placeholder expansion) as an injected
+ * instance, so tests construct it with their own registry and catalog rather than resetting
+ * global state.
+ */
+public class PlayerArmorSetService {
+    private final PlayerArmorWearerRegistry registry;
+    private final ArmorSetCatalog catalog;
 
-    public static void init() {
+    @Inject
+    public PlayerArmorSetService(PlayerArmorWearerRegistry registry, ArmorSetCatalog catalog) {
+        this.registry = registry;
+        this.catalog = catalog;
+    }
+
+    public void init() {
         registry.clear();
         for (Player player : Bukkit.getOnlinePlayers()) {
-            for (Set set : SetManager.getSets().values()) {
+            for (Set set : catalog.getSets().values()) {
                 if (!set.isWearingSet(player, null, null)) continue;
-                SetPlayerManager.addSetPlayer(player, set.getName());
+                addSetPlayer(player, set.getName());
                 set.apply(player);
                 return;
             }
         }
     }
 
-    public static void addSetPlayer(Player player, String setName) {
+    public void addSetPlayer(Player player, String setName) {
         registry.add(PlayerId.of(player.getUniqueId()), ArmorSetId.of(setName));
     }
 
-    public static void removeSetPlayer(Player player) {
+    public void removeSetPlayer(Player player) {
         registry.remove(PlayerId.of(player.getUniqueId()));
     }
 
-    public static boolean isWearingSet(Player player) {
+    public boolean isWearingSet(Player player) {
         return registry.isWearing(PlayerId.of(player.getUniqueId()));
     }
 
-    public static SetPlayer getSetPlayer(Player player) {
+    public SetPlayer getSetPlayer(Player player) {
         return registry.get(PlayerId.of(player.getUniqueId()))
-                .map(wearer -> new SetPlayer(player, wearer.getSetId().toString()))
+                .map(wearer -> new SetPlayer(player, catalog.getSet(wearer.getSetId().toString())))
                 .orElse(null);
     }
 
-    public static int getPiecesWearing(Set set, Player player) {
+    public int getPiecesWearing(Set set, Player player) {
         int wearing = 0;
         for (Piece piece : set.getSetPieces().keySet()) {
             switch (piece) {
@@ -68,10 +86,10 @@ public class SetPlayerManager {
         return wearing;
     }
 
-    public static Set getSetFromHand(Player player) {
+    public Set getSetFromHand(Player player) {
         if (player.getItemInHand() == null || player.getItemInHand().getType().equals(Material.AIR)) return null;
         NBTItem hand = new NBTItem(player.getItemInHand());
         if (hand.getString("armor+.set").equalsIgnoreCase("")) return null;
-        return SetManager.getSet(hand.getString("armor+.set"));
+        return catalog.getSet(hand.getString("armor+.set"));
     }
 }

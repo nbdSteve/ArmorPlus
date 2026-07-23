@@ -1,13 +1,14 @@
 package gg.steve.mc.ap.listener;
 
+import gg.steve.mc.ap.ArmorPlus;
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.managers.FileManager;
 import gg.steve.mc.ap.model.id.ArmorSetId;
+import gg.steve.mc.ap.model.set.ArmorSetRegistry;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,17 +30,15 @@ import static org.mockito.Mockito.*;
 
 /**
  * End-to-end style test of {@link PlayerCommandListener}, the only player-facing surface the
- * 4E registry extraction changed. Before the change, {@code SetManager.getSets()} returned a
- * {@code Map<String, Set>} and the listener iterated raw {@code String} keys; now it returns the
- * registry's {@code Map<ArmorSetId, Set>} view and the listener iterates {@code ArmorSetId} keys,
- * using {@code key.toString()} to recover the raw set-name string.
+ * registry extraction changed. The listener iterates the catalog's {@code Map<ArmorSetId, Set>}
+ * view and uses {@code key.toString()} to recover the raw set-name string.
  * <p>
  * These tests fire real {@link PlayerCommandPreprocessEvent}s (exactly what Bukkit delivers when a
- * player types a command in chat) at the real listener, wired to the real shared {@link SetManager}
- * registry, and assert the interception behaves identically: the set name is matched
- * case-insensitively, the event is cancelled, the matching set's GUI is opened, and unrelated
- * commands pass straight through. A transcript of each simulated keystroke and its outcome is
- * written to the evidence directory so a reviewer can see the player experience directly.
+ * player types a command in chat) at the real listener, wired to an {@link ArmorSetCatalog} the
+ * test constructs and populates directly, and assert the interception behaves identically: the set
+ * name is matched case-insensitively, the event is cancelled, the matching set's GUI is opened, and
+ * unrelated commands pass straight through. A transcript of each simulated keystroke and its outcome
+ * is written to the evidence directory so a reviewer can see the player experience directly.
  */
 @ExtendWith(MockitoExtension.class)
 class PlayerCommandListenerTest {
@@ -53,21 +52,19 @@ class PlayerCommandListenerTest {
     @Mock private Set dragonSet;
     @Mock private Set knightSet;
     @Mock private YamlConfiguration permissionsConfig;
+    @Mock private ArmorPlus plugin;
 
-    private final PlayerCommandListener listener = new PlayerCommandListener();
+    private ArmorSetCatalog catalog;
+    private PlayerCommandListener listener;
     private final List<String> transcript = new ArrayList<>();
 
     @BeforeEach
     void setUp() {
-        // Register two sets into the real shared registry, exactly as loadSets() would.
-        SetManager.get().getRegistry().clear();
-        SetManager.get().getRegistry().register(ArmorSetId.of("dragon"), dragonSet);
-        SetManager.get().getRegistry().register(ArmorSetId.of("knight"), knightSet);
-    }
-
-    @AfterEach
-    void tearDown() {
-        SetManager.get().getRegistry().clear();
+        // Register two sets into the catalog's registry, exactly as loadSets() would.
+        catalog = new ArmorSetCatalog(new ArmorSetRegistry<>(), plugin);
+        catalog.getRegistry().register(ArmorSetId.of("dragon"), dragonSet);
+        catalog.getRegistry().register(ArmorSetId.of("knight"), knightSet);
+        listener = new PlayerCommandListener(catalog);
     }
 
     /** Fire a command at the real listener and record the observable player-facing outcome. */
@@ -84,7 +81,7 @@ class PlayerCommandListenerTest {
     private void writeTranscript(String title) {
         List<String> lines = new ArrayList<>();
         lines.add("=== " + title + " ===");
-        lines.add("Registry keys (ArmorSetId): " + new ArrayList<>(SetManager.getSets().keySet()));
+        lines.add("Registry keys (ArmorSetId): " + new ArrayList<>(catalog.getSets().keySet()));
         lines.addAll(transcript);
         try {
             Files.createDirectories(EVIDENCE.getParent());

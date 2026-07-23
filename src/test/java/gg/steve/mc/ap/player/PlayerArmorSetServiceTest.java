@@ -1,17 +1,16 @@
 package gg.steve.mc.ap.player;
 
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
+import gg.steve.mc.ap.model.player.PlayerArmorWearerRegistry;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.LinkedHashMap;
@@ -22,86 +21,81 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 /**
- * Characterization tests for SetPlayerManager state transitions.
- * Pins add/remove/isWearing/getPiecesWearing before 4E extracts WearerRegistry.
+ * Characterization tests for PlayerArmorSetService state transitions.
+ * Pins add/remove/isWearing/getPiecesWearing behavior. Formerly exercised the static
+ * SetPlayerManager with a {@code MockedStatic<SetManager>}; now the service holds an injected
+ * wearer registry and catalog, so each test constructs a fresh instance with no static reset.
  */
 @ExtendWith(MockitoExtension.class)
-class SetPlayerManagerTest {
+class PlayerArmorSetServiceTest {
 
     @Mock private Player player1;
     @Mock private Player player2;
     @Mock private Set mockSet;
+    @Mock private ArmorSetCatalog catalog;
 
     private final UUID uuid1 = UUID.randomUUID();
     private final UUID uuid2 = UUID.randomUUID();
 
-    private MockedStatic<SetManager> setManagerMock;
+    private PlayerArmorSetService service;
 
     @BeforeEach
     void setUp() {
-        when(player1.getUniqueId()).thenReturn(uuid1);
+        lenient().when(player1.getUniqueId()).thenReturn(uuid1);
         lenient().when(player2.getUniqueId()).thenReturn(uuid2);
 
-        // SetPlayer constructor calls SetManager.getSet(name) - mock it
-        setManagerMock = mockStatic(SetManager.class);
-        setManagerMock.when(() -> SetManager.getSet(anyString())).thenReturn(mockSet);
+        // getSetPlayer resolves the worn set name through the catalog.
+        lenient().when(catalog.getSet(anyString())).thenReturn(mockSet);
 
-        // Reset the static state by removing any players
-        SetPlayerManager.removeSetPlayer(player1);
-        SetPlayerManager.removeSetPlayer(player2);
-    }
-
-    @AfterEach
-    void tearDown() {
-        setManagerMock.close();
+        service = new PlayerArmorSetService(new PlayerArmorWearerRegistry(), catalog);
     }
 
     @Test
     void addSetPlayer_playerNotWearing_addsSuccessfully() {
-        SetPlayerManager.addSetPlayer(player1, "warrior");
+        service.addSetPlayer(player1, "warrior");
 
-        assertTrue(SetPlayerManager.isWearingSet(player1));
+        assertTrue(service.isWearingSet(player1));
     }
 
     @Test
     void addSetPlayer_playerAlreadyWearing_replacesExisting() {
-        SetPlayerManager.addSetPlayer(player1, "warrior");
-        SetPlayerManager.addSetPlayer(player1, "mage");
+        service.addSetPlayer(player1, "warrior");
+        service.addSetPlayer(player1, "mage");
 
-        assertTrue(SetPlayerManager.isWearingSet(player1));
-        SetPlayer sp = SetPlayerManager.getSetPlayer(player1);
+        assertTrue(service.isWearingSet(player1));
+        SetPlayer sp = service.getSetPlayer(player1);
         assertNotNull(sp);
     }
 
     @Test
     void removeSetPlayer_playerWearing_removesSuccessfully() {
-        SetPlayerManager.addSetPlayer(player1, "warrior");
-        SetPlayerManager.removeSetPlayer(player1);
+        service.addSetPlayer(player1, "warrior");
+        service.removeSetPlayer(player1);
 
-        assertFalse(SetPlayerManager.isWearingSet(player1));
+        assertFalse(service.isWearingSet(player1));
     }
 
     @Test
     void removeSetPlayer_playerNotWearing_noError() {
-        assertDoesNotThrow(() -> SetPlayerManager.removeSetPlayer(player1));
+        assertDoesNotThrow(() -> service.removeSetPlayer(player1));
     }
 
     @Test
     void isWearingSet_uninitializedMap_returnsFalse() {
-        assertFalse(SetPlayerManager.isWearingSet(player2));
+        assertFalse(service.isWearingSet(player2));
     }
 
     @Test
     void multiplePlayers_independentTracking() {
-        SetPlayerManager.addSetPlayer(player1, "warrior");
-        SetPlayerManager.addSetPlayer(player2, "mage");
+        service.addSetPlayer(player1, "warrior");
+        service.addSetPlayer(player2, "mage");
 
-        assertTrue(SetPlayerManager.isWearingSet(player1));
-        assertTrue(SetPlayerManager.isWearingSet(player2));
+        assertTrue(service.isWearingSet(player1));
+        assertTrue(service.isWearingSet(player2));
 
-        SetPlayerManager.removeSetPlayer(player1);
-        assertFalse(SetPlayerManager.isWearingSet(player1));
-        assertTrue(SetPlayerManager.isWearingSet(player2));
+        service.removeSetPlayer(player1);
+        assertFalse(service.isWearingSet(player1));
+        assertTrue(service.isWearingSet(player2));
     }
 
     // --- getPiecesWearing characterization ---
@@ -132,7 +126,7 @@ class SetPlayerManagerTest {
         when(set.verifyPiece(boots)).thenReturn(true);
         when(set.verifyPiece(hand)).thenReturn(true);
 
-        int result = SetPlayerManager.getPiecesWearing(set, player1);
+        int result = service.getPiecesWearing(set, player1);
         assertEquals(5, result);
     }
 
@@ -156,7 +150,7 @@ class SetPlayerManagerTest {
 
         when(set.verifyPiece(any(ItemStack.class))).thenReturn(false);
 
-        int result = SetPlayerManager.getPiecesWearing(set, player1);
+        int result = service.getPiecesWearing(set, player1);
         assertEquals(0, result);
     }
 
@@ -183,7 +177,7 @@ class SetPlayerManagerTest {
         when(set.verifyPiece(legs)).thenReturn(true);
         when(set.verifyPiece(boots)).thenReturn(false);
 
-        int result = SetPlayerManager.getPiecesWearing(set, player1);
+        int result = service.getPiecesWearing(set, player1);
         assertEquals(2, result);
     }
 }

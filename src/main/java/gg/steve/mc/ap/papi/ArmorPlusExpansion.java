@@ -1,10 +1,10 @@
 package gg.steve.mc.ap.papi;
 
 import gg.steve.mc.ap.ArmorPlus;
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.managers.ConfigManager;
-import gg.steve.mc.ap.player.SetPlayerManager;
+import gg.steve.mc.ap.player.PlayerArmorSetService;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -13,9 +13,13 @@ import java.nio.file.Files;
 
 public class ArmorPlusExpansion extends PlaceholderExpansion {
     private ArmorPlus instance;
+    private final ArmorSetCatalog catalog;
+    private final PlayerArmorSetService playerArmorSetService;
 
-    public ArmorPlusExpansion(ArmorPlus instance) {
+    public ArmorPlusExpansion(ArmorPlus instance, ArmorSetCatalog catalog, PlayerArmorSetService playerArmorSetService) {
         this.instance = instance;
+        this.catalog = catalog;
+        this.playerArmorSetService = playerArmorSetService;
     }
 
     @Override
@@ -48,25 +52,25 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
         if (player == null) return "";
         String fallback = ConfigManager.CONFIG.get().getString("fallback-placeholder");
         if (identifier.equalsIgnoreCase("current_name")) {
-            if (SetPlayerManager.isWearingSet(player)) {
-                return SetPlayerManager.getSetPlayer(player).getSet().getName();
+            if (playerArmorSetService.isWearingSet(player)) {
+                return playerArmorSetService.getSetPlayer(player).getSet().getName();
             } else {
                 return fallback;
             }
         }
         if (identifier.contains("current_increase")) {
             double increase = 0;
-            if (SetPlayerManager.getSetFromHand(player) != null) {
-                Set set = SetPlayerManager.getSetFromHand(player);
+            if (playerArmorSetService.getSetFromHand(player) != null) {
+                Set set = playerArmorSetService.getSetFromHand(player);
                 if (set.getHandData() != null) {
                     if (identifier.endsWith("raw")) {
-                        if (set.getHandData().requiresFullSet() && SetPlayerManager.isWearingSet(player) && SetPlayerManager.getSetPlayer(player).getSet().equals(set)) {
+                        if (set.getHandData().requiresFullSet() && playerArmorSetService.isWearingSet(player) && playerArmorSetService.getSetPlayer(player).getSet().equals(set)) {
                             increase += set.getHandData().getIncrease() - 1;
                         } else if (!set.getHandData().requiresFullSet()) {
                             increase += set.getHandData().getIncrease() - 1;
                         }
                     } else if (identifier.endsWith("percentage")) {
-                        if (set.getHandData().requiresFullSet() && SetPlayerManager.isWearingSet(player) && SetPlayerManager.getSetPlayer(player).getSet().equals(set)) {
+                        if (set.getHandData().requiresFullSet() && playerArmorSetService.isWearingSet(player) && playerArmorSetService.getSetPlayer(player).getSet().equals(set)) {
                             increase += (set.getHandData().getIncrease() - 1) * 100;
                         } else if (!set.getHandData().requiresFullSet()) {
                             increase += (set.getHandData().getIncrease() - 1) * 100;
@@ -74,8 +78,8 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
                     }
                 }
             }
-            if (SetPlayerManager.isWearingSet(player)) {
-                Set set = SetPlayerManager.getSetPlayer(player).getSet();
+            if (playerArmorSetService.isWearingSet(player)) {
+                Set set = playerArmorSetService.getSetPlayer(player).getSet();
                 if (set.getBasicData().getIncrease() == -1 && increase == 0) {
                     return "Default";
                 }
@@ -85,7 +89,7 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
                     if (set.getBasicData().getIncrease() != -1) increase += (set.getBasicData().getIncrease() - 1) * 100;
                 }
             }
-            if (!SetPlayerManager.isWearingSet(player) && increase == 0) {
+            if (!playerArmorSetService.isWearingSet(player) && increase == 0) {
                 return fallback;
             }
             if (identifier.endsWith("raw")) {
@@ -97,46 +101,46 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
             }
         }
         if (identifier.contains("current_reduction")) {
-            if (SetPlayerManager.isWearingSet(player)) {
-                if (SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getReduction() == -1) {
+            if (playerArmorSetService.isWearingSet(player)) {
+                if (playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getReduction() == -1) {
                     return "Default";
                 }
                 if (identifier.endsWith("raw")) {
-                    return String.valueOf(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getReduction());
+                    return String.valueOf(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getReduction());
                 } else if (identifier.endsWith("formatted")) {
-                    return ArmorPlus.formatNumber(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getReduction());
+                    return ArmorPlus.formatNumber(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getReduction());
                 } else if (identifier.endsWith("percentage")) {
-                    return ArmorPlus.formatNumber(Math.abs((SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getReduction() - 1) * 100)) + "%";
+                    return ArmorPlus.formatNumber(Math.abs((playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getReduction() - 1) * 100)) + "%";
                 }
             } else {
                 return fallback;
             }
         }
         if (identifier.contains("current_kb")) {
-            if (SetPlayerManager.isWearingSet(player)) {
-                if (SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getKb() == -1) {
+            if (playerArmorSetService.isWearingSet(player)) {
+                if (playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getKb() == -1) {
                     return "Default";
                 }
                 if (identifier.endsWith("raw")) {
-                    return String.valueOf(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getKb());
+                    return String.valueOf(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getKb());
                 } else if (identifier.endsWith("formatted")) {
-                    return ArmorPlus.formatNumber(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getKb());
+                    return ArmorPlus.formatNumber(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getKb());
                 }
             } else {
                 return fallback;
             }
         }
         if (identifier.contains("current_health")) {
-            if (SetPlayerManager.isWearingSet(player)) {
-                if (SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getHealth() == -1) {
+            if (playerArmorSetService.isWearingSet(player)) {
+                if (playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getHealth() == -1) {
                     return "Default";
                 }
                 if (identifier.endsWith("raw")) {
-                    return String.valueOf(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getHealth());
+                    return String.valueOf(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getHealth());
                 } else if (identifier.endsWith("formatted")) {
-                    return ArmorPlus.formatNumber(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getHealth());
+                    return ArmorPlus.formatNumber(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getHealth());
                 } else if (identifier.endsWith("hearts")) {
-                    return ArmorPlus.formatNumber(SetPlayerManager.getSetPlayer(player).getSet().getBasicData().getHealth() / 2) + ChatColor.RED + "❤";
+                    return ArmorPlus.formatNumber(playerArmorSetService.getSetPlayer(player).getSet().getBasicData().getHealth() / 2) + ChatColor.RED + "❤";
                 }
             } else {
                 return fallback;
@@ -145,15 +149,15 @@ public class ArmorPlusExpansion extends PlaceholderExpansion {
         if (identifier.endsWith("pieces_wearing")) {
             String[] parts = identifier.split("_");
             Set set;
-            if ((set = SetManager.getSet(parts[0])) == null) {
+            if ((set = catalog.getSet(parts[0])) == null) {
                 return "Invalid set";
             }
-            return String.valueOf(SetPlayerManager.getPiecesWearing(set, player));
+            return String.valueOf(playerArmorSetService.getPiecesWearing(set, player));
         }
         if (identifier.endsWith("pieces_total")) {
             String[] parts = identifier.split("_");
             Set set;
-            if ((set = SetManager.getSet(parts[0])) == null) {
+            if ((set = catalog.getSet(parts[0])) == null) {
                 return "Invalid set";
             }
             return String.valueOf(set.getSetPieces().size());
