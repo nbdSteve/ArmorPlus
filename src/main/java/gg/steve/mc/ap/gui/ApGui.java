@@ -8,12 +8,6 @@ public class ApGui extends AbstractGui {
     private ConfigurationSection section;
     private final ArmorSetCatalog catalog;
 
-    /**
-     * Constructor the create a new Gui
-     *
-     * @param section
-     * @param catalog the armor-set catalog used to resolve the set a slot action opens
-     */
     public ApGui(ConfigurationSection section, ArmorSetCatalog catalog) {
         super(section, section.getString("type"), section.getInt("size"));
         this.section = section;

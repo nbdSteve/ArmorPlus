@@ -28,10 +28,7 @@ public final class ArmorPlus extends JavaPlugin {
     private static ApGui apGui;
     private static DecimalFormat numberFormat = new DecimalFormat("#,###.##");
 
-    /**
-     * The injected armor-set catalog, kept on the plugin so the still-static GUI-bootstrap
-     * facade below can hand it to {@link ApGui} without reaching for a static set map.
-     */
+    // kept on the plugin so the static getApGui() facade can reach it
     private ArmorSetCatalog catalog;
 
     @Override
@@ -41,8 +38,6 @@ public final class ArmorPlus extends JavaPlugin {
         // reset apgui to null for reloading
         apGui = null;
         SetupManager.setupFiles(new FileManager(instance));
-        // Composition root: build the injector once, then resolve the shared collaborators
-        // and hand them to the wiring below as instances instead of reaching for statics.
         Injector injector = Guice.createInjector(new ArmorPlusModule(this));
         this.catalog = injector.getInstance(ArmorSetCatalog.class);
         PlayerArmorSetService playerArmorSetService = injector.getInstance(PlayerArmorSetService.class);

@@ -12,16 +12,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-/**
- * Tracks which online players are currently wearing which armor set and answers the
- * platform's questions about worn sets.
- * <p>
- * Wearer state lives in the injected pure {@link PlayerArmorWearerRegistry}; the injected
- * {@link ArmorSetCatalog} resolves set names to {@link Set} instances. This is a shared
- * singleton passed to its callers (listeners and the placeholder expansion) as an injected
- * instance, so tests construct it with their own registry and catalog rather than resetting
- * global state.
- */
 public class PlayerArmorSetService {
     private final PlayerArmorWearerRegistry registry;
     private final ArmorSetCatalog catalog;

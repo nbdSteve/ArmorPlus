@@ -12,14 +12,6 @@ import java.io.File;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * The plugin's live catalog of armor sets, parsed from configuration and keyed by {@link ArmorSetId}.
- * <p>
- * State lives in an injected {@link ArmorSetRegistry}; this class is the adapter that populates the
- * registry from Bukkit-backed config files and reads it back for the platform layer. It is a shared
- * singleton wired by Guice and passed to its callers as an injected instance, so there is no static
- * map or global entry point to reset between reloads.
- */
 public class ArmorSetCatalog {
     private final ArmorSetRegistry<Set> registry;
     private final ArmorPlus plugin;
@@ -30,7 +22,6 @@ public class ArmorSetCatalog {
         this.plugin = plugin;
     }
 
-    /** The registry this catalog owns, for callers that read the raw id-to-set view. */
     public ArmorSetRegistry<Set> getRegistry() {
         return registry;
     }

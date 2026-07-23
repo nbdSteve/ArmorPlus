@@ -28,18 +28,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-/**
- * End-to-end style test of {@link PlayerCommandListener}, the only player-facing surface the
- * registry extraction changed. The listener iterates the catalog's {@code Map<ArmorSetId, Set>}
- * view and uses {@code key.toString()} to recover the raw set-name string.
- * <p>
- * These tests fire real {@link PlayerCommandPreprocessEvent}s (exactly what Bukkit delivers when a
- * player types a command in chat) at the real listener, wired to an {@link ArmorSetCatalog} the
- * test constructs and populates directly, and assert the interception behaves identically: the set
- * name is matched case-insensitively, the event is cancelled, the matching set's GUI is opened, and
- * unrelated commands pass straight through. A transcript of each simulated keystroke and its outcome
- * is written to the evidence directory so a reviewer can see the player experience directly.
- */
 @ExtendWith(MockitoExtension.class)
 class PlayerCommandListenerTest {
 
@@ -60,17 +48,14 @@ class PlayerCommandListenerTest {
 
     @BeforeEach
     void setUp() {
-        // Register two sets into the catalog's registry, exactly as loadSets() would.
         catalog = new ArmorSetCatalog(new ArmorSetRegistry<>(), plugin);
         catalog.getRegistry().register(ArmorSetId.of("dragon"), dragonSet);
         catalog.getRegistry().register(ArmorSetId.of("knight"), knightSet);
         listener = new PlayerCommandListener(catalog);
     }
 
-    /** Fire a command at the real listener and record the observable player-facing outcome. */
     private PlayerCommandPreprocessEvent type(String typed) {
-        // Three-arg constructor takes an explicit recipient set, avoiding the internal
-        // getServer().getOnlinePlayers() call the two-arg form makes.
+        // explicit recipient set avoids the internal getServer().getOnlinePlayers() the two-arg form calls
         PlayerCommandPreprocessEvent event =
                 new PlayerCommandPreprocessEvent(player, typed, Collections.emptySet());
         listener.onCmd(event);

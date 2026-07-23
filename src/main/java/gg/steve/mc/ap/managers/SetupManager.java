@@ -37,13 +37,6 @@ public class SetupManager {
         instance.getCommand("ap").setExecutor(new ApCmd(catalog));
     }
 
-    /**
-     * Register all of the events for the plugin.
-     *
-     * @param instance               Plugin, the main plugin instance
-     * @param catalog                the shared armor-set catalog the listeners resolve sets from
-     * @param playerArmorSetService  the shared worn-set tracker the listeners record wearers in
-     */
     public static void registerEvents(Plugin instance, ArmorSetCatalog catalog, PlayerArmorSetService playerArmorSetService) {
         PluginManager pm = instance.getServer().getPluginManager();
         pm.registerEvents(new ArmorListener(ConfigManager.BLOCKED.get().getStringList("blocked")), instance);

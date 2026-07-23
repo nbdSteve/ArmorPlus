@@ -28,22 +28,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Exercises the real Guice composition root that {@link ArmorPlus#onEnable()} builds.
- * <p>
- * This is the wiring the whole change turns on: the static {@code SetManager}/{@code SetPlayerManager}
- * singletons were deleted and replaced by injected {@link ArmorSetCatalog} / {@link PlayerArmorSetService}
- * instances that share the pure {@link ArmorSetRegistry} / {@link PlayerArmorWearerRegistry}. Every other
- * test constructs those collaborators by hand with {@code new}; this one drives the actual
- * {@link ArmorPlusModule} through a live {@link Injector} - the same objects {@code onEnable} resolves
- * and threads to the listeners, commands and expansion - so the DI contract itself is verified, not
- * just the classes in isolation.
- * <p>
- * The end-to-end check proves the property the old statics used to give for free: state written through
- * one injector-resolved collaborator (register a set on the catalog, mark a player wearing it on the
- * service) is observable through another, because Guice hands out one shared instance of each. A
- * transcript of what the injector produced is written to the evidence directory.
- */
+/** Verifies the real Guice composition root wires shared singletons over the pure registries. */
 @ExtendWith(MockitoExtension.class)
 class ArmorPlusModuleTest {
 
@@ -63,10 +48,8 @@ class ArmorPlusModuleTest {
     void injectorWiresSharedSingletonsAndTheyRoundTripState() {
         List<String> transcript = new ArrayList<>();
 
-        // Composition root, exactly as ArmorPlus.onEnable builds it.
         Injector injector = Guice.createInjector(new ArmorPlusModule(plugin));
 
-        // 1. Both adapters resolve as singletons: repeat lookups hand back the same object.
         ArmorSetCatalog catalog = injector.getInstance(ArmorSetCatalog.class);
         PlayerArmorSetService service = injector.getInstance(PlayerArmorSetService.class);
         assertSame(catalog, injector.getInstance(ArmorSetCatalog.class),
@@ -76,8 +59,6 @@ class ArmorPlusModuleTest {
         transcript.add("injector.getInstance(ArmorSetCatalog)        -> singleton " + (catalog != null));
         transcript.add("injector.getInstance(PlayerArmorSetService)  -> singleton " + (service != null));
 
-        // 2. The pure registries are the same instances the adapters were constructor-injected with:
-        //    the catalog holds the injector's ArmorSetRegistry singleton, proving the graph is threaded.
         ArmorSetRegistry<Set> sharedRegistry = injector.getInstance(SET_REGISTRY_KEY);
         assertSame(sharedRegistry, catalog.getRegistry(),
                 "the catalog must own the singleton ArmorSetRegistry the injector binds");
@@ -87,9 +68,7 @@ class ArmorPlusModuleTest {
         transcript.add("catalog.getRegistry() == injected ArmorSetRegistry singleton -> "
                 + (sharedRegistry == catalog.getRegistry()));
 
-        // 3. End-to-end: write through the catalog, read back through the service.
-        //    getSetPlayer resolves the worn set name back through the SAME catalog the service was
-        //    injected with, so this only works if Guice threaded one shared catalog into the service.
+        // round-trips only if Guice threaded one shared catalog into the service
         UUID id = UUID.fromString("00000000-0000-0000-0000-0000000000aa");
         org.mockito.Mockito.when(player.getUniqueId()).thenReturn(id);
 

@@ -9,15 +9,6 @@ import gg.steve.mc.ap.model.player.PlayerArmorWearerRegistry;
 import gg.steve.mc.ap.model.set.ArmorSetRegistry;
 import gg.steve.mc.ap.player.PlayerArmorSetService;
 
-/**
- * Guice bindings for the plugin's shared collaborators.
- * <p>
- * The pure {@code model} registries carry no framework annotations, so they are bound here
- * (Guice instantiates them via their no-arg constructors) rather than annotated in place -
- * this keeps the domain layer free of any dependency-injection imports. The adapter-layer
- * catalog and player service are constructor-injected singletons; a single instance of each
- * is shared across every listener, command, and expansion the injector wires.
- */
 public class ArmorPlusModule extends AbstractModule {
     private final ArmorPlus plugin;
 
@@ -28,6 +19,7 @@ public class ArmorPlusModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(ArmorPlus.class).toInstance(plugin);
+        // Bind the pure model registries here rather than annotating them, so the domain layer stays DI-free.
         bind(new TypeLiteral<ArmorSetRegistry<Set>>() {}).in(Singleton.class);
         bind(PlayerArmorWearerRegistry.class).in(Singleton.class);
         bind(ArmorSetCatalog.class).in(Singleton.class);

@@ -20,12 +20,6 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-/**
- * Characterization tests for PlayerArmorSetService state transitions.
- * Pins add/remove/isWearing/getPiecesWearing behavior. Formerly exercised the static
- * SetPlayerManager with a {@code MockedStatic<SetManager>}; now the service holds an injected
- * wearer registry and catalog, so each test constructs a fresh instance with no static reset.
- */
 @ExtendWith(MockitoExtension.class)
 class PlayerArmorSetServiceTest {
 
@@ -43,8 +37,6 @@ class PlayerArmorSetServiceTest {
     void setUp() {
         lenient().when(player1.getUniqueId()).thenReturn(uuid1);
         lenient().when(player2.getUniqueId()).thenReturn(uuid2);
-
-        // getSetPlayer resolves the worn set name through the catalog.
         lenient().when(catalog.getSet(anyString())).thenReturn(mockSet);
 
         service = new PlayerArmorSetService(new PlayerArmorWearerRegistry(), catalog);
@@ -97,8 +89,6 @@ class PlayerArmorSetServiceTest {
         assertFalse(service.isWearingSet(player1));
         assertTrue(service.isWearingSet(player2));
     }
-
-    // --- getPiecesWearing characterization ---
 
     @Test
     void getPiecesWearing_allPiecesVerified_countsAll(

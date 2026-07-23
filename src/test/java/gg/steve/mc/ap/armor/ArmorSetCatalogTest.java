@@ -10,17 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Characterization tests for {@link ArmorSetCatalog#getSet(String)} pinning the exact
- * null contract that the registry extraction had to preserve.
- * <p>
- * Real callers (GiveCmd, PlayerEquipListener, ArmorPlusExpansion) treat a null return as
- * "no such set" and must never see an exception for a missing/blank name. Because the
- * {@code ArmorSetRegistry} keys on {@code ArmorSetId} - which rejects null/empty via
- * commons-lang3 {@code Validate} - {@code getSet} guards those inputs before constructing the id.
- * These tests prove that guard preserves the original {@code map.get()} behavior on a catalog
- * built from an empty registry.
- */
+// getSet must return null for null/blank names: callers rely on it, but ArmorSetId.of rejects them.
 @ExtendWith(MockitoExtension.class)
 class ArmorSetCatalogTest {
 
