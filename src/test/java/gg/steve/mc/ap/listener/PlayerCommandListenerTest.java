@@ -45,7 +45,8 @@ import static org.mockito.Mockito.*;
 class PlayerCommandListenerTest {
 
     private static final Path EVIDENCE = Path.of(
-            "/var/folders/xr/3t6rc9s511sfnzjbrjc1y_380000gr/T/no-mistakes-evidence/01KY69XZQMQHZWP62V198YSZ3P",
+            System.getProperty("java.io.tmpdir"),
+            "no-mistakes-evidence", "01KY69XZQMQHZWP62V198YSZ3P",
             "player-command-intercept-transcript.txt");
 
     @Mock private Player player;
