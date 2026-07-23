@@ -1,12 +1,12 @@
 package gg.steve.mc.ap.listener;
 
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.armorequipevent.ArmorEquipEvent;
 import gg.steve.mc.ap.managers.ConfigManager;
 import gg.steve.mc.ap.nbt.NBTItem;
-import gg.steve.mc.ap.player.SetPlayerManager;
+import gg.steve.mc.ap.player.PlayerArmorSetService;
 import gg.steve.mc.ap.utils.CommandUtil;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -15,6 +15,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class PlayerEquipListener implements Listener {
+    private final ArmorSetCatalog catalog;
+    private final PlayerArmorSetService playerArmorSetService;
+
+    public PlayerEquipListener(ArmorSetCatalog catalog, PlayerArmorSetService playerArmorSetService) {
+        this.catalog = catalog;
+        this.playerArmorSetService = playerArmorSetService;
+    }
 
     @EventHandler
     public void equip(ArmorEquipEvent event) {
@@ -43,7 +50,7 @@ public class PlayerEquipListener implements Listener {
             }
         }
         String setName = nbtItem.getString("armor+.set");
-        Set set = SetManager.getSet(setName);
+        Set set = catalog.getSet(setName);
         Piece piece = null;
         for (Piece pieces : set.getSetPieces().keySet()) {
             if (event.getNewArmorPiece().getType().equals(set.getPiece(pieces).getType())) piece = pieces;
@@ -52,16 +59,16 @@ public class PlayerEquipListener implements Listener {
             CommandUtil.execute(set.getConfig().getStringList("set-pieces." + piece.name().toLowerCase() + ".commands.apply"), event.getPlayer());
         }
         if (set.isWearingSet(event.getPlayer(), event.getType(), event.getNewArmorPiece())) {
-            SetPlayerManager.addSetPlayer(event.getPlayer(), setName);
+            playerArmorSetService.addSetPlayer(event.getPlayer(), setName);
             set.apply(event.getPlayer());
         }
     }
 
     @EventHandler
     public void join(PlayerJoinEvent event) {
-        for (Set set : SetManager.getSets().values()) {
+        for (Set set : catalog.getSets().values()) {
             if (!set.isWearingSet(event.getPlayer(), null, null)) continue;
-            SetPlayerManager.addSetPlayer(event.getPlayer(), set.getName());
+            playerArmorSetService.addSetPlayer(event.getPlayer(), set.getName());
             set.apply(event.getPlayer());
             return;
         }

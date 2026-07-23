@@ -121,6 +121,8 @@
                                         <include>gg.steve.mc.ap.model.id.ItemHandle</include>
                                         <include>gg.steve.mc.ap.model.id.TaskHandle</include>
                                         <include>gg.steve.mc.ap.model.player.WornArmor</include>
+                                        <include>gg.steve.mc.ap.model.player.PlayerArmorWearerRegistry</include>
+                                        <include>gg.steve.mc.ap.model.set.ArmorSetRegistry</include>
                                     </includes>
                                     <limits>
                                         <limit>
@@ -155,7 +157,40 @@
                             <pattern>org.apache.commons.lang3</pattern>
                             <shadedPattern>gg.steve.mc.ap.lib.commons.lang3</shadedPattern>
                         </relocation>
+                        <!-- Relocate the DI framework and its transitives so the shaded jar
+                             never clashes with another plugin's Guice/Guava on the shared server classpath. -->
+                        <relocation>
+                            <pattern>com.google.inject</pattern>
+                            <shadedPattern>gg.steve.mc.ap.lib.inject</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.google.common</pattern>
+                            <shadedPattern>gg.steve.mc.ap.lib.guava</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.google.thirdparty</pattern>
+                            <shadedPattern>gg.steve.mc.ap.lib.guava.thirdparty</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>javax.inject</pattern>
+                            <shadedPattern>gg.steve.mc.ap.lib.javax.inject</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.aopalliance</pattern>
+                            <shadedPattern>gg.steve.mc.ap.lib.aopalliance</shadedPattern>
+                        </relocation>
                     </relocations>
+                    <!-- Guava drags in annotation-only jars (jsr305, checker-qual, error_prone,
+                         j2objc, listenablefuture) that add nothing at runtime; drop them from the shaded jar. -->
+                    <artifactSet>
+                        <excludes>
+                            <exclude>com.google.code.findbugs:jsr305</exclude>
+                            <exclude>org.checkerframework:checker-qual</exclude>
+                            <exclude>com.google.errorprone:error_prone_annotations</exclude>
+                            <exclude>com.google.j2objc:j2objc-annotations</exclude>
+                            <exclude>com.google.guava:listenablefuture</exclude>
+                        </excludes>
+                    </artifactSet>
                 </configuration>
                 <executions>
                     <execution>
@@ -251,6 +286,15 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.18.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Dependency injection. 5.1.0 is the last Guice line targeting Java 8 bytecode
+             (JSR-330 javax.inject); it is shaded and relocated below so it never collides
+             with other plugins on the server classpath. -->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>5.1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

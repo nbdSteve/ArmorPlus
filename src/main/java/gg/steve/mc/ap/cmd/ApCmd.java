@@ -1,5 +1,6 @@
 package gg.steve.mc.ap.cmd;
 
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.cmd.sub.GiveCmd;
 import gg.steve.mc.ap.cmd.sub.GuiCmd;
 import gg.steve.mc.ap.cmd.sub.HelpCmd;
@@ -14,6 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ApCmd implements TabExecutor {
+    private final ArmorSetCatalog catalog;
+
+    public ApCmd(ArmorSetCatalog catalog) {
+        this.catalog = catalog;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -39,7 +45,7 @@ public class ApCmd implements TabExecutor {
                 break;
             case "g":
             case "give":
-                GiveCmd.give(sender, args);
+                GiveCmd.give(sender, args, catalog);
                 break;
             default:
                 CommandDebug.INVALID_COMMAND.message(sender);

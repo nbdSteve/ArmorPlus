@@ -1,10 +1,11 @@
 package gg.steve.mc.ap.listener;
 
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.message.CommandDebug;
 import gg.steve.mc.ap.message.MessageType;
+import gg.steve.mc.ap.model.id.ArmorSetId;
 import gg.steve.mc.ap.permission.PermissionNode;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -14,19 +15,24 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class PlayerCommandListener implements Listener {
+    private final ArmorSetCatalog catalog;
+
+    public PlayerCommandListener(ArmorSetCatalog catalog) {
+        this.catalog = catalog;
+    }
 
     @EventHandler
     public void onCmd(PlayerCommandPreprocessEvent event) {
         String[] args = event.getMessage().split(" ");
         String setName = null;
-        for (String key : SetManager.getSets().keySet()) {
+        for (ArmorSetId key : catalog.getSets().keySet()) {
             if (args[0].equalsIgnoreCase("/" + key)) {
-                setName = key;
+                setName = key.toString();
                 event.setCancelled(true);
             }
         }
         if (setName == null) return;
-        Set set = SetManager.getSet(setName);
+        Set set = catalog.getSet(setName);
         if (args.length == 1) {
             if (!PermissionNode.GUI.hasPermission(event.getPlayer())) {
                 CommandDebug.INSUFFICIENT_PERMISSION.message(event.getPlayer(), PermissionNode.GUI.get());

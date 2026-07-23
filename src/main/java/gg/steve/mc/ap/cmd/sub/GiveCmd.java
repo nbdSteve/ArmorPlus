@@ -1,8 +1,8 @@
 package gg.steve.mc.ap.cmd.sub;
 
+import gg.steve.mc.ap.armor.ArmorSetCatalog;
 import gg.steve.mc.ap.armor.Piece;
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.message.CommandDebug;
 import gg.steve.mc.ap.message.MessageType;
 import gg.steve.mc.ap.permission.PermissionNode;
@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class GiveCmd {
 
-    public static void give(CommandSender sender, String[] args) {
+    public static void give(CommandSender sender, String[] args, ArmorSetCatalog catalog) {
         // /ap g phantom nbdsteve helmet 1
         if (args.length < 4) {
             CommandDebug.INVALID_NUMBER_OF_ARGUMENTS.message(sender);
@@ -29,11 +29,11 @@ public class GiveCmd {
             return;
         }
         Set set;
-        if (SetManager.getSet(args[1]) == null) {
+        if (catalog.getSet(args[1]) == null) {
             CommandDebug.INVALID_SET.message(sender);
             return;
         } else {
-            set = SetManager.getSet(args[1]);
+            set = catalog.getSet(args[1]);
         }
         Piece piece = null;
         boolean all = false;

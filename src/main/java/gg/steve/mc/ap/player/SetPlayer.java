@@ -1,16 +1,15 @@
 package gg.steve.mc.ap.player;
 
 import gg.steve.mc.ap.armor.Set;
-import gg.steve.mc.ap.armor.SetManager;
 import org.bukkit.entity.Player;
 
 public class SetPlayer {
     private Player player;
     private Set set;
 
-    public SetPlayer(Player player, String setName) {
+    public SetPlayer(Player player, Set set) {
         this.player = player;
-        this.set = SetManager.getSet(setName);
+        this.set = set;
     }
 
     public Player getPlayer() {
