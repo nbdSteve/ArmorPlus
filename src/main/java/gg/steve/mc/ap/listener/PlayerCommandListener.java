@@ -5,6 +5,7 @@ import gg.steve.mc.ap.armor.Set;
 import gg.steve.mc.ap.armor.SetManager;
 import gg.steve.mc.ap.message.CommandDebug;
 import gg.steve.mc.ap.message.MessageType;
+import gg.steve.mc.ap.model.id.ArmorSetId;
 import gg.steve.mc.ap.permission.PermissionNode;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -19,9 +20,9 @@ public class PlayerCommandListener implements Listener {
     public void onCmd(PlayerCommandPreprocessEvent event) {
         String[] args = event.getMessage().split(" ");
         String setName = null;
-        for (String key : SetManager.getSets().keySet()) {
+        for (ArmorSetId key : SetManager.getSets().keySet()) {
             if (args[0].equalsIgnoreCase("/" + key)) {
-                setName = key;
+                setName = key.toString();
                 event.setCancelled(true);
             }
         }
