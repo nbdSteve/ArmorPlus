@@ -13,12 +13,14 @@ import gg.steve.mc.ap.utils.LogUtil;
 import net.milkbowl.vault.economy.Economy;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public final class ArmorPlus extends JavaPlugin {
     private static ArmorPlus instance;
@@ -93,7 +95,8 @@ public final class ArmorPlus extends JavaPlugin {
 
     public static ApGui getApGui() {
         if (apGui == null) {
-            apGui = new ApGui(ConfigManager.CONFIG.get().getConfigurationSection("gui"), instance.catalog);
+            YamlConfiguration config = Objects.requireNonNull(ConfigManager.CONFIG.get(), "armor+.yml config is not loaded");
+            apGui = new ApGui(config.getConfigurationSection("gui"), instance.catalog);
         } else {
             apGui.refresh();
         }
